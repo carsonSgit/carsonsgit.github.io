@@ -1,25 +1,30 @@
 body{
-    background-image: linear-gradient(90deg, #464646 0%, #555555 35%, #616161 100%);
+    background-color: #20201e;
     margin: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
+p{
+    color:#dbdbda;
+}
+/*
 
+    NAVBAR STYLING
+
+*/
 .navbar {
     margin:0;
     padding: 10px;
-    background-color: rgba(182, 186, 182, 0.853);
     width: auto;
     display: flex;
+    gap: 25px;
     align-items: center;
 }
-
-
 .navbar .navitem {
     display: block;
     height: 100%;
     box-sizing: border-box;
+    align-items: center;
 }
-
 .navbar a {
     color: #f2f2f2;
     padding: 15px;
@@ -27,23 +32,45 @@ body{
     text-decoration: none;
     font-size: 17px;
 }
-
 .navbar a:hover {
     margin: 0;
     transition: 0.5s;
-    background-color: #7a7979;
     color: black;
 }
-
 .navbar a.active {
     margin: 0;
     transition: 0.3s;
-    background-color: rgb(64, 59, 71);
-    color: white;
+    color: rgb(109, 89, 138);
 }
-
 .navbar-icon {
     display: inline-block;
     line-height: 0;
     vertical-align: middle;
+}
+
+/*
+
+    HOME PAGE STYLING
+
+*/
+.about {
+    margin-left: 3%;
+    margin-top: 2%;
+    border-radius: 25px;
+    background: #42423f;
+    border: solid 1px #ffffff;
+    padding: 20px; 
+    width: 40%;
+    height: auto; 
+    justify-content: left;
+}
+.jacHyperLink{
+    color: #8ecde8;
+    text-decoration: none;
+}
+.aboutHeader{
+    color:#f4f4f4;
+}
+.about p mark {
+    background: yellow; /* Set the background color to yellow */
 }
