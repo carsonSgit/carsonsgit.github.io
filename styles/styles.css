@@ -1,3 +1,5 @@
+
+
 body{
     background-color: #20201e;
     margin: 0;
@@ -56,7 +58,7 @@ p{
 .about {
     margin-left: 3%;
     margin-top: 2%;
-    border-radius: 25px;
+    border-radius: 20px;
     background: #42423f;
     border: solid 1px #ffffff;
     padding: 20px; 
@@ -65,12 +67,91 @@ p{
     justify-content: left;
 }
 .jacHyperLink{
-    color: #8ecde8;
+    color: #50bc6a;
     text-decoration: none;
+}
+.jacHyperLink:hover{
+    color: #a7ddb4;
+    transition: 0.5s;
 }
 .aboutHeader{
     color:#f4f4f4;
 }
-.about p mark {
-    background: yellow; /* Set the background color to yellow */
+.secretButton {
+    appearance: none;
+    outline: 0;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    border: none;
+    padding: 10px 20px; /* Adjust padding for a more balanced size */
+    font-weight: 600;
+    color: #fff;
+    background-color: #7f71fe;
+    border-radius: 5px;
+    transition: all 0.3s ease-in;
+    margin: 0 auto; /* Center the button horizontally */
 }
+
+.secretButton:hover {
+    background-color: #9b97c7;
+    color: #fff;
+}
+
+.secretSection {
+    margin-left: 3%;
+    margin-top: 2%;
+    border-radius: 20px;
+    background: #42423f;
+    border: 1px solid #ffffff;
+    padding: 15px;
+    width: fit-content;
+    color: #dbdbda;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.secretSection p {
+    color: #dbdbda;
+}
+
+.revealSecretButton{
+    appearance: none;
+    outline: 0;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    border: none;
+    padding: 10px 20px; /* Adjust padding for a more balanced size */
+    font-weight: 600;
+    color: #fff;
+    background-color: #7f71fe34;
+    border-radius: 5px;
+    transition: all 0.3s ease-in;
+    margin: 0 auto; /* Center the button horizontally */
+    margin-left: 6%;
+    margin-top: 2%;
+}
+  

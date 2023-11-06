@@ -5,17 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../styles/styles.css">
     <title>Portfolio</title>
-
+    <script>
+         function playSoundAndRedirect() {
+            var audio = document.getElementById("secretAudio");
+            audio.play();
+            window.open("https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg", "_blank");
+        }
+        function revealSecretSection() {
+            var audio = document.getElementById("secretRevealed");
+            audio.play();
+            var secretSection = document.querySelector(".secretSection");
+            secretSection.classList.add("visible");
+        }
+    </script>
 </head>
 <body>
+    <audio id="secretAudio">
+        <source src="./assets/audio/secretAudio.wav" type="audio/wav">
+    </audio>
+    <audio id="secretRevealed">
+        <source src="./assets/audio/secretRevealed.wav" type="audio/wav">
+    </audio>
     <ul class="navbar">
         <li class="navitem">
-            <a href="index.html" class="navbar-icon-link">
-                <img src="./images/robot-svgrepo-com.svg" alt="Icon" class="navbar-icon">
+            <a href="javascript:revealSecretSection()" class="navbar-icon-link">
+                <img src="./assets/images/robot-svgrepo-com.svg" alt="Icon" class="navbar-icon">
             </a>
         </li>
         <li class="navitem"><a href="index.html" class="active">Home</a></li>
-        <li class="navitem"><a href="about.html">About</a></li>
+        <li class="navitem"><a href="resume.html">Resume</a></li>
         <li class="navitem"><a href="links.html">Links</a></li>
     </ul>
     <div class="about">
@@ -24,12 +42,12 @@
         <a href="https://johnabbott.qc.ca/career-programs/computer-science-technology/computer-science-420-b0/" class="jacHyperLink" target="_blank">Computer Science Program</a> 
         in Montreal, Quebec, Canada. 
         The program has a focus on software development which has given me a wide-grasp on many different programming languages & frameworks.
-        Since I have began my studies in CompSci, my passion for the field has only grown and I look forward to finding new ways to improve my skills.
+        Since I have begun my studies in CompSci, my passion for the field has only grown and I look forward to finding new ways to improve my skills.
         </p>
-
-        <p>
-
-        </p>
+    </div>
+    <div class="secretSection">
+        <p>Bring me to a cool cat</p>
+        <button class="secretButton" onclick="playSoundAndRedirect()">click!</button>
     </div>
 </body>
 </html>
