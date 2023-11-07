@@ -1,5 +1,29 @@
+
+
+/*
+    CURSOR EFFECT SOURCED FROM: https://dev.to/mattmarquise/how-to-create-a-custom-circular-cursor-for-your-website-4i7p
+*/
+html {
+    cursor: none;
+}
+/*
+    slight improvement made to the code sourced from: https://dev.to/mattmarquise/how-to-create-a-custom-circular-cursor-for-your-website-4i7p
+    setting pointer-events to none removes bug where on hovers would be slightly buggy with this cursor change.
+
+    removed -moz and -webkit CSS because those are for older browser versions, border-radius is widely used now.
+*/
+#circularcursor {
+    background-color: #9d988e8a;
+    border:1px solid #0a2008;    
+    height:10px;
+    width:10px;
+    border-radius:50%;
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+}
+
 body {
-    /*background-color: #f9f3f3;*/
     background-color: #f8f4ea;
     margin: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -45,10 +69,12 @@ p {
     transition: transform .3s ease-in-out;
 }
 .navbar a:hover::before{
+    cursor:none;
     transform-origin: right;
     transform: scaleX(1);
 }
 .navbar a:hover {
+    cursor:none;
     transition: 0.3s;
     color: rgb(0, 0, 0);
 }
@@ -73,6 +99,7 @@ p {
 }
 
 .info:hover {
+    cursor:none;
     transition: 0.3s;
     background: #1f4c224d;
 }
@@ -86,6 +113,7 @@ p {
 .jacHyperLink:hover {
     color: #839788;
     transition: 0.5s;
+    cursor: none;
 }
 
 .infoHeader {
