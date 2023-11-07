@@ -33,7 +33,10 @@ p {
     transition: 0.3s;
     color: #595252;
 }
-
+::selection {
+    background: #183a1a75;
+    color: #edecec;
+}
 .navbar {
     margin-top: 18px;
     margin-left: 42.5%; /* Magic to make navbar Truly centered */
