@@ -1,157 +1,124 @@
-
-
-body{
-    background-color: #20201e;
+body {
+    /*background-color: #f9f3f3;*/
+    background-color: #f8f4ea;
     margin: 0;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-p{
-    color:#dbdbda;
+
+p {
+    transition: 0.3s;
+    color: #595252;
 }
-/*
 
-    NAVBAR STYLING
-
-*/
 .navbar {
-    margin:0;
-    padding: 10px;
-    width: auto;
+    margin-top: 18px;
+    margin-left: 42.5%; /* Magic to make navbar Truly centered */
+    margin-right: 45%;
     display: flex;
-    gap: 25px;
-    align-items: center;
+    gap: 15px;
+    justify-content: center;
 }
 .navbar .navitem {
     display: block;
-    height: 100%;
-    box-sizing: border-box;
-    align-items: center;
 }
+
 .navbar a {
-    color: #f2f2f2;
-    padding: 15px;
-    margin: 0;
+    color: #118406;
     text-decoration: none;
     font-size: 17px;
 }
+
 .navbar a:hover {
-    margin: 0;
     transition: 0.5s;
-    color: black;
+    color: rgb(0, 0, 0);
 }
+
 .navbar a.active {
-    margin: 0;
     transition: 0.3s;
-    color: rgb(109, 89, 138);
-}
-.navbar-icon {
-    display: inline-block;
-    line-height: 0;
-    vertical-align: middle;
+    color: rgb(55, 85, 65);
 }
 
-/*
-
-    HOME PAGE STYLING
-
-*/
-.about {
+/* HOME PAGE STYLING */
+.info {
+    transition: 0.3s;
     margin-left: 3%;
-    margin-top: 2%;
+    margin-top: 1%;
     border-radius: 20px;
-    background: #42423f;
-    border: solid 1px #ffffff;
-    padding: 20px; 
+    background: #62846353;
+    border: solid 1px #2c4f29;
+    padding: 20px;
     width: 40%;
-    height: auto; 
+    height: auto;
     justify-content: left;
 }
-.jacHyperLink{
-    color: #50bc6a;
+
+.info:hover {
+    transition: 0.3s;
+    background: rgba(20, 78, 24, 0.32);
+}
+
+.jacHyperLink {
+    color: #114917;
+    transition: 0.5s;
     text-decoration: none;
 }
-.jacHyperLink:hover{
-    color: #a7ddb4;
+
+.jacHyperLink:hover {
+    color: #839788;
     transition: 0.5s;
 }
-.aboutHeader{
-    color:#f4f4f4;
+
+.infoHeader {
+    color: #1f1b1b;
 }
-.secretButton {
-    appearance: none;
-    outline: 0;
-    position: relative;
-    overflow: hidden;
-    display: inline-block;
-    text-align: center;
-    text-decoration: none;
-    vertical-align: middle;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-    border: none;
-    padding: 10px 20px; /* Adjust padding for a more balanced size */
-    font-weight: 600;
-    color: #fff;
-    background-color: #7f71fe;
-    border-radius: 5px;
-    transition: all 0.3s ease-in;
-    margin: 0 auto; /* Center the button horizontally */
+.content-container {
+    display: flex;
+    align-items: flex-start;
+}
+.info {
+    margin: 1% 3%; /* Top, Right margin */
+    width: 65%;
 }
 
-.secretButton:hover {
-    background-color: #9b97c7;
-    color: #fff;
-}
-
-.secretSection {
+.about {
+    margin-top: 1%;
     margin-left: 3%;
-    margin-top: 2%;
-    border-radius: 20px;
-    background: #42423f;
-    border: 1px solid #ffffff;
-    padding: 15px;
-    width: fit-content;
-    color: #dbdbda;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    width: 18%;
 }
+.aboutHeader{
+    color:#1f1b1b;
+}
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center; 
+    }
 
-.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+    .content-container {
+        flex-direction: column; /* Change flex-direction to stack items vertically */
+    }
 
-.secretSection p {
-    color: #dbdbda;
-}
+    .about {
+        margin: 2% auto; /* Center the ".about" div horizontally */
+        width: 80%; /* Adjust the width as needed */
+    }
 
-.revealSecretButton{
-    appearance: none;
-    outline: 0;
-    position: relative;
-    overflow: hidden;
-    display: inline-block;
-    text-align: center;
-    text-decoration: none;
-    vertical-align: middle;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-    border: none;
-    padding: 10px 20px; /* Adjust padding for a more balanced size */
-    font-weight: 600;
-    color: #fff;
-    background-color: #7f71fe34;
-    border-radius: 5px;
-    transition: all 0.3s ease-in;
-    margin: 0 auto; /* Center the button horizontally */
-    margin-left: 6%;
-    margin-top: 2%;
+    .info {
+        margin: 2% 3%; /* Adjust margin as needed */
+        width: 100%; /* Occupy full width */
+    }
+
+    .info, .secretSection {
+        width: 80%;
+        max-width: 80%;
+    }
+
+    .info {
+        margin-left: auto; /* Center the ".info" section on smaller screens */
+        margin-right: auto;
+    }
+    .secretSection {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
-  

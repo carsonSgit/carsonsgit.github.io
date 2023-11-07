@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="../styles/fun.css">
+    <link rel="icon" type="image/svg+xml" href="assets/images/robot-svgrepo-com.svg"> <!-- Add this line -->
     <title>Portfolio</title>
     <script>
+        /*
          function playSoundAndRedirect() {
             var audio = document.getElementById("secretAudio");
             audio.play();
@@ -16,7 +19,7 @@
             audio.play();
             var secretSection = document.querySelector(".secretSection");
             secretSection.classList.add("visible");
-        }
+        }*/
     </script>
 </head>
 <body>
@@ -26,28 +29,41 @@
     <audio id="secretRevealed">
         <source src="./assets/audio/secretRevealed.wav" type="audio/wav">
     </audio>
-    <ul class="navbar">
-        <li class="navitem">
-            <a href="javascript:revealSecretSection()" class="navbar-icon-link">
-                <img src="./assets/images/robot-svgrepo-com.svg" alt="Icon" class="navbar-icon">
-            </a>
-        </li>
+
+   <ul class="navbar">
         <li class="navitem"><a href="index.html" class="active">Home</a></li>
         <li class="navitem"><a href="resume.html">Resume</a></li>
         <li class="navitem"><a href="links.html">Links</a></li>
     </ul>
-    <div class="about">
-        <h1 class="aboutHeader">Who Am I</h1>
-        <p>I am a fifth-semester student in John Abbott College's
-        <a href="https://johnabbott.qc.ca/career-programs/computer-science-technology/computer-science-420-b0/" class="jacHyperLink" target="_blank">Computer Science Program</a> 
-        in Montreal, Quebec, Canada. 
-        The program has a focus on software development which has given me a wide-grasp on many different programming languages & frameworks.
-        Since I have begun my studies in CompSci, my passion for the field has only grown and I look forward to finding new ways to improve my skills.
-        </p>
+
+    
+    <div class="content-container">
+        <div class="about">
+            <h1 class="aboutHeader">Carson Spriggs-Audet</h1>
+            <p class="occupation">CompSci Student</p>
+        </div>
+        <div class="info">
+            <h1 class="infoHeader">Who Am I</h1>
+            <p>I am a fifth-semester student in John Abbott College's
+            <a href="https://johnabbott.qc.ca/career-programs/computer-science-technology/computer-science-420-b0/" class="jacHyperLink" target="_blank">Computer Science Program</a> 
+            in Montreal, Quebec, Canada. 
+            The program has a focus on software development which has given me a wide-grasp on many different programming languages & frameworks.
+            Since I have begun my studies in CompSci, my passion for the field has only grown and I look forward to finding new ways to improve my skills.
+            </p>
+            <h1 class="infoHeader">What am I up to</h1>
+            <p>Currently I am doing web, game, and android app development as well as learning cyber security. Of all I am doing, I would have to say that Game programming
+                would have to be my favourite course. It's considered the most challenging which I certainly agree with, but that's the fun of it. Getting stuck with a
+                new puzzle and finally figuring it out after tinkering with it for such a long time is a great feeling. Throughout my time at JAC, I can say with certainty
+                that this semester I have improved within the domain of computer science the most and I look forward to continuing to improve.
+            </p>
+        </div>
     </div>
+
+    <!-- GOT RID OF THIS FOR NOW
     <div class="secretSection">
         <p>Bring me to a cool cat</p>
         <button class="secretButton" onclick="playSoundAndRedirect()">click!</button>
     </div>
+     -->
 </body>
 </html>
