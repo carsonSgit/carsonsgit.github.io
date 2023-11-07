@@ -37,20 +37,19 @@ p {
     position: absolute;
     width: 100%;
     height: 2px;
-    border-radius: 4px;
     background-color: #18272F;
     bottom: 0;
     left: 0;
-    transform-origin: right;
+    transform-origin: left;
     transform: scaleX(0);
     transition: transform .3s ease-in-out;
 }
 .navbar a:hover::before{
-    transform-origin: left;
+    transform-origin: right;
     transform: scaleX(1);
 }
 .navbar a:hover {
-    transition: 0.5s;
+    transition: 0.3s;
     color: rgb(0, 0, 0);
 }
 
