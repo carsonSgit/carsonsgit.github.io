@@ -26,8 +26,11 @@ body {
     margin: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;   
 }
-
+h1{
+    font-size: 33px;
+}
 p {
+    font-size: 21px;
     transition: 0.3s;
     color: #595252;
 }
@@ -40,7 +43,7 @@ p {
     margin-left: 42.5%; /* Magic to make navbar Truly centered */
     margin-right: 45%;
     display: flex;
-    gap: 15px;
+    gap: 50px;
     justify-content: center;
 }
 .navbar .navitem {
@@ -54,7 +57,7 @@ p {
 .navbar a {
     color: #118406;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 25px;
     position:relative;
 }
 .navbar a::before{
@@ -81,6 +84,7 @@ p {
 }
 
 .navbar a.active {
+    cursor: none;
     transition: 0.3s;
     color: rgb(55, 85, 65);
 }
@@ -88,8 +92,8 @@ p {
 /* HOME PAGE STYLING */
 .info {
     transition: 0.3s;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 18%;
+    margin-right: 18%;
     margin-top: 1%;
     border-radius: 20px;
     background: #8db18d53;
@@ -106,12 +110,11 @@ p {
     background: #437b474d;
 }
 .divider {
-    height: 2px;
+    height: 3px;
     background-color: #172816;
-    width: 90px; 
+    width: 125px; 
     margin-top: 20px;
-    margin-bottom: 15px; 
-    border-radius: 20px;
+    border-radius: 100px;
 }
 .jacHyperLink {
     color: #2e9405;
