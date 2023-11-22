@@ -5,13 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../styles/styles.css">
     <link rel="stylesheet" type="text/css" href="../styles/fun.css">
+    <link rel="stylesheet" type="text/css" href="../styles/resume.css">
+    <link rel="icon" type="image/svg+xml" href="assets/images/robot-svgrepo-com.svg"> 
     <title>Portfolio</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        // SOURCED FROM: https://dev.to/mattmarquise/how-to-create-a-custom-circular-cursor-for-your-website-4i7p
+        $(document).ready(function() {
+            $(document).on('mousemove', function(e) {
+                $('#circularcursor').css({
+                    left: e.pageX,
+                    top: e.pageY
+                });
+            });
+        });
+    </script>
 </head>
 <body>
+    
+    <div id="circularcursor"></div>
     <ul class="navbar">
         <li class="navitem"><a href="index.html">Home</a></li>
         <li class="navitem"><a href="resume.html" class="active">Resume</a></li>
         <li class="navitem"><a href="links.html">Links</a></li>
     </ul>
+
+    <div class="resumeSection">
+        <!-- Temporary button css -->
+        <button class="pdfDownload" onclick="downloadPDF('English')">Download English PDF</button>
+        <button class="pdfDownload" onclick="downloadPDF('EnglishFrench')">Download English & French PDF</button>
+    </div>
+
+    <script>
+        function downloadPDF(language) {
+            // You can replace the dummy URLs with the actual URLs of your PDF files
+            var englishPDFUrl = 'path/to/english.pdf';
+            var englishFrenchPDFUrl = 'path/to/english_french.pdf';
+            
+            var downloadUrl = language === 'English' ? englishPDFUrl : englishFrenchPDFUrl;
+
+            var link = document.createElement('a');
+            link.href = downloadUrl;
+            link.download = language + '_portfolio.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
 </body>
 </html>
