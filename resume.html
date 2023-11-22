@@ -33,21 +33,21 @@
 
     <div class="resumeSection">
         <!-- Temporary button css -->
-        <button class="pdfDownload" onclick="downloadPDF('English')">Download English PDF</button>
-        <button class="pdfDownload" onclick="downloadPDF('EnglishFrench')">Download English & French PDF</button>
+        <button class="pdfDownload" onclick="downloadPDF('EN')">Download English PDF</button>
+        <button class="pdfDownload" onclick="downloadPDF('ENFR')">Download English & French PDF</button>
     </div>
 
     <script>
         function downloadPDF(language) {
             // You can replace the dummy URLs with the actual URLs of your PDF files
-            var englishPDFUrl = 'path/to/english.pdf';
-            var englishFrenchPDFUrl = 'path/to/english_french.pdf';
+            var englishPDFUrl = '../assets/pdf/EN_SpriggsAudetCarson.pdf';
+            var englishFrenchPDFUrl = '../assets/pdf/ENFR_SpriggsAudetCarson.pdf';
             
-            var downloadUrl = language === 'English' ? englishPDFUrl : englishFrenchPDFUrl;
+            var downloadUrl = language === 'EN' ? englishPDFUrl : englishFrenchPDFUrl;
 
             var link = document.createElement('a');
             link.href = downloadUrl;
-            link.download = language + '_portfolio.pdf';
+            link.download = language + '_CarsonSpriggsAudet.pdf';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);

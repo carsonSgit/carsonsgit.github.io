@@ -138,12 +138,27 @@ p {
     color:#1f1b1b;
 }
 @media (max-width: 768px) {
+    body{
+        cursor: default;
+    }
+    #circularcursor{
+        display: none;
+    }
+    .info:hover{
+        cursor: default;
+    }
+    .navbar a:hover::before,
+    .navbar a:hover {
+        cursor: pointer;
+    }
+    .jacHyperLink:hover {
+        cursor: pointer;
+    }
     .navbar {
         margin-left: 2%;
         margin-right: 11%;
         justify-content: space-evenly;
     }
-
     .content-container {
         flex-direction: column; /* Change flex-direction to stack items vertically */
     }

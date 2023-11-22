@@ -1,7 +1,7 @@
 /* General Resume Div */
 .resumeSection {
     transition: 0.3s;
-    margin: 1% auto; 
+    margin: 1% auto;
     margin-top: 1%;
     border-radius: 20px;
     background: #62846353;
@@ -10,6 +10,7 @@
     width: 40%;
     height: auto;
     justify-content: left;
+    text-align: center; 
 }
 
 .resumeSection:hover {
@@ -22,28 +23,56 @@
 .pdfDownload {
     appearance: none;
     outline: 0;
-    position: relative;
     overflow: hidden;
     display: inline-block;
     text-align: center;
     text-decoration: none;
     vertical-align: middle;
     cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-    border: none;
-    padding: 10px 20px; 
+    padding: 10px 10px;
     font-weight: 600;
-    color: #fff;
-    background-color: #27693f;
-    border-radius: 5px;
-    transition: all 0.3s ease-in;
+    color: rgb(27, 67, 44);
+    font-size: 15px;
+    font-family: arial;
+    position: relative;
+    transition: all .35s;
+    background: transparent;
+    background-color: rgba(255, 255, 255, 0.246);
+    border-radius: 10px;
+    border: 3px solid seagreen;
     margin: 0 auto; 
 }
 
-.pdfDownload:hover {
+.pdfDownload:hover,
+.pdfDownload:focus {
     cursor: none !important;
-    background-color: #648f73;
+    background-color: seagreen;
     color: #fff;
+}
+
+/* Effect sourced from https://www.sliderrevolution.com/resources/css-button-hover-effects/ */
+.pdfDownload:before,
+.pdfDownload:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 100%;
+    left: 0;
+    background: seagreen;
+    z-index: -1;
+    transition: all .25s;
+}
+
+.pdfDownload:before {
+    opacity: 0.5;
+}
+
+.pdfDownload:after {
+    transition-delay: 0.2s;
+}
+
+.pdfDownload:hover:before,
+.pdfDownload:hover:after {
+    top: 0;
 }
