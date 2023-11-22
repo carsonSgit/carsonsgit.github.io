@@ -88,13 +88,14 @@ p {
 /* HOME PAGE STYLING */
 .info {
     transition: 0.3s;
-    margin-left: 3%;
+    margin-left: 15%;
+    margin-right: 15%;
     margin-top: 1%;
     border-radius: 20px;
-    background: #62846353;
+    background: #8db18d53;
     border: solid 1px #2c4f29;
     padding: 20px;
-    width: 40%;
+    width: 100%;
     height: auto;
     justify-content: left;
 }
@@ -102,9 +103,16 @@ p {
 .info:hover {
     cursor:none;
     transition: 0.3s;
-    background: #1f4c224d;
+    background: #437b474d;
 }
-
+.divider {
+    height: 2px;
+    background-color: #172816;
+    width: 90px; 
+    margin-top: 20px;
+    margin-bottom: 15px; 
+    border-radius: 20px;
+}
 .jacHyperLink {
     color: #2e9405;
     transition: 0.5s;
@@ -124,10 +132,6 @@ p {
     display: flex;
     align-items: flex-start;
 }
-.info {
-    margin: 1% 3%; /* Top, Right margin */
-    width: 65%;
-}
 
 .about {
     margin-top: 1%;
@@ -139,7 +143,7 @@ p {
 }
 @media (max-width: 768px) {
     body{
-        cursor: default;
+        cursor: default !important;
     }
     #circularcursor{
         display: none;

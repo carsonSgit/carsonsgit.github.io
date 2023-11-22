@@ -76,3 +76,23 @@
 .pdfDownload:hover:after {
     top: 0;
 }
+
+@media (max-width: 768px) {
+    body{
+        cursor: default !important;
+    }
+    #circularcursor{
+        display: none;
+    }
+    .resumeSection:hover {
+        cursor: default;
+    }
+    .pdfDownload:hover,
+    .pdfDownload:focus {
+        cursor: pointer !important;
+    }
+
+    .pdfDownload{
+        margin-top: 4%;
+    }
+}
