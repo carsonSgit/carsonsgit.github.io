@@ -4,7 +4,7 @@
     margin: 1% auto;
     margin-top: 1%;
     border-radius: 20px;
-    background: #62846353;
+    background: #8db18d45;
     border: solid 1px #2c4f29;
     padding: 20px;
     width: 40%;
@@ -16,7 +16,7 @@
 .resumeSection:hover {
     cursor: none;
     transition: 0.3s;
-    background: #1f4c224d;
+    background: #99d99945;
 }
 
 /* Resume buttons */

@@ -11,7 +11,7 @@ html {
     removed -moz and -webkit CSS because those are for older browser versions, border-radius is widely used now.
 */
 #circularcursor {
-    background-color: #9d988e8a;
+    background-color: #f9f8f68a;
     border:1px solid #0a2008;    
     height:10px;
     width:10px;
@@ -22,7 +22,7 @@ html {
 }
 
 body {
-    background-color: #f8f4ea;
+    background-color: #f1f1f1;
     margin: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;   
 }
@@ -31,7 +31,6 @@ h1{
 }
 p {
     font-size: 21px;
-    transition: 0.3s;
     color: #595252;
 }
 ::selection {
@@ -92,23 +91,16 @@ p {
 /* HOME PAGE STYLING */
 .info {
     transition: 0.3s;
-    margin-left: 18%;
+    margin-left: 5%;
     margin-right: 18%;
     margin-top: 1%;
     border-radius: 20px;
-    background: #8db18d53;
-    border: solid 1px #2c4f29;
     padding: 20px;
     width: 100%;
     height: auto;
     justify-content: left;
 }
 
-.info:hover {
-    cursor:none;
-    transition: 0.3s;
-    background: #437b474d;
-}
 .divider {
     height: 3px;
     background-color: #172816;
@@ -129,7 +121,12 @@ p {
 }
 
 .infoHeader {
-    color: #1f1b1b;
+    font-size: 25px;
+    color: rgb(64, 124, 64);
+}
+.name {
+    font-size:40px;
+    color: rgb(1, 80, 24);
 }
 .content-container {
     display: flex;

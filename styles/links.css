@@ -1,0 +1,39 @@
+/* General Resume Div */
+.social-container {
+    transition: 0.3s;
+    margin: 1% auto;
+    margin-top: 1%;
+    border-radius: 20px;
+    background: #8db18d45;
+    border: solid 1px #2c4f29;
+    padding: 20px;
+    width: 20%;
+    height: auto;
+    justify-content: center;
+    text-align: center; 
+}
+
+.social-container:hover {
+    cursor: none;
+    transition: 0.3s;
+    background: #99d99945;
+}
+
+a{
+    cursor: none;
+    text-decoration: none;
+}
+.social-icon{
+    margin: 30px;
+    max-width: 100px;
+}
+@media (max-width: 768px) {
+    .social-icon{
+        margin-top: 50px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .social-container{
+        width: 40%;
+    }
+}
