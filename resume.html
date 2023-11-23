@@ -32,9 +32,21 @@
     </ul>
 
     <div class="resumeSection">
-        <!-- Temporary button css -->
-        <button class="pdfDownload" onclick="downloadPDF('EN')">Download English PDF</button>
-        <button class="pdfDownload" onclick="downloadPDF('FR')">Download French PDF</button>
+        <h1 class="resumeHeader">Resume</h1>
+        <p class="resumeText">Here you can download my resume in either English or French.</p>
+        
+        <!-- EN button with image -->
+        <button class="pdfDownload" onclick="downloadPDF('EN')">
+            <span>EN</span>
+            <img class="downloadImage" src="assets/images/downloadArrow.png">
+        </button>
+        
+        <!-- FR button with image -->
+        <button class="pdfDownload" onclick="downloadPDF('FR')">
+            <span>FR</span>
+            <img class="downloadImage" src="assets/images/downloadArrow.png">
+            
+        </button>
     </div>
 
     <script>

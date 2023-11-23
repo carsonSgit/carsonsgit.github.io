@@ -4,21 +4,17 @@
     margin: 1% auto;
     margin-top: 1%;
     border-radius: 20px;
-    background: #8db18d45;
-    border: solid 1px #2c4f29;
     padding: 20px;
-    width: 40%;
+    margin-left: 5%;
+    margin-right: 18%;
+    margin-top: 1%;
     height: auto;
     justify-content: left;
-    text-align: center; 
+    color: rgb(64, 124, 64);
 }
-
-.resumeSection:hover {
-    cursor: none;
-    transition: 0.3s;
-    background: #99d99945;
+.resumeText{
+    
 }
-
 /* Resume buttons */
 .pdfDownload {
     appearance: none;
@@ -29,7 +25,7 @@
     text-decoration: none;
     vertical-align: middle;
     cursor: pointer;
-    padding: 10px 10px;
+    padding: 10px 20px;
     font-weight: 600;
     color: rgb(27, 67, 44);
     font-size: 15px;
@@ -38,9 +34,9 @@
     transition: all .35s;
     background: transparent;
     background-color: rgba(255, 255, 255, 0.246);
-    border-radius: 10px;
-    border: 3px solid seagreen;
-    margin: 0 auto; 
+    border-radius: 9px;
+    border: 2px solid seagreen;
+    margin: 0 auto;
 }
 
 .pdfDownload:hover,
@@ -75,6 +71,10 @@
 .pdfDownload:hover:before,
 .pdfDownload:hover:after {
     top: 0;
+}
+.downloadImage{
+    max-width: 20px;
+    max-height: 10px;
 }
 
 @media (max-width: 768px) {
