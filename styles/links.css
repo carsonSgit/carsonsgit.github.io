@@ -29,6 +29,67 @@ a {
     border-radius: 50%;
 }
 
+.portfolio-list {
+    margin-left: 25%;
+    width: 52%;
+}
+
+.portfolio-item {
+    background-color: rgba(12, 117, 33, 0.1);
+    border-radius: 20px;
+    border: 2px solid rgba(4, 67, 31, 0.219);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.portfolio-item:hover {
+    background-color: rgba(12, 117, 33, 0.2);
+    transition: 0.3s;
+}
+
+.portfolio-text {
+    margin-left: 2%;
+    font-size: 18px;
+}
+.portfolio-header{
+    font-size: 22px;
+    margin-left: 2%;
+    margin-bottom: 1%;
+}
+
+/* Resume buttons */
+.portfolio-button {
+    appearance: none;
+    outline: 0;
+    overflow: hidden;
+    display: inline-block;
+    text-decoration: none;
+    vertical-align: middle;
+    padding: 8px 15px;
+    font-weight: 600;
+    color: rgb(27, 67, 44);
+    font-size: 15px;
+    font-family: arial;
+    position: relative;
+    transition: all .35s;
+    background: transparent;
+    background-color: rgba(255, 255, 255, 0.246);
+    border-radius: 9px;
+    border: 2px solid seagreen;
+    width: fit-content;
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
+
+.portfolio-button:hover,
+.portfolio-button:focus {
+    cursor: none !important;
+    background-color: seagreen;
+    color: #fff;
+}
+
 @media (max-width: 768px) {
     .social-icon {
         margin-top: 20px;
@@ -38,7 +99,16 @@ a {
         flex-direction: column; 
         align-items: center;
     }
-    .social-icon:hover{
+
+    .social-icon:hover {
         cursor: pointer;
+    }
+    .portfolio-list{
+        width: auto;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+    .portfolio-item{
+        width: auto;
     }
 }
