@@ -61,34 +61,130 @@ a {
 
 /* Resume buttons */
 .portfolio-button {
-    appearance: none;
-    outline: 0;
-    overflow: hidden;
-    display: inline-block;
-    text-decoration: none;
-    vertical-align: middle;
-    padding: 8px 15px;
-    font-weight: 600;
-    color: rgb(27, 67, 44);
-    font-size: 15px;
-    font-family: arial;
     position: relative;
-    transition: all .35s;
-    background: transparent;
-    background-color: rgba(255, 255, 255, 0.246);
-    border-radius: 9px;
-    border: 2px solid seagreen;
-    width: fit-content;
-    margin-left: 2%;
+    padding: 10px 22px;
     margin-bottom: 2%;
+    border-radius: 6px;
+    border: 1px solid #fff;
+    color: #fff;
+    background-color: rgb(56, 92, 71);
+    transition: all 0.9s ease;
 }
 
-.portfolio-button:hover,
-.portfolio-button:focus {
-    cursor: none !important;
-    background-color: seagreen;
-    color: #fff;
+.portfolio-button:active {
+    transform: scale(0.95);
 }
+
+/* Button effet sourced from: https://uiverse.io/zjssun/curly-seahorse-76 */
+
+.portfolio-button:before,
+.portfolio-button:after {
+    position: absolute;
+    content: "";
+    width: 150%;
+    left: 50%;
+    height: 100%;
+    transform: translateX(-50%);
+    z-index: -1000;
+    background-repeat: no-repeat;
+}
+
+.portfolio-button:hover:before {
+    top: -70%;
+    background-image: radial-gradient(circle, seagreen 20%, transparent 20%),
+        radial-gradient(circle, transparent 20%, seagreen 20%, transparent 30%),
+        radial-gradient(circle, seagreen 20%, transparent 20%),
+        radial-gradient(circle, seagreen 20%, transparent 20%),
+        radial-gradient(circle, transparent 10%, seagreen 15%, transparent 20%),
+        radial-gradient(circle, seagreen 20%, transparent 20%),
+        radial-gradient(circle, seagreen 20%, transparent 20%),
+        radial-gradient(circle, seagreen 20%, transparent 20%),
+        radial-gradient(circle, seagreen 20%, transparent 20%);
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+        10% 10%, 18% 18%;
+    background-position: 50% 120%;
+    animation: greentopBubbles 0.9s ease;
+}
+
+@keyframes greentopBubbles {
+    0% {
+        background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+            40% 90%, 55% 90%, 70% 90%;
+    }
+
+    50% {
+        background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+            50% 50%, 65% 20%, 90% 30%;
+    }
+
+    100% {
+        background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+            50% 40%, 65% 10%, 90% 20%;
+        background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+}
+
+.portfolio-button:hover::after {
+    bottom: -70%;
+    background-image: radial-gradient(circle, seagreen 20%, transparent 20%),
+        radial-gradient(circle, seagreen 20%, transparent 20%),
+        radial-gradient(circle, transparent 10%, seagreen 15%, transparent 20%),
+        radial-gradient(circle, seagreen 20%, transparent 20%),
+        radial-gradient(circle, seagreen 20%, transparent 20%),
+        radial-gradient(circle, seagreen 20%, transparent 20%),
+        radial-gradient(circle, seagreen 20%, transparent 20%);
+    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+    background-position: 50% 0%;
+    animation: greenbottomBubbles 0.9s ease;
+}
+
+@keyframes greenbottomBubbles {
+    0% {
+        background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+            70% -10%, 70% 0%;
+    }
+
+    50% {
+        background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+            105% 0%;
+    }
+
+    100% {
+        background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+            110% 10%;
+        background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+}
+
+
+.card {
+    box-sizing: border-box;
+    width: auto;
+    height:max-content;
+    background: rgba(217, 217, 217, 0.58);
+    border: 1px solid rgba(15, 94, 53, 0.369);
+    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(6px);
+    border-radius: 17px;
+    text-align: center;
+    transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    font-weight: bolder;
+    color: black;
+}
+
+.card:hover {
+    border: 1px solid black;
+    transform: scale(1.05);
+}
+
+.card:active {
+    transform: scale(0.95);
+}
+
 
 @media (max-width: 768px) {
     .social-icon {
