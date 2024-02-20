@@ -19,6 +19,9 @@
                     top: e.pageY
                 });
             });
+            
+            // Set the default PDF to English on page load
+            downloadPDF('EN');
         });
     </script>
 </head>
@@ -31,38 +34,56 @@
         <li class="navitem"><a href="links.html">Links</a></li>
     </ul>
 
-    <div class="resumeSection">
-        <h1 class="resumeHeader">Resume</h1>
-        <p class="resumeText">Here you can download my resume in either English or French.</p>
-        
-        <!-- EN button with image -->
-        <button class="pdfDownload" onclick="downloadPDF('EN')">
-            <span>EN</span>
-            <img class="downloadImage" src="assets/images/downloadArrow.png">
-        </button>
-        
-        <!-- FR button with image -->
-        <button class="pdfDownload" onclick="downloadPDF('FR')">
-            <span>FR</span>
-            <img class="downloadImage" src="assets/images/downloadArrow.png">
+    <div class="container">
+        <div class="resumeSection">
+            <h1 class="resumeHeader">Resume</h1>
+            <p class="resumeText">
+                [NOT UPDATED TO 2024]
+                <br/>
+                <br/>
+                Here I've provided both an English and French version of my resume.
+                I am actively looking for Summer 2024 internships!
+                <br/>
+                <br/>
             
-        </button>
+                Press the button below to toggle between English and French PDF's.
+            </p>
+            
+            <!-- Toggle button -->
+            <button class="pdfDownload" onclick="togglePDF()">
+                <span id="toggleLabel">English</span>
+            </button>
+
+            <br/><br/>
+        </div>
+
+        <!-- iframe to display PDF -->
+        <iframe id="pdfViewer"></iframe>
     </div>
 
     <script>
+        var currentLanguage = 'EN'; // Default language
+        
+        function togglePDF() {
+            if (currentLanguage === 'EN') {
+                downloadPDF('FR');
+                currentLanguage = 'FR';
+                document.getElementById('toggleLabel').innerText = 'French';
+            } else {
+                downloadPDF('EN');
+                currentLanguage = 'EN';
+                document.getElementById('toggleLabel').innerText = 'English';
+            }
+        }
+        
         function downloadPDF(language) {
-            // You can replace the dummy URLs with the actual URLs of your PDF files
             var englishPDFUrl = '../assets/pdf/EN_CarsonSpriggsAudet.pdf';
-            var englishFrenchPDFUrl = '../assets/pdf/FR_CarsonSpriggsAudet.pdf';
+            var frenchPDFUrl = '../assets/pdf/FR_CarsonSpriggsAudet.pdf';
             
-            var downloadUrl = language === 'EN' ? englishPDFUrl : englishFrenchPDFUrl;
+            var downloadUrl = language === 'EN' ? englishPDFUrl : frenchPDFUrl;
 
-            var link = document.createElement('a');
-            link.href = downloadUrl;
-            link.download = language + '_CarsonSpriggsAudet.pdf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+            // Set iframe source to the downloaded PDF
+            document.getElementById('pdfViewer').src = downloadUrl;
         }
     </script>
 </body>
