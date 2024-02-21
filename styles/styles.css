@@ -138,12 +138,14 @@ p {
 }
 
 .jacHyperLink {
+    cursor: none;
     color: #2e9405;
     transition: 0.5s;
     text-decoration: none;
 }
 
 .jacHyperLink:hover {
+    cursor: none;
     color: #839788;
     transition: 0.5s;
 }
