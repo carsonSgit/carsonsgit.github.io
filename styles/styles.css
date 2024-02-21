@@ -100,7 +100,7 @@ p {
 .info .circle {
     width: 190px;
     height: 190px;
-    background: radial-gradient(#b0e633, #53ef7d);
+    background: radial-gradient(#3e794275, #317a36);
     border-radius: 50%;
     position: absolute;
     animation: move-up6 2s ease-in infinite alternate-reverse;
