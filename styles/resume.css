@@ -58,12 +58,15 @@
     body{
         cursor: default !important;
     }
+
     #circularcursor{
         display: none;
     }
+
     .resumeSection:hover {
         cursor: default;
     }
+    
     .pdfDownload:hover,
     .pdfDownload:focus {
         cursor: pointer !important;

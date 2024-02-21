@@ -203,8 +203,8 @@ p {
         right: -5px;
     }
     .navbar {
-        margin: 18px auto; /* Center the navbar */
-        gap: 10px;
+        margin-left: 8%;
+        justify-content: left;
     }
 
     .content-container {
