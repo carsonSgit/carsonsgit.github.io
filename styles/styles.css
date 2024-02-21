@@ -65,16 +65,19 @@ p {
 }
 
 .navbar a:hover::before {
+    cursor: none;
     transform-origin: right;
     transform: scaleX(1);
 }
 
 .navbar a:hover {
+    cursor: none;
     transition: 0.3s;
     color: rgb(0, 0, 0);
 }
 
 .navbar a.active {
+    cursor: none;
     transition: 0.3s;
     color: rgb(55, 85, 65);
 }
