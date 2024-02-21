@@ -1,21 +1,13 @@
-/*
-    CURSOR EFFECT SOURCED FROM: https://dev.to/mattmarquise/how-to-create-a-custom-circular-cursor-for-your-website-4i7p
-*/
 html {
     cursor: none;
 }
-/*
-    slight improvement made to the code sourced from: https://dev.to/mattmarquise/how-to-create-a-custom-circular-cursor-for-your-website-4i7p
-    setting pointer-events to none removes bug where on hovers would be slightly buggy with this cursor change.
 
-    removed -moz and -webkit CSS because those are for older browser versions, border-radius is widely used now.
-*/
 #circularcursor {
     background-color: #f9f8f68a;
-    border:1px solid #0a2008;    
-    height:10px;
-    width:10px;
-    border-radius:50%;
+    border: 1px solid #0a2008;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
     position: absolute;
     pointer-events: none;
     z-index: 1000;
@@ -26,40 +18,40 @@ body {
     margin: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;   
 }
-h1{
+
+h1 {
     font-size: 33px;
 }
+
 p {
     font-size: 21px;
     color: #595252;
 }
+
 ::selection {
     background: #183a1a75;
     color: #edecec;
 }
+
 .navbar {
-    margin-top: 18px;
-    margin-left: 42.5%; /* Magic to make navbar Truly centered */
-    margin-right: 45%;
+    margin: 18px auto; /* Center the navbar */
     display: flex;
-    gap: 50px;
+    gap: 20px;
     justify-content: center;
 }
+
 .navbar .navitem {
     display: block;
 }
 
-
-/*
-    NAVBAR ONHOVER EFFECT INSPIRED BY Harshil Patel's WORK: https://css-tricks.com/css-link-hover-effects/
-*/
 .navbar a {
     color: #118406;
     text-decoration: none;
     font-size: 25px;
-    position:relative;
+    position: relative;
 }
-.navbar a::before{
+
+.navbar a::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -71,34 +63,67 @@ p {
     transform: scaleX(0);
     transition: transform .3s ease-in-out;
 }
-.navbar a:hover::before{
-    cursor:none;
+
+.navbar a:hover::before {
     transform-origin: right;
     transform: scaleX(1);
 }
+
 .navbar a:hover {
-    cursor:none;
     transition: 0.3s;
     color: rgb(0, 0, 0);
 }
 
 .navbar a.active {
-    cursor: none;
     transition: 0.3s;
     color: rgb(55, 85, 65);
 }
 
-/* HOME PAGE STYLING */
 .info {
-    transition: 0.3s;
-    margin-left: 5%;
-    margin-right: 18%;
-    margin-top: 1%;
-    border-radius: 20px;
-    padding: 20px;
-    width: 100%;
-    height: auto;
-    justify-content: left;
+    margin: 1% auto; 
+    padding: 0 5%;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.info .card-inner {
+    padding: 10vh;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(8px);
+    border-radius: 24px;
+}
+
+.info .circle {
+    width: 190px;
+    height: 190px;
+    background: radial-gradient(#b0e633, #53ef7d);
+    border-radius: 50%;
+    position: absolute;
+    animation: move-up6 2s ease-in infinite alternate-reverse;
+}
+
+.info .circle:nth-child(1) {
+    top: -25px;
+    left: -25px;
+}
+
+.info .circle:nth-child(2) {
+    bottom: -35px;
+    right: -55px;
+    animation-name: move-down1;
+}
+
+@keyframes move-up6 {
+    to {
+        transform: translateY(-13px);
+    }
+}
+
+@keyframes move-down1 {
+    to {
+        transform: translateY(10px);
+    }
 }
 
 .divider {
@@ -108,6 +133,7 @@ p {
     margin-top: 20px;
     border-radius: 100px;
 }
+
 .jacHyperLink {
     color: #2e9405;
     transition: 0.5s;
@@ -117,77 +143,71 @@ p {
 .jacHyperLink:hover {
     color: #839788;
     transition: 0.5s;
-    cursor: none;
 }
 
 .infoHeader {
     font-size: 25px;
     color: rgb(64, 124, 64);
 }
+
 .name {
-    font-size:40px;
+    font-size: 40px;
     color: rgb(1, 80, 24);
 }
+
 .content-container {
     display: flex;
     align-items: flex-start;
 }
 
 .about {
-    margin-top: 1%;
-    margin-left: 3%;
-    width: 18%;
+    margin: 2% auto;
+    width: 80%;
 }
-.aboutHeader{
-    color:#1f1b1b;
-}
+
 @media (max-width: 768px) {
-    body{
+
+    body {
         cursor: default !important;
     }
-    #circularcursor{
+
+    #circularcursor {
         display: none;
-    }
-    .info:hover{
-        cursor: default;
-    }
-    .navbar a:hover::before,
-    .navbar a:hover {
-        cursor: pointer;
-    }
-    .jacHyperLink:hover {
-        cursor: pointer;
-    }
-    .navbar {
-        margin-left: 2%;
-        margin-right: 11%;
-        justify-content: space-evenly;
-    }
-    .content-container {
-        flex-direction: column; /* Change flex-direction to stack items vertically */
-    }
-
-    .about {
-        margin: 2% auto; /* Center the ".about" div horizontally */
-        width: 80%; /* Adjust the width as needed */
-    }
-
-    .info {
-        margin: 2% 3%; /* Adjust margin as needed */
-        width: 100%; /* Occupy full width */
     }
 
     .info, .secretSection {
-        width: 80%;
-        max-width: 80%;
+        width: 85%; /* Occupy full width */
+        max-width: none; /* Reset max-width */
     }
 
-    .info {
-        margin-left: auto; /* Center the ".info" section on smaller screens */
-        margin-right: auto;
+    .info .circle {
+        width: 80px;
+        height: 80px;
     }
-    .secretSection {
-        margin-left: auto;
-        margin-right: auto;
+
+    .info .card-inner {
+        padding: 10%;
+    }
+
+    .info .card-inner p {
+        font-size: large;
+    }
+
+    .info .circle:nth-child(1) {
+        top: -5px;
+        left: -5px;
+    }
+    
+    .info .circle:nth-child(2) {
+        bottom: -15px;
+        right: -5px;
+    }
+    .navbar {
+        margin: 18px auto; /* Center the navbar */
+        gap: 10px;
+    }
+
+    .content-container {
+        flex-direction: column; /* Stack items vertically */
     }
 }
