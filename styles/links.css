@@ -54,7 +54,7 @@ a {
 /* Resume buttons */
 .portfolio-button {
     position: relative;
-    padding: 10px 22px;
+    padding: 10px 20px;
     margin-bottom: 2%;
     border-radius: 6px;
     border: 1px solid #fff;
@@ -179,7 +179,7 @@ a {
 }
 
 .card:active {
-    transform: scale(0.95);
+    transform: scale(1);
 }
 
 
