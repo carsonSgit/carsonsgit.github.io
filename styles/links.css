@@ -57,7 +57,7 @@ a {
     padding: 10px 20px;
     margin-bottom: 2%;
     border-radius: 6px;
-    border: 1px solid #fff;
+    border: 1px solid rgba(56, 92, 71, 0.37);
     color: #fff;
     background-color: rgb(56, 92, 71);
     transition: all 0.9s ease;
@@ -167,14 +167,16 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: bolder;
+    font-weight: bold;
     color: black;
+    transform: 0.8s ease-in-out;
 }
 
 .card:hover {
     border: 1px solid black;
-    transform: scale(1.02);
+    background-color: rgba(15, 94, 53, 0.172);
 }
+
 
 
 
