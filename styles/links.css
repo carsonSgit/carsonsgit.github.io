@@ -153,7 +153,6 @@ a {
     }
 }
 
-
 .card {
     box-sizing: border-box;
     width: auto;
@@ -168,19 +167,15 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    user-select: none;
     font-weight: bolder;
     color: black;
 }
 
 .card:hover {
     border: 1px solid black;
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
-.card:active {
-    transform: scale(1);
-}
 
 
 @media (max-width: 768px) {
