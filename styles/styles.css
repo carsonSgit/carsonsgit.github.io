@@ -189,7 +189,7 @@ p {
 
     body {
         cursor: default !important;
-        overflow-y: auto; /* Allow vertical scrolling */
+        overflow-y: scroll; /* Allow user to scroll */
     }
 
     #circularcursor {
