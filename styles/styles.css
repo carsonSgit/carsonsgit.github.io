@@ -1,5 +1,6 @@
 html {
     cursor: none;
+    overflow-y: hidden;
 }
 
 /* Customize scrollbar */
@@ -189,7 +190,7 @@ p {
 
     body {
         cursor: default !important;
-        overflow-y: scroll; /* Allow user to scroll */
+        overflow-y: scroll !important; /* Allow user to scroll */
     }
 
     #circularcursor {
