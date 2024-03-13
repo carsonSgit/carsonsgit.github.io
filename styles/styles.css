@@ -31,7 +31,7 @@ html {
 body {
     background-color: #f1f1f1;
     margin: 0;
-    overflow-y: hidden !important;
+    overflow-y: hidden;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;   
 }
 
@@ -190,7 +190,7 @@ p {
 
     body {
         cursor: default !important;
-        overflow-y: scroll !important; /* Allow user to scroll */
+        overflow-y: scroll; /* Allow user to scroll */
     }
 
     #circularcursor {
