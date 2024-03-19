@@ -1,4 +1,6 @@
-
+body{
+    overflow-y: !important scroll;
+    }
 a {
     cursor: none;
     text-decoration: none;
