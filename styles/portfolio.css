@@ -1,5 +1,5 @@
 body{
-    overflow-y: !important scroll;
+    overflow-y: scroll !important;
     }
 a {
     cursor: none;
