@@ -302,9 +302,8 @@ body{
 }
 
 @media screen and (max-width: 768px) {
-
     .name {
-        margin-left: 2.3vh;
+        margin-left: 2.4vh !important;
     }
 
     .portfolio_content h1 {
@@ -318,15 +317,11 @@ body{
     }
 
     .portfolio-root{
-        
-        /*margin-left: -0.8vh !important;*/
-        /*margin-bottom: -1vh;*/
         width: 200%;
-        /*height: 300%;*/
     }
 
     .svg-container {
-        width: 100%;
+        width: 0% !important;
         margin-bottom: 3vh;
     }
 
@@ -340,6 +335,8 @@ body{
         width: 90%;
         height: auto;
         margin: 0 auto;
+        margin-bottom: 10vh;
+        padding-bottom: 3vh;
     }
 
     .card_content h1,
@@ -361,6 +358,7 @@ body{
 
     .currentWork_title,
     .f23_title {
+        color: #000000;
         font-weight: 700;
         margin-left: 5%;
     }
@@ -374,12 +372,14 @@ body{
     }
 
     .svg-container {
-        width: 102%; 
+        width: 0% !important; 
         margin-bottom: 11vh;
     }
 
     .portfolio-root {
-        width: 104%;
+        background: #ffffff00 !important;
+        width: 100%;
+        padding: 0 !important;
     }
     .f23_card_content video{
         max-width: 80%;
