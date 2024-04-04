@@ -1,5 +1,5 @@
 body{
-    overflow-x: hidden;
+    overflow-x: hidden !important;
 }
 
 ::-webkit-scrollbar {
@@ -302,101 +302,89 @@ body{
 }
 
 @media screen and (max-width: 768px) {
-    body{
-        overflow-x: hidden;
-    }
-    .name{
-        margin-left: 2.3vh !important;
-    }
-    .portfolio_content h1{
-        margin-left: 1.5vh;
-    }
-    .portfolio-root{
-        margin-left: -0.9vh !important;
-        height: 320vh;
-        width: 200%;
-        margin-top: -41.3vh;
-    }
-    .svg-container{
-        width: 150%;
-        margin-bottom: 57.5vh;
+
+    .name {
+        margin-left: 2.3vh;
     }
 
-    .divider{
+    .portfolio_content h1 {
+        margin-left: 1.5vh;
+    }
+
+    .portfolio-root {
+        height: auto;
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .portfolio-root{
+        
+        /*margin-left: -0.8vh !important;*/
+        /*margin-bottom: -1vh;*/
+        width: 200%;
+        /*height: 300%;*/
+    }
+
+    .svg-container {
+        width: 100%;
+        margin-bottom: 3vh;
+    }
+
+    .divider {
         height: 0.3vh;
         margin-left: 2.2vh;
     }
-    
+
+    .f23_card,
     .card {
-        width: 40vh;
-        height: 60vh;
-        margin-left: 3vh;
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
     }
 
     .card_content h1,
     .card_content p {
-        margin-right:4vh;
+        margin-right: 4vh;
     }
 
     .card_content video {
-        max-width:80%;
-        margin-left: 2vh;
-        margin-top:2.5vh;
+        max-width: 80%;
+        margin: auto;
         border-radius: 12px;
     }
 
-    .portfolio-image{
-        height:15vh;
-        border-radius: 12px;
-    }
-
-    .currentWork_title{
-        font-weight: 700;
-        margin-left: 17.8vh;
-    }
-
-    .portfolio-image{
-        margin-top:3.5vh;
-        margin-bottom: 0vh;
+    .portfolio-image {
+        height: auto;
         width: 100%;
-    }
-
-    .f23_title{
-        font-weight: 700;
-        margin-left: 17.8vh;
-        color:#fff;
-        font-size: 4.5vh;
-    }
-    
-    .f23_card {
-        width: 40vh;
-        height: 60vh;
-        margin-left: 3vh;
-    }
-    .f23_card_content video{
-        max-width: 85%;
-        margin-left: 3.1vh;
-        margin-top:4.5vh;
         border-radius: 12px;
     }
-    .f23_card_content p{
-        margin-right:4vh;
-    }
-    .subheading{
-        margin-right:4vh;
+
+    .currentWork_title,
+    .f23_title {
+        font-weight: 700;
+        margin-left: 5%;
     }
 
+    .subheading {
+        margin-right: 4vh;
+    }
 
-    .divider{
+    .divider {
         width: 91%;
     }
+
     .svg-container {
         width: 102%; 
-        margin-bottom: 52.3vh;
+        margin-bottom: 11vh;
     }
-    .portfolio-root{
+
+    .portfolio-root {
         width: 104%;
     }
+    .f23_card_content video{
+        max-width: 80%;
+    }
+    
 }
 
 
