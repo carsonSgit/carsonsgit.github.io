@@ -301,7 +301,7 @@ body{
     color: #395241;
 }
 
-@media screen and (max-width: 844px) {
+@media screen and (max-width: 768px) {
     body{
         overflow-x: hidden;
     }
