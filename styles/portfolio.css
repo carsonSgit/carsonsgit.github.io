@@ -1,213 +1,388 @@
 body{
-    overflow-y: scroll !important;
-    }
-a {
-    cursor: none;
-    text-decoration: none;
+    overflow-x: hidden;
 }
 
-.social-container {
-    margin: 79vh;
-    margin-top: 5vh;
-    width: 20%;
+::-webkit-scrollbar {
+    width: 12px;
 }
 
-.social-icon {
-    max-width: 90px;
-    transition: transform 0.3s, border-radius 0.3s;
+::-webkit-scrollbar-thumb {
+    background-color: #183a1a6f;
 }
 
-.social-icon:hover {
-    transform: scale(1.1);
-    border-radius: 50%;
+::-webkit-scrollbar-track {
+    background-color: #183a1a91;
+    border-radius: 0px;
 }
 
-
-.portfolio-list {
-    margin-left: 25%;
-    width: 52%;
+.portfolio_content {
+    align-items: center;
 }
 
-.portfolio-item {
-    background-color: rgba(12, 117, 33, 0.1);
-    border-radius: 20px;
-    border: 2px solid rgba(4, 67, 31, 0.219);
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-    transition: 0.3s;
+.portfolioPage h1 {
+    /* user-select: none; */
+    display: inline-block;
+    font-size: 9.5vh;
+    margin-top: 2.5em;
+    margin-left: 0.5em;
+    margin-bottom: 0;
 }
 
-.portfolio-item:hover {
-    background-color: rgba(12, 117, 33, 0.2);
-    transition: 0.3s;
+.portfolioPage h2 {
+    /* user-select: none; */
+    display: inline-block;
+    margin-top:0;
+    margin-left: 1.7em;
+    font-size: 3vh;
+    color: #8a8a8a;
 }
 
-.portfolio-text {
-    margin: 2%;
-    font-size: 18px;
-}
-.portfolio-header{
-    font-size: 22px;
-    margin-left: 2%;
-    margin-bottom: 1%;
-}
-
-/* Resume buttons */
-.portfolio-button {
+.svg-container {
     position: relative;
-    padding: 10px 20px;
-    margin-bottom: 2%;
-    border-radius: 6px;
-    border: 1px solid rgba(56, 92, 71, 0.37);
-    color: #fff;
-    background-color: rgb(56, 92, 71);
-    transition: all 0.9s ease;
+    width: 110%;
+    height: 300px;
+    margin-bottom: 53.1vh;
 }
 
-.portfolio-button:active {
-    transform: scale(0.95);
-}
-
-/* Button effet sourced from: https://uiverse.io/zjssun/curly-seahorse-76 */
-
-.portfolio-button:before,
-.portfolio-button:after {
+.svg-container svg {
     position: absolute;
-    content: "";
-    width: 150%;
-    left: 50%;
-    height: 100%;
-    transform: translateX(-50%);
-    z-index: -1000;
-    background-repeat: no-repeat;
+    top: 100%;
+    left: -10%; 
 }
 
-.portfolio-button:hover{
-    transition: 0.3s;
-    background-color: rgba(78, 113, 92, 0.702);
+.portfolio-items {
+    padding-bottom: 8vh;
 }
 
-.portfolio-button:hover:before {
-    top: -70%;
-    background-image: radial-gradient(circle, seagreen 20%, transparent 20%),
-        radial-gradient(circle, transparent 20%, seagreen 20%, transparent 30%),
-        radial-gradient(circle, seagreen 20%, transparent 20%),
-        radial-gradient(circle, seagreen 20%, transparent 20%),
-        radial-gradient(circle, transparent 10%, seagreen 15%, transparent 20%),
-        radial-gradient(circle, seagreen 20%, transparent 20%),
-        radial-gradient(circle, seagreen 20%, transparent 20%),
-        radial-gradient(circle, seagreen 20%, transparent 20%),
-        radial-gradient(circle, seagreen 20%, transparent 20%);
-    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
-        10% 10%, 18% 18%;
-    background-position: 50% 120%;
-    animation: greentopBubbles 0.9s ease;
-}
-
-@keyframes greentopBubbles {
-    0% {
-        background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
-            40% 90%, 55% 90%, 70% 90%;
-    }
-
-    50% {
-        background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
-            50% 50%, 65% 20%, 90% 30%;
-    }
-
-    100% {
-        background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
-            50% 40%, 65% 10%, 90% 20%;
-        background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
-    }
-}
-
-.portfolio-button:hover::after {
-    bottom: -70%;
-    background-image: radial-gradient(circle, seagreen 20%, transparent 20%),
-        radial-gradient(circle, seagreen 20%, transparent 20%),
-        radial-gradient(circle, transparent 10%, seagreen 15%, transparent 20%),
-        radial-gradient(circle, seagreen 20%, transparent 20%),
-        radial-gradient(circle, seagreen 20%, transparent 20%),
-        radial-gradient(circle, seagreen 20%, transparent 20%),
-        radial-gradient(circle, seagreen 20%, transparent 20%);
-    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
-    background-position: 50% 0%;
-    animation: greenbottomBubbles 0.9s ease;
-}
-
-@keyframes greenbottomBubbles {
-    0% {
-        background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
-            70% -10%, 70% 0%;
-    }
-
-    50% {
-        background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
-            105% 0%;
-    }
-
-    100% {
-        background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
-            110% 10%;
-        background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
-    }
+.portfolio-root{
+    background: linear-gradient(to bottom, #27553D, #19231b) !important;
+    margin-left: -0.8vh !important;
+    margin-bottom: -1vh;
+    width: 200%;
+    height: 300%;
 }
 
 .card {
-    box-sizing: border-box;
-    width: auto;
-    height:max-content;
-    background: rgba(217, 217, 217, 0.58);
-    border: 1px solid rgba(15, 94, 53, 0.369);
-    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
-    backdrop-filter: blur(6px);
-    border-radius: 17px;
-    text-align: center;
-    transition: all 0.5s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: black;
-    transform: 0.8s ease-in-out;
+    width: 90vh;
+    height: 50vh;
+    margin: 0 auto;
+    margin-left: 100vh;
+    margin-bottom: 10vh;
+    background-color: #f8fefc;
+    border-radius: 8px;
+    z-index: 1;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);
+    transition: 0.4s ease-in-out;
 }
 
 .card:hover {
-    border: 1px solid black;
-    background-color: rgba(15, 94, 53, 0.172);
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.7);
+    transform: scale(1.01);
+}
+   
+.tools {
+    display: flex;
+    align-items: center;
+    padding: 9px;
+}
+   
+.circle {
+    padding: 0 4px;
+}
+   
+.box {
+    display: inline-block;
+    align-items: center;
+    width: 10px;
+    height: 10px;
+    padding: 1px;
+    border-radius: 50%;
+}
+   
+.red {
+    background-color: #ff605c;
+}
+   
+.yellow {
+    background-color: #ffbd44;
+}
+   
+.green {
+    background-color: #00ca4e;
+}
+
+.card_content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.card_content h1 {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin: 0.5em 0;
+}
+
+.card_content p {
+    font-size: 1em;
+    font-weight: 300;
+    margin: 0.5em 0;
+}
+
+.card_content a {
+    font-size: 1em;
+    text-decoration: none;
+    color: #3aa86f;
+    font-weight: 500;
 }
 
 
+.card_content {
+    display: flex;
+    align-items: flex-start;
+}
 
-
-@media (max-width: 768px) {
+.card_content h1,
+.card_content p {
+    flex: 1;
+    padding-left: 20px;
+}
+.card_content h1{
     
-    .social-container {
-        display: flex;
-        justify-content: space-around; 
-        align-items: center; 
-        margin: 18.5vh;
-        margin-top: 5vh;
-        width: 20%;
+    font-size: 3.5vh;
+}
+
+.card_content p{
+    font-size: 2vh;
+}
+
+.currentWork_title{
+    font-weight: 700;
+    margin-left: 8.5vh;
+    color:#fff;
+    font-size: 4.5vh;
+}
+
+.f23_title{
+    font-weight: 700;
+    margin-left: 180.5vh;
+    color:#fff;
+    font-size: 4.5vh;
+}
+
+.f23_card {
+    width: 90vh;
+    height: 50vh;
+    margin: 0 auto;
+    margin-left: 8vh;
+    margin-bottom: 10vh;
+    background-color: #f8fefc;
+    border-radius: 8px;
+    z-index: 1;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);
+    transition: 0.4s ease-in-out;
+}
+
+.f23_card:hover {
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.7);
+    transform: scale(1.01);
+}
+   
+.f23_tools {
+    display: flex;
+    align-items: center;
+    padding: 9px;
+}
+   
+.f23_circle {
+    padding: 0 4px;
+}
+   
+.f23_box {
+    display: inline-block;
+    align-items: center;
+    width: 10px;
+    height: 10px;
+    padding: 1px;
+    border-radius: 50%;
+}
+   
+.f23_red {
+    background-color: #ff605c;
+}
+   
+.f23_yellow {
+    background-color: #ffbd44;
+}
+   
+.f23_green {
+    background-color: #00ca4e;
+}
+
+.f23_card_content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.f23_card_content h1 {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin: 0.5em 0;
+}
+
+.f23_card_content p {
+    font-size: 2vh !important;
+    font-weight: 300;
+    margin: 0.5em 0;
+}
+
+.f23_card_content a {
+    font-size: 1em;
+    text-decoration: none;
+    color: #3aa86f;
+    font-weight: 500;
+}
+
+
+.f23_card_content {
+    display: flex;
+    align-items: flex-start;
+}
+
+.f23_card_content h1,
+.f23_card_content p {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.f23_card_content p {
+    font-size: 1em;
+    font-weight: 300;
+    margin: 0.5em 0;
+}
+
+.divider{
+    width: 48.5%;
+    height: 0.1vh;
+    background-color: #ffffff46;
+    border-radius: 24px;
+    border-color: #ffffff00;
+    margin-left: 3.5vh;
+}
+
+.card_content video {
+    max-width: 40%;
+    height: auto;
+    object-fit: cover;
+    margin-top: 25px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+}
+
+.f23_card_content video{
+    max-width: 50%;
+    margin-left: 3.1vh;
+    margin-top:4.5vh;
+    border-radius: 12px;
+}
+
+.portfolio-image{
+    margin-top:2vh;
+    margin-bottom: 0vh;
+    width: 60%;
+}
+
+.subheading{
+    font-size: 1.7vh;
+    padding-left: 20px;
+    margin-top: -1vh;
+    color: #395241;
+}
+
+@media screen and (max-width: 844px) {
+    .name{
+        margin-left: 2.2vh !important;
     }
-    
-    .social-icon {
-        max-width: 90px;
-        transition: transform 0.3s, border-radius 0.3s;
+    .portfolio_content h1{
+        margin-left: 1.5vh;
+    }
+    .portfolio-root{
+        margin-left: -0.9vh !important;
+        height: 320vh;
+        width: 200%;
+        margin-top: -41.3vh;
+    }
+    .svg-container{
+        width: 150%;
+        margin-bottom: 57.5vh;
     }
 
-    .social-icon:hover {
-        transform: scale(1.1);
-        border-radius: 50%;
+    .divider{
+        width: 47%;
+        height: 0.3vh;
+        margin-left: 2.2vh;
     }
-    .portfolio-list{
-        width: auto;
-        margin-left: 2%;
-        margin-right: 2%;
+    
+    .card {
+        width: 40vh;
+        height: 60vh;
+        margin-left: 3vh;
     }
-    .portfolio-item{
-        width: auto;
+
+    .card_content h1,
+    .card_content p {
+        margin-right:4vh;
+    }
+
+    .card_content video {
+        max-width:80%;
+        margin-left: 2vh;
+        margin-top:2.5vh;
+        border-radius: 12px;
+    }
+
+    .portfolio-image{
+        height:15vh;
+        border-radius: 12px;
+    }
+
+    .currentWork_title{
+        font-weight: 700;
+        margin-left: 3.5vh;
+    }
+
+    .portfolio-image{
+        margin-top:3.5vh;
+        margin-bottom: 0vh;
+        width: 100%;
+    }
+
+    .f23_title{
+        font-weight: 700;
+        margin-left: 3.5vh;
+        color:#fff;
+        font-size: 4.5vh;
+    }
+    
+    .f23_card {
+        width: 40vh;
+        height: 60vh;
+        margin-left: 3vh;
+    }
+    .f23_card_content video{
+        max-width: 85%;
+        margin-left: 3.1vh;
+        margin-top:4.5vh;
+        border-radius: 12px;
+    }
+    .f23_card_content p{
+        margin-right:4vh;
+    }
+    .subheading{
+        margin-right:4vh;
     }
 }
+
+

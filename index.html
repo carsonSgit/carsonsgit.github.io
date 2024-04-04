@@ -1,17 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+    <title>carson</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../styles/styles.css">
-    <link rel="stylesheet" type="text/css" href="../styles/fun.css">
-    <link rel="icon" type="image/svg+xml" href="assets/images/robot-svgrepo-com.svg"> 
-    <title>Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="./styles/index.css">
+    <script src="scripts/typing.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script>
-        // SOURCED FROM: https://dev.to/mattmarquise/how-to-create-a-custom-circular-cursor-for-your-website-4i7p
         $(document).ready(function() {
             $(document).on('mousemove', function(e) {
                 $('#circularcursor').css({
@@ -21,53 +17,22 @@
             });
         });
     </script>
-    <style>
-        body {
-            overflow-x: hidden;
-        }
-    </style>
 </head>
 <body>
     <div id="circularcursor"></div>
 
-   <ul class="navbar">
-        <li class="navitem"><a href="index.html" class="active">Home</a></li>
-        <li class="navitem"><a href="resume.html">Resume</a></li>
-        <li class="navitem"><a href="portfolio.html">Links</a></li>
-    </ul>
+    <div class="splashPage">
+        <div class="splashPage_content">
+            <h1>Hi, my name is</h1><h1 class="name">Carson</h1>
+            <br/>
+            <h2>Software Developer</h2>
+        </div>
+        <div class="nav">
+            <a id="nav-link" href="./portfolio.html"><span>WORK</span></a>
+            <a id="nav-link" href="./about.html"><span>ABOUT</span></a>
+        </div>
+    </div>
 
     
-    <div class="content-container">
-        
-        <div class="card info">
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="card-inner">
-                <h1 class="name">Carson Spriggs-Audet</h1>
-                <p class="occupation">CompSci Student</p>
-                <p class="occupation">Sainte-Anne-De-Bellevue, Montreal</p>
-                <div class="divider"></div>
-                <h1 class="infoHeader">About</h1>
-                <p>I am a sixth-semester student in John Abbott College's
-                    <a href="https://imgur.com/a/k4qMw1B" class="jacHyperLink" target="_blank">Computer Science Program</a>.
-                    Having taken extra-curricular classes in high school, focusing on web and game development, I decided that this
-                    was the path I wanted to take. Now, at John Abbott having learnt a wide range of new languages, my love for coding
-                    has grown even more. I look forward to continue expanding my knowledge of programming and grow as a programmer.
-                </p>
-                <h1 class="infoHeader">What am I up to</h1>
-                <p>I am currently an IT & Cybersecurity intern @ VDK as well as finishing my courses App Dev & Connected Objects. 
-                    In App Dev, we work in .NET MAUI to create crossplatform apps following the MVVM architecture. Connected Objects on
-                    the other hand, we are working with Raspberry Pi's in Python!
-                    
-                    <br />
-                    <br /> 
-                    
-                    Alongside my DEC at JAC, I am also enrolled in AI Launch Lab's R&D program & my team and I are
-                    currently working on a React.js site for to house our AI's functionality, <a href="https://trademind.pages.dev/" class="jacHyperLink" target="_blank">TradeMind AI</a>!
-                </p>
-            </div>
-        </div>
-        
-    </div>
 </body>
 </html>

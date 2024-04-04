@@ -1,0 +1,149 @@
+@font-face {
+    font-family: 'Oxygen';
+    src: url('https://fonts.gstatic.com/s/oxygen/v11/If2eFRGd4YgzZLcnfP4S6g.ttf') format('truetype'); /* URL to the font file hosted on Google Fonts */
+    font-weight: 300; /* Font weight */
+    font-style: normal; /* Font style */
+}
+
+
+#circularcursor {
+    background-color: #f9f8f649;
+    border: 1px solid #0a2008;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+::selection{
+    background-color: rgba(97, 122, 102, 0.312);
+    color: rgb(41, 50, 42);
+}
+
+html{
+    cursor: none;
+}
+
+body{
+    place-items: center;
+    font-family: 'Oxygen', sans-serif; /* Apply Oxygen font to the body */
+}
+
+.splashPage_content {
+    align-items: center;
+}
+
+.splashPage_content h1 {
+    /* user-select: none; */
+    display: inline-block;
+    font-size: 9.5vh;
+    margin-top: 3.5em;
+    margin-left: 0.5em;
+    margin-bottom: 0;
+}
+
+.splashPage_content h2 {
+    /* user-select: none; */
+    display: inline-block;
+    margin-top:0;
+    margin-left: 1.2em;
+    font-size: 4vh;
+    color: #8a8a8a;
+}
+
+.name {
+    margin: 0 !important;
+    margin-left: 0.3em !important;
+    background: linear-gradient(to right, #2c4c3b, #306844, #308613, #455b55, #1e453e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    animation: gradientCycle 2s infinite linear;
+}
+
+@keyframes gradientCycle {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.typing-indicator {
+    position: relative;
+    display: inline-block;
+    width: 2px;
+    background-color: #308613;
+    animation: blink 1s infinite;
+    margin-left: 0.2em;
+    margin-top: 0;
+}
+
+@keyframes blink {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 3vh;
+}
+
+
+#nav-link {
+    text-decoration: none;
+    font-size: 3vh;
+    font-weight: 750;
+    box-shadow: inset 0 0 0 0 #306844;
+    color: #000000;
+    margin: 0 -.25rem;
+    margin-left: 3vh !important;
+    padding: 0 .55rem;
+    transition: color .4s ease-in-out, box-shadow .4s ease-in-out;
+}
+
+#nav-link:hover, #nav-link:focus,
+#nav-link:active {
+    cursor: none !important;
+    box-shadow: inset 190px 0 0 0 #306844;
+    color: white;
+}
+a{
+    cursor: none;
+}
+
+@media screen and (max-width: 768px) {
+    .splashPage_content h1 {
+        margin: 0;
+        margin-top: 2em;
+        margin-left: 0.2em;
+    }
+    .name{
+        margin: 0 !important;
+        margin-left: 0.2em !important;
+    }
+    .splashPage_content h2 {
+        margin: 0;
+        margin-left: 0.6em !important;
+    }
+    #nav-link{
+        font-size: 2.5vh;
+        margin-left: 0vh !important;
+    }
+    
+}
+
