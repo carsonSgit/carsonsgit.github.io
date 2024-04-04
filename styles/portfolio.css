@@ -306,7 +306,7 @@ body{
         overflow-x: hidden;
     }
     .name{
-        margin-left: 2.2vh !important;
+        margin-left: 2.3vh !important;
     }
     .portfolio_content h1{
         margin-left: 1.5vh;
@@ -323,7 +323,6 @@ body{
     }
 
     .divider{
-        width: 47%;
         height: 0.3vh;
         margin-left: 2.2vh;
     }
@@ -353,7 +352,7 @@ body{
 
     .currentWork_title{
         font-weight: 700;
-        margin-left: 3.5vh;
+        margin-left: 17.8vh;
     }
 
     .portfolio-image{
@@ -364,7 +363,7 @@ body{
 
     .f23_title{
         font-weight: 700;
-        margin-left: 3.5vh;
+        margin-left: 17.8vh;
         color:#fff;
         font-size: 4.5vh;
     }
@@ -385,6 +384,18 @@ body{
     }
     .subheading{
         margin-right:4vh;
+    }
+
+
+    .divider{
+        width: 91%;
+    }
+    .svg-container {
+        width: 102%; 
+        margin-bottom: 52.3vh;
+    }
+    .portfolio-root{
+        width: 104%;
     }
 }
 
