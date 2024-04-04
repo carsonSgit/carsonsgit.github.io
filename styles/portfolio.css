@@ -302,6 +302,9 @@ body{
 }
 
 @media screen and (max-width: 844px) {
+    body{
+        overflow-x: hidden;
+    }
     .name{
         margin-left: 2.2vh !important;
     }
