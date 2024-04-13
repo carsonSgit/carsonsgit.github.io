@@ -55,7 +55,7 @@ body{
 }
 
 .portfolio-root{
-    background: linear-gradient(to bottom, #27553D, #19231b) !important;
+    /* background: linear-gradient(to bottom, #27553D, #19231b) !important; */
     margin-left: -0.8vh !important;
     margin-bottom: -1vh;
     width: 200%;
@@ -159,15 +159,18 @@ body{
 .currentWork_title{
     font-weight: 700;
     margin-left: 8.5vh;
-    color:#fff;
+    color:#000000;
     font-size: 4.5vh;
 }
 
 .f23_title{
+    position: relative;
+    margin-right: 10vh;
+    left:88vw;
     font-weight: 700;
-    margin-left: 180.5vh;
-    color:#fff;
+    color:#000000;
     font-size: 4.5vh;
+
 }
 
 .f23_card {
@@ -265,7 +268,7 @@ body{
 .divider{
     width: 48.5%;
     height: 0.1vh;
-    background-color: #ffffff46;
+    background-color: #00000054;
     border-radius: 24px;
     border-color: #ffffff00;
     margin-left: 3.5vh;
