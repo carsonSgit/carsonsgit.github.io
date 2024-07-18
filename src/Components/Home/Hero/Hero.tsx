@@ -5,13 +5,23 @@ const Content: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(1);
   const [hoverIndex, setHoverIndex] = useState(-1);
-  const imageNames = ['idleSprite0.png', 'idleSprite1.png', 'idleSprite2.png', 'idleSprite3.png'];
-  const hoverImageNames = ['hoverIdleSprite0.png', 'hoverIdleSprite1.png', 'hoverIdleSprite2.png', 'hoverIdleSprite3.png'];
+  const imageNames = [
+    'idleSprite0.png',
+    'idleSprite1.png',
+    'idleSprite2.png',
+    'idleSprite3.png',
+  ];
+  const hoverImageNames = [
+    'hoverIdleSprite0.png',
+    'hoverIdleSprite1.png',
+    'hoverIdleSprite2.png',
+    'hoverIdleSprite3.png',
+  ];
   const totalImages = imageNames.length;
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => {
+      setCurrentIndex(prevIndex => {
         let nextIndex = prevIndex + direction;
         if (nextIndex >= totalImages) {
           nextIndex = totalImages - 1;
@@ -31,7 +41,7 @@ const Content: React.FC = () => {
     let hoverInterval: NodeJS.Timeout | null = null;
     if (hoverIndex !== -1) {
       hoverInterval = setInterval(() => {
-        setHoverIndex((prevIndex) => {
+        setHoverIndex(prevIndex => {
           let nextIndex = prevIndex + direction;
           if (nextIndex >= totalImages) {
             nextIndex = totalImages - 1;
@@ -44,7 +54,9 @@ const Content: React.FC = () => {
         });
       }, 500);
     }
-    return () => { if (hoverInterval) clearInterval(hoverInterval); };
+    return () => {
+      if (hoverInterval) clearInterval(hoverInterval);
+    };
   }, [hoverIndex, totalImages, direction]);
 
   const handleMouseEnter = (index: number) => setHoverIndex(index);

@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
     { path: '/', label: 'HOME' },
     { path: '/about', label: 'ABOUT' },
     { path: '/projects', label: 'PROJECTS' },
-    { path: '/contact', label: 'RESUME' }
+    { path: '/contact', label: 'RESUME' },
   ];
 
   const toggleMenu = () => {
@@ -19,17 +19,15 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="navbar">
-      <div className="navbar-left">
-        carsonSgit
-      </div>
+      <div className="navbar-left">carsonSgit</div>
       <div className="hamburger" onClick={toggleMenu}>
         {menuOpen ? <FaTimes /> : <FaBars />}
       </div>
       <div className={`navbar-right ${menuOpen ? 'active' : ''}`}>
         {links.map((link, index) => (
-          <NavLink 
-            key={index} 
-            to={link.path} 
+          <NavLink
+            key={index}
+            to={link.path}
             className={`nav-link`}
             onClick={() => setMenuOpen(false)}
           >
@@ -39,6 +37,6 @@ const Navbar: React.FC = () => {
       </div>
     </nav>
   );
-}
+};
 
 export default Navbar;

@@ -1,59 +1,58 @@
 .ContentContainer {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    background-color: #f9fbf7;
-    color: #1c2211;
-    overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f9fbf7;
+  color: #1c2211;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .ContentContainer {
+    flex-direction: row;
   }
-  
-  @media (min-width: 768px) {
-    .ContentContainer {
-      flex-direction: row;
-    }
-  }
-  
+}
+
+.LeftContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 350px 40px 60px 60px; /* top, right, bottom, left */
+}
+
+@media (max-width: 768px) {
   .LeftContainer {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 350px 40px 60px 60px; /* top, right, bottom, left */
+    flex: 0 0 25%;
+    padding-left: 40px;
+    padding-top: 15px;
   }
-  
-  @media (max-width: 768px) {
-    .LeftContainer {
-      flex: 0 0 25%;
-      padding-left: 40px;
-      padding-top: 15px;
-    }
+}
+
+@media (min-width: 768px) {
+  .LeftContainer {
+    flex: 0 0 35%;
   }
-  
-  @media (min-width: 768px) {
-    .LeftContainer {
-      flex: 0 0 35%;
-    }
-  }
-  
+}
+
+.RightContainer {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-top: -110px;
+}
+
+@media (min-width: 768px) {
   .RightContainer {
-    flex: 1;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    margin-top: -110px;
+    flex: 0 0 65%;
   }
-  
-  @media (min-width: 768px) {
-    .RightContainer {
-      flex: 0 0 65%;
-    }
+}
+
+@media (max-width: 768px) {
+  .RightContainer {
+    flex: 0 0 75%;
   }
-  
-  @media (max-width: 768px) {
-    .RightContainer {
-      flex: 0 0 75%;
-    }
-  }
-  
+}

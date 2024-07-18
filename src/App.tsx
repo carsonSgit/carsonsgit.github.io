@@ -19,9 +19,8 @@ const App: React.FC = () => {
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Hero />
-      
     </div>
   );
-}
+};
 
 export default App;

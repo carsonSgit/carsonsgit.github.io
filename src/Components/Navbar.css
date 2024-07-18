@@ -79,7 +79,9 @@
     text-align: right;
     font-weight: 700;
     background-color: #f9fbf7;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
     transform: translateY(0px);
   }
 
