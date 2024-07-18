@@ -4,38 +4,51 @@ import './content.css';
 const Content: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(1);
-  const [hoverIndex, setHoverIndex] = useState(0);
-  const imageNames = ['stand1_0.png', 'stand1_1.png', 'stand1_2.png', 'stand1_3.png'];
-  const hoverImageNames = ['hover_stand1_0.png', 'hover_stand1_1.png', 'hover_stand1_2.png', 'hover_stand1_3.png'];
+  const [hoverIndex, setHoverIndex] = useState(-1);
+  const imageNames = ['idleSprite0.png', 'idleSprite1.png', 'idleSprite2.png', 'idleSprite3.png'];
+  const hoverImageNames = ['hoverIdleSprite0.png', 'hoverIdleSprite1.png', 'hoverIdleSprite2.png', 'hoverIdleSprite3.png'];
   const totalImages = imageNames.length;
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => {
         let nextIndex = prevIndex + direction;
-
         if (nextIndex >= totalImages) {
-          nextIndex = totalImages - 2;
+          nextIndex = totalImages - 1;
           setDirection(-1);
         } else if (nextIndex < 0) {
-          nextIndex = 1;
+          nextIndex = 0;
           setDirection(1);
         }
-
         return nextIndex;
       });
-    }, 500); // Interval time in milliseconds
+    }, 500);
 
-    return () => clearInterval(interval); // Cleanup interval on component unmount
-  }, [totalImages, direction]); // Dependencies for useEffect
+    return () => clearInterval(interval);
+  }, [totalImages, direction]);
 
-  const handleMouseEnter = (index: number) => {
-    setHoverIndex(index);
-  };
+  useEffect(() => {
+    let hoverInterval: NodeJS.Timeout | null = null;
+    if (hoverIndex !== -1) {
+      hoverInterval = setInterval(() => {
+        setHoverIndex((prevIndex) => {
+          let nextIndex = prevIndex + direction;
+          if (nextIndex >= totalImages) {
+            nextIndex = totalImages - 1;
+            setDirection(-1);
+          } else if (nextIndex < 0) {
+            nextIndex = 0;
+            setDirection(1);
+          }
+          return nextIndex;
+        });
+      }, 500);
+    }
+    return () => { if (hoverInterval) clearInterval(hoverInterval); };
+  }, [hoverIndex, totalImages, direction]);
 
-  const handleMouseLeave = () => {
-    setHoverIndex(0); // Reset to default image when not hovered
-  };
+  const handleMouseEnter = (index: number) => setHoverIndex(index);
+  const handleMouseLeave = () => setHoverIndex(-1);
 
   return (
     <div className="ContentContainer">
@@ -45,11 +58,9 @@ const Content: React.FC = () => {
       </div>
       <div className="RightContainer">
         <img
-          src={`${process.env.PUBLIC_URL}/${
-            hoverIndex !== 0 ? hoverImageNames[hoverIndex - 1] : imageNames[currentIndex]
-          }`}
-          alt={`stand1_${currentIndex}.png`}
-          onMouseEnter={() => handleMouseEnter(currentIndex + 1)}
+          src={`${process.env.PUBLIC_URL}/${hoverIndex !== -1 ? hoverImageNames[hoverIndex] : imageNames[currentIndex]}`}
+          alt={`Sprite ${currentIndex}`}
+          onMouseEnter={() => handleMouseEnter(currentIndex)}
           onMouseLeave={handleMouseLeave}
           width="200"
         />
