@@ -1,3 +1,40 @@
+.HeroText {
+  display: inline-block;
+}
+
+.AnimatedText {
+  animation: bounceText 1s infinite alternate;
+}
+
+@keyframes bounceText {
+  0% {
+  }
+  100% {
+    color: #19621d;
+  }
+}
+
+h1{
+  font-size: 3em;
+  margin-bottom: 0px;
+}
+
+p{
+  font-size: 1.5em;
+  padding-top: 0px;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.3em;
+  }
+  p{
+    font-size: 1.2em;
+  }
+  
+}
+
 .ContentContainer {
   display: flex;
   flex-direction: column;
@@ -18,7 +55,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 350px 40px 60px 60px; /* top, right, bottom, left */
+  padding: 320px 40px 60px 60px; /* top, right, bottom, left */
 }
 
 @media (max-width: 768px) {

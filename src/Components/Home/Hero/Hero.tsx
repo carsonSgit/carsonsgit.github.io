@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import './Hero.css';
 
 const Content: React.FC = () => {
@@ -65,8 +66,20 @@ const Content: React.FC = () => {
   return (
     <div className="ContentContainer">
       <div className="LeftContainer">
-        <h1>Hi, I'm Carson</h1>
-        <p>I like building cool things.</p>
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="HeroText"
+        >
+          Hi, I'm <span className="AnimatedText">Carson</span>
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}>
+          I like building cool things.
+        </motion.p>
       </div>
       <div className="RightContainer">
         <img
