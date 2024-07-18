@@ -1,10 +1,25 @@
 import React from 'react';
-import Container from './Components/Home/Content/content';
+import Hero from './Components/Home/Content/';
+import { Route, Routes } from 'react-router-dom';
+import Navbar from './Components/Navbar';
+
+const Home = () => <></>;
+const About = () => <></>;
+const Projects = () => <></>;
+const Contact = () => <></>;
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <Container />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+      <Hero />
+      
     </div>
   );
 }
