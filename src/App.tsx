@@ -1,10 +1,10 @@
 import React from 'react';
-import Container from './Components/Home/Content/content';
+import Hero from './Components/Home/Hero/Hero';
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <Container />
+      <Hero />
     </div>
   );
 }

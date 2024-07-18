@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './content.css';
+import './Hero.css';
 
-const Content: React.FC = () => {
+const Hero: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(1);
   const [hoverIndex, setHoverIndex] = useState(-1);
@@ -69,4 +69,4 @@ const Content: React.FC = () => {
   );
 };
 
-export default Content;
+export default Hero;
