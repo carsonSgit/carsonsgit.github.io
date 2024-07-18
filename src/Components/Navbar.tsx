@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import './Navbar.css';
 
 const Navbar: React.FC = () => {
@@ -22,16 +23,14 @@ const Navbar: React.FC = () => {
         carsonSgit
       </div>
       <div className="hamburger" onClick={toggleMenu}>
-        <div></div>
-        <div></div>
-        <div></div>
+        {menuOpen ? <FaTimes /> : <FaBars />}
       </div>
       <div className={`navbar-right ${menuOpen ? 'active' : ''}`}>
-        {links.map((link) => (
+        {links.map((link, index) => (
           <NavLink 
-            key={link.path} 
+            key={index} 
             to={link.path} 
-            className={({ isActive }) => isActive ? 'nav-link active-link' : 'nav-link'}
+            className={`nav-link`}
             onClick={() => setMenuOpen(false)}
           >
             {link.label}
