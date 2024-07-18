@@ -2,9 +2,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1vh;
+    padding: 0vh;
     background-color: #f9fbf7;
     color: #1c2211;
+    padding-top: 20px;
   }
   
   .navbar-left {
@@ -67,13 +68,13 @@
     }
   
     .hamburger {
-        padding-top: 15px;
+        padding-top: 5px;
         display: flex;
     }
 
     .navbar-left{
-        padding-top: 15px;
-        padding-left: 30px;
+        padding-top: 5px;
+        padding-left: 40px;
     }
   
     .nav-link {

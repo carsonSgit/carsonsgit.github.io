@@ -1,5 +1,5 @@
 import React from 'react';
-import Hero from './Components/Home/Content/';
+import Hero from './Components/Home/Hero/Hero';
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 

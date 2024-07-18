@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './content.css';
+import './Hero.css';
 
 const Content: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

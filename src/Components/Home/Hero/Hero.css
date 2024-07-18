@@ -18,14 +18,14 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 80px 40px 60px 80px; /* top, right, bottom, left */
+    padding: 60px 40px 60px 60px; /* top, right, bottom, left */
   }
   
   @media (max-width: 768px) {
     .LeftContainer {
       flex: 0 0 25%;
       padding-left: 40px;
-      padding-top: 0px;
+      padding-top: 15px;
     }
   }
   
