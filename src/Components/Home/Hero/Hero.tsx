@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { Typewriter } from 'react-simple-typewriter';
 import './Hero.css';
 
 const Hero: React.FC = () => {
@@ -66,20 +66,20 @@ const Hero: React.FC = () => {
   return (
     <div className="HeroContainer">
       <div className="LeftContainer">
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="HeroText"
-        >
+        <h1 className='HeroText'>
           Hi, I'm <span className="AnimatedText">Carson</span>
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}>
-          I like building cool things.
-        </motion.p>
+        </h1>
+        <p>
+          <Typewriter
+            words={['I like building cool things.', 'Soft dev @ Tail\'ed.', 'ML explorer.', 'Leetcode noob.', 'GitHub fanatic.', '']}
+            loop={false}
+            cursor
+            cursorStyle=''
+            typeSpeed={100}
+            deleteSpeed={70}
+            delaySpeed={500}
+          />
+          </p>
       </div>
       <div className="RightContainer">
         <img

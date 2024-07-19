@@ -14,7 +14,6 @@ body{
   background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
-  cursor: pointer;
 }
 
 @keyframes gradientAnimation {
@@ -28,24 +27,6 @@ body{
     background-position: 0% 50%;
   }
 }
-
-.AnimatedText::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, transparent 20%, rgba(255, 255, 255, 0.2) 10%);
-  background-size: 20px 20px;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.AnimatedText:hover::before {
-  opacity: 1;
-}
-
 
 h1{
   font-size: 8em;
