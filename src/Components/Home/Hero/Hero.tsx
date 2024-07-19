@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Typewriter } from 'react-simple-typewriter';
-import './Hero.css';
+import './Hero.scss';
 
 const Hero: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

@@ -1,3 +1,12 @@
+/* Colour Variables */
+$primary-color: #2af598;
+$secondary-color: #00715f;
+$tertiary-color: #33b072;
+$quaternary-color: #19621d;
+$background-color: #f9fbf7;
+$text-color: #1c2211;
+$font-color: #61665b;
+
 /* Page styling */
 body {
   overflow-y: hidden;
@@ -8,13 +17,11 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: #f9fbf7;
-  color: #1c2211;
+  background-color: $background-color;
+  color: $text-color;
   overflow: hidden;
-}
 
-@media (min-width: 768px) {
-  .HeroContainer {
+  @media (min-width: 768px) {
     flex-direction: row;
   }
 }
@@ -26,16 +33,12 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   padding: 160px 40px 60px 40px; /* top, right, bottom, left */
-}
 
-@media (min-width: 768px) {
-  .LeftContainer {
+  @media (min-width: 768px) {
     flex: 0 0 45%;
   }
-}
 
-@media (max-width: 768px) {
-  .LeftContainer {
+  @media (max-width: 768px) {
     flex: 0 0 25%;
     padding-left: 40px;
     padding-top: 15px;
@@ -51,28 +54,24 @@ body {
   align-items: center;
   overflow: hidden;
   margin-top: -110px;
-}
 
-@media (min-width: 768px) {
-  .RightContainer {
+  @media (min-width: 768px) {
     flex: 0 0 55%;
     margin-left: 50px;
   }
-}
 
-@media (max-width: 768px) {
-  .RightContainer {
+  @media (max-width: 768px) {
     flex: 0 0 75%;
   }
 }
 
-/* Page text styling */
+/* Text Styling */
 .HeroText {
   display: inline-block;
 }
 
 .AnimatedText {
-  background: linear-gradient(90deg, #2af598, #00715f, #33b072, #19621d);
+  background: linear-gradient(90deg, $primary-color, $secondary-color, $tertiary-color, $quaternary-color);
   background-size: 200% 200%;
   animation: gradientAnimation 5s ease infinite;
   -webkit-background-clip: text;
@@ -102,16 +101,16 @@ p {
   font-size: 2.5em;
   padding-top: 0px;
   font-weight: 600;
-  color: #61665b;
+  color: $font-color;
+
+  @media (max-width: 768px) {
+    font-size: 1.5em;
+  }
 }
 
 @media (max-width: 768px) {
   h1 {
     font-size: 3em;
     margin-bottom: -0.1em;
-  }
-
-  p {
-    font-size: 1.5em;
   }
 }
