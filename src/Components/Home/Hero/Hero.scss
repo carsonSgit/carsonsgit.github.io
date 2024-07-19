@@ -71,7 +71,13 @@ body {
 }
 
 .AnimatedText {
-  background: linear-gradient(90deg, $primary-color, $secondary-color, $tertiary-color, $quaternary-color);
+  background: linear-gradient(
+    90deg,
+    $primary-color,
+    $secondary-color,
+    $tertiary-color,
+    $quaternary-color
+  );
   background-size: 200% 200%;
   animation: gradientAnimation 5s ease infinite;
   -webkit-background-clip: text;

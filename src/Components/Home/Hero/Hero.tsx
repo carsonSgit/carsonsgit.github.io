@@ -66,20 +66,27 @@ const Hero: React.FC = () => {
   return (
     <div className="HeroContainer">
       <div className="LeftContainer">
-        <h1 className='HeroText'>
+        <h1 className="HeroText">
           Hi, I'm <span className="AnimatedText">Carson</span>
         </h1>
         <p>
           <Typewriter
-            words={['I like building cool things.', 'Soft dev @ Tail\'ed.', 'ML explorer.', 'Leetcode noob.', 'GitHub fanatic.', '']}
+            words={[
+              'I like building cool things.',
+              "Soft dev @ Tail'ed.",
+              'ML explorer.',
+              'Leetcode noob.',
+              'GitHub fanatic.',
+              '',
+            ]}
             loop={false}
             cursor
-            cursorStyle=''
+            cursorStyle=""
             typeSpeed={100}
             deleteSpeed={70}
             delaySpeed={500}
           />
-          </p>
+        </p>
       </div>
       <div className="RightContainer">
         <img
