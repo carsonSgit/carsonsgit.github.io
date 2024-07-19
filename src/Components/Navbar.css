@@ -5,12 +5,13 @@
   padding: 20px;
   background-color: #f9fbf7;
   color: #1c2211;
+  margin-top: 0.5em;
 }
 
 .navbar-left {
   font-size: 2rem;
   font-weight: bold;
-  margin-left: 40px;
+  margin-left: 1.5rem;
 }
 
 .hamburger {
@@ -33,10 +34,10 @@
 
 @media (max-width: 768px) {
   .navbar {
-    padding-top: 25px;
+    padding-top: 20px;
   }
   .navbar-left {
-    padding-left: 20px;
+    margin-left: 20px;
   }
 
   .hamburger {
@@ -48,6 +49,7 @@
     border: none;
     outline: none;
     z-index: 999;
+    margin-right: 20px;
   }
 
   .hamburger svg {

@@ -7,16 +7,45 @@ body{
 }
 
 .AnimatedText {
-  animation: bounceText 1s infinite alternate;
+  background: linear-gradient(90deg, #2af598, #00715f, #33b072, #19621d);
+  background-size: 200% 200%;
+  animation: gradientAnimation 5s ease infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  cursor: pointer;
 }
 
-@keyframes bounceText {
+@keyframes gradientAnimation {
   0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
   }
   100% {
-    color: #19621d;
+    background-position: 0% 50%;
   }
 }
+
+.AnimatedText::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, transparent 20%, rgba(255, 255, 255, 0.2) 10%);
+  background-size: 20px 20px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.AnimatedText:hover::before {
+  opacity: 1;
+}
+
 
 h1{
   font-size: 8em;
@@ -26,6 +55,8 @@ h1{
 p{
   font-size: 2.5em;
   padding-top: 0px;
+  font-weight: 600;
+  color: #61665b;
 }
 
 @media (max-width: 768px) {
@@ -59,7 +90,7 @@ p{
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 40px 40px 60px 60px; /* top, right, bottom, left */
+  padding: 40px 40px 60px 40px; /* top, right, bottom, left */
 }
 
 @media (max-width: 768px) {
