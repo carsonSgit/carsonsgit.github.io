@@ -10,7 +10,7 @@
 .navbar-left {
   font-size: 2rem;
   font-weight: bold;
-  padding-left: 40px;
+  margin-left: 40px;
 }
 
 .hamburger {
@@ -20,13 +20,14 @@
 .navbar-right {
   display: flex;
   align-items: center;
+  margin-right: 1.5rem;
 }
 
 .nav-link {
-  margin-left: 1rem;
+  margin-left: 3rem;
   color: #1c2211;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 
