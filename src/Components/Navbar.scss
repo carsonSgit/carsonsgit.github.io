@@ -1,0 +1,110 @@
+/* Variables for styling */
+$background-color: #f9fbf7;
+$text-color: #1c2211;
+$navbar-text-color: #1c2211;
+$nav-link-color: #1c2211;
+$hamburger-size: 32px;
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: $background-color;
+  color: $text-color;
+  margin-top: 0.5em;
+
+  @media (max-width: 768px) {
+    padding-top: 20px;
+  }
+}
+
+/* Navbar Left */
+.navbar-left {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-left: 1.5rem;
+
+  @media (max-width: 768px) {
+    margin-left: 20px;
+  }
+}
+
+/* Navbar Right */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  margin-right: 1.5rem;
+
+  @media (max-width: 768px) {
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: $background-color;
+    padding: 1vh;
+    z-index: 998;
+  }
+
+  &.active {
+    display: flex;
+    margin-top: 15px;
+  }
+}
+
+/* Nav Links (items) */
+.nav-link {
+  margin-left: 3rem;
+  color: $nav-link-color;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+
+  @media (max-width: 768px) {
+    margin: 0;
+    padding: 1rem;
+    width: 100%;
+    text-align: right;
+    font-weight: 700;
+    background-color: $background-color;
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+    transform: translateY(0px);
+
+    &.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    outline: none;
+    z-index: 999;
+    margin-right: 20px;
+
+    svg {
+      width: $hamburger-size;
+      height: $hamburger-size;
+    }
+  }
+}

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import './Hero.css';
+import { Typewriter } from 'react-simple-typewriter';
+import './Hero.scss';
 
-const Content: React.FC = () => {
+const Hero: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(1);
   const [hoverIndex, setHoverIndex] = useState(-1);
@@ -63,10 +64,22 @@ const Content: React.FC = () => {
   const handleMouseLeave = () => setHoverIndex(-1);
 
   return (
-    <div className="ContentContainer">
+    <div className="HeroContainer">
       <div className="LeftContainer">
-        <h1>Hi, I'm Carson</h1>
-        <p>I like building cool things.</p>
+        <h1 className='HeroText'>
+          Hi, I'm <span className="AnimatedText">Carson</span>
+        </h1>
+        <p>
+          <Typewriter
+            words={['I like building cool things.', 'Soft dev @ Tail\'ed.', 'ML explorer.', 'Leetcode noob.', 'GitHub fanatic.', '']}
+            loop={false}
+            cursor
+            cursorStyle=''
+            typeSpeed={100}
+            deleteSpeed={70}
+            delaySpeed={500}
+          />
+          </p>
       </div>
       <div className="RightContainer">
         <img
@@ -74,11 +87,11 @@ const Content: React.FC = () => {
           alt={`Sprite ${currentIndex}`}
           onMouseEnter={() => handleMouseEnter(currentIndex)}
           onMouseLeave={handleMouseLeave}
-          width="200"
+          width="280"
         />
       </div>
     </div>
   );
 };
 
-export default Content;
+export default Hero;
