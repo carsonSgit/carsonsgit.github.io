@@ -71,7 +71,7 @@ p{
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 40px 40px 60px 40px; /* top, right, bottom, left */
+  padding: 160px 40px 60px 40px; /* top, right, bottom, left */
 }
 
 @media (max-width: 768px) {
