@@ -15,7 +15,7 @@
 }
 
 h1{
-  font-size: 3em;
+  font-size: 8em;
   margin-bottom: 0px;
 }
 
@@ -35,7 +35,7 @@ p{
   
 }
 
-.ContentContainer {
+.HeroContainer {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -45,7 +45,7 @@ p{
 }
 
 @media (min-width: 768px) {
-  .ContentContainer {
+  .HeroContainer {
     flex-direction: row;
   }
 }
@@ -55,7 +55,7 @@ p{
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 320px 40px 60px 60px; /* top, right, bottom, left */
+  padding: 40px 40px 60px 60px; /* top, right, bottom, left */
 }
 
 @media (max-width: 768px) {
@@ -68,7 +68,7 @@ p{
 
 @media (min-width: 768px) {
   .LeftContainer {
-    flex: 0 0 35%;
+    flex: 0 0 45%;
   }
 }
 
@@ -84,7 +84,8 @@ p{
 
 @media (min-width: 768px) {
   .RightContainer {
-    flex: 0 0 65%;
+    flex: 0 0 55%;
+    margin-left: 50px;
   }
 }
 

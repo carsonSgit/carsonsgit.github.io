@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './Hero.css';
 
-const Content: React.FC = () => {
+const Hero: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(1);
   const [hoverIndex, setHoverIndex] = useState(-1);
@@ -64,7 +64,7 @@ const Content: React.FC = () => {
   const handleMouseLeave = () => setHoverIndex(-1);
 
   return (
-    <div className="ContentContainer">
+    <div className="HeroContainer">
       <div className="LeftContainer">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -87,11 +87,11 @@ const Content: React.FC = () => {
           alt={`Sprite ${currentIndex}`}
           onMouseEnter={() => handleMouseEnter(currentIndex)}
           onMouseLeave={handleMouseLeave}
-          width="200"
+          width="280"
         />
       </div>
     </div>
   );
 };
 
-export default Content;
+export default Hero;
