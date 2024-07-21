@@ -7,7 +7,6 @@ Welcome to the repo for my portfolio!
 <img src="https://github.com/user-attachments/assets/d38451ae-dc70-4290-af6d-c597b94f99e5" width="500"/>
 
 > Site Preview
-<br />
 
 ## Technologies Used
 - `React`
