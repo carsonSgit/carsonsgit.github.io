@@ -8,6 +8,13 @@ Welcome to the repo for my portfolio!
 
 > Site Preview
 <br />
-<br />
 
-I'm currently interning at `Tail'ed` as a `Software Developer` working on `Web & AI`! In my time interning, I've been reintroduced to `React` and `TypeScript` and I remembered how much I love that tech stack, so I decided it was time to remake a portfolio site from scratch with that same stack!
+## Technologies Used
+- `React`
+- `TypeScript`
+- `SCSS`
+
+## Important Links
+
+- Resources for development: [Helpful Links](https://github.com/carsonSgit/carsonsgit.github.io/issues/9)
+- Commit/Merge prefixes: [Commit Message Prefixes](https://github.com/carsonSgit/carsonsgit.github.io/issues/14)
