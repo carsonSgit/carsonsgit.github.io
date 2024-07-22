@@ -6,6 +6,11 @@ $background-color: #f9fbf7;
 $text-color: #1c2211;
 $font-color: #61665b;
 
+a{
+  text-decoration: none;
+  color: $primary-color;
+}
+
 .ProjectsContainer {
   padding: 0px 20px;
   background-color: $background-color;
