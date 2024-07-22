@@ -37,12 +37,15 @@ const projects = [
 const Projects: React.FC = () => {
   return (
     <div className="ProjectsContainer">
-      <h1 className="ProjectsTitle">My notable projects...</h1>
+      <h1 className="ProjectsTitle">
+        <span className="ProjectsTitleAnimated">Notable</span> projects
+      </h1>
       {projects.map((project, index) => (
         <ProjectItem key={index} project={project} />
       ))}
     </div>
   );
+  
 };
 
 const ProjectItem: React.FC<{ project: any }> = ({ project }) => {
