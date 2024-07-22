@@ -30,6 +30,14 @@ const projects = [
     github: 'https://github.com/carsonSgit/Linky',
     website: 'https://www.linky.im/',
   },
+  {
+    image: 'linky.png',
+    title: 'Linky',
+    languages: 'Mantine, TypeScript',
+    description: 'Linky is a hackathon winning project made for <a href="https://www.marihacks.com/" target="_blank" rel="noopener noreferrer">MariHacks 2024</a> in under 24hrs. It is a web app that turns your links into a chatbot so that you can study better!',
+    github: 'https://github.com/carsonSgit/Linky',
+    website: 'https://www.linky.im/',
+  },
   // Add more projects here
 ];
 
