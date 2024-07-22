@@ -34,9 +34,9 @@ const projects = [
     image: 'trademind.png',
     title: 'TradeMind',
     languages: 'React, Python, Machine Learning',
-    description: 'Linky is a hackathon winning project made for <a href="https://www.marihacks.com/" target="_blank" rel="noopener noreferrer">MariHacks 2024</a> in under 24hrs. It is a web app that turns your links into a chatbot so that you can study better!',
-    github: 'https://github.com/carsonSgit/Linky',
-    website: 'https://www.linky.im/',
+    description: 'TradeMind is a project developed for <a href="https://launchlab.ai/" target="_blank" rel="noopener noreferrer">AI Launch Lab</a>\'s <a href="https://launchlab.ai/rd-program/" target="_blank" rel="noopener noreferrer">R&D Program</a>. It is a web app that uses machine learning to predict stock prices and provide insights to users.',
+    github: 'https://github.com/carsonSgit/TradeMind',
+    website: 'https://trademind.pages.dev/',
   },
   // Add more projects here
 ];
