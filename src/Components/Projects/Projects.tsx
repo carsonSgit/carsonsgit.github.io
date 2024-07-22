@@ -23,7 +23,7 @@ const projects = [
     website: 'https://carsonsgit.github.io/cropcare-3d/',
   },
   {
-    image: 'project3.png',
+    image: 'linky.png',
     title: 'Linky',
     languages: 'Mantine, TypeScript',
     description: 'A startup consulting website designed to reach potential clients organically through a blog. Working closely with them to identify key metrics and success factors, I created a clean and intuitive design that effectively communicates their value proposition.',
