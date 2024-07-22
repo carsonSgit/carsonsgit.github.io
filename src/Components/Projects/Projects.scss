@@ -1,0 +1,91 @@
+/* Colour Variables */
+$primary-color: #2af598;
+$secondary-color: #00715f;
+$tertiary-color: #33b072;
+$quaternary-color: #19621d;
+$background-color: #f9fbf7;
+$text-color: #1c2211;
+$font-color: #61665b;
+
+/* Projects Container */
+.ProjectsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: $background-color;
+  color: $text-color;
+
+  @media (min-width: 768px) {
+    padding: 60px 40px;
+  }
+}
+
+/* Project Card */
+.ProjectCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+  padding: 20px;
+  border: 1px solid $font-color;
+  border-radius: 10px;
+  background-color: lighten($background-color, 5%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 60px;
+    padding: 30px;
+  }
+}
+
+/* Project Image */
+.ProjectImage {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+
+  @media (min-width: 768px) {
+    width: 50%;
+    margin-bottom: 0;
+    margin-right: 20px;
+  }
+}
+
+/* Project Details */
+.ProjectDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    align-items: flex-start;
+  }
+}
+
+/* Project Title */
+.ProjectTitle {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+/* Project Languages */
+.ProjectLanguages {
+  font-size: 1.2em;
+  color: $font-color;
+  margin-bottom: 1em;
+}
+
+/* Project Description */
+.ProjectDescription {
+  font-size: 1em;
+  color: $text-color;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    text-align: left;
+  }
+}
