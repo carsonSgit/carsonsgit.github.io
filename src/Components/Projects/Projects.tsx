@@ -1,7 +1,9 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import { animated, useSpring } from 'react-spring';
+import { motion } from 'framer-motion';
+import { useSpring, animated } from 'react-spring';
+import { Link } from 'react-router-dom'; // Import React Router for navigation
 import './Projects.scss';
 
 const projects = [
@@ -35,7 +37,7 @@ const projects = [
 const Projects: React.FC = () => {
   return (
     <div className="ProjectsContainer">
-      <h1 className="ProjectsTitle">A collection of my favorite works</h1>
+      <h1 className="ProjectsTitle">My notable projects...</h1>
       {projects.map((project, index) => (
         <ProjectItem key={index} project={project} />
       ))}
@@ -51,18 +53,22 @@ const ProjectItem: React.FC<{ project: any }> = ({ project }) => {
 
   const props = useSpring({
     opacity: inView ? 1 : 0,
-    transform: inView ? 'scale(1)' : 'scale(0.95)',
+    transform: inView ? 'translateY(0)' : 'translateY(20px)',
     config: { tension: 200, friction: 20 }
   });
 
   return (
-    <animated.div
+    <motion.div
       className="ProjectItem"
-      style={{ 
-        backgroundImage: `url(${process.env.PUBLIC_URL}/${project.image})`, 
-        ...props 
-      }}
+      style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/${project.image})` }}
+      initial={{ opacity: 0, scale: 0.99 }}
+      animate={{ opacity: inView ? 1 : 0, scale: inView ? 1 : 0.99 }}
+      transition={{ duration: 0.5 }}
       ref={ref}
+      whileHover={{
+        scale: 1.01,
+        transition: { duration: 0.15 },
+      }}
     >
       <div className="ProjectContent">
         <h2 className="ProjectTitle">{project.title}</h2>
@@ -81,7 +87,7 @@ const ProjectItem: React.FC<{ project: any }> = ({ project }) => {
           )}
         </div>
       </div>
-    </animated.div>
+    </motion.div>
   );
 };
 
