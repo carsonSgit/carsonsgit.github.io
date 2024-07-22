@@ -5,7 +5,10 @@ interface AnimatedImageProps {
   hoverImageNames: string[];
 }
 
-const AnimatedImage: React.FC<AnimatedImageProps> = ({ imageNames, hoverImageNames }) => {
+const AnimatedImage: React.FC<AnimatedImageProps> = ({
+  imageNames,
+  hoverImageNames,
+}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(1);
   const [hoverIndex, setHoverIndex] = useState(-1);
