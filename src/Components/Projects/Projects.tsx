@@ -11,8 +11,8 @@ const projects = [
     title: 'DEADWEIGHT',
     languages: 'C#, Unity',
     description: 'DEADWEIGHT is a game developed for the Kenney Jam 2024. It was my first experience working in Unity done in collaboration with <a href="https://github.com/NoahGJAC" target="_blank" rel="noopener noreferrer">NoahGJAC</a> as the first project for our game studio, <a href="https://github.com/Cano-Studios" target="_blank" rel="noopener noreferrer">Cano Studios</a>.',
-    github: 'https://github.com/example/pomgradient',
-    website: 'https://pomgradient.com',
+    github: 'https://github.com/Cano-Studios/DEADWEIGHT',
+    website: 'https://cano-studios.itch.io/deadweight',
   },
   {
     image: 'logo512.png',
