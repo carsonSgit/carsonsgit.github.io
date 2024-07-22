@@ -7,9 +7,9 @@ import './Projects.scss';
 const projects = [
   {
     image: 'DEADWEIGHT_WideThumbnail.png',
-    title: 'Pomgradient',
-    languages: 'JavaScript, React',
-    description: 'Pomegranate is a web-based gradient solution currently in beta that allows you to find, save, and craft gradients with a creative community!',
+    title: 'DEADWEIGHT',
+    languages: 'C#, Unity',
+    description: 'DEADWEIGHT is a game developed for the Kenney Jam 2024.',
     github: 'https://github.com/example/pomgradient',
     website: 'https://pomgradient.com',
   },
