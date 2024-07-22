@@ -1,7 +1,8 @@
 # My [Portfolio](https://carsonsgit.github.io/)
 
-Welcome to the repo for my portfolio! 
->[!IMPORTANT]
+Welcome to the repo for my portfolio!
+
+> [!IMPORTANT]
 > This is still currently a W.I.P!
 
 <img src="https://github.com/user-attachments/assets/d38451ae-dc70-4290-af6d-c597b94f99e5" width="500"/>
@@ -9,6 +10,7 @@ Welcome to the repo for my portfolio!
 > Site Preview
 
 ## Technologies Used
+
 - `React`
 - `TypeScript`
 - `SCSS`

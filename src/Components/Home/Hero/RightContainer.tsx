@@ -18,7 +18,10 @@ const hoverImageNames = [
 const RightContainer: React.FC = () => {
   return (
     <div className="RightContainer">
-      <AnimatedImage imageNames={imageNames} hoverImageNames={hoverImageNames} />
+      <AnimatedImage
+        imageNames={imageNames}
+        hoverImageNames={hoverImageNames}
+      />
     </div>
   );
 };
