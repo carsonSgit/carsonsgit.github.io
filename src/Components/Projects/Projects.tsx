@@ -2,6 +2,8 @@ import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { useSpring, animated } from 'react-spring';
+import { Link } from 'react-router-dom'; // Import React Router for navigation
 import './Projects.scss';
 
 const projects = [
@@ -49,13 +51,19 @@ const ProjectItem: React.FC<{ project: any }> = ({ project }) => {
     threshold: 0.1,
   });
 
+  const props = useSpring({
+    opacity: inView ? 1 : 0,
+    transform: inView ? 'translateY(0)' : 'translateY(20px)',
+    config: { tension: 200, friction: 20 }
+  });
+
   return (
-    <motion.div
+    <animated.div
       className="ProjectItem"
-      style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/${project.image})` }}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
-      transition={{ duration: 0.5 }}
+      style={{ 
+        backgroundImage: `url(${process.env.PUBLIC_URL}/${project.image})`, 
+        ...props 
+      }}
       ref={ref}
     >
       <div className="ProjectContent">
@@ -75,7 +83,7 @@ const ProjectItem: React.FC<{ project: any }> = ({ project }) => {
           )}
         </div>
       </div>
-    </motion.div>
+    </animated.div>
   );
 };
 
