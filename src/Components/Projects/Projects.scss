@@ -46,21 +46,21 @@ $font-color: #61665b;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
   color: #fff;
-  min-height: 200px; // Added minimum height
+  min-height: 200px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   }
 
   @media (max-width: 767px) {
     width: 90%;
-    height: auto; // Adjust height
-    background-size: cover; // Ensure image covers card
-    min-height: 200px; // Example value, adjust as needed
+    height: auto;
+    background-size: cover;
+    min-height: 200px;
   }
 }
-
 
 .ProjectContent {
   position: absolute;
@@ -76,11 +76,9 @@ $font-color: #61665b;
   align-items: flex-start;
   gap: 10px;
   box-sizing: border-box;
-}
+  transition: transform 0.3s ease;
 
-// media query for ProjectContent where position is not absolute
-@media (max-width: 767px) {
-  .ProjectContent {
+  @media (max-width: 767px) {
     position: relative;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;

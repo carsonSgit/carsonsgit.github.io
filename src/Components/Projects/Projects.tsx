@@ -1,9 +1,7 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import { motion } from 'framer-motion';
-import { useSpring, animated } from 'react-spring';
-import { Link } from 'react-router-dom'; // Import React Router for navigation
+import { animated, useSpring } from 'react-spring';
 import './Projects.scss';
 
 const projects = [
@@ -53,7 +51,7 @@ const ProjectItem: React.FC<{ project: any }> = ({ project }) => {
 
   const props = useSpring({
     opacity: inView ? 1 : 0,
-    transform: inView ? 'translateY(0)' : 'translateY(20px)',
+    transform: inView ? 'scale(1)' : 'scale(0.95)',
     config: { tension: 200, friction: 20 }
   });
 
