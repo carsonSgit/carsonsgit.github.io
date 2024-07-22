@@ -3,6 +3,7 @@ import Hero from './Components/Home/Hero/Hero';
 import Project from './Components/Projects/Projects';
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar';
+import './App.scss';
 
 const Home = () => <></>;
 const About = () => <></>;
