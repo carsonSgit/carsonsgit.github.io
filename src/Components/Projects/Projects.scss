@@ -78,6 +78,15 @@ $font-color: #61665b;
   box-sizing: border-box;
 }
 
+// media query for ProjectContent where position is not absolute
+@media (max-width: 767px) {
+  .ProjectContent {
+    position: relative;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
 .ProjectTitle {
   font-size: 1.4em;
   color: #fff;
