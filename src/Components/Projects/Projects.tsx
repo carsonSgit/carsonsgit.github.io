@@ -26,9 +26,9 @@ const projects = [
     image: 'linky.png',
     title: 'Linky',
     languages: 'Mantine, TypeScript',
-    description: 'A startup consulting website designed to reach potential clients organically through a blog. Working closely with them to identify key metrics and success factors, I created a clean and intuitive design that effectively communicates their value proposition.',
-    github: 'https://github.com/example/bundle-website',
-    website: 'https://bundlellc.com',
+    description: 'Linky is a hackathon winning project made for <a href="https://www.marihacks.com/" target="_blank" rel="noopener noreferrer">MariHacks 2024</a> in under 24hrs. It is a web app that turns your links into a chatbot so that you can study better!',
+    github: 'https://github.com/carsonSgit/Linky',
+    website: 'https://www.linky.im/',
   },
   // Add more projects here
 ];
