@@ -2,8 +2,7 @@ import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import { useSpring, animated } from 'react-spring';
-import { Link } from 'react-router-dom'; // Import React Router for navigation
+import { useSpring } from 'react-spring';
 import './Projects.scss';
 
 const projects = [
@@ -11,7 +10,7 @@ const projects = [
     image: 'DEADWEIGHT_WideThumbnail.png',
     title: 'DEADWEIGHT',
     languages: 'C#, Unity',
-    description: 'DEADWEIGHT is a game developed for the Kenney Jam 2024.',
+    description: 'DEADWEIGHT is a game developed for the Kenney Jam 2024. It was my first experience working in Unity done in collaboration with <a href="https://github.com/NoahGJAC" target="_blank" rel="noopener noreferrer">NoahGJAC</a> as the first project for our game studio, <a href="https://github.com/Cano-Studios" target="_blank" rel="noopener noreferrer">Cano Studios</a>.',
     github: 'https://github.com/example/pomgradient',
     website: 'https://pomgradient.com',
   },
@@ -45,7 +44,6 @@ const Projects: React.FC = () => {
       ))}
     </div>
   );
-  
 };
 
 const ProjectItem: React.FC<{ project: any }> = ({ project }) => {
@@ -76,7 +74,7 @@ const ProjectItem: React.FC<{ project: any }> = ({ project }) => {
       <div className="ProjectContent">
         <h2 className="ProjectTitle">{project.title}</h2>
         <p className="ProjectLanguages">{project.languages}</p>
-        <p className="ProjectDescription">{project.description}</p>
+        <p className="ProjectDescription" dangerouslySetInnerHTML={{ __html: project.description }} />
         <div className="ProjectLinks">
           {project.github && (
             <a href={project.github} className="ProjectLink" target="_blank" rel="noopener noreferrer">
