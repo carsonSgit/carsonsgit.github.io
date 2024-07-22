@@ -14,12 +14,11 @@ const App: React.FC = () => {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Hero />} />
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Project />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-      <Hero />
     </div>
   );
 };

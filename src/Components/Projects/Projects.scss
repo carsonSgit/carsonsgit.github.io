@@ -9,9 +9,6 @@ $font-color: #61665b;
 
 /* Projects Container */
 .ProjectsContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 40px 20px;
   background-color: $background-color;
   color: $text-color;
@@ -21,71 +18,116 @@ $font-color: #61665b;
   }
 }
 
-/* Project Card */
-.ProjectCard {
+/* Projects Title */
+.ProjectsTitle {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: $text-color;
+
+  @media (min-width: 768px) {
+    font-size: 3em;
+  }
+}
+
+/* Project Item */
+.ProjectItem {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 40px;
-  padding: 20px;
-  border: 1px solid $font-color;
-  border-radius: 10px;
-  background-color: lighten($background-color, 5%);
+  background: #f9fbf7;
+  border-radius: 15px;
+  overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
 
   @media (min-width: 768px) {
     flex-direction: row;
     align-items: flex-start;
-    margin-bottom: 60px;
-    padding: 30px;
+  }
+}
+
+/* Project Image Container */
+.ProjectImageContainer {
+  width: 100%;
+  max-height: 200px;
+  overflow: hidden;
+  
+  @media (min-width: 768px) {
+    width: 40%;
+    max-height: none;
   }
 }
 
 /* Project Image */
 .ProjectImage {
   width: 100%;
-  max-width: 400px;
-  border-radius: 10px;
-  margin-bottom: 20px;
+  height: auto;
 
   @media (min-width: 768px) {
-    width: 50%;
-    margin-bottom: 0;
-    margin-right: 20px;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
-/* Project Details */
-.ProjectDetails {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* Project Content */
+.ProjectContent {
+  padding: 20px;
+  text-align: center;
 
   @media (min-width: 768px) {
-    align-items: flex-start;
+    text-align: left;
+    padding: 40px;
+    width: 60%;
   }
 }
 
 /* Project Title */
 .ProjectTitle {
-  font-size: 2em;
-  margin-bottom: 0.5em;
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  color: $text-color;
 }
 
 /* Project Languages */
 .ProjectLanguages {
   font-size: 1.2em;
-  color: $font-color;
-  margin-bottom: 1em;
+  margin-bottom: 10px;
+  color: $secondary-color;
 }
 
 /* Project Description */
 .ProjectDescription {
   font-size: 1em;
-  color: $text-color;
-  text-align: center;
+  color: $font-color;
 
   @media (min-width: 768px) {
-    text-align: left;
+    font-size: 1.1em;
+  }
+}
+
+/* Project Links */
+.ProjectLinks {
+  margin-top: 20px;
+
+  .ProjectLink {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: $secondary-color;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: darken($secondary-color, 10%);
+    }
   }
 }
