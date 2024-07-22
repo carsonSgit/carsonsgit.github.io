@@ -1,8 +1,8 @@
 /* Variables for styling */
-$background-color: #f9fbf7;
-$text-color: #1c2211;
-$navbar-text-color: #1c2211;
-$nav-link-color: #1c2211;
+$background-color: #262f2aec;
+$text-color: #b1b6a7;
+$navbar-text-color: #b1b6a7;
+$nav-link-color: #b1b6a7;
 $hamburger-size: 32px;
 
 /* Navbar Styles */
@@ -13,7 +13,7 @@ $hamburger-size: 32px;
   padding: 20px;
   background-color: $background-color;
   color: $text-color;
-  margin-top: 0.5em;
+  margin-top: 0em;
 
   @media (max-width: 768px) {
     padding-top: 20px;
@@ -53,6 +53,7 @@ $hamburger-size: 32px;
   &.active {
     display: flex;
     margin-top: 15px;
+    margin-right:auto;
   }
 }
 
