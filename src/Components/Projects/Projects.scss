@@ -1,0 +1,167 @@
+$primary-color: #2af598;
+$secondary-color: #00715f;
+$tertiary-color: #33b072;
+$quaternary-color: #19621d;
+$background-color: #f9fbf7;
+$text-color: #1c2211;
+$font-color: #61665b;
+
+a{
+  text-decoration: none;
+  color: $primary-color;
+}
+
+.ProjectsContainer {
+  padding: 0px 20px;
+  background-color: $background-color;
+  color: $text-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    padding: 0px 40px;
+  }
+}
+.ProjectsTitle {
+  font-size: 2.8em;
+  margin-bottom: 40px;
+  color: $text-color;
+
+  @media (min-width: 768px) {
+    font-size: 4.5em;
+  }
+}
+
+.ProjectsTitleAnimated {
+  margin-bottom: 40px;
+  color: transparent;
+  background: linear-gradient(45deg, $primary-color, $secondary-color, $tertiary-color, $quaternary-color);
+  background-size: 400% 400%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: gradientAnimation 5s ease infinite;
+  
+  font-size: inherit; 
+
+  @media (min-width: 768px) {
+    font-size: inherit;
+  }
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.ProjectItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 75em;
+  height: 35em;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  color: #fff;
+  min-height: 200px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.417);
+  }
+
+  @media (max-width: 767px) {
+    width: 90%;
+    height: auto;
+    background-size: cover;
+    min-height: 200px;
+  }
+}
+
+.ProjectContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+
+  @media (max-width: 767px) {
+    position: relative;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.ProjectTitle {
+  font-size: 1.4em;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.ProjectLanguages {
+  font-size: 1.2em;
+  color: #ccc;
+  margin-bottom: 5px;
+}
+
+.ProjectDescription {
+  font-size: 1em;
+  color: #eee;
+  text-align: left;
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ProjectLinks {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.ProjectLink {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 10px;
+  background-color: $secondary-color;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+
+  svg {
+    margin-right: 5px;
+  }
+
+  &:hover {
+    background-color: darken($secondary-color, 10%);
+    transform: scale(1.05);
+  }
+}
