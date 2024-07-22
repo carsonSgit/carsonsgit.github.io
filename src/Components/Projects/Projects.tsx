@@ -1,39 +1,36 @@
 import React from 'react';
-import { useSpring, animated } from 'react-spring';
 import { useInView } from 'react-intersection-observer';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 import './Projects.scss';
 
 const projects = [
   {
-    image: 'temp1.png',
-    title: 'Project Alpha',
+    image: 'DEADWEIGHT_WideThumbnail.png',
+    title: 'Pomgradient',
     languages: 'JavaScript, React',
-    description: 'This is a temporary project description to illustrate the use of placeholder text for a project. It provides some context about the project and its features.',
-    github: 'https://github.com/username/project-alpha',
-    website: 'https://projectalpha.com'
+    description: 'Pomegranate is a web-based gradient solution currently in beta that allows you to find, save, and craft gradients with a creative community!',
+    github: 'https://github.com/example/pomgradient',
+    website: 'https://pomgradient.com',
   },
   {
-    image: 'temp2.png',
-    title: 'Project Beta',
+    image: 'logo512.png',
+    title: 'CSS Art Challenge',
     languages: 'HTML, CSS',
-    description: 'This placeholder description is for another project example. It demonstrates how to fill out project details with generic information.',
-    github: 'https://github.com/username/project-beta',
-    website: ''
+    description: 'I created CSS Art Challenge to help people discover that CSS can be fun and more than just creating basic layouts by competing in monthly challenges and winning prizes!',
+    github: 'https://github.com/example/css-art-challenge',
+    website: 'https://cssartchallenge.com',
   },
   {
-    image: 'temp3.png',
-    title: 'Project Gamma',
+    image: 'project3.png',
+    title: 'Bundle, LLC Website',
     languages: 'React, Next.js',
-    description: 'Here is a temporary description for a different project. It shows how to provide project details and links in a placeholder format.',
-    github: 'https://github.com/username/project-gamma',
-    website: 'https://projectgamma.com'
+    description: 'A startup consulting website designed to reach potential clients organically through a blog. Working closely with them to identify key metrics and success factors, I created a clean and intuitive design that effectively communicates their value proposition.',
+    github: 'https://github.com/example/bundle-website',
+    website: 'https://bundlellc.com',
   },
   // Add more projects here
 ];
-
 
 const Projects: React.FC = () => {
   return (
@@ -52,16 +49,15 @@ const ProjectItem: React.FC<{ project: any }> = ({ project }) => {
     threshold: 0.1,
   });
 
-  const fade = useSpring({
-    opacity: inView ? 1 : 0,
-    transform: inView ? 'translateY(0)' : 'translateY(20px)',
-  });
-
   return (
-    <animated.div className="ProjectItem" style={fade} ref={ref}>
-      <div className="ProjectImageContainer">
-        <img src={`${process.env.PUBLIC_URL}/${project.image}`} alt={project.title} className="ProjectImage" />
-      </div>
+    <motion.div
+      className="ProjectItem"
+      style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/${project.image})` }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
+      transition={{ duration: 0.5 }}
+      ref={ref}
+    >
       <div className="ProjectContent">
         <h2 className="ProjectTitle">{project.title}</h2>
         <p className="ProjectLanguages">{project.languages}</p>
@@ -69,17 +65,17 @@ const ProjectItem: React.FC<{ project: any }> = ({ project }) => {
         <div className="ProjectLinks">
           {project.github && (
             <a href={project.github} className="ProjectLink" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faGithub} /> GitHub
+              <FaGithub /> GitHub
             </a>
           )}
           {project.website && (
             <a href={project.website} className="ProjectLink" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faExternalLinkAlt} /> Website
+              <FaExternalLinkAlt /> Website
             </a>
           )}
         </div>
       </div>
-    </animated.div>
+    </motion.div>
   );
 };
 

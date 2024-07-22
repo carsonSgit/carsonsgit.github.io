@@ -1,4 +1,3 @@
-/* Colour Variables */
 $primary-color: #2af598;
 $secondary-color: #00715f;
 $tertiary-color: #33b072;
@@ -7,20 +6,23 @@ $background-color: #f9fbf7;
 $text-color: #1c2211;
 $font-color: #61665b;
 
-/* Projects Container */
 .ProjectsContainer {
-  padding: 40px 20px;
+  padding: 0px 20px;
   background-color: $background-color;
   color: $text-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
 
   @media (min-width: 768px) {
     padding: 60px 40px;
   }
 }
 
-/* Projects Title */
 .ProjectsTitle {
-  text-align: center;
   font-size: 2.5em;
   margin-bottom: 40px;
   color: $text-color;
@@ -30,104 +32,96 @@ $font-color: #61665b;
   }
 }
 
-/* Project Item */
 .ProjectItem {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 40px;
-  background: #f9fbf7;
+  margin-bottom: 20px;
+  width: 60em;
+  height: 30em;
+  background-size: cover;
+  background-position: center;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  color: #fff;
+  min-height: 200px; // Added minimum height
 
   &:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
 
-  @media (min-width: 768px) {
-    flex-direction: row;
-    align-items: flex-start;
+  @media (max-width: 767px) {
+    width: 90%;
+    height: auto; // Adjust height
+    background-size: cover; // Ensure image covers card
+    min-height: 200px; // Example value, adjust as needed
   }
 }
 
-/* Project Image Container */
-.ProjectImageContainer {
-  width: 100%;
-  max-height: 200px;
-  overflow: hidden;
-  
-  @media (min-width: 768px) {
-    width: 40%;
-    max-height: none;
-  }
-}
 
-/* Project Image */
-.ProjectImage {
-  width: 100%;
-  height: auto;
-
-  @media (min-width: 768px) {
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-/* Project Content */
 .ProjectContent {
-  padding: 20px;
-  text-align: center;
-
-  @media (min-width: 768px) {
-    text-align: left;
-    padding: 40px;
-    width: 60%;
-  }
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  box-sizing: border-box;
 }
 
-/* Project Title */
 .ProjectTitle {
-  font-size: 1.8em;
-  margin-bottom: 10px;
-  color: $text-color;
+  font-size: 1.4em;
+  color: #fff;
+  margin-bottom: 5px;
 }
 
-/* Project Languages */
 .ProjectLanguages {
   font-size: 1.2em;
-  margin-bottom: 10px;
-  color: $secondary-color;
+  color: #ccc;
+  margin-bottom: 5px;
 }
 
-/* Project Description */
 .ProjectDescription {
   font-size: 1em;
-  color: $font-color;
-
-  @media (min-width: 768px) {
-    font-size: 1.1em;
-  }
+  color: #eee;
+  text-align: left;
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* Project Links */
 .ProjectLinks {
-  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  align-items: center;
+}
 
-  .ProjectLink {
-    display: inline-block;
-    margin-right: 10px;
-    padding: 10px 20px;
-    background-color: $secondary-color;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+.ProjectLink {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: $secondary-color;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
 
-    &:hover {
-      background-color: darken($secondary-color, 10%);
-    }
+  svg {
+    margin-right: 5px;
+  }
+
+  &:hover {
+    background-color: darken($secondary-color, 10%);
+    transform: scale(1.05);
   }
 }
