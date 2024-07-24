@@ -49,8 +49,8 @@ $font-color: #a2aa94;
   }
 
   @media (max-width: 992px){
-    flex: 0 0 60%;
-    padding: 230px 20px 60px 40px; /* top, right, bottom, left */
+    flex: 0 0 52%;
+    padding: 230px 0px 60px 40px; /* top, right, bottom, left */
   }
 }
 
@@ -148,7 +148,7 @@ p {
 
 @media (max-width: 992px) {
   h1 {
-    font-size: 5em;
+    font-size: 4em;
     margin-bottom: -0.2em;
   }
 
