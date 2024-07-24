@@ -25,6 +25,10 @@ a {
   @media (min-width: 768px) {
     padding: 0px 40px;
   }
+
+  @media (max-width: 1200px) {
+    margin-left: -120px;
+  }
 }
 .ProjectsTitle {
   font-size: 2.8em;
@@ -99,6 +103,11 @@ a {
     height: auto;
     background-size: cover;
     min-height: 200px;
+  }
+
+  @media (max-width: 1200px) {
+    width: 45em;
+    height: 25em;
   }
 }
 

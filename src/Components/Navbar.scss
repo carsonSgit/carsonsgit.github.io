@@ -55,6 +55,10 @@ $hamburger-size: 32px;
     margin-top: 15px;
     margin-right: auto;
   }
+
+  @media (max-width: 1200px) {
+    margin-right: 8em;
+  }
 }
 
 /* Nav Links (items) */
