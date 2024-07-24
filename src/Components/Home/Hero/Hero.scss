@@ -19,6 +19,10 @@ $font-color: #a2aa94;
   @media (min-width: 768px) {
     flex-direction: row;
   }
+
+  @media (max-width: 1200px) {
+    flex-direction: row;
+  }
 }
 
 /* Left Container */
@@ -37,6 +41,11 @@ $font-color: #a2aa94;
     flex: 0 0 25%;
     padding-left: 40px;
     padding-top: 15px;
+  }
+
+  @media (max-width: 1200px) {
+    flex: 0 0 65%;
+    padding: 160px 0px 60px 40px; /* top, right, bottom, left */
   }
 }
 
@@ -57,6 +66,11 @@ $font-color: #a2aa94;
 
   @media (max-width: 768px) {
     flex: 0 0 75%;
+  }
+
+  @media (max-width: 1200px) {
+    flex: 0 0 50%;
+    margin-left: -100px;
   }
 }
 
@@ -114,4 +128,16 @@ p {
     font-size: 3em;
     margin-bottom: -0.1em;
   }
+}
+
+@media (max-width: 1200px) {
+  h1 {
+    font-size: 7em;
+    margin-bottom: -0.2em;
+  }
+
+  p {
+    font-size: 2em;
+  }
+  
 }
