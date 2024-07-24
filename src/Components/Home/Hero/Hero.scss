@@ -47,6 +47,11 @@ $font-color: #a2aa94;
     flex: 0 0 65%;
     padding: 160px 0px 60px 40px; /* top, right, bottom, left */
   }
+
+  @media (max-width: 992px){
+    flex: 0 0 60%;
+    padding: 230px 20px 60px 40px; /* top, right, bottom, left */
+  }
 }
 
 /* Right Container */
@@ -139,5 +144,15 @@ p {
   p {
     font-size: 2em;
   }
-  
+}
+
+@media (max-width: 992px) {
+  h1 {
+    font-size: 5em;
+    margin-bottom: -0.2em;
+  }
+
+  p {
+    font-size: 1.5em;
+  }
 }
