@@ -72,6 +72,11 @@ $font-color: #a2aa94;
     flex: 0 0 55%;
     padding: 20px 40px 0px 40px; /* top, right, bottom, left */
   }
+
+  @media (max-width: 768px){
+    padding: 240px 40px 0px 40px; /* top, right, bottom, left */
+    flex: 0 0 55%;
+  }
 }
 
 /* Right Container */
@@ -121,6 +126,12 @@ $font-color: #a2aa94;
     flex: 0 0 100%;
     margin-left: 10px;
     margin-top: -290px;
+  }
+
+  @media (max-width: 360px) {
+    flex: 0 0 100%;
+    margin-left: 10px;
+    margin-top: -350px;
   }
 }
 
@@ -254,5 +265,16 @@ p {
 
   p {
     font-size: 1.1em;
+  }
+}
+
+@media (max-width: 768px){
+  h1 {
+    font-size: 5em;
+    margin-bottom: -0.1em;
+  }
+
+  p {
+    font-size: 1.9em;
   }
 }
