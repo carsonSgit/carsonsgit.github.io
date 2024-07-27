@@ -89,6 +89,7 @@ a {
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
+  margin-left: 0;
   width: 75em;
   height: 35em;
   background-size: cover;
@@ -118,6 +119,12 @@ a {
     height: auto;
     background-size: cover;
     min-height: 200px;
+  }
+
+  @media (max-width: 1199px) {
+    width: 80%;
+    height: auto + 100px;
+    margin-left: 12.5%;
   }
 }
 
