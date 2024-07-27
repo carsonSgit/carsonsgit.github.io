@@ -33,7 +33,13 @@ a {
   @media (max-width: 992px) {
     margin-left: -100px;
   }
+
+  @media (max-width: 767px) {
+    padding: 0px 10px;
+    margin-left: 0;
+  }
 }
+
 .ProjectsTitle {
   font-size: 2.8em;
   margin-bottom: 40px;
@@ -102,16 +108,16 @@ a {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.417);
   }
 
+  @media (max-width: 1200px) {
+    width: 45em;
+    height: 25em;
+  }
+
   @media (max-width: 767px) {
     width: 90%;
     height: auto;
     background-size: cover;
     min-height: 200px;
-  }
-
-  @media (max-width: 1200px) {
-    width: 45em;
-    height: 25em;
   }
 }
 
