@@ -174,3 +174,13 @@ p {
   }
 }
 
+@media (max-width: 430px) {
+  h1 {
+    font-size: 3.3em;
+    margin-bottom: -0.2em;
+  }
+
+  p {
+    font-size: 1.3em;
+  }
+}
