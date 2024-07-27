@@ -22,16 +22,14 @@ a {
   min-height: 100vh;
   text-align: center;
 
-  @media (min-width: 768px) {
+  @media (min-width: 768px) and (max-width: 1200px) {
+    padding: 0px 30px;
+    margin-left: 0;
+  }
+
+  @media (min-width: 1200px) {
     padding: 0px 40px;
-  }
-
-  @media (max-width: 1200px) {
-    margin-left: -120px;
-  }
-
-  @media (max-width: 992px) {
-    margin-left: -100px;
+    margin-left: 0;
   }
 
   @media (max-width: 767px) {
@@ -45,7 +43,11 @@ a {
   margin-bottom: 40px;
   color: $text-color;
 
-  @media (min-width: 768px) {
+  @media (min-width: 768px) and (max-width: 1200px) {
+    font-size: 3.5em;
+  }
+
+  @media (min-width: 1200px) {
     font-size: 4.5em;
   }
 }
@@ -64,10 +66,13 @@ a {
   background-clip: text;
   -webkit-background-clip: text;
   animation: gradientAnimation 5s ease infinite;
-
   font-size: inherit;
 
-  @media (min-width: 768px) {
+  @media (min-width: 768px) and (max-width: 1200px) {
+    font-size: inherit;
+  }
+
+  @media (min-width: 1200px) {
     font-size: inherit;
   }
 }
@@ -89,9 +94,7 @@ a {
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
-  margin-left: 0;
-  width: 75em;
-  height: 35em;
+  width: 90%;
   background-size: cover;
   background-position: center;
   border-radius: 15px;
@@ -109,9 +112,16 @@ a {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.417);
   }
 
-  @media (max-width: 1200px) {
-    width: 45em;
-    height: 25em;
+  @media (min-width: 768px) and (max-width: 1200px) {
+    height: auto;
+    min-height: 400px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 75%;
+    height: auto;
+    min-height: 500px;
+    margin-left: 0;
   }
 
   @media (max-width: 767px) {
@@ -119,12 +129,6 @@ a {
     height: auto;
     background-size: cover;
     min-height: 200px;
-  }
-
-  @media (max-width: 1199px) {
-    width: 80%;
-    height: auto + 100px;
-    margin-left: 12.5%;
   }
 }
 
