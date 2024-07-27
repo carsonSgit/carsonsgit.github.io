@@ -22,19 +22,16 @@ a {
   min-height: 100vh;
   text-align: center;
 
+  @media (max-width: 767px) {
+    padding: 0px 10px;
+  }
+
   @media (min-width: 768px) and (max-width: 1200px) {
     padding: 0px 30px;
-    margin-left: 0;
   }
 
   @media (min-width: 1200px) {
     padding: 0px 40px;
-    margin-left: 0;
-  }
-
-  @media (max-width: 767px) {
-    padding: 0px 10px;
-    margin-left: 0;
   }
 }
 
@@ -67,14 +64,6 @@ a {
   -webkit-background-clip: text;
   animation: gradientAnimation 5s ease infinite;
   font-size: inherit;
-
-  @media (min-width: 768px) and (max-width: 1200px) {
-    font-size: inherit;
-  }
-
-  @media (min-width: 1200px) {
-    font-size: inherit;
-  }
 }
 
 @keyframes gradientAnimation {
@@ -103,13 +92,17 @@ a {
   position: relative;
   color: #fff;
   min-height: 200px;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.417);
+  }
+
+  @media (max-width: 767px) {
+    width: 90%;
+    height: auto;
+    min-height: 200px;
   }
 
   @media (min-width: 768px) and (max-width: 1200px) {
@@ -121,14 +114,6 @@ a {
     width: 75%;
     height: auto;
     min-height: 500px;
-    margin-left: 0;
-  }
-
-  @media (max-width: 767px) {
-    width: 90%;
-    height: auto;
-    background-size: cover;
-    min-height: 200px;
   }
 }
 
@@ -191,9 +176,7 @@ a {
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
-  transition:
-    background-color 0.3s,
-    transform 0.3s;
+  transition: background-color 0.3s, transform 0.3s;
 
   svg {
     margin-right: 5px;
