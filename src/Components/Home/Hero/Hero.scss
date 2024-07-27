@@ -245,3 +245,14 @@ p {
     font-size: 1.2em;
   }
 }
+
+@media (max-width: 360px){
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: -0.2em;
+  }
+
+  p {
+    font-size: 1.1em;
+  }
+}
