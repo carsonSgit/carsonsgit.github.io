@@ -65,7 +65,7 @@ $font-color: #a2aa94;
 
   @media (max-width: 414px) {
     flex: 0 0 50%;
-    padding: 60px 40px 0px 40px; /* top, right, bottom, left */
+    padding: 30px 40px 0px 40px; /* top, right, bottom, left */
   }
 
   @media (max-width: 375px) {
@@ -73,10 +73,6 @@ $font-color: #a2aa94;
     padding: 20px 40px 0px 40px; /* top, right, bottom, left */
   }
 
-  @media (max-width: 768px){
-    padding: 240px 40px 0px 40px; /* top, right, bottom, left */
-    flex: 0 0 55%;
-  }
 }
 
 /* Right Container */
@@ -123,7 +119,6 @@ $font-color: #a2aa94;
   }
 
   @media (max-width: 375px) {
-    flex: 0 0 100%;
     margin-left: 10px;
     margin-top: -290px;
   }
@@ -215,7 +210,7 @@ p {
 
 @media (max-width: 430px) {
   h1 {
-    font-size: 3.3em;
+    font-size: 3.2em;
     margin-bottom: -0.2em;
   }
 
@@ -237,7 +232,7 @@ p {
 
 @media (max-width: 414px) {
   h1 {
-    font-size: 3em;
+    font-size: 2.9em;
     margin-bottom: -0.2em;
   }
 
@@ -265,16 +260,5 @@ p {
 
   p {
     font-size: 1.1em;
-  }
-}
-
-@media (max-width: 768px){
-  h1 {
-    font-size: 5em;
-    margin-bottom: -0.1em;
-  }
-
-  p {
-    font-size: 1.9em;
   }
 }
