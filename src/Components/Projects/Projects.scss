@@ -92,7 +92,9 @@ a {
   position: relative;
   color: #fff;
   min-height: 200px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 
   &:hover {
     transform: scale(1.05);
@@ -176,7 +178,9 @@ a {
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
-  transition: background-color 0.3s, transform 0.3s;
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
 
   svg {
     margin-right: 5px;
