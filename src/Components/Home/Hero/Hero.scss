@@ -32,6 +32,10 @@ $font-color: #a2aa94;
   @media (min-width: 430px) and (max-width: 600px) {
     flex-direction: column;
   }
+
+  @media (min-width: 1200px) and (max-width: 1920px) {
+    flex-direction: row;
+  }
 }
 
 /* Left Container */
@@ -80,6 +84,11 @@ $font-color: #a2aa94;
   @media (max-width: 375px) {
     flex: 0 0 55%;
     padding: 20px 40px 0px 40px; /* top, right, bottom, left */
+  }
+
+  @media (min-width: 1200px) and (max-width: 1800px) {
+    flex: 0 0 55%;
+    padding: 160px 60px 0px 60px; /* top, right, bottom, left */
   }
 }
 
@@ -142,6 +151,12 @@ $font-color: #a2aa94;
     margin-left: 10px;
     margin-top: -350px;
   }
+
+  @media (min-width: 1200px) and (max-width: 1800px) {
+    flex: 0 0 45%;
+    margin-left: -35px;
+    margin-top: -200px;
+  }
 }
 
 /* Text Styling */
@@ -180,6 +195,10 @@ $font-color: #a2aa94;
 h1 {
   font-size: 8em;
   margin-bottom: -0.3em;
+
+  @media (min-width: 1200px) and (max-width: 1800px) {
+    font-size: 6em;
+  }
 }
 
 p {
@@ -190,6 +209,10 @@ p {
 
   @media (max-width: 768px) {
     font-size: 1.5em;
+  }
+
+  @media (min-width: 1200px) and (max-width: 1800px) {
+    font-size: 2em;
   }
 }
 
