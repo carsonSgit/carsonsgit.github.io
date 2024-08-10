@@ -94,7 +94,7 @@ const About: React.FC = () => {
               <li><SiSqlite /> SQLite</li>
               <li><SiMongodb /> MongoDB</li>
               <li><SiMysql /> MySQL</li>
-              <li><SiMicrosoftsqlserver /> Microsoft SQL Server</li>
+              <li><SiMicrosoftsqlserver /> MSSQL</li>
             </ul>
           </div>
         </div>
