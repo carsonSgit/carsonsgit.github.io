@@ -13,7 +13,6 @@ import {
 const About: React.FC = () => {
   return (
     <div className="AboutContainer">
-      <h1 className="AboutTitle">About Me</h1>
       <div className="AboutContentContainer">
         <div className="AboutContent">
           <p>

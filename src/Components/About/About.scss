@@ -21,13 +21,6 @@ $tools-item-tint: lighten($background-color, 15%);
   box-shadow: $box-shadow;
 }
 
-.AboutTitle {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  color: darken($primary-color, 10%);
-  text-align: center;
-}
-
 .AboutContentContainer {
   display: flex;
   justify-content: space-between;
