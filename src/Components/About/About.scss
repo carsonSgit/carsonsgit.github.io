@@ -14,16 +14,19 @@ $language-item-tint: darken($list-item-color, 30%);
 $framework-item-tint: darken($list-item-color, 35%);
 $tools-item-tint: darken($list-item-color, 40%);
 
+
 .AboutContainer {
   width: auto;
   padding: 20px;
 }
+
 
 .AboutContentContainer {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 }
+
 
 .AboutContent {
   flex: 1;
