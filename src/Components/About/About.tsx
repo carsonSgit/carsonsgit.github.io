@@ -86,13 +86,9 @@ const About: React.FC = () => {
               <li><SiPostman /> Postman</li>
               <li><SiSwagger /> Swagger</li>
               <li><SiJira /> Jira</li>
-              <li><SiGradle /> Gradle</li>
-              <li><SiArduino /> Arduino</li>
               <li><SiCisco /> Cisco</li>
               <li><FaRaspberryPi /> Raspberry Pi</li>
-              <li><SiCanva /> Canva</li>
               <li><FaFigma /> Figma</li>
-              <li><SiGimp /> Gimp</li>
               <li><SiMongodb /> MongoDB</li>
             </ul>
           </div>
