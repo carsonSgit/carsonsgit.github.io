@@ -2,7 +2,7 @@ import React from 'react';
 import './About.scss';
 import {
   FaPython, FaJava, FaJsSquare, FaReact, FaGitAlt, FaDocker, FaHtml5, FaCss3Alt, FaAws, FaNodeJs, FaSass, FaPhp, FaMarkdown,
-  FaAngular, FaBootstrap, FaFigma, FaRaspberryPi, FaDatabase
+  FaAngular, FaBootstrap, FaFigma, FaRaspberryPi, FaDatabase, FaTerminal 
 } from 'react-icons/fa';
 import {
   SiCsharp, SiSqlite, SiKotlin, SiDotnet, SiXamarin, SiTypescript, SiJquery, SiNextdotjs, SiAzuredevops, SiFirebase, SiVercel,
@@ -37,8 +37,8 @@ const About: React.FC = () => {
               <li><SiKotlin /> Kotlin</li>
               <li><FaDatabase/> SQL</li>
               <li><FaPhp /> PHP</li>
-              <li>PowerShell</li>
-              <li>Bash</li>
+              <li><FaTerminal /> PowerShell</li>
+              <li><FaTerminal /> Bash</li>
               <li><FaMarkdown /> Markdown</li>
               <li><FaHtml5 /> HTML</li>
               <li><FaCss3Alt /> CSS</li>
