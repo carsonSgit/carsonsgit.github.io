@@ -7,7 +7,7 @@ import {
 import {
   SiCsharp, SiSqlite, SiKotlin, SiDotnet, SiXamarin, SiTypescript, SiJquery, SiNextdotjs, SiAzuredevops, SiFirebase, SiVercel,
   SiCloudflare, SiExpress, SiTailwindcss, SiNginx, SiMongodb, SiMysql, SiMicrosoftsqlserver, SiCanva, SiGimp, SiKeras, SiPytorch, SiScikitlearn,
-  SiPostman, SiSwagger, SiJira, SiGradle, SiKubernetes, SiArduino, SiCisco, SiUnity, 
+  SiPostman, SiSwagger, SiJira, SiGradle, SiKubernetes, SiArduino, SiCisco, SiUnity
 } from 'react-icons/si';
 
 const About: React.FC = () => {
@@ -40,17 +40,17 @@ const About: React.FC = () => {
               <li>PowerShell</li>
               <li>Bash</li>
               <li><FaMarkdown /> Markdown</li>
-              <li><FaHtml5/> HTML</li>
-              <li><FaCss3Alt/> CSS</li>
+              <li><FaHtml5 /> HTML</li>
+              <li><FaCss3Alt /> CSS</li>
             </ul>
           </div>
 
           <div className="CategoryContainer">
             <h3 className="CategoryTitle">Frameworks & Libraries</h3>
             <ul className="TechList frameworks-libraries">
-              <li><SiDotnet/> ASP.NET</li>
-              <li><SiDotnet/> .NET MAUI</li>
-              <li><SiDotnet/> WPF</li>
+              <li><SiDotnet /> ASP.NET</li>
+              <li><SiDotnet /> .NET MAUI</li>
+              <li><SiDotnet /> WPF</li>
               <li><SiXamarin /> Xamarin</li>
               <li><FaReact /> React</li>
               <li><SiNextdotjs /> Next.js</li>
