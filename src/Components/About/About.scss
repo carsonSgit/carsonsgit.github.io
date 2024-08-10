@@ -3,6 +3,7 @@ $secondary-color: #00715f;
 $tertiary-color: #33b072;
 $quaternary-color: #95b9b0;
 $background-color: #262f2aec;
+$list-item-color: #2bd4a0;
 $text-color: #fafff0;
 $font-color: #a2aa94;
 $hover-color: #ced4da;
@@ -10,9 +11,9 @@ $box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 $border-radius: 8px;
 
 // Tint colors for list items in each category
-$language-item-tint: lighten($background-color, 10%);
-$framework-item-tint: lighten($background-color, 5%);
-$tools-item-tint: lighten($background-color, 15%);
+$language-item-tint: darken($list-item-color, 30%);
+$framework-item-tint: darken($list-item-color, 35%);
+$tools-item-tint: darken($list-item-color, 40%);
 
 .AboutContainer {
   padding: 20px;
