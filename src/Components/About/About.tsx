@@ -2,12 +2,12 @@ import React from 'react';
 import './About.scss';
 import {
   FaPython, FaJava, FaJsSquare, FaReact, FaGitAlt, FaDocker, FaHtml5, FaCss3Alt, FaAws, FaNodeJs, FaSass, FaPhp, FaMarkdown,
-  FaAngular, FaBootstrap, FaFigma, FaRaspberryPi
+  FaAngular, FaBootstrap, FaFigma, FaRaspberryPi, FaDatabase
 } from 'react-icons/fa';
 import {
   SiCsharp, SiSqlite, SiKotlin, SiDotnet, SiXamarin, SiTypescript, SiJquery, SiNextdotjs, SiAzuredevops, SiFirebase, SiVercel,
   SiCloudflare, SiExpress, SiTailwindcss, SiNginx, SiMongodb, SiMysql, SiMicrosoftsqlserver, SiCanva, SiGimp, SiKeras, SiPytorch, SiScikitlearn,
-  SiPostman, SiSwagger, SiJira, SiGradle, SiKubernetes, SiArduino, SiCisco, SiUnity, SiSql 
+  SiPostman, SiSwagger, SiJira, SiGradle, SiKubernetes, SiArduino, SiCisco, SiUnity, 
 } from 'react-icons/si';
 
 const About: React.FC = () => {
@@ -35,7 +35,7 @@ const About: React.FC = () => {
               <li><SiTypescript /> TypeScript</li>
               <li><SiCsharp /> C#</li>
               <li><SiKotlin /> Kotlin</li>
-              <li><SiSql/> SQL</li>
+              <li><FaDatabase/> SQL</li>
               <li><FaPhp /> PHP</li>
               <li>PowerShell</li>
               <li>Bash</li>
@@ -95,12 +95,6 @@ const About: React.FC = () => {
               <li><SiMongodb /> MongoDB</li>
               <li><SiMysql /> MySQL</li>
               <li><SiMicrosoftsqlserver /> Microsoft SQL Server</li>
-            </ul>
-          </div>
-
-          <div className="CategoryContainer">
-            <h3 className="CategoryTitle">Databases</h3>
-            <ul className="TechList databases">
             </ul>
           </div>
         </div>
