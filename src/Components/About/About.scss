@@ -10,7 +10,6 @@ $hover-color: #ced4da;
 $box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 $border-radius: 8px;
 
-// Tint colors for list items in each category
 $language-item-tint: darken($list-item-color, 30%);
 $framework-item-tint: darken($list-item-color, 35%);
 $tools-item-tint: darken($list-item-color, 40%);
@@ -42,8 +41,7 @@ $tools-item-tint: darken($list-item-color, 40%);
 
 .TechnologiesTitle {
   font-size: 2rem;
-  margin-bottom: 30px;
-  color: $primary-color;
+  color: $text-color;
   text-align: center;
 }
 
@@ -54,7 +52,8 @@ $tools-item-tint: darken($list-item-color, 40%);
 .CategoryTitle {
   font-size: 1.5rem;
   margin-bottom: 10px;
-  color: $primary-color;
+  color: $text-color;
+  text-align: center;
 }
 
 .TechList {
