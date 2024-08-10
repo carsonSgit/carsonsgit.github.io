@@ -23,8 +23,6 @@ const About: React.FC = () => {
         </div>
 
         <div className="Technologies">
-          <h2 className="TechnologiesTitle">TechStack</h2>
-
           <div className="CategoryContainer">
             <h3 className="CategoryTitle">Languages</h3>
             <ul className="TechList programming-languages">

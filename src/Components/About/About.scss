@@ -16,9 +16,7 @@ $tools-item-tint: darken($list-item-color, 40%);
 
 .AboutContainer {
   padding: 20px;
-  margin: 0 auto;
   background-color: $background-color;
-  box-shadow: $box-shadow;
 }
 
 .AboutContentContainer {
@@ -37,12 +35,6 @@ $tools-item-tint: darken($list-item-color, 40%);
 
 .Technologies {
   flex: 1;
-}
-
-.TechnologiesTitle {
-  font-size: 2rem;
-  color: $text-color;
-  text-align: center;
 }
 
 .CategoryContainer {
