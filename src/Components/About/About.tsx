@@ -17,7 +17,7 @@ const About: React.FC = () => {
         </div>
 
         <div className="Technologies">
-          <h2 className="TechnologiesTitle">Technologies I Work With</h2>
+          <h2 className="TechnologiesTitle">TechStack</h2>
           <ul className="TechList">
             <li><FaPython /> Python</li>
             <li><FaJava /> Java</li>

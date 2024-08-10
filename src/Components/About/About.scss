@@ -17,9 +17,9 @@ $border-radius: 8px;
 }
 
 .AboutTitle {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 20px;
-  color: $primary-color;
+  color: darken($primary-color, 10%);
   text-align: center;
 }
 
@@ -43,7 +43,7 @@ $border-radius: 8px;
 
 .TechnologiesTitle {
   font-size: 2rem;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   color: $primary-color;
   text-align: center;
 }
@@ -53,23 +53,25 @@ $border-radius: 8px;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 15px;
+  justify-content: center;
 }
 
 .TechList li {
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-  background-color: lighten($background-color, 5%);
-  padding: 10px;
-  border-radius: 4px;
-  color: lighten($background-color, 70%);
+  font-size: 1.2rem;
+  background-color: lighten($background-color, 10%);
+  padding: 12px 20px;
+  border-radius: $border-radius;
+  color: $text-color;
   display: flex;
   align-items: center;
-  gap: 8px;
-  transition: background-color 0.3s ease;
+  gap: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: $box-shadow;
 
   &:hover {
-    background-color: darken($background-color, 10%);
+    background-color: darken($background-color, 15%);
+    transform: scale(1.05);
   }
 }
 
@@ -80,7 +82,6 @@ $border-radius: 8px;
 
   .AboutContent {
     margin-right: 0;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 }
-
