@@ -15,7 +15,7 @@ const About: React.FC = () => {
     <div className="AboutContainer">
       <div className="AboutContentContainer">
         <div className="AboutContent">
-          <p>
+          <p className="AboutText">
             Hi, I'm Carson! I'm a passionate software developer currently working as a Junior Software Engineer. 
             I love building cool things and exploring the world of machine learning. I'm also an active participant in hackathons, 
             constantly seeking opportunities to enhance my skills and make an impact.
