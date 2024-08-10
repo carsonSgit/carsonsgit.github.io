@@ -7,7 +7,7 @@ import {
 import {
   SiCsharp, SiSqlite, SiKotlin, SiDotnet, SiXamarin, SiTypescript, SiJquery, SiNextdotjs, SiAzuredevops, SiFirebase, SiVercel,
   SiCloudflare, SiExpress, SiTailwindcss, SiNginx, SiMongodb, SiMysql, SiMicrosoftsqlserver, SiCanva, SiGimp, SiKeras, SiPytorch, SiScikitlearn,
-  SiPostman, SiSwagger, SiJira, SiGradle, SiKubernetes, SiArduino, SiCisco, SiUnity
+  SiPostman, SiSwagger, SiJira, SiGradle, SiKubernetes, SiArduino, SiCisco, SiUnity, SiMantine 
 } from 'react-icons/si';
 
 const About: React.FC = () => {
@@ -57,7 +57,7 @@ const About: React.FC = () => {
               <li><SiJquery /> jQuery</li>
               <li><FaAngular /> Angular</li>
               <li><FaBootstrap /> Bootstrap</li>
-              <li>Mantine</li>
+              <li><SiMantine /> Mantine</li>
               <li><FaNodeJs /> Node.js</li>
               <li><FaSass /> SCSS</li>
               <li><SiTailwindcss /> TailwindCSS</li>
