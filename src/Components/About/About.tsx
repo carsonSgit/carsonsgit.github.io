@@ -2,12 +2,12 @@ import React from 'react';
 import './About.scss';
 import {
   FaPython, FaJava, FaJsSquare, FaReact, FaGitAlt, FaDocker, FaHtml5, FaCss3Alt, FaAws, FaNodeJs, FaSass, FaPhp, FaMarkdown,
-  FaAngular, FaBootstrap, FaFigma, FaRaspberryPi, FaDatabase, FaTerminal 
+  FaAngular, FaBootstrap, FaFigma, FaRaspberryPi, FaDatabase 
 } from 'react-icons/fa';
 import {
   SiCsharp, SiSqlite, SiKotlin, SiDotnet, SiXamarin, SiTypescript, SiJquery, SiNextdotjs, SiAzuredevops, SiFirebase, SiVercel,
   SiCloudflare, SiExpress, SiTailwindcss, SiNginx, SiMongodb, SiMysql, SiMicrosoftsqlserver, SiCanva, SiGimp, SiKeras, SiPytorch, SiScikitlearn,
-  SiPostman, SiSwagger, SiJira, SiGradle, SiKubernetes, SiArduino, SiCisco, SiUnity, SiMantine 
+  SiPostman, SiSwagger, SiJira, SiGradle, SiKubernetes, SiArduino, SiCisco, SiUnity, SiMantine, SiGnubash, SiPowershell 
 } from 'react-icons/si';
 
 const About: React.FC = () => {
@@ -37,8 +37,8 @@ const About: React.FC = () => {
               <li><SiKotlin /> Kotlin</li>
               <li><FaDatabase/> SQL</li>
               <li><FaPhp /> PHP</li>
-              <li><FaTerminal /> PowerShell</li>
-              <li><FaTerminal /> Bash</li>
+              <li><SiPowershell /> PowerShell</li>
+              <li><SiGnubash /> Bash</li>
               <li><FaMarkdown /> Markdown</li>
               <li><FaHtml5 /> HTML</li>
               <li><FaCss3Alt /> CSS</li>
