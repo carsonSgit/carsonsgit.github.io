@@ -9,6 +9,11 @@ $hover-color: #ced4da;
 $box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 $border-radius: 8px;
 
+// Tint colors for list items in each category
+$language-item-tint: lighten($background-color, 10%);
+$framework-item-tint: lighten($background-color, 5%);
+$tools-item-tint: lighten($background-color, 15%);
+
 .AboutContainer {
   padding: 20px;
   margin: 0 auto;
@@ -48,6 +53,16 @@ $border-radius: 8px;
   text-align: center;
 }
 
+.CategoryContainer {
+  margin-bottom: 20px;
+}
+
+.CategoryTitle {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: $primary-color;
+}
+
 .TechList {
   list-style-type: none;
   padding: 0;
@@ -57,9 +72,20 @@ $border-radius: 8px;
   justify-content: center;
 }
 
+.TechList.programming-languages li {
+  background-color: $language-item-tint;
+}
+
+.TechList.frameworks-libraries li {
+  background-color: $framework-item-tint;
+}
+
+.TechList.tools-platforms li {
+  background-color: $tools-item-tint;
+}
+
 .TechList li {
   font-size: 1.2rem;
-  background-color: lighten($background-color, 10%);
   padding: 12px 20px;
   border-radius: $border-radius;
   color: $text-color;

@@ -7,7 +7,7 @@ import {
 import {
   SiCsharp, SiSqlite, SiKotlin, SiDotnet, SiXamarin, SiTypescript, SiJquery, SiNextdotjs, SiAzuredevops, SiFirebase, SiVercel,
   SiCloudflare, SiExpress, SiTailwindcss, SiNginx, SiMongodb, SiMysql, SiMicrosoftsqlserver, SiCanva, SiGimp, SiKeras, SiPytorch, SiScikitlearn,
-  SiPostman, SiSwagger, SiJira, SiGradle, SiKubernetes, SiArduino, SiCisco, SiUnity, SiMantine, SiGnubash, SiPowershell 
+  SiPostman, SiSwagger, SiJira, SiGradle, SiKubernetes, SiArduino, SiCisco, SiUnity, SiMantine, SiGnubash, SiPowershell
 } from 'react-icons/si';
 
 const About: React.FC = () => {
@@ -35,13 +35,15 @@ const About: React.FC = () => {
               <li><SiTypescript /> TypeScript</li>
               <li><SiCsharp /> C#</li>
               <li><SiKotlin /> Kotlin</li>
-              <li><FaDatabase/> SQL</li>
               <li><FaPhp /> PHP</li>
               <li><SiPowershell /> PowerShell</li>
               <li><SiGnubash /> Bash</li>
               <li><FaMarkdown /> Markdown</li>
               <li><FaHtml5 /> HTML</li>
               <li><FaCss3Alt /> CSS</li>
+              <li><SiMicrosoftsqlserver /> MSSQL</li>
+              <li><SiSqlite /> SQLite</li>
+              <li><SiMysql /> MySQL</li>
             </ul>
           </div>
 
@@ -91,10 +93,7 @@ const About: React.FC = () => {
               <li><SiCanva /> Canva</li>
               <li><FaFigma /> Figma</li>
               <li><SiGimp /> Gimp</li>
-              <li><SiSqlite /> SQLite</li>
               <li><SiMongodb /> MongoDB</li>
-              <li><SiMysql /> MySQL</li>
-              <li><SiMicrosoftsqlserver /> MSSQL</li>
             </ul>
           </div>
         </div>
