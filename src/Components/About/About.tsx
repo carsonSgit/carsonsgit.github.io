@@ -7,7 +7,7 @@ import {
 import {
   SiCsharp, SiSqlite, SiKotlin, SiDotnet, SiXamarin, SiTypescript, SiJquery, SiNextdotjs, SiAzuredevops, SiFirebase, SiVercel,
   SiCloudflare, SiExpress, SiTailwindcss, SiNginx, SiMongodb, SiMysql, SiMicrosoftsqlserver, SiCanva, SiGimp, SiKeras, SiPytorch, SiScikitlearn,
-  SiPostman, SiSwagger, SiJira, SiGradle, SiKubernetes, SiArduino, SiCisco, SiUnity
+  SiPostman, SiSwagger, SiJira, SiGradle, SiKubernetes, SiArduino, SiCisco, SiUnity, SiSql 
 } from 'react-icons/si';
 
 const About: React.FC = () => {
@@ -25,58 +25,84 @@ const About: React.FC = () => {
 
         <div className="Technologies">
           <h2 className="TechnologiesTitle">TechStack</h2>
-          <ul className="TechList">
-            <li><FaPython /> Python</li>
-            <li><FaJava /> Java</li>
-            <li><FaJsSquare /> JavaScript</li>
-            <li><SiTypescript /> TypeScript</li>
-            <li><SiCsharp /> C#</li>
-            <li><SiSqlite /> SQLite</li>
-            <li><SiKotlin /> Kotlin</li>
-            <li><SiDotnet /> ASP.NET, .NET MAUI</li>
-            <li><FaReact /> React</li>
-            <li><SiNextdotjs /> Next.js</li>
-            <li><SiJquery /> jQuery</li>
-            <li><SiXamarin /> Xamarin</li>
-            <li><FaGitAlt /> Git</li>
-            <li><FaDocker /> Docker</li>
-            <li><SiUnity /> Unity</li>
-            <li><SiAzuredevops /> Microsoft Azure</li>
-            <li><FaHtml5 /> HTML5</li>
-            <li><FaCss3Alt /> CSS3</li>
-            <li><FaMarkdown /> Markdown</li>
-            <li><FaPhp /> PHP</li>
-            <li>PowerShell</li>
-            <li><FaAws /> AWS</li>
-            <li><SiCloudflare /> Cloudflare</li>
-            <li><SiFirebase /> Firebase</li>
-            <li><SiVercel /> Vercel</li>
-            <li><FaAngular /> Angular</li>
-            <li><FaBootstrap /> Bootstrap</li>
-            <li><SiExpress /> Express.js</li>
-            <li>Mantine</li>
-            <li><FaNodeJs /> Node.js</li>
-            <li><FaSass /> SASS</li>
-            <li><SiTailwindcss /> TailwindCSS</li>
-            <li><SiNginx /> Nginx</li>
-            <li><SiMongodb /> MongoDB</li>
-            <li><SiMicrosoftsqlserver /> Microsoft SQL Server</li>
-            <li><SiMysql /> MySQL</li>
-            <li><SiCanva /> Canva</li>
-            <li><FaFigma /> Figma</li>
-            <li><SiGimp /> Gimp</li>
-            <li><SiKeras /> Keras</li>
-            <li><SiPytorch /> PyTorch</li>
-            <li><SiScikitlearn /> scikit-learn</li>
-            <li><SiPostman /> Postman</li>
-            <li><SiSwagger /> Swagger</li>
-            <li><SiJira /> Jira</li>
-            <li><SiGradle /> Gradle</li>
-            <li><SiKubernetes /> Kubernetes</li>
-            <li><SiArduino /> Arduino</li>
-            <li><SiCisco /> Cisco</li>
-            <li><FaRaspberryPi /> Raspberry Pi</li>
-          </ul>
+
+          <div className="CategoryContainer">
+            <h3 className="CategoryTitle">Languages</h3>
+            <ul className="TechList programming-languages">
+              <li><FaPython /> Python</li>
+              <li><FaJava /> Java</li>
+              <li><FaJsSquare /> JavaScript</li>
+              <li><SiTypescript /> TypeScript</li>
+              <li><SiCsharp /> C#</li>
+              <li><SiKotlin /> Kotlin</li>
+              <li><SiSql/> SQL</li>
+              <li><FaPhp /> PHP</li>
+              <li>PowerShell</li>
+              <li>Bash</li>
+              <li><FaMarkdown /> Markdown</li>
+              <li><FaHtml5/> HTML</li>
+              <li><FaCss3Alt/> CSS</li>
+            </ul>
+          </div>
+
+          <div className="CategoryContainer">
+            <h3 className="CategoryTitle">Frameworks & Libraries</h3>
+            <ul className="TechList frameworks-libraries">
+              <li><SiDotnet/> ASP.NET</li>
+              <li><SiDotnet/> .NET MAUI</li>
+              <li><SiDotnet/> WPF</li>
+              <li><SiXamarin /> Xamarin</li>
+              <li><FaReact /> React</li>
+              <li><SiNextdotjs /> Next.js</li>
+              <li><SiJquery /> jQuery</li>
+              <li><FaAngular /> Angular</li>
+              <li><FaBootstrap /> Bootstrap</li>
+              <li>Mantine</li>
+              <li><FaNodeJs /> Node.js</li>
+              <li><FaSass /> SCSS</li>
+              <li><SiTailwindcss /> TailwindCSS</li>
+              <li><SiExpress /> Express.js</li>
+              <li><SiKeras /> Keras</li>
+              <li><SiPytorch /> PyTorch</li>
+              <li><SiScikitlearn /> scikit-learn</li>
+            </ul>
+          </div>
+
+          <div className="CategoryContainer">
+            <h3 className="CategoryTitle">Tools & Platforms</h3>
+            <ul className="TechList tools-platforms">
+              <li><FaGitAlt /> Git</li>
+              <li><FaDocker /> Docker</li>
+              <li><SiAzuredevops /> Microsoft Azure</li>
+              <li><FaAws /> AWS</li>
+              <li><SiCloudflare /> Cloudflare</li>
+              <li><SiFirebase /> Firebase</li>
+              <li><SiVercel /> Vercel</li>
+              <li><SiNginx /> Nginx</li>
+              <li><SiUnity /> Unity</li>
+              <li><SiKubernetes /> Kubernetes</li>
+              <li><SiPostman /> Postman</li>
+              <li><SiSwagger /> Swagger</li>
+              <li><SiJira /> Jira</li>
+              <li><SiGradle /> Gradle</li>
+              <li><SiArduino /> Arduino</li>
+              <li><SiCisco /> Cisco</li>
+              <li><FaRaspberryPi /> Raspberry Pi</li>
+              <li><SiCanva /> Canva</li>
+              <li><FaFigma /> Figma</li>
+              <li><SiGimp /> Gimp</li>
+              <li><SiSqlite /> SQLite</li>
+              <li><SiMongodb /> MongoDB</li>
+              <li><SiMysql /> MySQL</li>
+              <li><SiMicrosoftsqlserver /> Microsoft SQL Server</li>
+            </ul>
+          </div>
+
+          <div className="CategoryContainer">
+            <h3 className="CategoryTitle">Databases</h3>
+            <ul className="TechList databases">
+            </ul>
+          </div>
         </div>
       </div>
     </div>
