@@ -1,12 +1,13 @@
 import React from 'react';
 import Hero from './Components/Home/Hero/Hero';
 import Project from './Components/Projects/Projects';
+import About from './Components/About/About';
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import './App.scss';
 
 const Home = () => <></>;
-const About = () => <></>;
+const Abouts = () => <></>;
 const Projects = () => <></>;
 const Contact = () => <></>;
 
