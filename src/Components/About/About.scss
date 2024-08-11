@@ -105,3 +105,11 @@ $tools-item-tint: darken($list-item-color, 40%);
     margin-bottom: 30px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .AboutText {
+    font-size: 1.6em; // Adjust for readability
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
