@@ -43,7 +43,7 @@ $tools-item-tint: darken($list-item-color, 40%);
   font-size: 1.8em;
   font-weight: 400;
   color: lighten($font-color, 30%);
-  padding: 0px 40px 0px 20px; /* top, right, bottom, left */
+  padding: 0px 40px 0px 30px; /* top, right, bottom, left */
 }
 
 .Technologies {
@@ -121,7 +121,7 @@ $tools-item-tint: darken($list-item-color, 40%);
   }
 }
 
-a {
+.hoverLink {
   color: $list-item-color;
 }
 
@@ -137,7 +137,7 @@ a {
   }
 }
 
-a:hover {
+.hoverLink:hover {
   background: linear-gradient(
     90deg,
     $primary-color,
