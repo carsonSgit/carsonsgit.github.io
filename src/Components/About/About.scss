@@ -113,5 +113,9 @@ $tools-item-tint: darken($list-item-color, 40%);
     font-size: 1.6em; // Adjust for readability
     padding-left: 20px;
     padding-right: 20px;
+    text-align: center;
+  }
+  .AboutContainer{
+    margin-right: 20px;
   }
 }
