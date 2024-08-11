@@ -87,7 +87,6 @@ $tools-item-tint: darken($list-item-color, 40%);
   align-items: center;
   gap: 10px;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  box-shadow: $box-shadow;
 
   &:hover {
     background-color: darken($background-color, 15%);
