@@ -90,7 +90,9 @@ $tools-item-tint: darken($list-item-color, 40%);
   display: flex;
   align-items: center;
   gap: 10px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
 
   &:hover {
     background-color: darken($background-color, 15%);
@@ -116,7 +118,7 @@ $tools-item-tint: darken($list-item-color, 40%);
     padding-right: 20px;
     text-align: center;
   }
-  .AboutContainer{
+  .AboutContainer {
     margin-right: 20px;
   }
 }
@@ -145,7 +147,7 @@ $tools-item-tint: darken($list-item-color, 40%);
     $tertiary-color,
     $quaternary-color
   );
-  
+
   background-size: 200% 200%;
   -webkit-background-clip: text;
   background-clip: text;
