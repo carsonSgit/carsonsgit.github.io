@@ -117,3 +117,35 @@ $tools-item-tint: darken($list-item-color, 40%);
     margin-right: 20px;
   }
 }
+
+a {
+  color: $list-item-color;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+a:hover {
+  background: linear-gradient(
+    90deg,
+    $primary-color,
+    $secondary-color,
+    $tertiary-color,
+    $quaternary-color
+  );
+  
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientAnimation 5s ease infinite;
+}
