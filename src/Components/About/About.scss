@@ -29,7 +29,7 @@ $tools-item-tint: darken($list-item-color, 40%);
   flex: 1;
   margin-right: 20px;
   font-size: 1.1rem;
-  line-height: 1.6;
+  line-height: 1.4;
   color: $secondary-color;
 }
 
@@ -37,9 +37,8 @@ $tools-item-tint: darken($list-item-color, 40%);
   font-size: 1.8em;
   font-weight: 400;
   color: lighten($font-color, 30%);
-
   @media (min-width: 1800px) {
-    padding: 0px 40px 0px 40px; /* top, right, bottom, left */
+    padding: 0px 40px 0px 20px; /* top, right, bottom, left */
   }
 }
 
