@@ -233,7 +233,7 @@ const About: React.FC = () => {
           </div>
 
           <div className="CategoryContainer">
-            <h3 className="CategoryTitle">Tools & Platforms</h3>
+            <h3 className="CategoryTitle">Tools</h3>
             <ul className="TechList tools-platforms">
               <li>
                 <FaGitAlt /> Git
