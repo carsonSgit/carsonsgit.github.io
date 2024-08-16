@@ -1,4 +1,4 @@
 export interface AnimatedImageProps {
-    imageNames: string[];
-    hoverImageNames: string[];
-  }
+  imageNames: string[];
+  hoverImageNames: string[];
+}
