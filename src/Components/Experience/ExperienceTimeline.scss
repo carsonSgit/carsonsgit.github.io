@@ -53,10 +53,6 @@ $font-color: #a2aa94;
       color: darken($primary-color, 20%);
       transition: color 0.3s ease-in-out;
 
-      &:hover {
-        color: $secondary-color;
-      }
-
       @media (max-width: 768px) {
         font-size: 1.3em;
       }
