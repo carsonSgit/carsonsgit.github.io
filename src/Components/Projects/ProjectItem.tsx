@@ -4,7 +4,6 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useSpring } from 'react-spring';
 import { ProjectItemProps } from '../Interfaces/projectItemProps';
-import {  } from '../Interfaces/projects';
 import './Projects.scss';
 
 const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
