@@ -7,12 +7,6 @@ import { Route, Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import './App.scss';
 
-const Home = () => <></>;
-const Abouts = () => <></>;
-const Projects = () => <></>;
-const Contact = () => <></>;
-
-
 const App: React.FC = () => {
   return (
     <div className="App">
