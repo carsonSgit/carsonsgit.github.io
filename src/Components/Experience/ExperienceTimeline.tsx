@@ -4,7 +4,7 @@ import './ExperienceTimeline.scss';
 
 type Statistics = {
   [key: string]: {
-    [key: string]: number;
+    [key: string]: number | string;
   };
 };
 
@@ -78,17 +78,17 @@ const ExperienceTimeline = () => {
       languagesAndFrameworksUsed: 5,
     },
     'Head Delegate Montreal': {
-      schools: 15
+      schools: '10+'
     },
     'IT Intern': {
-      supportCasesResolved: 100,
-      cybersecurityVulnerabilitiesResolved: 4500
+      supportCasesResolved: '100+',
+      cybersecurityVulnerabilitiesResolved: '4500+'
     },
     'Director': {
-      attendees: 130
+      attendees: '130+'
     },
     'R&D Fellowship': {
-      stPlace: 1
+      inProgramHistory: 'Best project'
     }
   };
 
@@ -134,7 +134,7 @@ const ExperienceTimeline = () => {
               <div className="timeline-date">{item.date}</div>
               <p>{item.description}</p>
               <div className="timeline-stats">
-                {Object.entries(statistics[item.statsKey] || {}).map(([key, value]: [string, number]) => (
+                {Object.entries(statistics[item.statsKey] || {}).map(([key, value]: [string, number | string]) => (
                   <div key={key} className="stat-item">
                     <strong>{value}</strong> {key.replace(/([A-Z])/g, ' $1').toLowerCase()}
                   </div>
