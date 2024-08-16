@@ -1,6 +1,6 @@
 export const experience = [
   {
-    date: 'June 2024 - Ongoing',
+    date: 'May 2024 - Ongoing',
     title: 'SDE Intern',
     company: "Tail'ed",
     description: 'Building the company website & developing an AI product.',
