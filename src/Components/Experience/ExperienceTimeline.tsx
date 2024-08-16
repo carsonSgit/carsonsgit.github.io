@@ -11,10 +11,28 @@ const ExperienceTimeline = () => (
         description: 'Building the company website & developing an AI product.'
       },
       {
+        date: 'March 2024 - Ongoing',
+        title: 'Head Delegate Montreal',
+        company: 'Candadian University Software Engineering Conference (CUSEC)',
+        description: 'Leading the delegation of post-secondary students across Montreal for the annual conference'
+      },
+      {
+        date: 'January 2024 - May 2024',
+        title: 'IT Intern',
+        company: 'Town of Kirkland',
+        description: 'Delivered technical support to government employees and received training in cybersecurity under the Cybersecurity Analyst of the municipality.'
+      },
+      {
         date: 'March 2024 - July 2024',
         title: 'Director',
         company: 'JACHacks',
         description: 'Led the organization of the hackathon, overseeing event planning and execution.'
+      },
+      {
+        date: 'February 2024 - April 2024',
+        title: 'R&D Fellowship',
+        company: 'AI Launch Lab',
+        description: 'Learned under PhDs while developing TradeMind for my fellowship project.'
       }
     ].map((exp, index) => (
       <motion.div
