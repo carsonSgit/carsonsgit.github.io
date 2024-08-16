@@ -29,17 +29,13 @@ $font-color: #a2aa94;
 }
 
 .timeline-date {
-  font-size: 1.5em;
+  font-size: 1em;
   color: $font-color;
   margin-bottom: 5px;
   font-weight: bold;
 
   @media (max-width: 768px) {
-    font-size: 1.2em;
-  }
-
-  @media (max-width: 430px) {
-    font-size: 1em;
+    font-size: 0.8em;
   }
 }
 
@@ -52,7 +48,7 @@ $font-color: #a2aa94;
   h3 {
     font-size: 1.5em;
     margin-bottom: 3px;
-    color: $primary-color;
+    color: darken($primary-color, 20%);
 
     @media (max-width: 768px) {
       font-size: 1.3em;
@@ -62,24 +58,9 @@ $font-color: #a2aa94;
       font-size: 1.1em;
     }
   }
-
-  h4 {
-    font-size: 1.2em;
-    margin-bottom: 5px;
-    color: $secondary-color;
-
-    @media (max-width: 768px) {
-      font-size: 1em;
-    }
-
-    @media (max-width: 430px) {
-      font-size: 0.9em;
-    }
-  }
-
   p {
     font-size: 1em;
-    color: $font-color;
+    color: lighten($font-color, 30%);
 
     @media (max-width: 768px) {
       font-size: 0.9em;
@@ -89,4 +70,12 @@ $font-color: #a2aa94;
       font-size: 0.8em;
     }
   }
+}
+
+.timeline-company{
+    color: lighten($secondary-color, 10%);
+}
+
+.timeline-atsign{
+    color: $text-color;
 }

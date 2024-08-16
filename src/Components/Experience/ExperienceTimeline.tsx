@@ -28,9 +28,8 @@ const ExperienceTimeline = () => (
           <div className="timeline-circle" />
         </div>
         <div className="timeline-content">
+          <h3>{exp.title} <span className="timeline-atsign">@ </span><span className="timeline-company">{exp.company}</span></h3>
           <div className="timeline-date">{exp.date}</div>
-          <h3>{exp.title}</h3>
-          <h4>{exp.company}</h4>
           <p>{exp.description}</p>
         </div>
       </motion.div>
