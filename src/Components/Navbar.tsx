@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
     { path: '/', label: 'HOME' },
     { path: '/about', label: 'ABOUT' },
     { path: '/projects', label: 'PROJECTS' },
-    { path: '/contact', label: 'RESUME' },
+    { path: '/stats', label: 'STATS' },
   ];
 
   const toggleMenu = () => {
