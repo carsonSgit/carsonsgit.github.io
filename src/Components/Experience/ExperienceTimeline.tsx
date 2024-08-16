@@ -2,13 +2,8 @@ import { motion, useAnimation } from 'framer-motion';
 import { useEffect } from 'react';
 import { education } from '../data/education';
 import { experience } from '../data/experience';
+import { statistics } from '../data/statistics';
 import './ExperienceTimeline.scss';
-
-type Statistics = {
-  [key: string]: {
-    [key: string]: number | string;
-    } | null;
-};
 
 const ExperienceTimeline = () => {
   const controls = useAnimation();
@@ -20,33 +15,6 @@ const ExperienceTimeline = () => {
       transition: { delay: i * 0.2 },
     }));
   }, [controls]);
-
-  const statistics: Statistics = {
-    'SDE Intern': {
-      productsMade: 3,
-      languagesAndFrameworksUsed: 5,
-    },
-    'Head Delegate Montreal': {
-      schools: '10+'
-    },
-    'IT Intern': {
-      supportCasesResolved: '100+',
-      cybersecurityVulnerabilitiesResolved: '4500+'
-    },
-    'Director': {
-      attendees: '130+'
-    },
-    'R&D Fellowship': {
-      inProgramHistory: 'Best project'
-    },
-    'Academics': {
-      inFinalSemester: '4.0 GPA',
-      outstandingAcademicImprovementAward: 'Awarded the',
-      semesterlyAwardedScholarship: '$1500',
-      capstoneProjectInProgramHistory: 'Best'
-    },
-    'Economics': null // I have no stats yet
-  };
 
   return (
     <div className="timeline">
