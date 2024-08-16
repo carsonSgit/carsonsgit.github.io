@@ -30,7 +30,8 @@ const ExperienceTimeline = () => {
       date: 'August 2021 - May 2024',
       title: 'Computer Science DEC',
       institution: 'John Abbott College',
-      description: 'Graduated with a focus on software/app/mobile development, including programming and IoT.'
+      description: 'Graduated with a focus on software/app/mobile development, including programming and IoT.',
+      statsKey: 'Academics'
     }
   ];
 
@@ -89,6 +90,12 @@ const ExperienceTimeline = () => {
     },
     'R&D Fellowship': {
       inProgramHistory: 'Best project'
+    },
+    'Academics': {
+            'inFinalSemester': '4.0 GPA',
+            'outstandingAcademicImprovementAward': 'Received the',
+            'semesterlyAwardedScholarship': '$1500',
+            'capstoneProjectInProgramHistory': 'Best'
     }
   };
 
