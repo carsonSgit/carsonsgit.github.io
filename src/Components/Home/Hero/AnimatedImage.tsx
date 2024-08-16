@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { AnimatedImageProps } from '../../Interfaces/animatedImageProps';
 
 const AnimatedImage: React.FC<AnimatedImageProps> = ({
   imageNames,
