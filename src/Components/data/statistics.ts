@@ -22,7 +22,7 @@ export const statistics: Statistics = {
     inFinalSemester: '4.0 GPA',
     outstandingAcademicImprovementAward: 'Awarded the',
     semesterlyAwardedScholarship: '$1500',
-    capstoneProjectInProgramHistory: 'Best',
+    capstoneProjectInDepartmentHistory: 'Best',
   },
   Economics: null, // I have no stats yet
 };
