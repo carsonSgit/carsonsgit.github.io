@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-interface AnimatedImageProps {
-  imageNames: string[];
-  hoverImageNames: string[];
-}
-
 const AnimatedImage: React.FC<AnimatedImageProps> = ({
   imageNames,
   hoverImageNames,
