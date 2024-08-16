@@ -1,5 +1,5 @@
 export type Statistics = {
-    [key: string]: {
-      [key: string]: number | string;
-      } | null;
-  };
+  [key: string]: {
+    [key: string]: number | string;
+  } | null;
+};

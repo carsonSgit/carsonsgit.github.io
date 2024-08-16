@@ -9,7 +9,7 @@ const ExperienceTimeline = () => {
   const controls = useAnimation();
 
   useEffect(() => {
-    controls.start((i) => ({
+    controls.start(i => ({
       opacity: 1,
       y: 0,
       transition: { delay: i * 0.2 },
@@ -33,15 +33,21 @@ const ExperienceTimeline = () => {
           >
             <div className="timeline-step education-step"></div>
             <div className="timeline-content">
-              <h3>{item.title} <span className="timeline-atsign">@ </span><span className="timeline-institution">{item.institution}</span></h3>
+              <h3>
+                {item.title} <span className="timeline-atsign">@ </span>
+                <span className="timeline-institution">{item.institution}</span>
+              </h3>
               <div className="timeline-date">{item.date}</div>
               <p>{item.description}</p>
               <div className="timeline-stats">
-                {Object.entries(statistics[item.statsKey] || {}).map(([key, value]: [string, number | string]) => (
-                  <div key={key} className="stat-item">
-                    <strong>{value}</strong> {key.replace(/([A-Z])/g, ' $1').toLowerCase()}
-                  </div>
-                ))}
+                {Object.entries(statistics[item.statsKey] || {}).map(
+                  ([key, value]: [string, number | string]) => (
+                    <div key={key} className="stat-item">
+                      <strong>{value}</strong>{' '}
+                      {key.replace(/([A-Z])/g, ' $1').toLowerCase()}
+                    </div>
+                  ),
+                )}
               </div>
             </div>
           </motion.div>
@@ -61,15 +67,21 @@ const ExperienceTimeline = () => {
           >
             <div className="timeline-step experience-step"></div>
             <div className="timeline-content">
-              <h3>{item.title} <span className="timeline-atsign">@ </span><span className="timeline-company">{item.company}</span></h3>
+              <h3>
+                {item.title} <span className="timeline-atsign">@ </span>
+                <span className="timeline-company">{item.company}</span>
+              </h3>
               <div className="timeline-date">{item.date}</div>
               <p>{item.description}</p>
               <div className="timeline-stats">
-                {Object.entries(statistics[item.statsKey] || {}).map(([key, value]: [string, number | string]) => (
-                  <div key={key} className="stat-item">
-                    <strong>{value}</strong> {key.replace(/([A-Z])/g, ' $1').toLowerCase()}
-                  </div>
-                ))}
+                {Object.entries(statistics[item.statsKey] || {}).map(
+                  ([key, value]: [string, number | string]) => (
+                    <div key={key} className="stat-item">
+                      <strong>{value}</strong>{' '}
+                      {key.replace(/([A-Z])/g, ' $1').toLowerCase()}
+                    </div>
+                  ),
+                )}
               </div>
             </div>
           </motion.div>

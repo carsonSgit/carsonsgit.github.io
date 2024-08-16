@@ -29,7 +29,11 @@ $font-color: #a2aa94;
   margin-right: 20px;
   margin-bottom: 30px;
   padding-left: 20px;
-  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(245,245,245,0.1) 200%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(245, 245, 245, 0.1) 200%
+  );
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -37,14 +41,20 @@ $font-color: #a2aa94;
   transform-origin: left center;
 
   &:hover {
-    background: linear-gradient(90deg, rgba(255,255,255,0.1) 0%, rgba(245,245,245,0.2) 200%);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(245, 245, 245, 0.2) 200%
+    );
     transform: translateY(-5px);
-    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+    transition:
+      transform 0.3s ease-in-out,
+      background 0.3s ease-in-out;
   }
 
   .timeline-content {
     padding-left: 10px;
-    margin-right: 20px; 
+    margin-right: 20px;
     color: $text-color;
     border-left: 2px solid $primary-color;
 
@@ -105,8 +115,8 @@ $font-color: #a2aa94;
 }
 
 .timeline-section {
-    margin-left: 30px;
-    margin-right: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 .timeline-section-title {
@@ -126,19 +136,18 @@ $font-color: #a2aa94;
 }
 
 .timeline-stats {
-    margin-top: 10px;
-    margin-bottom:10px;
-    display: flex;
-    flex-direction: column;
-  
-    .stat-item {
-      font-size: 0.9em;
-      color: $text-color;
-      margin-bottom: 5px;
-  
-      strong {
-        color: $primary-color;
-      }
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+
+  .stat-item {
+    font-size: 0.9em;
+    color: $text-color;
+    margin-bottom: 5px;
+
+    strong {
+      color: $primary-color;
     }
   }
-  
+}

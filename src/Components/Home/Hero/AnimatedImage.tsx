@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
-interface AnimatedImageProps {
-  imageNames: string[];
-  hoverImageNames: string[];
-}
+import { AnimatedImageProps } from '../../Interfaces/animatedImageProps';
 
 const AnimatedImage: React.FC<AnimatedImageProps> = ({
   imageNames,
@@ -64,6 +60,7 @@ const AnimatedImage: React.FC<AnimatedImageProps> = ({
       onMouseEnter={() => handleMouseEnter(currentIndex)}
       onMouseLeave={handleMouseLeave}
       width="280"
+      loading='lazy'
     />
   );
 };
