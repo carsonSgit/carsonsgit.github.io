@@ -119,3 +119,20 @@ $font-color: #a2aa94;
     font-size: 1.4em;
   }
 }
+
+.timeline-stats {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+  
+    .stat-item {
+      font-size: 0.9em;
+      color: $text-color;
+      margin-bottom: 5px;
+  
+      strong {
+        color: $primary-color;
+      }
+    }
+  }
+  

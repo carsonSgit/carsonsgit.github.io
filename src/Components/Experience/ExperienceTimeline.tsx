@@ -2,6 +2,12 @@ import { motion, useAnimation } from 'framer-motion';
 import { useEffect } from 'react';
 import './ExperienceTimeline.scss';
 
+type Statistics = {
+  [key: string]: {
+    [key: string]: number;
+  };
+};
+
 const ExperienceTimeline = () => {
   const controls = useAnimation();
 
@@ -33,33 +39,57 @@ const ExperienceTimeline = () => {
       date: 'June 2024 - Ongoing',
       title: 'SDE Intern',
       company: 'Tail\'ed',
-      description: 'Building the company website & developing an AI product.'
+      description: 'Building the company website & developing an AI product.',
+      statsKey: 'SDE Intern'
     },
     {
       date: 'March 2024 - Ongoing',
       title: 'Head Delegate Montreal',
       company: 'Canadian University Software Engineering Conference (CUSEC)',
-      description: 'Leading the delegation of post-secondary students across Montreal for the annual conference.'
+      description: 'Leading the delegation of post-secondary students across Montreal for the annual conference.',
+      statsKey: 'Head Delegate Montreal'
     },
     {
       date: 'January 2024 - May 2024',
       title: 'IT Intern',
       company: 'Town of Kirkland',
-      description: 'Delivered technical support to government employees and received training in cybersecurity under the Cybersecurity Analyst of the municipality.'
+      description: 'Delivered technical support to government employees and received training in cybersecurity under the Cybersecurity Analyst of the municipality.',
+      statsKey: 'IT Intern'
     },
     {
       date: 'March 2024 - July 2024',
       title: 'Director',
       company: 'JACHacks',
-      description: 'Led the organization of the hackathon, overseeing event planning and execution.'
+      description: 'Led the organization of the hackathon, overseeing event planning and execution.',
+      statsKey: 'Director'
     },
     {
       date: 'February 2024 - April 2024',
       title: 'R&D Fellowship',
       company: 'AI Launch Lab',
-      description: 'Learned under PhDs while developing TradeMind for my fellowship project.'
+      description: 'Learned under PhDs while developing TradeMind for my fellowship project.',
+      statsKey: 'R&D Fellowship'
     }
   ];
+
+  const statistics: Statistics = {
+    'SDE Intern': {
+      vulnerabilitiesResolved: 15,
+      ticketsClosed: 30
+    },
+    'Head Delegate Montreal': {
+      attendees: 200
+    },
+    'IT Intern': {
+      supportCasesResolved: 50
+    },
+    'Director': {
+      eventsOrganized: 5
+    },
+    'R&D Fellowship': {
+      projectsDeveloped: 2
+    }
+  };
 
   return (
     <div className="timeline">
@@ -102,6 +132,13 @@ const ExperienceTimeline = () => {
               <h3>{item.title} <span className="timeline-atsign">@ </span><span className="timeline-company">{item.company}</span></h3>
               <div className="timeline-date">{item.date}</div>
               <p>{item.description}</p>
+              <div className="timeline-stats">
+                {Object.entries(statistics[item.statsKey] || {}).map(([key, value]: [string, number]) => (
+                  <div key={key} className="stat-item">
+                    <strong>{value}</strong> {key.replace(/([A-Z])/g, ' $1').toLowerCase()}
+                  </div>
+                ))}
+              </div>
             </div>
           </motion.div>
         ))}
