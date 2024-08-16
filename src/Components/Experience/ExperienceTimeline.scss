@@ -33,6 +33,13 @@ $font-color: #a2aa94;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   position: relative;
+  transform-origin: left center;
+
+  &:hover {
+    background: linear-gradient(90deg, rgba(255,255,255,0.1) 0%, rgba(245,245,245,0.2) 200%);
+    transform: translateY(-5px);
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+  }
 
   .timeline-content {
     padding-left: 10px;
@@ -44,6 +51,11 @@ $font-color: #a2aa94;
       font-size: 1.5em;
       margin-bottom: 3px;
       color: darken($primary-color, 20%);
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: $secondary-color;
+      }
 
       @media (max-width: 768px) {
         font-size: 1.3em;
@@ -75,4 +87,26 @@ $font-color: #a2aa94;
   .timeline-atsign {
     color: $text-color;
   }
+
+  .timeline-date {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: $quaternary-color;
+  }
+}
+
+.timeline-step {
+  position: absolute;
+  left: -12px;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.timeline-circle {
+  width: 10px;
+  height: 10px;
+  background-color: $primary-color;
+  border-radius: 50%;
 }
