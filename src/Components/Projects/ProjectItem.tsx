@@ -3,12 +3,9 @@ import { useInView } from 'react-intersection-observer';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useSpring } from 'react-spring';
-import { Project } from '../Data/portfolioProjects';
+import { ProjectItemProps } from '../Interfaces/projectItemProps';
+import {  } from '../Interfaces/projects';
 import './Projects.scss';
-
-interface ProjectItemProps {
-  project: Project;
-}
 
 const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
   const [ref, inView] = useInView({

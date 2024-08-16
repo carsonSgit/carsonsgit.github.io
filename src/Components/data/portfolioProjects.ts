@@ -1,13 +1,6 @@
-export interface Project {
-  image: string;
-  title: string;
-  languages: string;
-  description: string;
-  github?: string;
-  website?: string;
-}
+import { Project } from '../Interfaces/projects';
 
-const projects: Project[] = [
+export const projects: Project[] = [
   {
     image: 'DEADWEIGHT.png',
     title: 'DEADWEIGHT',
@@ -45,5 +38,3 @@ const projects: Project[] = [
     website: 'https://trademind.pages.dev/',
   },
 ];
-
-export default projects;
