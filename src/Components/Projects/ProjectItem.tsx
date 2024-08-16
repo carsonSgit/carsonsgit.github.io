@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useSpring } from 'react-spring';
-import { Project } from '../data/portfolioProjects';
+import { Project } from '../Data/portfolioProjects';
 import './Projects.scss';
 
 interface ProjectItemProps {

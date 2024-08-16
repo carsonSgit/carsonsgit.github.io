@@ -1,4 +1,4 @@
-import { Statistics } from './types';
+import { Statistics } from '../Interfaces/types';
 
 export const statistics: Statistics = {
     'SDE Intern': {
