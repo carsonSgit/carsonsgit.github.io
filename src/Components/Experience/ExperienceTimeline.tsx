@@ -3,32 +3,38 @@ import './ExperienceTimeline.scss';
 
 const ExperienceTimeline = () => (
   <div className="timeline">
-    <motion.div
-      initial={{ opacity: 0, x: -50 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.5 }}
-      className="timeline-item"
-    >
-      <div className="timeline-date">June 2024 - Ongoing</div>
-      <div className="timeline-content">
-        <h3>SDE Intern</h3>
-        <h4>Tail'ed</h4>
-        <p>Building the company website & developing an AI product.</p>
-      </div>
-    </motion.div>
-    <motion.div
-      initial={{ opacity: 0, x: -50 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.5 }}
-      className="timeline-item"
-    >
-      <div className="timeline-date">March 2024 - July 2024</div>
-      <div className="timeline-content">
-        <h3>Director</h3>
-        <h4>JACHacks</h4>
-        <p>Led the organization of the hackathon, overseeing event planning and execution.</p>
-      </div>
-    </motion.div>
+    {[
+      {
+        date: 'June 2024 - Ongoing',
+        title: 'SDE Intern',
+        company: 'Tail\'ed',
+        description: 'Building the company website & developing an AI product.'
+      },
+      {
+        date: 'March 2024 - July 2024',
+        title: 'Director',
+        company: 'JACHacks',
+        description: 'Led the organization of the hackathon, overseeing event planning and execution.'
+      }
+    ].map((exp, index) => (
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="timeline-item"
+      >
+        <div className="timeline-step">
+          <div className="timeline-circle" />
+        </div>
+        <div className="timeline-content">
+          <div className="timeline-date">{exp.date}</div>
+          <h3>{exp.title}</h3>
+          <h4>{exp.company}</h4>
+          <p>{exp.description}</p>
+        </div>
+      </motion.div>
+    ))}
   </div>
 );
 
