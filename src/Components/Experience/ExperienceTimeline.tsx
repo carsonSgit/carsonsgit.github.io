@@ -74,7 +74,8 @@ const ExperienceTimeline = () => {
 
   const statistics: Statistics = {
     'SDE Intern': {
-      productsMade: 3
+      productsMade: 3,
+      languagesAndFrameworksUsed: 5,
     },
     'Head Delegate Montreal': {
       schools: 15
