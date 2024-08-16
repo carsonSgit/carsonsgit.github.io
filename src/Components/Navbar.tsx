@@ -1,17 +1,11 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { links } from './Data/navbarLinks';
 import './Navbar.scss';
 
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const links = [
-    { path: '/', label: 'HOME' },
-    { path: '/about', label: 'ABOUT' },
-    { path: '/projects', label: 'PROJECTS' },
-    { path: '/contact', label: 'RESUME' },
-  ];
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
