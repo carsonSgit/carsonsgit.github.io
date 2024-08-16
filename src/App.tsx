@@ -2,7 +2,7 @@ import React from 'react';
 import Hero from './Components/Home/Hero/Hero';
 import Project from './Components/Projects/Projects';
 import About from './Components/About/About';
-import ExperiencePage from './Components/Experience/Experience';
+import Experience from './Components/Experience/Experience';
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import './App.scss';
@@ -21,7 +21,7 @@ const App: React.FC = () => {
         <Route path="/" element={<Hero />} />
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Project />} />
-        <Route path="/contact" element={<ExperiencePage />} />
+        <Route path="/contact" element={<Experience />} />
       </Routes>
     </div>
   );

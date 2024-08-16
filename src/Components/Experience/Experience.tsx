@@ -2,11 +2,11 @@ import React from 'react';
 import ExperienceTimeline from './ExperienceTimeline';
 import './Experience.scss';
 
-const ExperiencePage = () => (
+const Experience = () => (
   <div className="experience-page">
     <h1>My Experience</h1>
     <ExperienceTimeline />
   </div>
 );
 
-export default ExperiencePage;
+export default Experience;
