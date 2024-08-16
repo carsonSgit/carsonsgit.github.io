@@ -44,9 +44,9 @@ $font-color: #a2aa94;
 }
 
 .timeline-content {
-  padding: 10px;
+  padding-left: 10px;
   color: $text-color;
-  border-left: 2px solid $primary-color; /* Added a subtle line to separate content */
+  border-left: 2px solid $primary-color;
 
   h3 {
     font-size: 1.5em;
@@ -63,8 +63,8 @@ $font-color: #a2aa94;
   }
 
   h4 {
-    font-size: 1.2em; /* Reduced font size */
-    margin-bottom: 5px; /* Reduced bottom margin */
+    font-size: 1.2em;
+    margin-bottom: 5px;
     color: $secondary-color;
 
     @media (max-width: 768px) {
@@ -77,7 +77,7 @@ $font-color: #a2aa94;
   }
 
   p {
-    font-size: 1em; /* Reduced font size */
+    font-size: 1em;
     color: $font-color;
 
     @media (max-width: 768px) {
