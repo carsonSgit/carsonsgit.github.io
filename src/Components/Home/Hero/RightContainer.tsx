@@ -1,6 +1,6 @@
 import React from 'react';
 import AnimatedImage from './AnimatedImage';
-import { imageNames, hoverImageNames } from '../../Data/imageNames';
+import { imageNames, hoverImageNames } from '../../data/imageNames';
 import './Hero.scss';
 
 const RightContainer: React.FC = () => {

@@ -1,8 +1,8 @@
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect } from 'react';
-import { education } from '../Data/education';
-import { experience } from '../Data/experience';
-import { statistics } from '../Data/statistics';
+import { education } from '../data/education';
+import { experience } from '../data/experience';
+import { statistics } from '../data/statistics';
 import './ExperienceTimeline.scss';
 
 const ExperienceTimeline = () => {
