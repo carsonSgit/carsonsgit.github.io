@@ -15,7 +15,7 @@ const ExperienceTimeline = () => {
 
   const education = [
     {
-      date: 'September 2024 - Present',
+      date: 'September 2024 - Ongoing',
       title: 'Bachelors of Economics',
       institution: 'Concordia University',
       description: 'Continuing my education exploring the world of economics and finance to bridge the gap between tech and business.'
