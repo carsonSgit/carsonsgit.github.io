@@ -6,7 +6,6 @@ import './Experience.scss';
 const Experience = () => (
   <div className="experience-page">
     <h1>My Experience</h1>
-    <EducationTimeline />
     <ExperienceTimeline />
   </div>
 );
