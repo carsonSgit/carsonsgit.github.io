@@ -14,7 +14,7 @@ const ExperienceTimeline = () => (
         date: 'March 2024 - Ongoing',
         title: 'Head Delegate Montreal',
         company: 'Canadian University Software Engineering Conference (CUSEC)',
-        description: 'Leading the delegation of post-secondary students across Montreal for the annual conference'
+        description: 'Leading the delegation of post-secondary students across Montreal for the annual conference.'
       },
       {
         date: 'January 2024 - May 2024',
@@ -39,7 +39,9 @@ const ExperienceTimeline = () => (
         key={index}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: index * 0.1 }}
+        exit={{ opacity: 0, y: 20 }}
+        transition={{ duration: 0.5, delay: index * 0.1, ease: "easeInOut" }}
+        whileHover={{ scale: 1.05 }}
         className="timeline-item"
       >
         <div className="timeline-step">
