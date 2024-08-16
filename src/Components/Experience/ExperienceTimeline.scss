@@ -7,113 +7,85 @@ $background-color: #262f2aec;
 $text-color: #fafff0;
 $font-color: #a2aa94;
 
-
 .timeline {
-    position: relative;
-    padding: 20px 0;
-    margin-left: 50px;
-    border-left: 2px solid $primary-color;
-  
-    @media (max-width: 768px) {
-      margin-left: 20px;
-    }
-  
-    @media (max-width: 430px) {
-      margin-left: 15px;
-      padding: 10px 0;
-    }
+  position: relative;
+  padding: 20px 0;
+  margin-left: 10px;
+
+  @media (max-width: 768px) {
+    margin-left: 20px;
   }
-  
-  .timeline-item {
-    position: relative;
-    margin-bottom: 40px;
-    padding-left: 20px;
-  
-    &:before {
-      content: '';
-      position: absolute;
-      top: 5px;
-      left: -12px;
-      width: 15px;
-      height: 15px;
-      border-radius: 50%;
-      background-color: $primary-color;
-      border: 3px solid $secondary-color;
-    }
-  
-    &:last-child {
-      margin-bottom: 0;
-    }
-  
-    @media (max-width: 768px) {
-      padding-left: 15px;
-    }
-  
-    @media (max-width: 430px) {
-      padding-left: 10px;
-    }
+
+  @media (max-width: 430px) {
+    margin-left: 15px;
+    padding: 10px 0;
   }
-  
-  .timeline-date {
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+  padding-left: 20px;
+}
+
+.timeline-date {
+  font-size: 1.5em;
+  color: $font-color;
+  margin-bottom: 5px;
+  font-weight: bold;
+
+  @media (max-width: 768px) {
+    font-size: 1.2em;
+  }
+
+  @media (max-width: 430px) {
+    font-size: 1em;
+  }
+}
+
+.timeline-content {
+  padding: 10px;
+  color: $text-color;
+  border-left: 2px solid $primary-color; /* Added a subtle line to separate content */
+
+  h3 {
     font-size: 1.5em;
-    color: $font-color;
-    margin-bottom: 10px;
-  
+    margin-bottom: 3px;
+    color: $primary-color;
+
     @media (max-width: 768px) {
-      font-size: 1.2em;
+      font-size: 1.3em;
     }
-  
+
     @media (max-width: 430px) {
+      font-size: 1.1em;
+    }
+  }
+
+  h4 {
+    font-size: 1.2em; /* Reduced font size */
+    margin-bottom: 5px; /* Reduced bottom margin */
+    color: $secondary-color;
+
+    @media (max-width: 768px) {
       font-size: 1em;
     }
-  }
-  
-  .timeline-content {
-    background-color: $background-color;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: $text-color;
-  
-    h3 {
-      font-size: 1.8em;
-      margin-bottom: 5px;
-      color: $primary-color;
-  
-      @media (max-width: 768px) {
-        font-size: 1.5em;
-      }
-  
-      @media (max-width: 430px) {
-        font-size: 1.2em;
-      }
-    }
-  
-    h4 {
-      font-size: 1.4em;
-      margin-bottom: 10px;
-      color: $secondary-color;
-  
-      @media (max-width: 768px) {
-        font-size: 1.2em;
-      }
-  
-      @media (max-width: 430px) {
-        font-size: 1em;
-      }
-    }
-  
-    p {
-      font-size: 1.2em;
-      color: $font-color;
-  
-      @media (max-width: 768px) {
-        font-size: 1em;
-      }
-  
-      @media (max-width: 430px) {
-        font-size: 0.9em;
-      }
+
+    @media (max-width: 430px) {
+      font-size: 0.9em;
     }
   }
-  
+
+  p {
+    font-size: 1em; /* Reduced font size */
+    color: $font-color;
+
+    @media (max-width: 768px) {
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 430px) {
+      font-size: 0.8em;
+    }
+  }
+}
