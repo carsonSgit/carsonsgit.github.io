@@ -11,7 +11,7 @@ $font-color: #a2aa94;
 .HeroContainer {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 90vh;
   color: $text-color;
   overflow: hidden;
 
@@ -103,7 +103,7 @@ $font-color: #a2aa94;
 
   @media (min-width: 768px) {
     flex: 0 0 55%;
-    margin-left: 50px;
+    margin-left: 150px;
   }
 
   @media (max-width: 768px) {

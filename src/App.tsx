@@ -6,6 +6,7 @@ import Experience from './Components/Experience/Experience';
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import './App.scss';
+import Footer from './Components/Footer/Footer';
 
 const App: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const App: React.FC = () => {
         <Route path="/projects" element={<Project />} />
         <Route path="/stats" element={<Experience />} />
       </Routes>
+      <Footer />
     </div>
   );
 };
