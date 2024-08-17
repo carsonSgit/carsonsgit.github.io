@@ -17,16 +17,21 @@ $icon-color: $text-color;
   margin-top: 30px;
   border-radius: 12px;
   text-align: center;
-  width: 15%;
+  width: 45vw;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
+
+  @media (min-width: 768px) {
+    width: 15vw;
+  }
 
   .FooterIcons {
     display: flex;
     justify-content: center;
     gap: 20px;
     margin-bottom: 10px;
+    flex-wrap: wrap;
 
     a {
       color: $icon-color;
