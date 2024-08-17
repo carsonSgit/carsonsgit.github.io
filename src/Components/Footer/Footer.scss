@@ -10,8 +10,10 @@ $footer-background-color: darken($background-color, 10%);
 $icon-color: $text-color;
 
 .Footer {
-  background-color: $footer-background-color;
+  background-color: rgba(darken($footer-background-color,70%), 0.2);
   padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
   text-align: center;
   width: 25%;
   position: relative;
