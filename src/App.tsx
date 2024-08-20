@@ -8,13 +8,13 @@ import Navbar from './Components/Navbar';
 import './App.scss';
 import Footer from './Components/Footer/Footer';
 
-import OnePager from './Components/Test-Onepager/OnePager';
+import Content from './Components/Content/Content';
 
 const App: React.FC = () => {
   return (
     <div className="App">
       <Navbar />
-      <OnePager />
+      <Content />
       <Footer />
     </div>
   );
