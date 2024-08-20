@@ -11,7 +11,6 @@ const Projects: React.FC = () => {
         <span className="ProjectsTitleAnimated">Notable</span> projects
       </h1>
       <div className="ProjectsContainer">
-        
         {projects.map((project, index) => (
           <ProjectItem key={index} project={project} />
         ))}
