@@ -1,14 +1,8 @@
 import React from 'react';
-import Hero from './Components/Home/Hero/Hero';
-import Project from './Components/Projects/Projects';
-import About from './Components/About/About';
-import Experience from './Components/Experience/Experience';
-import { Route, Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar';
-import './App.scss';
-import Footer from './Components/Footer/Footer';
-
 import Content from './Components/Content/Content';
+import Footer from './Components/Footer/Footer';
+import './App.scss';
 
 const App: React.FC = () => {
   return (
