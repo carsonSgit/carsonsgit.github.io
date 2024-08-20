@@ -5,14 +5,14 @@ import Experience from '../Experience/Experience';
 import About from '../About/About';
 
 const OnePager: React.FC = () => {
-    return (
-        <div>
-            <Hero />
-            <Projects />
-            <Experience />
-            <About />
-        </div>
-    );
+  return (
+    <div>
+      <Hero />
+      <Projects />
+      <Experience />
+      <About />
+    </div>
+  );
 };
 
 export default OnePager;
