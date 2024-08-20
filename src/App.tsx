@@ -8,16 +8,13 @@ import Navbar from './Components/Navbar';
 import './App.scss';
 import Footer from './Components/Footer/Footer';
 
+import OnePager from './Components/Test-Onepager/OnePager';
+
 const App: React.FC = () => {
   return (
     <div className="App">
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Hero />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Project />} />
-        <Route path="/stats" element={<Experience />} />
-      </Routes>
+      <OnePager />
       <Footer />
     </div>
   );
