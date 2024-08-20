@@ -86,7 +86,7 @@ const About: React.FC = () => {
             I'm not hard to track down, but you can find me on{' '}
             <a
               className="hoverLink"
-              href="www.linkedin.com/in/carsonspriggs"
+              href="https://linkedin.com/in/carsonspriggs"
               target="_blank"
               rel="noreferrer"
             >
