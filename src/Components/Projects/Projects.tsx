@@ -6,13 +6,16 @@ import './Projects.scss';
 
 const Projects: React.FC = () => {
   return (
-    <div className="ProjectsContainer">
+    <div>
       <h1 className="ProjectsTitle">
         <span className="ProjectsTitleAnimated">Notable</span> projects
       </h1>
-      {projects.map((project, index) => (
-        <ProjectItem key={index} project={project} />
-      ))}
+      <div className="ProjectsContainer">
+        
+        {projects.map((project, index) => (
+          <ProjectItem key={index} project={project} />
+        ))}
+      </div>
     </div>
   );
 };
