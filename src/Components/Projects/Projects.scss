@@ -20,7 +20,6 @@ a {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  text-align: center;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
