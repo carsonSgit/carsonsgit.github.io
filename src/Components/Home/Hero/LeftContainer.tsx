@@ -12,7 +12,7 @@ const LeftContainer: React.FC = () => {
         <Typewriter
           words={[
             'I like building cool things.',
-            "Soft dev @ Tail'ed.",
+            "Prev SDE @ Tail'ed.",
             'ML explorer.',
             'Leetcode noob.',
             'GitHub fanatic.',
