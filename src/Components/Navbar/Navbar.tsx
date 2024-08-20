@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import { links } from './Data/navbarLinks';
+import { links } from '../Data/navbarLinks';
 import './Navbar.scss';
 
 const Navbar: React.FC = () => {
