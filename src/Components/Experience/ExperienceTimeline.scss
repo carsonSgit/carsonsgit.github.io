@@ -5,56 +5,144 @@ $quaternary-color: #95b9b0;
 $background-color: #262f2aec;
 $text-color: #fafff0;
 $font-color: #a2aa94;
+$list-item-color: #2bd4a0;
+$hover-color: #ced4da;
+$box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+$border-radius: 8px;
+$language-item-tint: darken($list-item-color, 30%);
+$framework-item-tint: darken($list-item-color, 35%);
+$tools-item-tint: darken($list-item-color, 40%);
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  padding: 2rem;
+  max-width: 1900px;
+  margin: 0 auto;
+  align-items: start;
+
+  .category-containers {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    .CategoryContainer {
+      padding: 1rem;
+      border-radius: 8px;
+
+      .CategoryTitle {
+        font-size: 1.5rem;
+        color: $text-color;
+        text-align: center;
+        &:not(:first-child) {
+          margin-top: 0;
+        }
+      }
+
+      .TechList {
+        font-family: 'Poppins', sans-serif;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+        list-style-type: none;
+        padding: 0;
+
+        li {
+          display: flex;
+          align-items: center;
+          color: darken(white, 5%);
+          padding: 1rem;
+          font-weight: 500;
+          font-size: 1.1rem;
+          border-radius: $border-radius;
+
+          svg {
+            margin-right: 0.5rem;
+            color: white;
+          }
+        }
+
+        li:hover {
+          background-color: darken($background-color, 15%);
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 0em;
+
+    .category-containers {
+      .CategoryContainer {
+        .TechList {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    }
+  }
+}
+
+.TechList.programming-languages li {
+  background-color: $language-item-tint;
+}
+
+.TechList.frameworks-libraries li {
+  background-color: $framework-item-tint;
+}
+
+.TechList.tools-platforms li {
+  background-color: $tools-item-tint;
+}
 
 .timeline {
   position: relative;
-  padding: 20px 0;
+  padding: 15px 0;
   margin-left: 10px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 
   @media (max-width: 768px) {
-    margin-left: 20px;
+    margin-left: 15px;
   }
 
   @media (max-width: 430px) {
-    margin-left: 15px;
-    padding: 10px 0;
+    margin-left: 10px;
+    padding: 5px 0;
   }
 }
 
 .timeline-item {
   position: relative;
-  margin-right: 20px;
-  margin-bottom: 30px;
-  padding-left: 20px;
+  margin-left: -15px;
+  margin-bottom: 20px;
+  padding-left: 15px;
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0) 0%,
     rgba(245, 245, 245, 0.1) 200%
   );
+  background-size: 200% 100%;
+  background-position: left;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   position: relative;
   transform-origin: left center;
+  transition: background-position 0.3s ease-in-out, transform 0.3s ease-in-out;
 
   &:hover {
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.1) 0%,
-      rgba(245, 245, 245, 0.2) 200%
-    );
+    background-position: right;
     transform: translateY(-5px);
-    transition:
-      transform 0.3s ease-in-out,
-      background 0.3s ease-in-out;
   }
 
   .timeline-content {
     padding-left: 10px;
-    margin-right: 20px;
+    margin-right: 10px;
     color: $text-color;
     border-left: 2px solid $primary-color;
 
@@ -67,10 +155,6 @@ $font-color: #a2aa94;
       @media (max-width: 768px) {
         font-size: 1.3em;
       }
-
-      @media (max-width: 430px) {
-        font-size: 1.1em;
-      }
     }
 
     p {
@@ -78,18 +162,12 @@ $font-color: #a2aa94;
       color: lighten($font-color, 30%);
 
       @media (max-width: 768px) {
-        font-size: 0.9em;
-      }
-
-      @media (max-width: 430px) {
-        font-size: 0.8em;
+        font-size: 0.95em;
       }
     }
   }
 
-  .timeline-company {
-    color: lighten($secondary-color, 10%);
-  }
+  .timeline-company,
   .timeline-institution {
     color: lighten($secondary-color, 10%);
   }
@@ -107,7 +185,7 @@ $font-color: #a2aa94;
 
 .timeline-step {
   position: absolute;
-  left: -12px;
+  left: -10px;
   top: 0;
   height: 100%;
   display: flex;
@@ -115,15 +193,16 @@ $font-color: #a2aa94;
 }
 
 .timeline-section {
-  margin-left: 30px;
-  margin-right: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .timeline-section-title {
   font-size: 2em;
   color: $text-color;
-  margin-bottom: 15px;
-  padding-left: 10px;
+  margin-bottom: 10px;
+  margin-left: -15px;
+  padding-left: 5px;
   font-weight: bold;
 
   @media (max-width: 768px) {
@@ -136,15 +215,15 @@ $font-color: #a2aa94;
 }
 
 .timeline-stats {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   display: flex;
   flex-direction: column;
 
   .stat-item {
     font-size: 0.9em;
     color: $text-color;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 
     strong {
       color: $primary-color;

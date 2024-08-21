@@ -4,7 +4,7 @@ import Projects from '../Projects/Projects';
 import Experience from '../Experience/Experience';
 import About from '../About/About';
 
-const OnePager: React.FC = () => {
+const Content: React.FC = () => {
   return (
     <div>
       <Hero />
@@ -15,4 +15,4 @@ const OnePager: React.FC = () => {
   );
 };
 
-export default OnePager;
+export default Content;

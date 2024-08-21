@@ -8,8 +8,8 @@ export const experience = [
   },
   {
     date: 'March 2024 - Ongoing',
-    title: 'Head Delegate Montreal',
-    company: 'Canadian University Software Engineering Conference (CUSEC)',
+    title: 'HD Montreal',
+    company: 'CUSEC',
     description:
       'Leading the delegation of post-secondary students across Montreal for the annual conference.',
     statsKey: 'Head Delegate Montreal',
@@ -19,7 +19,7 @@ export const experience = [
     title: 'IT Intern',
     company: 'Town of Kirkland',
     description:
-      'Delivered technical support to government employees and received training in cybersecurity under the Cybersecurity Analyst of the municipality.',
+      'Delivered technical support to government employees and trained under the Cybersecurity Lead of the municipality.',
     statsKey: 'IT Intern',
   },
   {
