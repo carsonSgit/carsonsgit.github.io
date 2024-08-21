@@ -29,6 +29,9 @@ $tools-item-tint: darken($list-item-color, 40%);
 
       .CategoryTitle {
         font-size: 1.5rem;
+        &:not(:first-child) {
+          margin-top: 0;
+        }
       }
 
       .TechList {
