@@ -142,10 +142,6 @@ $tools-item-tint: darken($list-item-color, 40%);
       @media (max-width: 768px) {
         font-size: 1.3em; 
       }
-
-      @media (max-width: 430px) {
-        font-size: 1.1em; 
-      }
     }
 
     p {
