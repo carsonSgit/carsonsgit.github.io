@@ -6,6 +6,9 @@ $background-color: #262f2aec;
 $text-color: #fafff0;
 $font-color: #a2aa94;
 $list-item-color: #2bd4a0;
+$hover-color: #ced4da;
+$box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+$border-radius: 8px;
 $language-item-tint: darken($list-item-color, 30%);
 $framework-item-tint: darken($list-item-color, 35%);
 $tools-item-tint: darken($list-item-color, 40%);
@@ -29,15 +32,20 @@ $tools-item-tint: darken($list-item-color, 40%);
 
       .CategoryTitle {
         font-size: 1.5rem;
+        color: $text-color;
+        text-align: center;
         &:not(:first-child) {
           margin-top: 0;
         }
       }
 
       .TechList {
+        font-family: 'Poppins', sans-serif;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 0.5rem;
+        list-style-type: none;
+        padding: 0;
 
         li {
           display: flex;
@@ -46,6 +54,7 @@ $tools-item-tint: darken($list-item-color, 40%);
           padding: 1rem;
           font-weight: 500;
           font-size: 1.1rem;
+          border-radius: $border-radius;
 
           svg {
             margin-right: 0.5rem;
@@ -91,27 +100,27 @@ $tools-item-tint: darken($list-item-color, 40%);
 
 .timeline {
   position: relative;
-  padding: 15px 0; 
+  padding: 15px 0;
   margin-left: 10px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 
   @media (max-width: 768px) {
-    margin-left: 15px; 
+    margin-left: 15px;
   }
 
   @media (max-width: 430px) {
-    margin-left: 10px; 
-    padding: 5px 0; 
+    margin-left: 10px;
+    padding: 5px 0;
   }
 }
 
 .timeline-item {
   position: relative;
   margin-left: -15px;
-  margin-bottom: 20px; 
-  padding-left: 15px; 
+  margin-bottom: 20px;
+  padding-left: 15px;
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0) 0%,
@@ -132,28 +141,28 @@ $tools-item-tint: darken($list-item-color, 40%);
   }
 
   .timeline-content {
-    padding-left: 10px; 
-    margin-right: 10px; 
+    padding-left: 10px;
+    margin-right: 10px;
     color: $text-color;
     border-left: 2px solid $primary-color;
 
     h3 {
-      font-size: 1.5em; 
+      font-size: 1.5em;
       margin-bottom: 3px;
       color: darken($primary-color, 20%);
       transition: color 0.3s ease-in-out;
 
       @media (max-width: 768px) {
-        font-size: 1.3em; 
+        font-size: 1.3em;
       }
     }
 
     p {
-      font-size: 1em; 
+      font-size: 1em;
       color: lighten($font-color, 30%);
 
       @media (max-width: 768px) {
-        font-size: 0.95em; 
+        font-size: 0.95em;
       }
     }
   }
@@ -169,14 +178,14 @@ $tools-item-tint: darken($list-item-color, 40%);
 
   .timeline-date {
     margin-top: 5px;
-    font-size: 0.9em; 
+    font-size: 0.9em;
     color: $quaternary-color;
   }
 }
 
 .timeline-step {
   position: absolute;
-  left: -10px; 
+  left: -10px;
   top: 0;
   height: 100%;
   display: flex;
@@ -184,35 +193,35 @@ $tools-item-tint: darken($list-item-color, 40%);
 }
 
 .timeline-section {
-  margin-left: 20px; 
-  margin-right: 20px; 
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .timeline-section-title {
-  font-size: 2em; 
+  font-size: 2em;
   color: $text-color;
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
   margin-left: -15px;
-  padding-left: 5px; 
+  padding-left: 5px;
   font-weight: bold;
 
   @media (max-width: 768px) {
-    font-size: 1.7em; 
+    font-size: 1.7em;
   }
 
   @media (max-width: 430px) {
-    font-size: 1.4em; 
+    font-size: 1.4em;
   }
 }
 
 .timeline-stats {
-  margin-top: 5px; 
-  margin-bottom: 5px; 
+  margin-top: 5px;
+  margin-bottom: 5px;
   display: flex;
   flex-direction: column;
 
   .stat-item {
-    font-size: 0.9em; 
+    font-size: 0.9em;
     color: $text-color;
     margin-bottom: 3px;
 
