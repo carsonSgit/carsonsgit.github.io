@@ -1,7 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { getGitHubProfileStats } from './getGitHubStats';
 import './About.scss';
 
+interface GitHubStats {
+  username: string;
+  public_repos: number;
+  followers: number;
+  following: number;
+}
+
 const About: React.FC = () => {
+  const [stats, setStats] = useState<GitHubStats | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchGitHubStats = async () => {
+      try {
+        const fetchedStats = await getGitHubProfileStats();
+        setStats(fetchedStats);
+      } catch (error) {
+        console.error('Error fetching GitHub stats:', error);
+        setError('Failed to fetch GitHub stats.');
+      }
+    };
+
+    fetchGitHubStats();
+  }, []);
+
   return (
     <div className="AboutContainer">
       <div className="AboutContentContainer">
@@ -72,14 +97,24 @@ const About: React.FC = () => {
           </p>
         </div>
 
-          <div className="AboutImageContainer">
-            <img
-              className="AboutImage"
-              src={`${process.env.PUBLIC_URL}/carson.webp`}
-              alt="PlaceHolder"
-            />
-          </div>
+        <div className="AboutImageContainer">
+          <img
+            className="AboutImage"
+            src={`${process.env.PUBLIC_URL}/carson.webp`}
+            alt="Carson"
+          />
         </div>
+
+        {error ? (
+          <p className="errorText">{error}</p>
+        ) : stats ? (
+          <p>
+            Public Repos: {stats.public_repos} | Followers: {stats.followers} | Following: {stats.following}
+          </p>
+        ) : (
+          <p>Loading GitHub stats...</p>
+        )}
+      </div>
     </div>
   );
 };
