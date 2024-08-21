@@ -39,15 +39,17 @@ $tools-item-tint: darken($list-item-color, 40%);
         li {
           display: flex;
           align-items: center;
+          color: darken(white, 5%);
           padding: 1rem;
-          font-weight: 400;
+          font-weight: 500;
           font-size: 1.1rem;
 
           svg {
             margin-right: 0.5rem;
+            color: white;
           }
         }
-        
+
         li:hover {
           background-color: darken($background-color, 15%);
           transform: scale(1.05);
