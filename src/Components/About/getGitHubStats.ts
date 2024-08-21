@@ -5,3 +5,10 @@ export const getGitHubProfileStats = async () => {
     const data = await response.json();
     return data;
 }
+
+export const getGitHubProfileLanguages = async () => {
+    const response = await fetch('https://api.github.com/users/carsonSgit/repos');
+    const data = await response.json();
+    return data;
+
+}

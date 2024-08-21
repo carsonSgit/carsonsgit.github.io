@@ -1,13 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getGitHubProfileStats } from './getGitHubStats';
+import { GitHubStats } from '../Interfaces/githubStats';
 import './About.scss';
-
-interface GitHubStats {
-  username: string;
-  public_repos: number;
-  followers: number;
-  following: number;
-}
 
 const About: React.FC = () => {
   const [stats, setStats] = useState<GitHubStats | null>(null);
@@ -109,7 +103,7 @@ const About: React.FC = () => {
           <p className="errorText">{error}</p>
         ) : stats ? (
           <p>
-            Public Repos: {stats.public_repos} | Followers: {stats.followers} | Following: {stats.following}
+            Username: {stats.login}, Public Repos: {stats.public_repos} | Followers: {stats.followers} | Following: {stats.following}
           </p>
         ) : (
           <p>Loading GitHub stats...</p>
