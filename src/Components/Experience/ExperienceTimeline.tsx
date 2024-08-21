@@ -17,7 +17,6 @@ import {
   FaNodeJs,
   FaSass,
   FaPhp,
-  FaMarkdown,
   FaAngular,
   FaBootstrap,
   FaFigma,
@@ -171,9 +170,6 @@ const ExperienceTimeline = () => {
             </li>
             <li>
               <SiGnubash /> Bash
-            </li>
-            <li>
-              <FaMarkdown /> Markdown
             </li>
             <li>
               <FaHtml5 /> HTML
