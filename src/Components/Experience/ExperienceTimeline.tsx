@@ -254,7 +254,7 @@ const ExperienceTimeline = () => {
               <FaDocker /> Docker
             </li>
             <li>
-              <SiAzuredevops /> Microsoft Azure
+              <SiAzuredevops /> Azure
             </li>
             <li>
               <FaAws /> AWS
@@ -287,7 +287,7 @@ const ExperienceTimeline = () => {
               <SiJira /> Jira
             </li>
             <li>
-              <FaRaspberryPi /> Raspberry Pi
+              <FaRaspberryPi /> Rasp Pi
             </li>
             <li>
               <FaFigma /> Figma

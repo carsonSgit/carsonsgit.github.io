@@ -79,7 +79,7 @@ $tools-item-tint: darken($list-item-color, 40%);
     .category-containers {
       .CategoryContainer {
         .TechList {
-          grid-template-columns: 1fr;
+          grid-template-columns: repeat(2, 1fr);
         }
       }
     }
