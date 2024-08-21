@@ -1,38 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { getGitHubProfileStats, getGitHubProfileLanguages } from './getGitHubStats';
-import { GitHubStats } from '../Interfaces/githubStats';
+import React from 'react';
 import './About.scss';
 
 const About: React.FC = () => {
-  const [stats, setStats] = useState<GitHubStats | null>(null);
-  const [topLanguages, setTopLanguages] = useState<{ language: string; bytes: number }[]>([]);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchGitHubStats = async () => {
-      try {
-        const fetchedStats = await getGitHubProfileStats();
-        setStats(fetchedStats);
-      } catch (error) {
-        console.error('Error fetching GitHub stats:', error);
-        setError('Failed to fetch GitHub stats.');
-      }
-    };
-
-    const fetchGitHubLanguages = async () => {
-      try {
-        const fetchedLanguages = await getGitHubProfileLanguages();
-        setTopLanguages(fetchedLanguages);
-      } catch (error) {
-        console.error('Error fetching GitHub languages:', error);
-        setError('Failed to fetch GitHub languages.');
-      }
-    };
-
-    fetchGitHubStats();
-    fetchGitHubLanguages();
-  }, []);
-
   return (
     <div className="AboutContainer">
       <div className="AboutContentContainer">
@@ -109,21 +78,6 @@ const About: React.FC = () => {
             src={`${process.env.PUBLIC_URL}/carson.webp`}
             alt="Carson"
           />
-        </div>
-
-        <div className="LanguagesContainer">
-          <h3>Top 4 Languages Used:</h3>
-          {topLanguages.length > 0 ? (
-            <ul>
-              {topLanguages.map(({ language, bytes }) => (
-                <li key={language}>
-                  {language}
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p>Loading languages...</p>
-          )}
         </div>
       </div>
     </div>
