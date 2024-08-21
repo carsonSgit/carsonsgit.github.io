@@ -48,7 +48,6 @@ import {
   SiSwagger,
   SiJira,
   SiKubernetes,
-  SiCisco,
   SiUnity,
   SiMantine,
   SiGnubash,
@@ -290,9 +289,6 @@ const ExperienceTimeline = () => {
             </li>
             <li>
               <SiJira /> Jira
-            </li>
-            <li>
-              <SiCisco /> Cisco
             </li>
             <li>
               <FaRaspberryPi /> Raspberry Pi
