@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { getGitHubProfileStats } from './getGitHubStats';
+import { getGitHubProfileStats, getGitHubProfileLanguages } from './getGitHubStats';
 import { GitHubStats } from '../Interfaces/githubStats';
 import './About.scss';
 
 const About: React.FC = () => {
   const [stats, setStats] = useState<GitHubStats | null>(null);
+  const [topLanguages, setTopLanguages] = useState<{ language: string; bytes: number }[]>([]);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -18,7 +19,18 @@ const About: React.FC = () => {
       }
     };
 
+    const fetchGitHubLanguages = async () => {
+      try {
+        const fetchedLanguages = await getGitHubProfileLanguages();
+        setTopLanguages(fetchedLanguages);
+      } catch (error) {
+        console.error('Error fetching GitHub languages:', error);
+        setError('Failed to fetch GitHub languages.');
+      }
+    };
+
     fetchGitHubStats();
+    fetchGitHubLanguages();
   }, []);
 
   return (
@@ -108,6 +120,21 @@ const About: React.FC = () => {
         ) : (
           <p>Loading GitHub stats...</p>
         )}
+
+        <div className="LanguagesContainer">
+          <h3>Top 4 Languages Used:</h3>
+          {topLanguages.length > 0 ? (
+            <ul>
+              {topLanguages.map(({ language, bytes }) => (
+                <li key={language}>
+                  {language}: {bytes} bytes
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>Loading languages...</p>
+          )}
+        </div>
       </div>
     </div>
   );
