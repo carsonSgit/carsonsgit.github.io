@@ -300,9 +300,6 @@ const ExperienceTimeline = () => {
             <li>
               <FaFigma /> Figma
             </li>
-            <li>
-              <SiKubernetes /> GNS3
-            </li>
           </ul>
         </div>
       </div>
