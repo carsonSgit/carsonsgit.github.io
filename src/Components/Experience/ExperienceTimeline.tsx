@@ -49,7 +49,6 @@ import {
   SiJira,
   SiKubernetes,
   SiUnity,
-  SiMantine,
   SiGnubash,
   SiPowershell,
 } from 'react-icons/si';
@@ -217,9 +216,6 @@ const ExperienceTimeline = () => {
             </li>
             <li>
               <FaBootstrap /> Bootstrap
-            </li>
-            <li>
-              <SiMantine /> Mantine
             </li>
             <li>
               <FaNodeJs /> Node.js
