@@ -5,6 +5,7 @@ export const experience = [
     company: "Tail'ed",
     description: 'Building the company website & developing an AI product.',
     statsKey: 'SDE Intern',
+    link: 'https://tailed.ca/en'
   },
   {
     date: 'March 2024 - Ongoing',
@@ -13,6 +14,7 @@ export const experience = [
     description:
       'Leading the delegation of post-secondary students across Montreal for the annual conference.',
     statsKey: 'Head Delegate Montreal',
+    link: 'https://2024.cusec.net/'
   },
   {
     date: 'January 2024 - May 2024',
@@ -21,6 +23,7 @@ export const experience = [
     description:
       'Delivered technical support to government employees and trained under the Cybersecurity Lead of the municipality.',
     statsKey: 'IT Intern',
+    link: 'https://www.ville.kirkland.qc.ca/'
   },
   {
     date: 'March 2024 - July 2024',
@@ -29,6 +32,7 @@ export const experience = [
     description:
       'Led the organization of the hackathon, overseeing event planning and execution.',
     statsKey: 'Director',
+    link: 'https://jachacks.pages.dev/'
   },
   {
     date: 'February 2024 - April 2024',
@@ -37,5 +41,6 @@ export const experience = [
     description:
       'Learned under PhDs while developing TradeMind for my fellowship project.',
     statsKey: 'R&D Fellowship',
+    link: 'https://launchlab.ai/rd-program/'
   },
 ];
