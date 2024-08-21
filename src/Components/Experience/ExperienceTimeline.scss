@@ -62,6 +62,7 @@ $tools-item-tint: darken($list-item-color, 40%);
 @media (max-width: 768px) {
   .experience-grid {
     grid-template-columns: 1fr;
+    gap: 0em;
 
     .category-containers {
       .CategoryContainer {
@@ -151,7 +152,6 @@ $tools-item-tint: darken($list-item-color, 40%);
       @media (max-width: 768px) {
         font-size: 0.95em; 
       }
-
     }
   }
 
