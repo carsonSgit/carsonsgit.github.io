@@ -84,7 +84,9 @@ const ExperienceTimeline = () => {
               <div className="timeline-content">
                 <h3>
                   {item.title} <span className="timeline-atsign">@ </span>
-                  <span className="timeline-institution">{item.institution}</span>
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="timeline-institution">
+                    {item.institution}
+                  </a>
                 </h3>
                 <div className="timeline-date">{item.date}</div>
                 <p>{item.description}</p>
@@ -117,8 +119,10 @@ const ExperienceTimeline = () => {
               <div className="timeline-step experience-step"></div>
               <div className="timeline-content">
                 <h3>
-                  {item.title} <span className="timeline-atsign">@ </span>
-                  <span className="timeline-company">{item.company}</span>
+                  <a href={item.link} target="_blank" rel="noopener noreferrer">
+                    {item.title} <span className="timeline-atsign">@ </span>
+                    <span className="timeline-company">{item.company}</span>
+                  </a>
                 </h3>
                 <div className="timeline-date">{item.date}</div>
                 <p>{item.description}</p>
