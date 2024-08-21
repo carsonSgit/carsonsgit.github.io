@@ -55,6 +55,7 @@ $tools-item-tint: darken($list-item-color, 40%);
           font-weight: 500;
           font-size: 1.1rem;
           border-radius: $border-radius;
+          transition: transform 0.3s ease, background-color 0.3s ease;
 
           svg {
             margin-right: 0.5rem;
