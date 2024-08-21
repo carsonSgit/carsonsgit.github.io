@@ -75,7 +75,7 @@ const About: React.FC = () => {
         <div className="AboutImageContainer">
           <img
             className="AboutImage"
-            src="https://avatars.githubusercontent.com/u/92652800?v=4"
+            src={`${process.env.PUBLIC_URL}/carson.webp`}
             alt="PlaceHolder"
           />
         </div>
