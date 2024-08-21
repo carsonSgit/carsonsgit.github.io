@@ -111,23 +111,13 @@ const About: React.FC = () => {
           />
         </div>
 
-        {error ? (
-          <p className="errorText">{error}</p>
-        ) : stats ? (
-          <p>
-            Username: {stats.login}, Public Repos: {stats.public_repos} | Followers: {stats.followers} | Following: {stats.following}
-          </p>
-        ) : (
-          <p>Loading GitHub stats...</p>
-        )}
-
         <div className="LanguagesContainer">
           <h3>Top 4 Languages Used:</h3>
           {topLanguages.length > 0 ? (
             <ul>
               {topLanguages.map(({ language, bytes }) => (
                 <li key={language}>
-                  {language}: {bytes} bytes
+                  {language}
                 </li>
               ))}
             </ul>
