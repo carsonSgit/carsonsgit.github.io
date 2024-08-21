@@ -9,15 +9,18 @@ $font-color: #a2aa94;
 $hover-color: #ced4da;
 $box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 $border-radius: 8px;
-
 $language-item-tint: darken($list-item-color, 30%);
 $framework-item-tint: darken($list-item-color, 35%);
 $tools-item-tint: darken($list-item-color, 40%);
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@font-face {
+  font-family: 'Poppins';
+  src: url('../../Assets/Fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
 
 .AboutContainer {
-  font-family: 'Poppins', sans-serif;
   width: auto;
   padding: 20px;
 }
@@ -40,6 +43,7 @@ $tools-item-tint: darken($list-item-color, 40%);
 }
 
 .AboutText {
+  font-family: 'Poppins', sans-serif;
   font-size: 1.8em;
   font-weight: 400;
   color: lighten($font-color, 30%);
