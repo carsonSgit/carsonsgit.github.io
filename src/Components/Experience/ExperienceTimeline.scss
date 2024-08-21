@@ -40,47 +40,47 @@ $tools-item-tint: darken($list-item-color, 40%);
       }
 
       .TechList {
-  font-family: 'Poppins', sans-serif;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.5rem;
-  list-style-type: none;
-  padding: 0;
-  margin: 0 auto;
-  max-width: 600px;
-  width: 100%;
+        font-family: 'Poppins', sans-serif;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+        list-style-type: none;
+        padding: 0;
+        margin: 0 auto;
+        max-width: 600px;
+        width: 100%;
 
-  li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: darken(white, 5%);
-    padding: 1rem;
-    font-weight: 500;
-    font-size: 1.1rem;
-    border-radius: $border-radius;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+        li {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: darken(white, 5%);
+          padding: 1rem;
+          font-weight: 500;
+          font-size: 1.1rem;
+          border-radius: $border-radius;
+          transition: transform 0.3s ease, background-color 0.3s ease;
 
-    svg {
-      margin-right: 0.5rem;
-      color: white;
-    }
-  }
+          svg {
+            margin-right: 0.5rem;
+            color: white;
+          }
+        }
 
-  li:hover {
-    background-color: darken($background-color, 8%);
-    transform: scale(1.05);
-  }
-}
+        li:hover {
+          background-color: darken($background-color, 8%);
+          transform: scale(1.05);
+        }
+      }
 
-@media (max-width: 768px) {
-  .TechList {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    margin: 0 auto;
-    max-width: 100%;
-  }
-}
+      @media (max-width: 768px) {
+        .TechList {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.5rem;
+          margin: 0 auto;
+          max-width: 100%;
+        }
+      }
     }
   }
 }
@@ -89,14 +89,6 @@ $tools-item-tint: darken($list-item-color, 40%);
   .experience-grid {
     grid-template-columns: 1fr;
     gap: 0em;
-
-    .category-containers {
-      .CategoryContainer {
-        .TechList {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-    }
   }
 }
 
