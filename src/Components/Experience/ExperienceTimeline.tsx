@@ -68,7 +68,7 @@ const ExperienceTimeline = () => {
     <div className="experience-grid">
       <div className="timeline">
         <motion.div className="particle-background" />
-
+  
         <div className="timeline-section">
           <h2 className="timeline-section-title">Education</h2>
           {education.map((item, index) => (
@@ -84,7 +84,9 @@ const ExperienceTimeline = () => {
               <div className="timeline-content">
                 <h3>
                   {item.title} <span className="timeline-atsign">@ </span>
-                  <span className="timeline-institution">{item.institution}</span>
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="timeline-institution">
+                    {item.institution}
+                  </a>
                 </h3>
                 <div className="timeline-date">{item.date}</div>
                 <p>{item.description}</p>
@@ -102,7 +104,8 @@ const ExperienceTimeline = () => {
             </motion.div>
           ))}
         </div>
-
+  
+        {/* Experience section remains unchanged */}
         <div className="timeline-section">
           <h2 className="timeline-section-title">Experience</h2>
           {experience.map((item, index) => (
