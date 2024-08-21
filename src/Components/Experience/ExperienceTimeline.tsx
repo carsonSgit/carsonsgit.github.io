@@ -257,6 +257,9 @@ const ExperienceTimeline = () => {
               <FaGitAlt /> Git
             </li>
             <li>
+              <SiMongodb /> MongoDB
+            </li>
+            <li>
               <FaDocker /> Docker
             </li>
             <li>
