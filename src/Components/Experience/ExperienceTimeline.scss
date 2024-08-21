@@ -81,6 +81,11 @@ $tools-item-tint: darken($list-item-color, 40%);
           max-width: 100%;
         }
       }
+      @media (max-width: 392px){
+        .TechList {
+          margin-left: -8px;
+        }
+      }
     }
   }
 }
@@ -117,7 +122,7 @@ $tools-item-tint: darken($list-item-color, 40%);
   }
 
   @media (max-width: 430px) {
-    margin-left: 10px;
+    margin-left: 5px;
     padding: 5px 0;
   }
 }
