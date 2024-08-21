@@ -6,6 +6,64 @@ $background-color: #262f2aec;
 $text-color: #fafff0;
 $font-color: #a2aa94;
 
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .category-containers {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+    .CategoryContainer {
+      padding: 1rem;
+      border-radius: 8px;
+
+      .CategoryTitle {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .TechList {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+
+        li {
+          flex: 1 1 45%;
+          display: flex;
+          align-items: center;
+
+          svg {
+            margin-right: 0.5rem;
+            color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-grid {
+    grid-template-columns: 1fr;
+
+    .category-containers {
+      .CategoryContainer {
+        .TechList {
+          li {
+            flex: 1 1 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
 .timeline {
   position: relative;
   padding: 15px 0; 
