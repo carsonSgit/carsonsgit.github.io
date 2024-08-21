@@ -306,9 +306,6 @@ const ExperienceTimeline = () => {
             <li>
               <FaDocker /> Gimp
             </li>
-            <li>
-              <FaDocker /> Canva
-            </li>
           </ul>
         </div>
       </div>
