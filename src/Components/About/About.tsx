@@ -72,13 +72,13 @@ const About: React.FC = () => {
           </p>
         </div>
 
-        <div className="AboutImageContainer">
+        {/*<div className="AboutImageContainer">
           <img
             className="AboutImage"
             src={`${process.env.PUBLIC_URL}/carson.webp`}
             alt="Carson"
           />
-        </div>
+        </div>*/}
       </div>
     </div>
   );
