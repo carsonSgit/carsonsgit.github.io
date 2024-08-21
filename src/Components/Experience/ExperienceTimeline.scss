@@ -5,6 +5,10 @@ $quaternary-color: #95b9b0;
 $background-color: #262f2aec;
 $text-color: #fafff0;
 $font-color: #a2aa94;
+$list-item-color: #2bd4a0;
+$language-item-tint: darken($list-item-color, 30%);
+$framework-item-tint: darken($list-item-color, 35%);
+$tools-item-tint: darken($list-item-color, 40%);
 
 .experience-grid {
   display: grid;
@@ -17,7 +21,6 @@ $font-color: #a2aa94;
   .category-containers {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
 
     .CategoryContainer {
       padding: 1rem;
@@ -25,22 +28,22 @@ $font-color: #a2aa94;
 
       .CategoryTitle {
         font-size: 1.5rem;
-        margin-bottom: 1rem;
       }
 
       .TechList {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 0.5rem;
 
         li {
           display: flex;
           align-items: center;
-          padding: 0.5rem;
+          padding: 1rem;
+          font-weight: 400;
+          font-size: 1.1rem;
 
           svg {
             margin-right: 0.5rem;
-            color: $primary-color;
           }
         }
       }
@@ -60,6 +63,18 @@ $font-color: #a2aa94;
       }
     }
   }
+}
+
+.TechList.programming-languages li {
+  background-color: $language-item-tint;
+}
+
+.TechList.frameworks-libraries li {
+  background-color: $framework-item-tint;
+}
+
+.TechList.tools-platforms li {
+  background-color: $tools-item-tint;
 }
 
 .timeline {
