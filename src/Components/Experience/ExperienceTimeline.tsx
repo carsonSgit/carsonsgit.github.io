@@ -303,9 +303,6 @@ const ExperienceTimeline = () => {
             <li>
               <SiKubernetes /> GNS3
             </li>
-            <li>
-              <FaDocker /> Gimp
-            </li>
           </ul>
         </div>
       </div>
