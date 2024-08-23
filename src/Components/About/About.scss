@@ -39,7 +39,6 @@ $tools-item-tint: darken($list-item-color, 40%);
   color: $secondary-color;
   background-color: rgba(darken($background-color, 10%), 0.25);
   border-radius: $border-radius;
-  margin-left: 20px;
 }
 
 .AboutText {
@@ -48,12 +47,6 @@ $tools-item-tint: darken($list-item-color, 40%);
   font-weight: 400;
   color: lighten($font-color, 30%);
   padding: 0px 40px 0px 30px; /* top, right, bottom, left */
-}
-
-.AboutImage {
-  width: 45%;
-  border-radius: $border-radius;
-  box-shadow: $box-shadow;
 }
 
 @media screen and (max-width: 768px) {
@@ -73,9 +66,6 @@ $tools-item-tint: darken($list-item-color, 40%);
     padding-left: 20px;
     padding-right: 20px;
     text-align: center;
-  }
-  .AboutContainer {
-    margin-right: 20px;
   }
 }
 
@@ -109,4 +99,24 @@ $tools-item-tint: darken($list-item-color, 40%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradientAnimation 5s ease infinite;
+}
+
+.AboutImageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.AboutImage {
+  width: 90%;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+}
+
+@media screen and (max-width: 768px) {
+  .AboutImage {
+    width: 100%;
+
+  }
 }
