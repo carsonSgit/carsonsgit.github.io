@@ -1,4 +1,3 @@
-// src/components/Projects.tsx
 import React from 'react';
 import ProjectItem from './ProjectItem';
 import { projects } from '../Data/portfolioProjects';
