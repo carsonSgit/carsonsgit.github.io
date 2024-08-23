@@ -21,6 +21,7 @@ a {
   min-height: 100vh;
   width: 85%;
   margin: 0 auto;
+  margin-bottom: 30px;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
