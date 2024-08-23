@@ -1,15 +1,15 @@
 export interface GitHubStats {
-    login: string;
-    public_repos: number;
-    followers: number;
-    following: number;
-  }
+  login: string;
+  public_repos: number;
+  followers: number;
+  following: number;
+}
 
 export interface LanguageData {
-    [key: string]: number;
+  [key: string]: number;
 }
-  
+
 export interface TopLanguage {
-    language: string;
-    bytes: number;
+  language: string;
+  bytes: number;
 }
