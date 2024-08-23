@@ -117,6 +117,8 @@ $tools-item-tint: darken($list-item-color, 40%);
 @media screen and (max-width: 768px) {
   .AboutImage {
     width: 100%;
-
+  }
+  .AboutImageContainer {
+    width: 90%;
   }
 }
