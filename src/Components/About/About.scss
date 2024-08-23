@@ -21,7 +21,6 @@ $tools-item-tint: darken($list-item-color, 40%);
 }
 
 .AboutContainer {
-  width: 85%;
   padding: 40px;
   margin-top: 20px;
   margin-left: auto;
@@ -113,7 +112,6 @@ $tools-item-tint: darken($list-item-color, 40%);
 }
 
 .AboutImage {
-  width: 90%;
   border-radius: $border-radius;
   box-shadow: $box-shadow;
 }
@@ -121,8 +119,5 @@ $tools-item-tint: darken($list-item-color, 40%);
 @media screen and (max-width: 768px) {
   .AboutImage {
     width: 100%;
-  }
-  .AboutImageContainer {
-    width: 90%;
   }
 }
