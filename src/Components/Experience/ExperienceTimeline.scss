@@ -69,6 +69,7 @@ $tools-item-tint: darken($list-item-color, 40%);
         }
 
         li:hover {
+          cursor: default;
           background: linear-gradient(
             120deg,
             $secondary-color,
