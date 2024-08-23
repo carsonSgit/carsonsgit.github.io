@@ -57,7 +57,7 @@ const ExperienceTimeline = () => {
   const controls = useAnimation();
 
   useEffect(() => {
-    controls.start((i) => ({
+    controls.start(i => ({
       opacity: 1,
       y: 0,
       transition: { delay: i * 0.2 },
@@ -84,7 +84,12 @@ const ExperienceTimeline = () => {
               <div className="timeline-content">
                 <h3>
                   {item.title} <span className="timeline-atsign">@ </span>
-                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="timeline-institution">
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="timeline-institution"
+                  >
                     {item.institution}
                   </a>
                 </h3>

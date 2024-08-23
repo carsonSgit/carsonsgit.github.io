@@ -59,7 +59,9 @@ $tools-item-tint: darken($list-item-color, 40%);
           font-weight: 500;
           font-size: 1.1rem;
           border-radius: $border-radius;
-          transition: transform 0.3s ease, background-color 0.3s ease;
+          transition:
+            transform 0.3s ease,
+            background-color 0.3s ease;
 
           svg {
             margin-right: 0.5rem;
@@ -81,7 +83,7 @@ $tools-item-tint: darken($list-item-color, 40%);
           max-width: 100%;
         }
       }
-      @media (max-width: 392px){
+      @media (max-width: 392px) {
         .TechList {
           margin-left: -8px;
         }
@@ -144,7 +146,9 @@ $tools-item-tint: darken($list-item-color, 40%);
   overflow: hidden;
   position: relative;
   transform-origin: left center;
-  transition: background-position 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition:
+    background-position 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
 
   &:hover {
     background-position: right;
