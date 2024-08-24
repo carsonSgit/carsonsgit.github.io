@@ -56,10 +56,12 @@ const AnimatedImage: React.FC<AnimatedImageProps> = ({
   return (
     <img
       src={`${process.env.PUBLIC_URL}/${hoverIndex !== -1 ? hoverImageNames[hoverIndex] : imageNames[currentIndex]}`}
-      alt={`Sprite ${currentIndex}`}
+      alt={`Animated image showing ${hoverIndex !== -1 ? hoverImageNames[hoverIndex] : imageNames[currentIndex]}`}
       onMouseEnter={() => handleMouseEnter(currentIndex)}
       onMouseLeave={handleMouseLeave}
       width="280"
+      aria-live="polite"
+      aria-label={`Current animated image: ${hoverIndex !== -1 ? hoverImageNames[hoverIndex] : imageNames[currentIndex]}`}
     />
   );
 };

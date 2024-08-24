@@ -5,10 +5,10 @@ import './Hero.scss';
 const LeftContainer: React.FC = () => {
   return (
     <div className="LeftContainer">
-      <h1 className="HeroText">
+      <h1 className="HeroText" aria-label="Introduction">
         Hi, I&#39;m <span className="AnimatedText">Carson</span>
       </h1>
-      <p>
+      <p aria-live="polite" aria-label="Typewriter effect text">
         <Typewriter
           words={[
             'I like building cool things.',

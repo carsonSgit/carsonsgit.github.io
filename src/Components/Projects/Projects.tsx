@@ -5,11 +5,11 @@ import './Projects.scss';
 
 const Projects: React.FC = () => {
   return (
-    <div>
-      <h1 className="ProjectsTitle">
+    <div role="region" aria-labelledby="projects-title">
+      <h1 id="projects-title" className="ProjectsTitle">
         <span className="ProjectsTitleAnimated">Notable</span> projects
       </h1>
-      <div className="ProjectsContainer">
+      <div className="ProjectsContainer" aria-label="List of notable projects">
         {projects.map((project, index) => (
           <ProjectItem key={index} project={project} />
         ))}
