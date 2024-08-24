@@ -28,6 +28,9 @@
 
 🌟 **Welcome to my portfolio!** My site shows a bit about myself & what I've done as a Computer Scientist!
 
+
+<div align="center"> <img src="https://github-readme-stats.vercel.app/api/pin/?username=carsonSgit&repo=carsonsgit.github.io&theme=dark" alt="Repo Stats"/> </div>
+
 ## Features
 
 - 🎨 **Dynamic Project Showcase:** Interactive sections featuring my projects with links to live demos and GitHub repositories.
@@ -40,3 +43,13 @@
 - 🔍 **Commit/Merge Prefixes:** Learn about my commit message conventions: [Commit Message Prefixes](https://github.com/carsonSgit/carsonsgit.github.io/issues/14)
 
 Thank you for visiting my portfolio! I hope you find my work inspiring. 🎉
+
+### 📈 Quick Repo Stats
+
+- **Stars**: ![GitHub Stars](https://img.shields.io/github/stars/carsonSgit/carsonsgit.github.io?style=for-the-badge)
+- **Issues**: ![GitHub Closed Issues](https://img.shields.io/github/issues-closed/carsonSgit/carsonsgit.github.io?style=for-the-badge)
+- **PRs**: ![GitHub Pull Requests](https://img.shields.io/github/issues-pr-closed/carsonSgit/carsonSgit.github.io?style=for-the-badge)
+- **Code Size**: ![GitHub Code Size](https://img.shields.io/github/languages/code-size/carsonSgit/carsonSgit.github.io?style=for-the-badge)
+- **Repo Size**: ![GitHub Repo Size](https://img.shields.io/github/repo-size/carsonSgit/carsonSgit.github.io?style=for-the-badge)
+- **Languages**: ![GitHub Language Count](https://img.shields.io/github/languages/count/carsonSgit/carsonSgit.github.io?style=for-the-badge)
+
