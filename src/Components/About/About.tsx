@@ -17,7 +17,7 @@ const About: React.FC = () => {
       <div className="AboutContentContainer">
         <div className="AboutContent">
           <p className="AboutText">
-            Hi, my name is Carson! I'm a recent grad from John Abbott College's
+            Hi, my name is Carson! I&#39;m a recent grad from John Abbott College&#39;s
             Computer Science degree continuing my education over at Concordia
             University!
             <br />
@@ -29,20 +29,20 @@ const About: React.FC = () => {
               target="_blank"
               rel="noreferrer"
             >
-              Tail'ed
+              Tail&#39;ed
             </a>{' '}
             as a Software Developer, working on the company website using
             TypeScript, React, and Next.js. Alongside that, I also worked on
             some tools for users written in Python (notably, an AI-tool).
             <br />
             <br />
-            In my free time, I'm usually working on a personal project, learning
+            In my free time, I&#39;m usually working on a personal project, learning
             a new technology, or wallowing in some imposter syndrome. Aside from
             that, my interests are geared towards AI/ML and their potential
             impact on environmental solutions.
             <br />
             <br />
-            I'm not hard to track down, but you can find me on{' '}
+            I&#39;m not hard to track down, but you can find me on{' '}
             <a
               className="hoverLink"
               href="https://linkedin.com/in/carsonspriggs"
