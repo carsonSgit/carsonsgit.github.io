@@ -32,13 +32,20 @@
 - 🔧 **Technologies:** A display of _most_ of the technologies I've used in my CS career.
 - 📱 **Responsive Design:** Made with different screen-sizes in mind (mobile-first approach).
 
+<br/>
+
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/7c16ee3d-082b-4598-8913-952ccdc12cbd" />
+    <h6>💡Lighthouse test results 🏠</h6>
+</div>
+
 <div align="center"><h2> 🔗 Important Links </h2></div>
 
 - 📚 **Development Resources:** Here are some [helpful links](https://github.com/carsonSgit/carsonsgit.github.io/issues/9) I made use of during development.
-- 🔍 **Commit/Merge Prefixes:** I used these [commit message prefixes](https://github.com/carsonSgit/carsonsgit.github.io/issues/14) to improve my Git habits.
-- 📖 **React Documentation:** Learn more about React [here](https://reactjs.org/docs/getting-started.html).
-- 📘 **TypeScript Documentation:** Explore TypeScript documentation [here](https://www.typescriptlang.org/docs/).
-- 🎨 **SCSS Documentation:** Check out the SCSS documentation [here](https://sass-lang.com/documentation).
+- 🔍 **Commit/Merge Prefixes:** I used these [commit message prefixes](https://github.com/carsonSgit/carsonsgit.github.io/issues/14) to improve my `Git` habits.
+- 📖 **React Documentation:** Learn more about `React` [here](https://reactjs.org/docs/getting-started.html).
+- 📘 **TypeScript Documentation:** Explore `TypeScript` documentation [here](https://www.typescriptlang.org/docs/).
+- 🎨 **SCSS Documentation:** Check out the `SCSS` documentation [here](https://sass-lang.com/documentation).
 
 <div align="center"><h2> 📈 Quick Repo Stats </h2></div>
 
@@ -67,29 +74,35 @@ If you want to run it locally follow these steps:
 ### 📥 Installation Steps:
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/carsonSgit/carsonsgit.github.io.git
-   ```
-2. Go to the project directory:
-   ```bash
-   cd carsonsgit.github.io
-   ```
-3. Install dependencies
+   
+    ```bash
+    git clone https://github.com/carsonSgit/carsonsgit.github.io.git
+    ```
 
-   ```bash
-   npm i
-   ```
+2. Go to the project directory:
+   
+    ```bash
+    cd carsonsgit.github.io
+    ```
+
+3. Install dependencies
+  
+    ```bash
+    npm i
+    ```
 
    **OR** if your `npm i` doesn't work
-
-   ```bash
-   npm i --force
-   ```
+   
+    ```bash
+    npm i --force
+    ```
 
 4. Run locally
-   ```bash
-   npm start
-   ```
+   
+    ```bash
+    npm start
+    ```
+
 5. Open your browser at `http://localhost:3000`!
 
 <br />
