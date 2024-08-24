@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "carsonSgit Portfolio",
+  "name": "carsonSgit Portfolio",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,8 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#1c5722", 
+  "background_color": "#23272b", 
+  "description": "Welcome to my personal portfolio!",
+  "lang": "en-US"
 }
