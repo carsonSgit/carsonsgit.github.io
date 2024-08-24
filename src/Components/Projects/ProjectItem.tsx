@@ -12,12 +12,6 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
     threshold: 0.1,
   });
 
-  const props = useSpring({
-    opacity: inView ? 1 : 0,
-    transform: inView ? 'translateY(0)' : 'translateY(20px)',
-    config: { tension: 200, friction: 20 },
-  });
-
   return (
     <motion.div
       className="ProjectItem"
