@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, useInView } from 'framer-motion';
-import { FaFilePdf, FaStar, FaGithub } from 'react-icons/fa'; 
+import { FaFilePdf, FaStar, FaGithub } from 'react-icons/fa';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './About.scss';
@@ -10,8 +10,8 @@ const About: React.FC = () => {
   const isInView = useInView(ref, { once: true });
 
   const handleDownloadClick = () => {
-    toast.success("Resume downloaded successfully!", {
-      position: "bottom-right",
+    toast.success('Resume downloaded successfully!', {
+      position: 'bottom-right',
     });
   };
 
@@ -98,9 +98,9 @@ const About: React.FC = () => {
             alt="At JACHacks"
           />
           <div className="ButtonContainer">
-            <a 
-              href={`${process.env.PUBLIC_URL}/CarsonSpriggs_CV.pdf`} 
-              download 
+            <a
+              href={`${process.env.PUBLIC_URL}/CarsonSpriggs_CV.pdf`}
+              download
               onClick={handleDownloadClick}
             >
               <button className="DownloadCVButton">
@@ -108,13 +108,13 @@ const About: React.FC = () => {
                 Resume
               </button>
             </a>
-            <a 
-              href="https://github.com/carsonSgit/carsonsgit.github.io" 
-              target="_blank" 
+            <a
+              href="https://github.com/carsonSgit/carsonsgit.github.io"
+              target="_blank"
               rel="noreferrer"
             >
               <button className="GitHubButton">
-                <FaStar className="StarIcon" /> 
+                <FaStar className="StarIcon" />
                 this on
                 <FaGithub className="GitHubIcon" />
               </button>

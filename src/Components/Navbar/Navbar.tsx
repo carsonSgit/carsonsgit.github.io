@@ -17,11 +17,12 @@ const Navbar: React.FC = () => {
     event.preventDefault();
     const element = document.getElementById(id);
     if (element) {
-      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-      const offsetPosition = elementPosition - 60; 
+      const elementPosition =
+        element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - 60;
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
     }
     setMenuOpen(false);
@@ -30,13 +31,10 @@ const Navbar: React.FC = () => {
   return (
     <nav className="navbar">
       <div className="navbar-left">
-          <a
-            href={`#hero`}
-            onClick={event => handleLinkClick(event, 'hero')}
-          >
-            carsonSgit
-          </a>
-          </div>
+        <a href={`#hero`} onClick={event => handleLinkClick(event, 'hero')}>
+          carsonSgit
+        </a>
+      </div>
       <div className="hamburger" onClick={toggleMenu}>
         {menuOpen ? <FaTimes /> : <FaBars />}
       </div>

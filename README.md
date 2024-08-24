@@ -29,9 +29,8 @@
 <div align="center"><h2> ✨ Features </h2></div>
 
 - 🎨 **Top Project Showcase:** Tiled sections featuring my top projects with links to live demos and GitHub repos.
-- 🔧 **Technologies:** A display of *most* of the technologies I've used in my CS career.
+- 🔧 **Technologies:** A display of _most_ of the technologies I've used in my CS career.
 - 📱 **Responsive Design:** Made with different screen-sizes in mind (mobile-first approach).
-
 
 <div align="center"><h2> 🔗 Important Links </h2></div>
 
@@ -40,7 +39,6 @@
 - 📖 **React Documentation:** Learn more about React [here](https://reactjs.org/docs/getting-started.html).
 - 📘 **TypeScript Documentation:** Explore TypeScript documentation [here](https://www.typescriptlang.org/docs/).
 - 🎨 **SCSS Documentation:** Check out the SCSS documentation [here](https://sass-lang.com/documentation).
-
 
 <div align="center"><h2> 📈 Quick Repo Stats </h2></div>
 
@@ -51,9 +49,9 @@
         <img src="https://img.shields.io/github/issues-pr-closed/carsonSgit/carsonSgit.github.io?style=for-the-badge" alt="GitHub PRs" />
     </p>
     <p>
+        <img src="https://img.shields.io/github/languages/count/carsonSgit/carsonSgit.github.io?style=for-the-badge" alt="GitHub Languages" />
         <img src="https://img.shields.io/github/languages/code-size/carsonSgit/carsonSgit.github.io?style=for-the-badge" alt="GitHub Code Size" />
         <img src="https://img.shields.io/github/repo-size/carsonSgit/carsonSgit.github.io?style=for-the-badge" alt="GitHub Repo Size" />
-        <img src="https://img.shields.io/github/languages/count/carsonSgit/carsonSgit.github.io?style=for-the-badge" alt="GitHub Languages" />
     </p>
 </div>
 
@@ -61,32 +59,37 @@
 If you want to run it locally follow these steps:
 
 ### 🔧 Prerequisites:
+
 - `Git`
 - `Node.js`
 - `npm (Node Package Manager)`
 
 ### 📥 Installation Steps:
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/carsonSgit/carsonsgit.github.io.git
-    ```
+   ```
 2. Go to the project directory:
-    ```bash
-    cd carsonsgit.github.io
-    ```
+   ```bash
+   cd carsonsgit.github.io
+   ```
 3. Install dependencies
-    ```bash
-    npm i
-    ```
-    **OR** if your `npm i` doesn't work
 
-    ```bash
-    npm i --force
-    ```
+   ```bash
+   npm i
+   ```
+
+   **OR** if your `npm i` doesn't work
+
+   ```bash
+   npm i --force
+   ```
+
 4. Run locally
-    ```bash
-    npm start
-    ```
+   ```bash
+   npm start
+   ```
 5. Open your browser at `http://localhost:3000`!
 
 <br />
