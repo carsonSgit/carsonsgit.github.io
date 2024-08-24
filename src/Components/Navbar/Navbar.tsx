@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { links } from '../Data/navbarLinks';
 import './Navbar.scss';
@@ -19,14 +18,14 @@ const Navbar: React.FC = () => {
       </div>
       <div className={`navbar-right ${menuOpen ? 'active' : ''}`}>
         {links.map((link, index) => (
-          <NavLink
+          <a
             key={index}
-            to={link.path}
-            className={`nav-link`}
+            href={`#${link.id}`}
+            className="nav-link"
             onClick={() => setMenuOpen(false)}
           >
             {link.label}
-          </NavLink>
+          </a>
         ))}
       </div>
     </nav>

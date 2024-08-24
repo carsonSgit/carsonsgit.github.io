@@ -8,10 +8,16 @@ import './Content.scss';
 const Content: React.FC = () => {
   return (
     <div className="content-container">
-      <Hero />
-      <div className="section-container">
+      <div id="hero">
+        <Hero />
+      </div>
+      <div id="projects" className="section-container">
         <Projects />
+      </div>
+      <div id="stats" className="section-container">
         <Experience />
+      </div>
+      <div id="about" className="section-container">
         <About />
       </div>
     </div>
