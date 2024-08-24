@@ -27,6 +27,10 @@ $hamburger-size: 32px;
   @media (max-width: 768px) {
     margin-left: 20px;
   }
+
+  a {
+    color: $navbar-text-color;
+  }
 }
 
 /* Navbar Right */
