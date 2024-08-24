@@ -1,5 +1,9 @@
 /* Variables for styling */
 $background-color: #262f2aec;
+$primary-color: #2af598;
+$secondary-color: #00715f;
+$tertiary-color: #33b072;
+$quaternary-color: #95b9b0;
 $text-color: #c6c9bf;
 $navbar-text-color: #c6c9bf;
 $hamburger-size: 32px;
@@ -36,6 +40,22 @@ $hamburger-size: 32px;
 
   a {
     color: $navbar-text-color;
+    transition: background 0.5s ease, color 0.5s ease;
+
+    &:hover {
+      background: linear-gradient(
+        90deg,
+        $primary-color,
+        $secondary-color,
+        $tertiary-color,
+        $quaternary-color
+      );
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientAnimation 5s ease infinite;
+    }
   }
 }
 
@@ -76,6 +96,8 @@ $hamburger-size: 32px;
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: 700;
+  position: relative;
+  transition: background 0.5s ease, color 0.5s ease;
 
   @media (max-width: 768px) {
     margin: 0;
@@ -84,9 +106,7 @@ $hamburger-size: 32px;
     text-align: right;
     font-weight: 700;
     background-color: $background-color;
-    transition:
-      transform 0.3s ease,
-      opacity 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
     transform: translateY(0px);
 
     &.show {
@@ -97,6 +117,21 @@ $hamburger-size: 32px;
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  &:hover {
+    background: linear-gradient(
+      90deg,
+      $primary-color,
+      $secondary-color,
+      $tertiary-color,
+      $quaternary-color
+    );
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 5s ease infinite;
   }
 }
 
@@ -119,5 +154,18 @@ $hamburger-size: 32px;
       width: $hamburger-size;
       height: $hamburger-size;
     }
+  }
+}
+
+/* Gradient Animation */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
