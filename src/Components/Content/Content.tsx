@@ -3,14 +3,17 @@ import Hero from '../Home/Hero/Hero';
 import Projects from '../Projects/Projects';
 import Experience from '../Experience/Experience';
 import About from '../About/About';
+import './Content.scss';
 
 const Content: React.FC = () => {
   return (
-    <div>
+    <div className="content-container">
       <Hero />
-      <Projects />
-      <Experience />
-      <About />
+      <div className="section-container">
+        <Projects />
+        <Experience />
+        <About />
+      </div>
     </div>
   );
 };

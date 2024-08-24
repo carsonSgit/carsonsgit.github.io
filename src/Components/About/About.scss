@@ -21,9 +21,10 @@ $tools-item-tint: darken($list-item-color, 40%);
 }
 
 .AboutContainer {
-  width: auto;
   padding: 40px;
   margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .AboutContentContainer {
@@ -34,7 +35,7 @@ $tools-item-tint: darken($list-item-color, 40%);
 
 .AboutContent {
   flex: 1;
-  margin-right: 20px;
+  margin-right: 50px;
   font-size: 1rem;
   line-height: 1.4;
   color: $secondary-color;
@@ -111,7 +112,6 @@ $tools-item-tint: darken($list-item-color, 40%);
 }
 
 .AboutImage {
-  width: 90%;
   border-radius: $border-radius;
   box-shadow: $box-shadow;
 }
@@ -119,8 +119,5 @@ $tools-item-tint: darken($list-item-color, 40%);
 @media screen and (max-width: 768px) {
   .AboutImage {
     width: 100%;
-  }
-  .AboutImageContainer {
-    width: 90%;
   }
 }
