@@ -88,6 +88,9 @@ const About: React.FC = () => {
             src={`${process.env.PUBLIC_URL}/aboutImage.webp`}
             alt="At JACHacks"
           />
+          <a href={`${process.env.PUBLIC_URL}/CarsonSpriggs_CV.pdf`} download>
+            <button className="DownloadCVButton">Download CV</button>
+          </a>
         </div>
       </div>
     </motion.div>
