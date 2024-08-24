@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, useInView } from 'framer-motion';
-import { FaFilePdf } from 'react-icons/fa'; 
+import { FaFilePdf, FaStar } from 'react-icons/fa'; 
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './About.scss';
@@ -97,16 +97,28 @@ const About: React.FC = () => {
             src={`${process.env.PUBLIC_URL}/aboutImage.webp`}
             alt="At JACHacks"
           />
-          <a 
-            href={`${process.env.PUBLIC_URL}/CarsonSpriggs_CV.pdf`} 
-            download 
-            onClick={handleDownloadClick}
-          >
-            <button className="DownloadCVButton">
-              <FaFilePdf className="DownloadIcon" />
-              Resume
-            </button>
-          </a>
+          <div className="ButtonContainer">
+            <a 
+              href={`${process.env.PUBLIC_URL}/CarsonSpriggs_CV.pdf`} 
+              download 
+              onClick={handleDownloadClick}
+            >
+              <button className="DownloadCVButton">
+                <FaFilePdf className="DownloadIcon" />
+                Resume
+              </button>
+            </a>
+            <a 
+              href="https://github.com/carsonSgit" 
+              target="_blank" 
+              rel="noreferrer"
+            >
+              <button className="GitHubButton">
+                <FaStar className="GitHubIcon" /> 
+                Repo
+              </button>
+            </a>
+          </div>
         </div>
       </div>
       <ToastContainer
