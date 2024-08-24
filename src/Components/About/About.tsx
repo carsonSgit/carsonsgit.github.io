@@ -28,7 +28,6 @@ const About: React.FC = () => {
               href="https://www.tailed.ca/en"
               target="_blank"
               rel="noreferrer"
-              aria-label="Visit Tail'ed's website"
             >
               Tail&#39;ed
             </a>{' '}
@@ -49,7 +48,6 @@ const About: React.FC = () => {
               href="https://linkedin.com/in/carsonspriggs"
               target="_blank"
               rel="noreferrer"
-              aria-label="Visit my LinkedIn profile"
             >
               LinkedIn
             </a>
@@ -59,7 +57,6 @@ const About: React.FC = () => {
               href="https://github.com/carsonSgit"
               target="_blank"
               rel="noreferrer"
-              aria-label="Visit my GitHub profile"
             >
               GitHub
             </a>
@@ -69,7 +66,6 @@ const About: React.FC = () => {
               href="https://dev.to/carsonsgit"
               target="_blank"
               rel="noreferrer"
-              aria-label="Visit my Dev.to profile"
             >
               Dev.to
             </a>{' '}
@@ -79,7 +75,6 @@ const About: React.FC = () => {
               href="https://medium.com/@carsonspriggs6"
               target="_blank"
               rel="noreferrer"
-              aria-label="Visit my Medium profile"
             >
               Medium
             </a>{' '}
