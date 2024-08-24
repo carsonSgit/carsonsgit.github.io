@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { links } from '../Data/navbarLinks';
 import './Navbar.scss';
@@ -11,6 +10,15 @@ const Navbar: React.FC = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    event.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setMenuOpen(false);
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-left">carsonSgit</div>
@@ -19,14 +27,14 @@ const Navbar: React.FC = () => {
       </div>
       <div className={`navbar-right ${menuOpen ? 'active' : ''}`}>
         {links.map((link, index) => (
-          <NavLink
+          <a
             key={index}
-            to={link.path}
-            className={`nav-link`}
-            onClick={() => setMenuOpen(false)}
+            href={`#${link.id}`}
+            className="nav-link"
+            onClick={(event) => handleLinkClick(event, link.id)}
           >
             {link.label}
-          </NavLink>
+          </a>
         ))}
       </div>
     </nav>

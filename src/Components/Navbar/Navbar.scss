@@ -1,8 +1,7 @@
 /* Variables for styling */
 $background-color: #262f2aec;
-$text-color: #b1b6a7;
-$navbar-text-color: #b1b6a7;
-$nav-link-color: #b1b6a7;
+$text-color: #c6c9bf;
+$navbar-text-color: #c6c9bf;
 $hamburger-size: 32px;
 
 /* Navbar Styles */
@@ -63,7 +62,7 @@ $hamburger-size: 32px;
 /* Nav Links (items) */
 .nav-link {
   margin-left: 3rem;
-  color: $nav-link-color;
+  color: $navbar-text-color;
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: 700;
