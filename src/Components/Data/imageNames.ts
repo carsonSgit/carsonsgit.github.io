@@ -1,12 +1,12 @@
 export const imageNames = [
-  'idleSprite0.png',
-  'idleSprite1.png',
-  'idleSprite2.png',
-  'idleSprite3.png',
+  'idleSprite0.webp',
+  'idleSprite1.webp',
+  'idleSprite2.webp',
+  'idleSprite3.webp',
 ];
 export const hoverImageNames = [
-  'hoverIdleSprite0.png',
-  'hoverIdleSprite1.png',
-  'hoverIdleSprite2.png',
-  'hoverIdleSprite3.png',
+  'hoverIdleSprite0.webp',
+  'hoverIdleSprite1.webp',
+  'hoverIdleSprite2.webp',
+  'hoverIdleSprite3.webp',
 ];

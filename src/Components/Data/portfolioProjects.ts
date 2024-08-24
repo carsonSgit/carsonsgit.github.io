@@ -2,7 +2,7 @@ import { Project } from '../Interfaces/projects';
 
 export const projects: Project[] = [
   {
-    image: 'cropcare.png',
+    image: 'cropcare.webp',
     title: 'CropCare',
     languages: 'Python, .NET MAUI, Raspberry Pi, IoT',
     description:
@@ -11,7 +11,7 @@ export const projects: Project[] = [
     website: 'https://carsonsgit.github.io/cropcare-3d/',
   },
   {
-    image: 'linky.png',
+    image: 'linky.webp',
     title: 'Linky',
     languages: 'Mantine, TypeScript, RAG AI, Vector DB',
     description:
@@ -20,7 +20,7 @@ export const projects: Project[] = [
     website: 'https://www.linky.im/',
   },
   {
-    image: 'trademind.png',
+    image: 'trademind.webp',
     title: 'TradeMind',
     languages: 'React, Python, Machine Learning',
     description:
@@ -29,7 +29,7 @@ export const projects: Project[] = [
     website: 'https://trademind.pages.dev/',
   },  
   {
-    image: 'pharmahacks2024.png',
+    image: 'pharmahacks2024.webp',
     title: 'Mice Neural Decoding',
     languages: 'Python, Jupyter Notebook, Machine Learning',
     description:
