@@ -22,19 +22,15 @@
     </div>
 </div>
 
-<div align="center"><h2> About This Project </h2></div>
+<div align="center"><h2> 📔 About </h2></div>
 
-🌟 **Welcome to my portfolio!** My site showcases my journey as a Computer Scientist, featuring my skills, projects, and achievements.
-
-<div align="center">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=carsonSgit&repo=carsonsgit.github.io&theme=dark" alt="Repo Stats"/>
-</div>
+🌟 **Welcome to my portfolio!** My site showcases my journey as a Computer Scientist, showing my skills, projects, experiences, and achievements.
 
 <div align="center"><h2> ✨ Features </h2></div>
 
-- 🎨 **Dynamic Project Showcase:** Interactive sections featuring my projects with links to live demos and GitHub repositories.
-- 📱 **Responsive Design:** A mobile-first approach ensures a great look on all devices.
-- 🔧 **Tech Stack Overview:** A clear representation of my specialized technologies, offering insights into my skills.
+- 🎨 **Top Project Showcase:** Tiled sections featuring my top projects with links to live demos and GitHub repos.
+- 🔧 **Technologies:** A display of *most* of the technologies I've used in my CS career.
+- 📱 **Responsive Design:** Made with different screen-sizes in mind (mobile-first approach).
 
 
 <div align="center"><h2> 🔗 Important Links </h2></div>
@@ -57,6 +53,38 @@
     </p>
 </div>
 
----
+<div align="center"><h2> 🚀 Deploy Locally </h2></div>
+If you want to run it locally follow these steps:
 
-Thank you for visiting my portfolio! I hope you find my work inspiring. 🎉
+### 🔧 Prerequisites:
+- `Git`
+- `Node.js`
+- `npm (Node Package Manager)`
+
+### 📥 Installation Steps:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/carsonSgit/carsonsgit.github.io.git
+    ```
+2. Go to the project directory:
+    ```bash
+    cd carsonsgit.github.io
+    ```
+3. Install dependencies
+    ```bash
+    npm i
+    ```
+    **OR** if your `npm i` doesn't work
+
+    ```bash
+    npm i --force
+    ```
+4. Run locally
+    ```bash
+    npm start
+    ```
+5. Open your browser at `http://localhost:3000`!
+
+<br />
+
+**Thank you for visiting my portfolio! 🎉**
