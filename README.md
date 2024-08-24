@@ -1,13 +1,6 @@
-# My [Portfolio](https://carsonsgit.github.io/)
-
-Welcome to the repo for my portfolio!
-
-> [!IMPORTANT]
-> This is still currently a W.I.P! primarily because of mobile responsiveness and procrastination..... ALMOST DONE!
-
-<img src="https://github.com/user-attachments/assets/d38451ae-dc70-4290-af6d-c597b94f99e5" width="500"/>
-
-> Site Preview
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/78b42bd7-1abb-4dd5-9480-351413ee0217" width="700" />
+</div>
 
 ## Technologies Used
 
