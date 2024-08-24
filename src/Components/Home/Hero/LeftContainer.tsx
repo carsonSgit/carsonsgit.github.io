@@ -6,7 +6,7 @@ const LeftContainer: React.FC = () => {
   return (
     <div className="LeftContainer">
       <h1 className="HeroText">
-        Hi, I'm <span className="AnimatedText">Carson</span>
+        Hi, I&#39;m <span className="AnimatedText">Carson</span>
       </h1>
       <p>
         <Typewriter

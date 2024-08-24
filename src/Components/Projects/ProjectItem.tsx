@@ -2,7 +2,6 @@ import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import { useSpring } from 'react-spring';
 import { ProjectItemProps } from '../Interfaces/projectItemProps';
 import './Projects.scss';
 
