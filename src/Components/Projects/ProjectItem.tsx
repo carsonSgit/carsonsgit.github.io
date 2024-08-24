@@ -12,26 +12,16 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
     threshold: 0.1,
   });
 
-  const props = useSpring({
-    opacity: inView ? 1 : 0,
-    transform: inView ? 'translateY(0)' : 'translateY(20px)',
-    config: { tension: 200, friction: 20 },
-  });
-
   return (
     <motion.div
       className="ProjectItem"
       style={{
         backgroundImage: `url(${process.env.PUBLIC_URL}/${project.image})`,
       }}
-      initial={{ opacity: 0, scale: 0.99 }}
+      initial={{ opacity: 0}}
       animate={{ opacity: inView ? 1 : 0, scale: inView ? 1 : 0.99 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.8 }}
       ref={ref}
-      whileHover={{
-        scale: 1.01,
-        transition: { duration: 0.15 },
-      }}
     >
       <div className="ProjectContent">
         <h2 className="ProjectTitle">{project.title}</h2>

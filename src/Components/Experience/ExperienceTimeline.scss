@@ -80,7 +80,6 @@ $tools-item-tint: darken($list-item-color, 40%);
 
           background-size: 300% 300%;
           animation: gradientAnimation 4s ease-in-out infinite;
-          transform: scale(1.04);
           transition: transform 0.3s ease-in-out;
         }
       }
