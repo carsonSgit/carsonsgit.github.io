@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion, useInView } from 'framer-motion';
+import { FaFilePdf } from 'react-icons/fa'; 
 import './About.scss';
 
 const About: React.FC = () => {
@@ -89,7 +90,10 @@ const About: React.FC = () => {
             alt="At JACHacks"
           />
           <a href={`${process.env.PUBLIC_URL}/CarsonSpriggs_CV.pdf`} download>
-            <button className="DownloadCVButton">Download CV</button>
+            <button className="DownloadCVButton">
+              <FaFilePdf className="DownloadIcon" />
+              Resume
+            </button>
           </a>
         </div>
       </div>

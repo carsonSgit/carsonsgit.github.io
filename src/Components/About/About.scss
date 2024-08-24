@@ -118,19 +118,30 @@ $tools-item-tint: darken($list-item-color, 40%);
 }
 
 .DownloadCVButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 20px;
-  padding: 10px 20px;
-  background-color: $secondary-color;
+  padding: 12px 24px;
+  background: darken(#2bd4a0, 30%);
   color: $text-color;
   border: none;
   border-radius: $border-radius;
   cursor: pointer;
-  font-size: 1em;
-  transition: background-color 0.3s ease;
+  font-size: 1.1em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  box-shadow: $box-shadow;
+  transition: background 0.3s ease, transform 0.2s ease;
 
   &:hover {
-    background-color: $primary-color;
+    transform: translateY(-2px);
   }
+}
+
+.DownloadIcon {
+  margin-right: 10px;
+  font-size: 1.2em;
 }
 
 @media screen and (max-width: 768px) {
