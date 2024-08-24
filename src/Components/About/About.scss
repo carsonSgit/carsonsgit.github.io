@@ -41,7 +41,7 @@ $tools-item-tint: darken($list-item-color, 40%);
   color: $secondary-color;
   background-color: rgba(darken($background-color, 10%), 0.25);
   border-radius: $border-radius;
-  box-shadow: 2px 2px 16px 2px rgba(darken($background-color, 20%), 0.4);
+  box-shadow: 0px 2px 16px 2px rgba(darken($background-color, 20%), 0.3);
 }
 
 .AboutText {
@@ -115,7 +115,7 @@ $tools-item-tint: darken($list-item-color, 40%);
 
 .AboutImage {
   border-radius: $border-radius;
-  box-shadow: 2px 2px 16px 2px rgba(darken($background-color, 20%), 0.4);
+  box-shadow: 0px 2px 16px 2px rgba(darken($background-color, 20%), 0.3);
 }
 
 .DownloadCVButton {
