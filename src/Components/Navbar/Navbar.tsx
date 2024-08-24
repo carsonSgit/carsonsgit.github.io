@@ -10,6 +10,15 @@ const Navbar: React.FC = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    event.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setMenuOpen(false);
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-left">carsonSgit</div>
@@ -22,7 +31,7 @@ const Navbar: React.FC = () => {
             key={index}
             href={`#${link.id}`}
             className="nav-link"
-            onClick={() => setMenuOpen(false)}
+            onClick={(event) => handleLinkClick(event, link.id)}
           >
             {link.label}
           </a>

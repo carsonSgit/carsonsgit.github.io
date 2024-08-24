@@ -4,10 +4,6 @@ $scrollbar-thumb-color: #8cbc9158;
 $scrollbar-thumb-hover-color: #5f7167;
 $background-color: #27302b;
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background-color: $background-color;
 }
