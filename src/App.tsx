@@ -6,9 +6,11 @@ import './App.scss';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
+    <div className="App" role="document">
       <Navbar />
-      <Content />
+      <main>
+        <Content />
+      </main>
       <Footer />
     </div>
   );
