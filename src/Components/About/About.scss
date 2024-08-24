@@ -41,6 +41,7 @@ $tools-item-tint: darken($list-item-color, 40%);
   color: $secondary-color;
   background-color: rgba(darken($background-color, 10%), 0.25);
   border-radius: $border-radius;
+  box-shadow: 0px 2px 16px 2px rgba(darken($background-color, 20%), 0.3);
 }
 
 .AboutText {
@@ -105,6 +106,7 @@ $tools-item-tint: darken($list-item-color, 40%);
 
 .AboutImageContainer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
@@ -113,7 +115,35 @@ $tools-item-tint: darken($list-item-color, 40%);
 
 .AboutImage {
   border-radius: $border-radius;
+  box-shadow: 0px 2px 16px 2px rgba(darken($background-color, 20%), 0.3);
+}
+
+.DownloadCVButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: darken(#2bd4a0, 30%);
+  color: $text-color;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
   box-shadow: $box-shadow;
+  transition: background 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.DownloadIcon {
+  margin-right: 10px;
+  margin-top: -3px;
+  font-size: 1.2em;
 }
 
 @media screen and (max-width: 768px) {
@@ -121,3 +151,45 @@ $tools-item-tint: darken($list-item-color, 40%);
     width: 100%;
   }
 }
+
+.ButtonContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.GitHubButton {
+  background-color: #161a1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 12px 24px;
+  color: $text-color;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  box-shadow: $box-shadow;
+  transition: background 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.GitHubIcon {
+  margin-left: 10px;
+  margin-top: -3px;
+  font-size: 1.2em;
+}
+
+.StarIcon {
+  margin-right: 10px;
+  margin-top: -3px;
+  font-size: 1.2em;
+}
+

@@ -1,10 +1,19 @@
 import React from 'react';
 import { motion, useInView } from 'framer-motion';
+import { FaFilePdf, FaStar, FaGithub } from 'react-icons/fa'; 
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './About.scss';
 
 const About: React.FC = () => {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true });
+
+  const handleDownloadClick = () => {
+    toast.success("Resume downloaded successfully!", {
+      position: "bottom-right",
+    });
+  };
 
   return (
     <motion.div
@@ -88,8 +97,41 @@ const About: React.FC = () => {
             src={`${process.env.PUBLIC_URL}/aboutImage.webp`}
             alt="At JACHacks"
           />
+          <div className="ButtonContainer">
+            <a 
+              href={`${process.env.PUBLIC_URL}/CarsonSpriggs_CV.pdf`} 
+              download 
+              onClick={handleDownloadClick}
+            >
+              <button className="DownloadCVButton">
+                <FaFilePdf className="DownloadIcon" />
+                Resume
+              </button>
+            </a>
+            <a 
+              href="https://github.com/carsonSgit/carsonsgit.github.io" 
+              target="_blank" 
+              rel="noreferrer"
+            >
+              <button className="GitHubButton">
+                <FaStar className="StarIcon" /> 
+                this on
+                <FaGithub className="GitHubIcon" />
+              </button>
+            </a>
+          </div>
         </div>
       </div>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={2000}
+        hideProgressBar={true}
+        closeOnClick
+        rtl={false}
+        draggable
+        theme={'dark'}
+        toastStyle={{ backgroundColor: '#1b211e' }}
+      />
     </motion.div>
   );
 };
