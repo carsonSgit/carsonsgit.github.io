@@ -21,7 +21,7 @@ $hamburger-size: 32px;
   left: 0;
   right: 0;
   z-index: 1000;
-  background-color: #27302B;
+  background-color: #27302b;
 
   @media (max-width: 768px) {
     padding-top: 20px;
@@ -40,7 +40,9 @@ $hamburger-size: 32px;
 
   a {
     color: $navbar-text-color;
-    transition: background 0.5s ease, color 0.5s ease;
+    transition:
+      background 0.5s ease,
+      color 0.5s ease;
 
     &:hover {
       background: linear-gradient(
@@ -97,7 +99,9 @@ $hamburger-size: 32px;
   font-size: 1.5rem;
   font-weight: 700;
   position: relative;
-  transition: background 0.5s ease, color 0.5s ease;
+  transition:
+    background 0.5s ease,
+    color 0.5s ease;
 
   @media (max-width: 768px) {
     margin: 0;
@@ -106,7 +110,9 @@ $hamburger-size: 32px;
     text-align: right;
     font-weight: 700;
     background-color: $background-color;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
     transform: translateY(0px);
 
     &.show {
