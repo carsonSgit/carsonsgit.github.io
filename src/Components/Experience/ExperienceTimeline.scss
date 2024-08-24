@@ -77,13 +77,12 @@ $tools-item-tint: darken($list-item-color, 40%);
             darken($tertiary-color, 10%),
             darken($list-item-color, 10%)
           );
-          
+
           background-size: 300% 300%;
           animation: gradientAnimation 4s ease-in-out infinite;
           transform: scale(1.04);
-          transition:  transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out;
         }
-        
       }
 
       @media (max-width: 768px) {
