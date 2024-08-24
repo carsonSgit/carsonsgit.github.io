@@ -66,11 +66,11 @@ const ExperienceTimeline = () => {
 
   return (
     <div className="experience-grid">
-      <div className="timeline" aria-label="Experience Timeline">
+      <div className="timeline">
         <motion.div className="particle-background" />
 
         <div className="timeline-section">
-          <h2 className="timeline-section-title" id="education">Education</h2>
+          <h2 className="timeline-section-title">Education</h2>
           {education.map((item, index) => (
             <motion.div
               key={index}
@@ -79,28 +79,26 @@ const ExperienceTimeline = () => {
               animate={controls}
               exit={{ opacity: 0, y: 20 }}
               className="timeline-item"
-              aria-labelledby={`education-item-${index}`}
             >
-              <div className="timeline-step education-step" aria-hidden="true"></div>
+              <div className="timeline-step education-step"></div>
               <div className="timeline-content">
-                <h3 id={`education-item-${index}`}>
+                <h3>
                   {item.title} <span className="timeline-atsign">@ </span>
                   <a
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="timeline-institution"
-                    aria-label={`Link to ${item.institution}`}
                   >
                     {item.institution}
                   </a>
                 </h3>
-                <div className="timeline-date" aria-label="Date of education">{item.date}</div>
+                <div className="timeline-date">{item.date}</div>
                 <p>{item.description}</p>
-                <div className="timeline-stats" aria-label="Statistics related to education">
+                <div className="timeline-stats">
                   {Object.entries(statistics[item.statsKey] || {}).map(
                     ([key, value]: [string, number | string]) => (
-                      <div key={key} className="stat-item" aria-label={`${key.replace(/([A-Z])/g, ' $1').toLowerCase()}: ${value}`}>
+                      <div key={key} className="stat-item">
                         <strong>{value}</strong>{' '}
                         {key.replace(/([A-Z])/g, ' $1').toLowerCase()}
                       </div>
@@ -113,7 +111,7 @@ const ExperienceTimeline = () => {
         </div>
 
         <div className="timeline-section">
-          <h2 className="timeline-section-title" id="experience">Experience</h2>
+          <h2 className="timeline-section-title">Experience</h2>
           {experience.map((item, index) => (
             <motion.div
               key={index}
@@ -122,22 +120,21 @@ const ExperienceTimeline = () => {
               animate={controls}
               exit={{ opacity: 0, y: 20 }}
               className="timeline-item"
-              aria-labelledby={`experience-item-${index}`}
             >
-              <div className="timeline-step experience-step" aria-hidden="true"></div>
+              <div className="timeline-step experience-step"></div>
               <div className="timeline-content">
-                <h3 id={`experience-item-${index}`}>
-                  <a href={item.link} target="_blank" rel="noopener noreferrer" aria-label={`Link to ${item.title} at ${item.company}`}>
+                <h3>
+                  <a href={item.link} target="_blank" rel="noopener noreferrer">
                     {item.title} <span className="timeline-atsign">@ </span>
                     <span className="timeline-company">{item.company}</span>
                   </a>
                 </h3>
-                <div className="timeline-date" aria-label="Date of experience">{item.date}</div>
+                <div className="timeline-date">{item.date}</div>
                 <p>{item.description}</p>
-                <div className="timeline-stats" aria-label="Statistics related to experience">
+                <div className="timeline-stats">
                   {Object.entries(statistics[item.statsKey] || {}).map(
                     ([key, value]: [string, number | string]) => (
-                      <div key={key} className="stat-item" aria-label={`${key.replace(/([A-Z])/g, ' $1').toLowerCase()}: ${value}`}>
+                      <div key={key} className="stat-item">
                         <strong>{value}</strong>{' '}
                         {key.replace(/([A-Z])/g, ' $1').toLowerCase()}
                       </div>
@@ -150,68 +147,160 @@ const ExperienceTimeline = () => {
         </div>
       </div>
 
-      <div className="category-containers" aria-label="Technical skills">
+      <div className="category-containers">
         <div className="CategoryContainer">
           <h3 className="CategoryTitle">Languages</h3>
-          <ul className="TechList programming-languages" role="list">
-            <li role="listitem" aria-label="Python"><FaPython /> Python</li>
-            <li role="listitem" aria-label="Java"><FaJava /> Java</li>
-            <li role="listitem" aria-label="JavaScript"><FaJsSquare /> JavaScript</li>
-            <li role="listitem" aria-label="TypeScript"><SiTypescript /> TypeScript</li>
-            <li role="listitem" aria-label="C#"><SiCsharp /> C#</li>
-            <li role="listitem" aria-label="Kotlin"><SiKotlin /> Kotlin</li>
-            <li role="listitem" aria-label="PHP"><FaPhp /> PHP</li>
-            <li role="listitem" aria-label="PowerShell"><SiPowershell /> PowerShell</li>
-            <li role="listitem" aria-label="Bash"><SiGnubash /> Bash</li>
-            <li role="listitem" aria-label="HTML"><FaHtml5 /> HTML</li>
-            <li role="listitem" aria-label="CSS"><FaCss3Alt /> CSS</li>
-            <li role="listitem" aria-label="MSSQL"><SiMicrosoftsqlserver /> MSSQL</li>
-            <li role="listitem" aria-label="SQLite"><SiSqlite /> SQLite</li>
-            <li role="listitem" aria-label="MySQL"><SiMysql /> MySQL</li>
+          <ul className="TechList programming-languages">
+            <li>
+              <FaPython /> Python
+            </li>
+            <li>
+              <FaJava /> Java
+            </li>
+            <li>
+              <FaJsSquare /> JavaScript
+            </li>
+            <li>
+              <SiTypescript /> TypeScript
+            </li>
+            <li>
+              <SiCsharp /> C#
+            </li>
+            <li>
+              <SiKotlin /> Kotlin
+            </li>
+            <li>
+              <FaPhp /> PHP
+            </li>
+            <li>
+              <SiPowershell /> PowerShell
+            </li>
+            <li>
+              <SiGnubash /> Bash
+            </li>
+            <li>
+              <FaHtml5 /> HTML
+            </li>
+            <li>
+              <FaCss3Alt /> CSS
+            </li>
+            <li>
+              <SiMicrosoftsqlserver /> MSSQL
+            </li>
+            <li>
+              <SiSqlite /> SQLite
+            </li>
+            <li>
+              <SiMysql /> MySQL
+            </li>
           </ul>
         </div>
 
         <div className="CategoryContainer">
           <h3 className="CategoryTitle">Frameworks & Libraries</h3>
-          <ul className="TechList frameworks-libraries" role="list">
-            <li role="listitem" aria-label="ASP.NET"><SiDotnet /> ASP.NET</li>
-            <li role="listitem" aria-label=".NET MAUI"><SiDotnet /> .NET MAUI</li>
-            <li role="listitem" aria-label="WPF"><SiDotnet /> WPF</li>
-            <li role="listitem" aria-label="Xamarin"><SiXamarin /> Xamarin</li>
-            <li role="listitem" aria-label="React"><FaReact /> React</li>
-            <li role="listitem" aria-label="Next.js"><SiNextdotjs /> Next.js</li>
-            <li role="listitem" aria-label="jQuery"><SiJquery /> jQuery</li>
-            <li role="listitem" aria-label="Angular"><FaAngular /> Angular</li>
-            <li role="listitem" aria-label="Bootstrap"><FaBootstrap /> Bootstrap</li>
-            <li role="listitem" aria-label="Node.js"><FaNodeJs /> Node.js</li>
-            <li role="listitem" aria-label="Firebase"><SiFirebase /> Firebase</li>
-            <li role="listitem" aria-label="MongoDB"><SiMongodb /> MongoDB</li>
-            <li role="listitem" aria-label="SCSS"><FaSass /> SCSS</li>
-            <li role="listitem" aria-label="TailwindCSS"><SiTailwindcss /> TailwindCSS</li>
-            <li role="listitem" aria-label="Express.js"><SiExpress /> Express.js</li>
-            <li role="listitem" aria-label="Keras"><SiKeras /> Keras</li>
-            <li role="listitem" aria-label="PyTorch"><SiPytorch /> PyTorch</li>
-            <li role="listitem" aria-label="scikit-learn"><SiScikitlearn /> scikit-learn</li>
+          <ul className="TechList frameworks-libraries">
+            <li>
+              <SiDotnet /> ASP.NET
+            </li>
+            <li>
+              <SiDotnet /> .NET MAUI
+            </li>
+            <li>
+              <SiDotnet /> WPF
+            </li>
+            <li>
+              <SiXamarin /> Xamarin
+            </li>
+            <li>
+              <FaReact /> React
+            </li>
+            <li>
+              <SiNextdotjs /> Next.js
+            </li>
+            <li>
+              <SiJquery /> jQuery
+            </li>
+            <li>
+              <FaAngular /> Angular
+            </li>
+            <li>
+              <FaBootstrap /> Bootstrap
+            </li>
+            <li>
+              <FaNodeJs /> Node.js
+            </li>
+            <li>
+              <FaSass /> SCSS
+            </li>
+            <li>
+              <SiTailwindcss /> TailwindCSS
+            </li>
+            <li>
+              <SiExpress /> Express.js
+            </li>
+            <li>
+              <SiKeras /> Keras
+            </li>
+            <li>
+              <SiPytorch /> PyTorch
+            </li>
+            <li>
+              <SiScikitlearn /> scikit-learn
+            </li>
           </ul>
         </div>
 
         <div className="CategoryContainer">
           <h3 className="CategoryTitle">Tools</h3>
-          <ul className="TechList tools-platforms" role="list">
-            <li role="listitem" aria-label="Git"><FaGitAlt /> Git</li>
-            <li role="listitem" aria-label="Docker"><FaDocker /> Docker</li>
-            <li role="listitem" aria-label="AWS"><FaAws /> AWS</li>
-            <li role="listitem" aria-label="Azure DevOps"><SiAzuredevops /> Azure DevOps</li>
-            <li role="listitem" aria-label="Postman"><SiPostman /> Postman</li>
-            <li role="listitem" aria-label="Swagger"><SiSwagger /> Swagger</li>
-            <li role="listitem" aria-label="Jira"><SiJira /> Jira</li>
-            <li role="listitem" aria-label="Figma"><FaFigma /> Figma</li>
-            <li role="listitem" aria-label="Cloudflare"><SiCloudflare /> Cloudflare</li>
-            <li role="listitem" aria-label="Vercel"><SiVercel /> Vercel</li>
-            <li role="listitem" aria-label="Nginx"><SiNginx /> Nginx</li>
-            <li role="listitem" aria-label="Raspberry Pi"><FaRaspberryPi /> Raspberry Pi</li>
-            <li role="listitem" aria-label="Kubernetes"><SiKubernetes /> Kubernetes</li>
-            <li role="listitem" aria-label="Unity"><SiUnity /> Unity</li>
+          <ul className="TechList tools-platforms">
+            <li>
+              <FaGitAlt /> Git
+            </li>
+            <li>
+              <SiMongodb /> MongoDB
+            </li>
+            <li>
+              <FaDocker /> Docker
+            </li>
+            <li>
+              <SiAzuredevops /> Azure
+            </li>
+            <li>
+              <FaAws /> AWS
+            </li>
+            <li>
+              <SiCloudflare /> Cloudflare
+            </li>
+            <li>
+              <SiFirebase /> Firebase
+            </li>
+            <li>
+              <SiVercel /> Vercel
+            </li>
+            <li>
+              <SiNginx /> Nginx
+            </li>
+            <li>
+              <SiUnity /> Unity
+            </li>
+            <li>
+              <SiKubernetes /> Kubernetes
+            </li>
+            <li>
+              <SiPostman /> Postman
+            </li>
+            <li>
+              <SiSwagger /> Swagger
+            </li>
+            <li>
+              <SiJira /> Jira
+            </li>
+            <li>
+              <FaRaspberryPi /> Rasp Pi
+            </li>
+            <li>
+              <FaFigma /> Figma
+            </li>
           </ul>
         </div>
       </div>

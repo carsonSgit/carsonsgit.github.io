@@ -17,12 +17,10 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
       style={{
         backgroundImage: `url(${process.env.PUBLIC_URL}/${project.image})`,
       }}
-      initial={{ opacity: 0 }}
+      initial={{ opacity: 0}}
       animate={{ opacity: inView ? 1 : 0, scale: inView ? 1 : 0.99 }}
       transition={{ duration: 0.8 }}
       ref={ref}
-      role="region"
-      aria-labelledby={`project-title`}
     >
       <div className="ProjectContent">
         <h2 className="ProjectTitle">{project.title}</h2>
@@ -38,7 +36,6 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
               className="ProjectLink"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`View ${project.title} on GitHub`}
             >
               <FaGithub /> GitHub
             </a>
@@ -49,7 +46,6 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
               className="ProjectLink"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`Visit the website for ${project.title}`}
             >
               <FaExternalLinkAlt /> Website
             </a>
