@@ -105,6 +105,7 @@ $tools-item-tint: darken($list-item-color, 40%);
 
 .AboutImageContainer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
@@ -114,6 +115,22 @@ $tools-item-tint: darken($list-item-color, 40%);
 .AboutImage {
   border-radius: $border-radius;
   box-shadow: $box-shadow;
+}
+
+.DownloadCVButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: $secondary-color;
+  color: $text-color;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $primary-color;
+  }
 }
 
 @media screen and (max-width: 768px) {
