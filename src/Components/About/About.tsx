@@ -17,9 +17,9 @@ const About: React.FC = () => {
       <div className="AboutContentContainer">
         <div className="AboutContent">
           <p className="AboutText">
-            Hi, my name is Carson! I&#39;m a recent grad from John Abbott College&#39;s
-            Computer Science degree continuing my education over at Concordia
-            University!
+            Hi, my name is Carson! I&#39;m a recent grad from John Abbott
+            College&#39;s Computer Science degree continuing my education over
+            at Concordia University!
             <br />
             <br />
             This summer, I interned @{' '}
@@ -36,10 +36,10 @@ const About: React.FC = () => {
             some tools for users written in Python (notably, an AI-tool).
             <br />
             <br />
-            In my free time, I&#39;m usually working on a personal project, learning
-            a new technology, or wallowing in some imposter syndrome. Aside from
-            that, my interests are geared towards AI/ML and their potential
-            impact on environmental solutions.
+            In my free time, I&#39;m usually working on a personal project,
+            learning a new technology, or wallowing in some imposter syndrome.
+            Aside from that, my interests are geared towards AI/ML and their
+            potential impact on environmental solutions.
             <br />
             <br />
             I&#39;m not hard to track down, but you can find me on{' '}

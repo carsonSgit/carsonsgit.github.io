@@ -10,7 +10,10 @@ const Navbar: React.FC = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+  const handleLinkClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    id: string,
+  ) => {
     event.preventDefault();
     const element = document.getElementById(id);
     if (element) {
@@ -31,7 +34,7 @@ const Navbar: React.FC = () => {
             key={index}
             href={`#${link.id}`}
             className="nav-link"
-            onClick={(event) => handleLinkClick(event, link.id)}
+            onClick={event => handleLinkClick(event, link.id)}
           >
             {link.label}
           </a>

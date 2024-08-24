@@ -27,7 +27,7 @@ export const projects: Project[] = [
       'TradeMind is a project developed for <a href="https://launchlab.ai/" target="_blank" rel="noopener noreferrer">AI Launch Lab</a>\'s <a href="https://launchlab.ai/rd-program/" target="_blank" rel="noopener noreferrer">R&D Program</a>. It is a web app that uses machine learning to predict stock prices and provide insights to users.',
     github: 'https://github.com/carsonSgit/TradeMind',
     website: 'https://trademind.pages.dev/',
-  },  
+  },
   {
     image: 'pharmahacks2024.webp',
     title: 'Mice Neural Decoding',
@@ -35,6 +35,7 @@ export const projects: Project[] = [
     description:
       'Mice Neural Decoding was a challenge at the <a href="https://pharmahacks.com/#welcome" target="_blank" rel="noopener noreferrer">PharmaHacks 2024</a> event. My group and I decoded mouse navigation decisions by analyzing L2/3 neuron activity in the retrosplenial cortex, following the findings of Tseng et al. (2022) in their Neuron Paper. Please read the README.md on the GitHub repo!',
     github: 'https://github.com/carsonSgit/Mice-Neural-Decoding-ML',
-    website: 'https://github.com/carsonSgit/Mice-Neural-Decoding-ML/blob/main/PharmaHacks%202024%20Neural%20Decoding%20Single%20File.ipynb',
+    website:
+      'https://github.com/carsonSgit/Mice-Neural-Decoding-ML/blob/main/PharmaHacks%202024%20Neural%20Decoding%20Single%20File.ipynb',
   },
 ];

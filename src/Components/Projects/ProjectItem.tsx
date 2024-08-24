@@ -17,7 +17,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
       style={{
         backgroundImage: `url(${process.env.PUBLIC_URL}/${project.image})`,
       }}
-      initial={{ opacity: 0}}
+      initial={{ opacity: 0 }}
       animate={{ opacity: inView ? 1 : 0, scale: inView ? 1 : 0.99 }}
       transition={{ duration: 0.8 }}
       ref={ref}
