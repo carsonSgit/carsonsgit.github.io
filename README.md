@@ -14,7 +14,7 @@
 </div>
 
 <div align="center">
-    <h6><strong>Tech Stack 💻</strong></h6>
+    <h2>💻 Tech Stack</h2>
     <div style="display: flex; gap: 20px; justify-content: center;">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSoW3g9hjXIasgon-kpzz-lD9z4SsalyPbZA&s" alt="React" width="50" height="50" />
         <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="TypeScript" width="50" height="50" />
@@ -23,33 +23,46 @@
 </div>
 
 
-
 ## About This Project
 
-🌟 **Welcome to my portfolio!** My site shows a bit about myself & what I've done as a Computer Scientist!
+🌟 **Welcome to my portfolio!** My site showcases my journey as a Computer Scientist, featuring my skills, projects, and achievements.
 
+<div align="center">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=carsonSgit&repo=carsonsgit.github.io&theme=dark" alt="Repo Stats"/>
+</div>
 
-<div align="center"> <img src="https://github-readme-stats.vercel.app/api/pin/?username=carsonSgit&repo=carsonsgit.github.io&theme=dark" alt="Repo Stats"/> </div>
+---
 
-## Features
+## ✨ Features
 
 - 🎨 **Dynamic Project Showcase:** Interactive sections featuring my projects with links to live demos and GitHub repositories.
 - 📱 **Responsive Design:** A mobile-first approach ensures a great look on all devices.
 - 🔧 **Tech Stack Overview:** A clear representation of my specialized technologies, offering insights into my skills.
 
-## Important Links
+---
+
+## 🔗 Important Links
 
 - 📚 **Development Resources:** Explore the resources that guided my journey: [Helpful Links](https://github.com/carsonSgit/carsonsgit.github.io/issues/9)
 - 🔍 **Commit/Merge Prefixes:** Learn about my commit message conventions: [Commit Message Prefixes](https://github.com/carsonSgit/carsonsgit.github.io/issues/14)
 
+---
+
+## 📈 Quick Repo Stats
+
+<div align="center">
+    <p>
+        <img src="https://img.shields.io/github/stars/carsonSgit/carsonsgit.github.io?style=for-the-badge" alt="GitHub Stars" />
+        <img src="https://img.shields.io/github/issues-closed/carsonSgit/carsonsgit.github.io?style=for-the-badge" alt="GitHub Closed Issues" />
+        <img src="https://img.shields.io/github/issues-pr-closed/carsonSgit/carsonSgit.github.io?style=for-the-badge" alt="GitHub PRs" />
+    </p>
+    <p>
+        <img src="https://img.shields.io/github/languages/code-size/carsonSgit/carsonSgit.github.io?style=for-the-badge" alt="GitHub Code Size" />
+        <img src="https://img.shields.io/github/repo-size/carsonSgit/carsonSgit.github.io?style=for-the-badge" alt="GitHub Repo Size" />
+        <img src="https://img.shields.io/github/languages/count/carsonSgit/carsonSgit.github.io?style=for-the-badge" alt="GitHub Languages" />
+    </p>
+</div>
+
+---
+
 Thank you for visiting my portfolio! I hope you find my work inspiring. 🎉
-
-### 📈 Quick Repo Stats
-
-- **Stars**: ![GitHub Stars](https://img.shields.io/github/stars/carsonSgit/carsonsgit.github.io?style=for-the-badge)
-- **Issues**: ![GitHub Closed Issues](https://img.shields.io/github/issues-closed/carsonSgit/carsonsgit.github.io?style=for-the-badge)
-- **PRs**: ![GitHub Pull Requests](https://img.shields.io/github/issues-pr-closed/carsonSgit/carsonSgit.github.io?style=for-the-badge)
-- **Code Size**: ![GitHub Code Size](https://img.shields.io/github/languages/code-size/carsonSgit/carsonSgit.github.io?style=for-the-badge)
-- **Repo Size**: ![GitHub Repo Size](https://img.shields.io/github/repo-size/carsonSgit/carsonSgit.github.io?style=for-the-badge)
-- **Languages**: ![GitHub Language Count](https://img.shields.io/github/languages/count/carsonSgit/carsonSgit.github.io?style=for-the-badge)
-
