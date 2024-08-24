@@ -39,8 +39,8 @@
 
 <div align="center"><h2> 🔗 Important Links </h2></div>
 
-- 📚 **Development Resources:** Explore the resources that guided my journey: [Helpful Links](https://github.com/carsonSgit/carsonsgit.github.io/issues/9)
-- 🔍 **Commit/Merge Prefixes:** Learn about my commit message conventions: [Commit Message Prefixes](https://github.com/carsonSgit/carsonsgit.github.io/issues/14)
+- 📚 **Development Resources:** Here are some [helpful links](https://github.com/carsonSgit/carsonsgit.github.io/issues/9) I made use of during development.
+- 🔍 **Commit/Merge Prefixes:** I used these [commit message prefixes](https://github.com/carsonSgit/carsonsgit.github.io/issues/14) to improve my Git habits.
 
 <div align="center"><h2> 📈 Quick Repo Stats </h2></div>
 
