@@ -60,7 +60,6 @@ const AnimatedImage: React.FC<AnimatedImageProps> = ({
       onMouseEnter={() => handleMouseEnter(currentIndex)}
       onMouseLeave={handleMouseLeave}
       width="280"
-      loading="lazy"
     />
   );
 };
