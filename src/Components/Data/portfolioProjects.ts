@@ -29,7 +29,7 @@ export const projects: Project[] = [
     website: 'https://trademind.pages.dev/',
   },  
   {
-    image: 'DEADWEIGHT.png',
+    image: 'pharmahacks2024.png',
     title: 'Mice Neural Decoding',
     languages: 'Python, Jupyter Notebook, Machine Learning',
     description:
