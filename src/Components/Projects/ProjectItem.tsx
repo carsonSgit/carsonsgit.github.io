@@ -26,7 +26,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
       }}
       initial={{ opacity: 0}}
       animate={{ opacity: inView ? 1 : 0, scale: inView ? 1 : 0.99 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.8 }}
       ref={ref}
     >
       <div className="ProjectContent">
