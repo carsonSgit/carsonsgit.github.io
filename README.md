@@ -22,8 +22,7 @@
     </div>
 </div>
 
-
-## About This Project
+<div align="center"><h2> About This Project </h2></div>
 
 🌟 **Welcome to my portfolio!** My site showcases my journey as a Computer Scientist, featuring my skills, projects, and achievements.
 
@@ -31,24 +30,19 @@
     <img src="https://github-readme-stats.vercel.app/api/pin/?username=carsonSgit&repo=carsonsgit.github.io&theme=dark" alt="Repo Stats"/>
 </div>
 
----
-
-## ✨ Features
+<div align="center"><h2> ✨ Features </h2></div>
 
 - 🎨 **Dynamic Project Showcase:** Interactive sections featuring my projects with links to live demos and GitHub repositories.
 - 📱 **Responsive Design:** A mobile-first approach ensures a great look on all devices.
 - 🔧 **Tech Stack Overview:** A clear representation of my specialized technologies, offering insights into my skills.
 
----
 
-## 🔗 Important Links
+<div align="center"><h2> 🔗 Important Links </h2></div>
 
 - 📚 **Development Resources:** Explore the resources that guided my journey: [Helpful Links](https://github.com/carsonSgit/carsonsgit.github.io/issues/9)
 - 🔍 **Commit/Merge Prefixes:** Learn about my commit message conventions: [Commit Message Prefixes](https://github.com/carsonSgit/carsonsgit.github.io/issues/14)
 
----
-
-## 📈 Quick Repo Stats
+<div align="center"><h2> 📈 Quick Repo Stats </h2></div>
 
 <div align="center">
     <p>
