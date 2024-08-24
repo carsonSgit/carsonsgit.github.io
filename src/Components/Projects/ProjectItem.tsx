@@ -24,14 +24,10 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
       style={{
         backgroundImage: `url(${process.env.PUBLIC_URL}/${project.image})`,
       }}
-      initial={{ opacity: 0, scale: 0.99 }}
+      initial={{ opacity: 0}}
       animate={{ opacity: inView ? 1 : 0, scale: inView ? 1 : 0.99 }}
       transition={{ duration: 0.5 }}
       ref={ref}
-      whileHover={{
-        scale: 1.01,
-        transition: { duration: 0.15 },
-      }}
     >
       <div className="ProjectContent">
         <h2 className="ProjectTitle">{project.title}</h2>
