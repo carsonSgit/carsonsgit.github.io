@@ -37,6 +37,10 @@
 
 - 📚 **Development Resources:** Here are some [helpful links](https://github.com/carsonSgit/carsonsgit.github.io/issues/9) I made use of during development.
 - 🔍 **Commit/Merge Prefixes:** I used these [commit message prefixes](https://github.com/carsonSgit/carsonsgit.github.io/issues/14) to improve my Git habits.
+- 📖 **React Documentation:** Learn more about React [here](https://reactjs.org/docs/getting-started.html).
+- 📘 **TypeScript Documentation:** Explore TypeScript documentation [here](https://www.typescriptlang.org/docs/).
+- 🎨 **SCSS Documentation:** Check out the SCSS documentation [here](https://sass-lang.com/documentation).
+
 
 <div align="center"><h2> 📈 Quick Repo Stats </h2></div>
 
