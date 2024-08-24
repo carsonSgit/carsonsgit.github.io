@@ -6,6 +6,9 @@
     <a href="https://github.com/carsonSgit">
         <img src="https://img.shields.io/badge/-GitHub-181717.svg?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
     </a>
+    <a href="mailto:carsonspriggs8@gmail.com"> 
+        <img src="https://img.shields.io/badge/-Email-D14836.svg?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /> 
+    </a> 
     <br /><br />
     <img src="https://github.com/user-attachments/assets/78b42bd7-1abb-4dd5-9480-351413ee0217" width="700" />
 </div>
@@ -18,6 +21,7 @@
         <img src="https://github.com/user-attachments/assets/1259cb2a-6c04-4597-bda6-511a2990ccc8" alt="SCSS" width="50" height="50" />
     </div>
 </div>
+
 
 
 ## About This Project
