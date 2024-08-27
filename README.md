@@ -28,7 +28,7 @@
 
 <div align="center"><h2> ✨ Features </h2></div>
 
-- 🎨 **Top Project Showcase:** Tiled sections featuring my top projects with links to live demos and GitHub repos.
+- 🎨 **Top Project Showcase:** Tiled sections featuring my top projects with links to detailed GitHub repos and (if they exist) hosted websites related to the project.
 - 🔧 **Technologies:** A display of _most_ of the technologies I've used in my CS career.
 - 📱 **Responsive Design:** Made with different screen-sizes in mind (mobile-first approach).
 
