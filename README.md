@@ -62,49 +62,7 @@
     </p>
 </div>
 
-<div align="center"><h2> 🚀 Deploy Locally </h2></div>
-If you want to run it locally follow these steps:
-
-### 🔧 Prerequisites:
-
-- `Git`
-- `Node.js`
-- `npm (Node Package Manager)`
-
-### 📥 Installation Steps:
-
-1. Clone the repository:
-   
-    ```bash
-    git clone https://github.com/carsonSgit/carsonsgit.github.io.git
-    ```
-
-2. Go to the project directory:
-   
-    ```bash
-    cd carsonsgit.github.io
-    ```
-
-3. Install dependencies
-  
-    ```bash
-    npm i
-    ```
-
-   **OR** if your `npm i` doesn't work
-   
-    ```bash
-    npm i --force
-    ```
-
-4. Run locally
-   
-    ```bash
-    npm start
-    ```
-
-5. Open your browser at `http://localhost:3000`!
-
-<br />
+> [!NOTE]
+> If you have any questions/are interested in my process, don't hesitate to reach out to me!
 
 **Thank you for visiting my portfolio! 🎉**
