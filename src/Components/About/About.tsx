@@ -34,7 +34,7 @@ const About: React.FC = () => {
             This summer, I interned @{' '}
             <a
               className="hoverLink"
-              href="https://www.tailed.ca/en"
+              href="https://www.tailed.ca"
               target="_blank"
               rel="noreferrer"
             >
