@@ -5,7 +5,7 @@ export const experience = [
     company: "Tail'ed",
     description: 'Building the company website & developing an AI product.',
     statsKey: 'SDE Intern',
-    link: 'https://tailed.ca/en',
+    link: 'https://tailed.ca',
   },
   {
     date: 'March 2024 - Ongoing',
