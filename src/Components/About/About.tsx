@@ -59,8 +59,8 @@ const About: React.FC = () => {
               rel="noreferrer"
             >
               LinkedIn
-            </a>
-            ,{' '}
+            </a>{' '}
+            or{' '}
             <a
               className="hoverLink"
               href="https://github.com/carsonSgit"
