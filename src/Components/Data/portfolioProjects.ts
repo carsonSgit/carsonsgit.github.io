@@ -6,7 +6,7 @@ export const projects: Project[] = [
     title: 'CropCare',
     languages: 'Python, .NET MAUI, Raspberry Pi, IoT',
     description:
-      'Developed an IoT container farm with leveraging Python, .NET MAUI, a Raspberry Pi, and Azure IoT hub for mobile monitoring and control. Our project was recognized as the top Capstone project in the history of my school\'s Computer Science program.',
+      "Developed an IoT container farm with leveraging Python, .NET MAUI, a Raspberry Pi, and Azure IoT hub for mobile monitoring and control. Our project was recognized as the top Capstone project in the history of my school's Computer Science program.",
     github: 'https://github.com/carsonSgit/CropCare',
     website: 'https://carsonsgit.github.io/cropcare-3d/',
   },
