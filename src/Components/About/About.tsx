@@ -60,7 +60,8 @@ const About: React.FC = () => {
             >
               LinkedIn
             </a>
-            ,{' '}
+            {' '} or 
+            {' '}
             <a
               className="hoverLink"
               href="https://github.com/carsonSgit"
