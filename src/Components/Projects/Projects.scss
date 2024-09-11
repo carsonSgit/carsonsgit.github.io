@@ -144,20 +144,22 @@ a {
 .ProjectTitle {
   font-size: 1.4em;
   color: #fff;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
 }
 
 .ProjectLanguages {
   font-size: 1.2em;
   color: #ccc;
-  margin-bottom: 5px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .ProjectDescription {
   font-size: 1em;
   color: #eee;
   text-align: left;
-  margin-bottom: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
