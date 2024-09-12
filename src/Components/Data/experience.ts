@@ -9,10 +9,10 @@ export const experience = [
   },
   {
     date: 'March 2024 - Ongoing',
-    title: 'HD Montreal',
+    title: 'HD Montreal & Sponsorships',
     company: 'CUSEC',
     description:
-      'Leading the delegation of post-secondary students across Montreal for the annual conference.',
+      'Leading the delegation of post-secondary students across Montreal for the annual conference & communicating with companies to secure sponsorship opportunities.',
     statsKey: 'Head Delegate Montreal',
     link: 'https://2024.cusec.net/',
   },
