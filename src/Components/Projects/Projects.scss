@@ -148,11 +148,29 @@ a {
 }
 
 .ProjectLanguages {
-  font-size: 1.2em;
-  color: #ccc;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
 }
+
+.ProjectLanguagePill {
+  background-color: rgba(darken($secondary-color, 10%), 0.5);
+  border: 2px solid darken($secondary-color, 1%);
+  border-radius: 20px;
+  color: #fff;
+  padding: 3px 10px;
+  font-size: 0.9em;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: darken($tertiary-color, 20%);
+    cursor: default;
+  }
+}
+
 
 .ProjectDescription {
   font-size: 1em;
