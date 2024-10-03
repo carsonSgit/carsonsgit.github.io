@@ -24,7 +24,13 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
     >
       <div className="ProjectContent">
         <h2 className="ProjectTitle">{project.title}</h2>
-        <p className="ProjectLanguages">{project.languages}</p>
+        <div className="ProjectLanguages">
+          {project.languages.map((language, index) => (
+            <span key={index} className="ProjectLanguagePill">
+              {language}
+            </span>
+          ))}
+        </div>
         <p
           className="ProjectDescription"
           dangerouslySetInnerHTML={{ __html: project.description }}
