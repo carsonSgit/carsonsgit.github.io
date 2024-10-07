@@ -1,16 +1,5 @@
 export const experience = [
   {
-    date: 'May 2024 - August 2024',
-    title: 'SDE Intern',
-    company: "Tail'ed",
-    description: [
-      'Worked on the company website using Next.js and React.',
-      'Developed an AI model to rank user skills in regards to a job position based on their CV.'
-    ],
-    statsKey: 'SDE Intern',
-    link: 'https://tailed.ca',
-  },
-  {
     date: 'March 2024 - Ongoing',
     title: 'HD Montreal & Sponsors',
     company: 'CUSEC',
@@ -20,6 +9,17 @@ export const experience = [
     ],
     statsKey: 'Head Delegate Montreal',
     link: 'https://2024.cusec.net/',
+  },
+  {
+    date: 'May 2024 - August 2024',
+    title: 'SDE Intern',
+    company: "Tail'ed",
+    description: [
+      'Worked on the company website using Next.js and React.',
+      'Developed an AI model to rank user skills in regards to a job position based on their CV.'
+    ],
+    statsKey: 'SDE Intern',
+    link: 'https://tailed.ca',
   },
   {
     date: 'January 2024 - May 2024',
