@@ -266,3 +266,32 @@ $tools-item-tint: darken($list-item-color, 40%);
     }
   }
 }
+
+.timeline-description {
+  gap: 100px;
+  padding-left: 0;
+  list-style: none;
+
+  li {
+    position: relative;
+    margin-bottom: 0.5rem;
+    padding-left: 20px;
+    font-weight: 500;
+
+    &::before {
+      content: '\2022';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
+      color: $secondary-color;
+      transition: 0.3s ease;
+    }
+
+    &:hover::before {
+      transition: 0.3s ease;
+      color: $quaternary-color;
+    }
+  }
+}
