@@ -39,7 +39,7 @@ export const experience = [
     company: 'JACHacks',
     description: [
       'Managed a team of 5 to ensure the successful organization and execution of the hackathon.',
-      'Organized the event with a short timeline of 1.5 months, resulting in 100+ participants and overly positive feedback.'
+      'Organized the event with a short timeline of 1.5 months, resulting in 130+ attendeess and overly positive feedback.'
     ],
     statsKey: 'Director',
     link: 'https://jachacks.pages.dev/',

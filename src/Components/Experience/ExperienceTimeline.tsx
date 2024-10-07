@@ -130,7 +130,11 @@ const ExperienceTimeline = () => {
                   </a>
                 </h3>
                 <div className="timeline-date">{item.date}</div>
-                <p>{item.description}</p>
+                <ul className="timeline-description">
+                  {item.description.map((desc, descIndex) => (
+                    <li key={descIndex}>{desc}</li>
+                  ))}
+                </ul>
                 <div className="timeline-stats">
                   {Object.entries(statistics[item.statsKey] || {}).map(
                     ([key, value]: [string, number | string]) => (
