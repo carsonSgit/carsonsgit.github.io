@@ -275,15 +275,17 @@ $tools-item-tint: darken($list-item-color, 40%);
   li {
     position: relative;
     margin-bottom: 0.5rem;
+    color: lighten($quaternary-color, 15%);
     padding-left: 20px;
     font-weight: 500;
+    transition: 0.3s ease;
 
     &::before {
-      content: '\2022';
+      content: '\25AA ';
       position: absolute;
       left: 0;
       top: 50%;
-      transform: translateY(-50%);
+      transform: translateY(-55%);
       font-size: 1.2rem;
       color: $secondary-color;
       transition: 0.3s ease;
@@ -292,6 +294,11 @@ $tools-item-tint: darken($list-item-color, 40%);
     &:hover::before {
       transition: 0.3s ease;
       color: $quaternary-color;
+    }
+
+    &:hover{
+      transition: 0.3s ease;
+      color: whitesmoke;
     }
   }
 }
