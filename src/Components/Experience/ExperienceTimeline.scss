@@ -191,7 +191,13 @@ $tools-item-tint: darken($list-item-color, 40%);
 
     p {
       font-size: 1em;
-      color: lighten($font-color, 30%);
+      transition: 0.3s ease;
+      color: lighten($quaternary-color, 22%);
+
+      &:hover{
+        transition: 0.3s ease;
+        color: white;
+      }
 
       @media (max-width: 768px) {
         font-size: 0.95em;
@@ -294,8 +300,8 @@ $tools-item-tint: darken($list-item-color, 40%);
 
     &:hover{
       transition: 0.3s ease;
-
       color: white;
     }
   }
 }
+
