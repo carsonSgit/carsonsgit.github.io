@@ -272,26 +272,15 @@ $tools-item-tint: darken($list-item-color, 40%);
 .timeline-description {
   gap: 100px;
   padding-left: 0;
-  list-style: none;
 
   li {
     position: relative;
     margin-bottom: 0.5rem;
-    padding-left: 20px;
-    color: lighten($quaternary-color, 22%);
+    margin-left:1.5rem;
+    padding-left: 0px;
+    color: lighten($quaternary-color, 10%);
     font-weight: 500;
     transition: 0.3s ease;
-
-    &::before {
-      content: '\25AA ';
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-55%);
-      font-size: 1.2rem;
-      color: $secondary-color;
-      transition: 0.3s ease;
-    }
 
     &:hover::before {
       transition: 0.3s ease;
