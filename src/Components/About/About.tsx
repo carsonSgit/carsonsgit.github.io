@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, useInView } from 'framer-motion';
-import { FaFilePdf, FaStar, FaGithub } from 'react-icons/fa';
+import { FaFilePdf, FaGithub } from 'react-icons/fa';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './About.scss';
@@ -114,8 +114,7 @@ const About: React.FC = () => {
               rel="noreferrer"
             >
               <button className="GitHubButton">
-                <FaStar className="StarIcon" />
-                this on
+                Repo
                 <FaGithub className="GitHubIcon" />
               </button>
             </a>
