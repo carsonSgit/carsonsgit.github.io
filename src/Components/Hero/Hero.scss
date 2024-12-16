@@ -1,14 +1,14 @@
 .HeroContainer {
   flex: 1;
   display: flex;
-  flex-direction: column; /* Default: vertical stack */
+  flex-direction: column; 
   justify-content: start;
   align-items: start;
   margin-top: 50px;
   padding: 20px;
 
   @media screen and (max-width: 768px) {
-    flex-direction: column; /* Keep items stacked vertically on mobile */
+    flex-direction: column; 
     justify-content: start;
     margin: 0;
     padding: 10px;

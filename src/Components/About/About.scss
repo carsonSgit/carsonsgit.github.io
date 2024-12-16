@@ -18,40 +18,16 @@ $tools-item-tint: darken($list-item-color, 40%);
   margin-top: 100px;
 }
 
-.AboutContentContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.AboutContent {
-  flex: 1;
-}
-
 .AboutText {
   font-weight: 500;
   color: rgb(69, 69, 69);
   font-size: 1.2em;
-  padding: 0px 40px 0px 30px; /* top, right, bottom, left */
-}
-
-@media screen and (max-width: 768px) {
-  .AboutContentContainer {
-    flex-direction: column;
-  }
-
-  .AboutContent {
-    margin-right: 0;
-    margin-bottom: 30px;
-  }
 }
 
 @media screen and (max-width: 768px) {
   .AboutText {
     font-size: 1.4em;
     padding-left: 20px;
-    padding-right: 20px;
-    text-align: center;
   }
 }
 
