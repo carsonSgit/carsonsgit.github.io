@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../../Navbar/Navbar';
+import Navbar from '../Navbar/Navbar';
 import './Hero.scss';
 // import AnimatedImage from './AnimatedImage';
 // import { imageNames, hoverImageNames } from '../../Data/imageNames';

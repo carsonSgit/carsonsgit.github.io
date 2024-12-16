@@ -1,7 +1,7 @@
 import React from 'react';
 import Content from './Components/Content/Content';
 import './App.scss';
-import Hero from './Components/Home/Hero/Hero';
+import Hero from './Components/Hero/Hero';
 
 const LeftColumn = () => {
   return (
