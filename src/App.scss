@@ -1,45 +1,30 @@
-.App {
-  background-color: #0f232a;
-  display: flex;
-  height: 100vh;
-  overflow: hidden;
-
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-    height: auto;
-  }
+.container {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
-.FixedSection {
+.left-column {
+  padding: 10px;
   position: sticky;
   top: 0;
-  left: 0;
-  width: 40%;
   height: 100vh;
-  background-color: #f8f9fa;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-
-  @media screen and (max-width: 768px) {
-    position: relative;
-    width: 100%;
-    height: auto;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-  }
 }
 
-.ScrollableContent {
-  width: 60%;
-  height: 100vh;
-  overflow-y: scroll;
-  padding: 20px;
+.right-column {
+  padding: 10px;
+}
 
-  @media screen and (max-width: 768px) {
-    margin-left: 0;
+@media screen and (max-width: 768px) {
+  .container {
+    margin: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .left-column, .right-column {
+    position: relative;
     height: auto;
   }
 }
