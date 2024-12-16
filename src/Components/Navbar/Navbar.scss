@@ -1,15 +1,17 @@
 .navbar {
   display: flex;
-  flex-direction: column; /* Vertical layout by default */
+  flex-direction: column;
   gap: 15px;
   padding: 0;
   margin: 0;
-  z-index: 15; /* Ensure navbar is above other elements, including FixedSection */
+  z-index: 15;
+  align-items: flex-start;
 
   @media screen and (max-width: 768px) {
-    flex-direction: row; /* Switch to horizontal layout on small screens */
-    justify-content: start;
+    flex-direction: row;
+    justify-content: flex-start;
     gap: 10px;
+    align-items: center;
   }
 }
 
@@ -21,10 +23,10 @@
   transition: color 0.3s ease;
 
   &:hover {
-    color: #007bff; /* Highlight color */
+    color: #007bff;
   }
 
   @media screen and (max-width: 768px) {
-    font-size: 1em; /* Slightly smaller text on small screens */
+    font-size: 1em;
   }
 }
