@@ -5,7 +5,8 @@ $quaternary-color: #95b9b0;
 $background-color: #262f2aec;
 $list-item-color: #2bd4a0;
 $text-color: #fafff0;
-$font-color: #a2aa94;
+// $font-color: #a2aa94;
+$font-color: #000000;
 $hover-color: #ced4da;
 $box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 $border-radius: 8px;
@@ -13,18 +14,8 @@ $language-item-tint: darken($list-item-color, 30%);
 $framework-item-tint: darken($list-item-color, 35%);
 $tools-item-tint: darken($list-item-color, 40%);
 
-@font-face {
-  font-family: 'Poppins';
-  src: url('../../Assets/Fonts/Poppins-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
 .AboutContainer {
-  padding: 40px;
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 100px;
 }
 
 .AboutContentContainer {
@@ -35,20 +26,12 @@ $tools-item-tint: darken($list-item-color, 40%);
 
 .AboutContent {
   flex: 1;
-  margin-right: 50px;
-  font-size: 1rem;
-  line-height: 1.4;
-  color: $secondary-color;
-  background-color: rgba(darken($background-color, 10%), 0.25);
-  border-radius: $border-radius;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .AboutText {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.8em;
-  font-weight: 400;
-  color: lighten($font-color, 30%);
+  font-weight: 500;
+  color: rgb(69, 69, 69);
+  font-size: 1.2em;
   padding: 0px 40px 0px 30px; /* top, right, bottom, left */
 }
 
@@ -73,126 +56,12 @@ $tools-item-tint: darken($list-item-color, 40%);
 }
 
 .hoverLink {
+  font-weight: 600;
   color: $list-item-color;
 }
 
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 .hoverLink:hover {
-  background: linear-gradient(
-    90deg,
-    $primary-color,
-    $secondary-color,
-    $tertiary-color,
-    $quaternary-color
-  );
-
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradientAnimation 5s ease infinite;
+  color: $hover-color;
 }
 
-.AboutImageContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  margin: 0 auto;
-}
 
-.AboutImage {
-  border-radius: $border-radius;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
-}
-
-.DownloadCVButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-  padding: 12px 24px;
-  background: darken(#2bd4a0, 30%);
-  color: $text-color;
-  border: none;
-  border-radius: $border-radius;
-  cursor: pointer;
-  font-size: 1.1em;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  box-shadow: $box-shadow;
-  transition:
-    background 0.3s ease,
-    transform 0.2s ease;
-
-  &:hover {
-    transform: translateY(-2px);
-  }
-}
-
-.DownloadIcon {
-  margin-right: 10px;
-  margin-top: -3px;
-  font-size: 1.2em;
-}
-
-@media screen and (max-width: 768px) {
-  .AboutImage {
-    width: 100%;
-  }
-}
-
-.ButtonContainer {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.GitHubButton {
-  background-color: #161a1f;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-  padding: 12px 24px;
-  color: $text-color;
-  border: none;
-  border-radius: $border-radius;
-  cursor: pointer;
-  font-size: 1.1em;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  box-shadow: $box-shadow;
-  transition:
-    background 0.3s ease,
-    transform 0.2s ease;
-
-  &:hover {
-    transform: translateY(-2px);
-  }
-}
-
-.GitHubIcon {
-  margin-left: 10px;
-  margin-top: -3px;
-  font-size: 1.2em;
-}
-
-.StarIcon {
-  margin-right: 10px;
-  margin-top: -3px;
-  font-size: 1.2em;
-}
