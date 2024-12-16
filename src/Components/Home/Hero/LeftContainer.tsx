@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typewriter } from 'react-simple-typewriter';
+import Navbar from '../../Navbar/Navbar'; // Adjust the path if necessary
 import './Hero.scss';
 
 const LeftContainer: React.FC = () => {
@@ -8,24 +8,8 @@ const LeftContainer: React.FC = () => {
       <h1 className="HeroText">
         Hi, I&#39;m <span className="AnimatedText">Carson</span>
       </h1>
-      <p>
-        <Typewriter
-          words={[
-            'I like building cool things.',
-            "Prev SDE @ Tail'ed.",
-            'ML explorer.',
-            'Leetcode noob.',
-            'GitHub fanatic.',
-            '',
-          ]}
-          loop={false}
-          cursor
-          cursorStyle=""
-          typeSpeed={100}
-          deleteSpeed={70}
-          delaySpeed={500}
-        />
-      </p>
+      <h2>Software Developer</h2>
+      <Navbar />
     </div>
   );
 };

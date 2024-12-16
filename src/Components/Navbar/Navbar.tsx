@@ -1,15 +1,8 @@
-import React, { useState } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import React from 'react';
 import { links } from '../Data/navbarLinks';
 import './Navbar.scss';
 
 const Navbar: React.FC = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
   const handleLinkClick = (
     event: React.MouseEvent<HTMLAnchorElement>,
     id: string,
@@ -25,31 +18,20 @@ const Navbar: React.FC = () => {
         behavior: 'smooth',
       });
     }
-    setMenuOpen(false);
   };
 
   return (
     <nav className="navbar">
-      <div className="navbar-left">
-        <a href={`#hero`} onClick={event => handleLinkClick(event, 'hero')}>
-          carsonSgit
+      {links.map((link, index) => (
+        <a
+          key={index}
+          href={`#${link.id}`}
+          className="nav-link"
+          onClick={(event) => handleLinkClick(event, link.id)}
+        >
+          {link.label}
         </a>
-      </div>
-      <div className="hamburger" onClick={toggleMenu}>
-        {menuOpen ? <FaTimes /> : <FaBars />}
-      </div>
-      <div className={`navbar-right ${menuOpen ? 'active' : ''}`}>
-        {links.map((link, index) => (
-          <a
-            key={index}
-            href={`#${link.id}`}
-            className="nav-link"
-            onClick={event => handleLinkClick(event, link.id)}
-          >
-            {link.label}
-          </a>
-        ))}
-      </div>
+      ))}
     </nav>
   );
 };

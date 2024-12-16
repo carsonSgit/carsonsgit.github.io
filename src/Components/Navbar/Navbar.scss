@@ -1,177 +1,30 @@
-/* Variables for styling */
-$background-color: #262f2aec;
-$primary-color: #2af598;
-$secondary-color: #00715f;
-$tertiary-color: #33b072;
-$quaternary-color: #95b9b0;
-$text-color: #c6c9bf;
-$navbar-text-color: #c6c9bf;
-$hamburger-size: 32px;
-
-/* Navbar Styles */
 .navbar {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  color: $text-color;
-  margin-top: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background-color: #27302b;
+  flex-direction: column; /* Vertical layout by default */
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+  z-index: 15; /* Ensure navbar is above other elements, including FixedSection */
 
-  @media (max-width: 768px) {
-    padding-top: 20px;
+  @media screen and (max-width: 768px) {
+    flex-direction: row; /* Switch to horizontal layout on small screens */
+    justify-content: start;
+    gap: 10px;
   }
 }
 
-/* Navbar Left */
-.navbar-left {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-left: 1.5rem;
-
-  @media (max-width: 768px) {
-    margin-left: 20px;
-  }
-
-  a {
-    color: $navbar-text-color;
-    transition:
-      background 0.5s ease,
-      color 0.5s ease;
-
-    &:hover {
-      background: linear-gradient(
-        90deg,
-        $primary-color,
-        $secondary-color,
-        $tertiary-color,
-        $quaternary-color
-      );
-      background-size: 200% 200%;
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: gradientAnimation 5s ease infinite;
-    }
-  }
-}
-
-/* Navbar Right */
-.navbar-right {
-  display: flex;
-  align-items: center;
-  margin-right: 1.5rem;
-
-  @media (max-width: 768px) {
-    display: none;
-    flex-direction: column;
-    align-items: flex-end;
-    width: 100%;
-    position: absolute;
-    top: 55px;
-    right: 0;
-    background-color: $background-color;
-    padding: 1vh;
-    z-index: 998;
-  }
-
-  &.active {
-    display: flex;
-    margin-top: 15px;
-    margin-right: auto;
-  }
-
-  @media (max-width: 1200px) {
-    margin-right: 2em;
-  }
-}
-
-/* Nav Links (items) */
 .nav-link {
-  margin-left: 3rem;
-  color: $navbar-text-color;
   text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: 700;
-  position: relative;
-  transition:
-    background 0.5s ease,
-    color 0.5s ease;
-
-  @media (max-width: 768px) {
-    margin: 0;
-    padding: 1rem;
-    width: 100%;
-    text-align: right;
-    font-weight: 700;
-    background-color: $background-color;
-    transition:
-      transform 0.3s ease,
-      opacity 0.3s ease;
-    transform: translateY(0px);
-
-    &.show {
-      transform: translateY(0);
-      opacity: 1;
-    }
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
+  color: #333;
+  font-weight: bold;
+  font-size: 1.2em;
+  transition: color 0.3s ease;
 
   &:hover {
-    background: linear-gradient(
-      90deg,
-      $primary-color,
-      $secondary-color,
-      $tertiary-color,
-      $quaternary-color
-    );
-    background-size: 200% 200%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradientAnimation 5s ease infinite;
+    color: #007bff; /* Highlight color */
   }
-}
 
-/* Hamburger Menu */
-.hamburger {
-  display: none;
-
-  @media (max-width: 768px) {
-    display: flex;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    border: none;
-    outline: none;
-    z-index: 999;
-    margin-right: 20px;
-
-    svg {
-      width: $hamburger-size;
-      height: $hamburger-size;
-    }
-  }
-}
-
-/* Gradient Animation */
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
+  @media screen and (max-width: 768px) {
+    font-size: 1em; /* Slightly smaller text on small screens */
   }
 }

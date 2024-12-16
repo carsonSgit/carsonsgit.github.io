@@ -1,5 +1,4 @@
 import React, { Suspense, lazy } from 'react';
-import Hero from '../Home/Hero/Hero';
 import './Content.scss';
 
 const LazyProjects = lazy(() => import('../Projects/Projects'));
@@ -9,8 +8,10 @@ const LazyAbout = lazy(() => import('../About/About'));
 const Content: React.FC = () => {
   return (
     <div className="content-container">
-      <div id="hero">
-        <Hero />
+      <div id="about" className="section-container">
+        <Suspense fallback={<div>Loading about...</div>}>
+          <LazyAbout />
+        </Suspense>
       </div>
       <div id="projects" className="section-container">
         <Suspense fallback={<div>Loading projects...</div>}>
@@ -22,11 +23,7 @@ const Content: React.FC = () => {
           <LazyExperience />
         </Suspense>
       </div>
-      <div id="about" className="section-container">
-        <Suspense fallback={<div>Loading about...</div>}>
-          <LazyAbout />
-        </Suspense>
-      </div>
+      
     </div>
   );
 };

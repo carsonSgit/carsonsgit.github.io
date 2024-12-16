@@ -1,13 +1,13 @@
 import React from 'react';
 import LeftContainer from './LeftContainer';
-import RightContainer from './RightContainer';
+// import RightContainer from './RightContainer';
 import './Hero.scss';
 
 const Hero: React.FC = () => {
   return (
     <div className="HeroContainer">
       <LeftContainer />
-      <RightContainer />
+      { /* <RightContainer /> */ }
     </div>
   );
 };
