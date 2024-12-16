@@ -1,28 +1,17 @@
 import React from 'react';
 import Content from './Components/Content/Content';
-import Navbar from './Components/Navbar/Navbar';  // Adjust the import path if needed
 import './App.scss';
-import './Components/Home/Hero/Hero.scss';
+import Hero from './Components/Home/Hero/Hero';
 
-// LeftColumn Component (HeroContainer)
-const LeftColumn: React.FC = () => {
+const LeftColumn = () => {
   return (
     <div className="left-column">
-      <div className="HeroContainer">
-        <div className="LeftContainer">
-          <h1 className="HeroText">
-            Hi, I&#39;m <span className="AnimatedText">Carson</span>
-          </h1>
-          <h2>Software Developer</h2>
-          <Navbar />
-        </div>
-      </div>
+      <Hero />
     </div>
   );
 };
 
-// RightColumn Component (Content)
-const RightColumn: React.FC = () => {
+const RightColumn = () => {
   return (
     <div className="right-column">
       <Content />
@@ -30,7 +19,7 @@ const RightColumn: React.FC = () => {
   );
 };
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <div className="App">
       <div className="FixedSection">

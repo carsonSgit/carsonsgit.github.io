@@ -1,13 +1,19 @@
 import React from 'react';
-import LeftContainer from './LeftContainer';
-// import RightContainer from './RightContainer';
+import Navbar from '../../Navbar/Navbar';
 import './Hero.scss';
+// import AnimatedImage from './AnimatedImage';
+// import { imageNames, hoverImageNames } from '../../Data/imageNames';
 
 const Hero: React.FC = () => {
   return (
     <div className="HeroContainer">
-      <LeftContainer />
-      { /* <RightContainer /> */ }
+      <h1 className="HeroText">
+            Hi, I&#39;m <span className="AnimatedText">Carson</span> 
+          </h1>
+          <h2>Software Developer</h2>
+          <Navbar />
+
+          { /* <AnimatedImage imageNames={imageNames} hoverImageNames={hoverImageNames}/> */ }
     </div>
   );
 };

@@ -59,7 +59,7 @@ const AnimatedImage: React.FC<AnimatedImageProps> = ({
       alt={`Sprite ${currentIndex}`}
       onMouseEnter={() => handleMouseEnter(currentIndex)}
       onMouseLeave={handleMouseLeave}
-      width="280"
+      width="80"
     />
   );
 };
