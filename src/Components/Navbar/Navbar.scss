@@ -8,7 +8,8 @@
   align-items: flex-start;
 
   @media screen and (max-width: 768px) {
-    flex-direction: row;
+    // no navbar on mobile :)
+    display: none;
   }
 }
 
@@ -20,10 +21,9 @@
   transition: color 0.3s ease;
 
   &:hover {
-    color: #007bff;
+    color: #23aa7f;
   }
-
-  @media screen and (max-width: 768px) {
-    font-size: 1em;
+  &.active {
+    color: #23aa7f;
   }
 }
