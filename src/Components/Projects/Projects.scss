@@ -1,11 +1,14 @@
 $primary-color: #2af598;
+$secondary-color: #00715f;
+$tertiary-color: #33b072;
+$quaternary-color: #95b9b0;
 $background-color: #303030;
-$text-color: #fafff0;
+$text-color: #f0f0f0;
 $hover-scale: 1.05;
 $transition-duration: 0.3s;
 
 * {
-  box-sizing: border-box;  // Ensures padding doesn't affect width calculations
+  box-sizing: border-box;
 }
 
 a {
@@ -33,18 +36,47 @@ a {
   font-size: 2.5em;
   margin-bottom: 20px;
   text-align: center;
-  color: $text-color;
+  color: #131d15;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 2px;
 }
 
+.ProjectsTitleAnimated {
+  margin-bottom: 40px;
+  color: transparent;
+  background: linear-gradient(
+    45deg,
+    $primary-color,
+    $secondary-color,
+    $tertiary-color,
+    $quaternary-color
+  );
+  background-size: 400% 400%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: gradientAnimation 5s ease infinite;
+  font-size: inherit;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .ProjectItem {
-  background-color: $background-color;
+  background-color: #233532f0;
   border-radius: 12px;
   padding: 20px;
   height: fit-content;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .ProjectTitle {
@@ -72,6 +104,7 @@ a {
   padding: 6px 10px;
   font-size: 0.9em;
   font-weight: 600;
+  color: #fffffff2 !important;
   cursor: default;
 }
 
@@ -89,3 +122,4 @@ a {
     }
   }
 }
+

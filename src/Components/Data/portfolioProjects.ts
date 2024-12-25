@@ -1,16 +1,16 @@
 import { Project } from '../Interfaces/projects';
 
 const languageColors = {
-  Python: { backgroundColour: 'rgba(33, 147, 129, 0.5)', textColour: '#A3D8D0' }, // Softer, muted text for Python
+  Python: { backgroundColour: 'rgba(33, 147, 129, 0.5)', textColour: '#A3D8D0' },
   '.NET MAUI': { backgroundColour: '#433248', textColour: '#D0A7FF' },
   RaspberryPi: { backgroundColour: 'rgba(109, 63, 68, 0.7)', textColour: '#FFD8D8' },
   IoT: { backgroundColour: '#4E5B31', textColour: '#F2FF8C' },
   Mantine: { backgroundColour: 'rgba(60, 74, 40, 0.7)', textColour: '#B8F5A9' },
-  TypeScript: { backgroundColour: 'rgba(64, 147, 178, 0.5)', textColour: '#B0E9F6' }, // Muted text for TypeScript
+  TypeScript: { backgroundColour: 'rgba(64, 147, 178, 0.5)', textColour: '#B0E9F6' }, 
   RAGAI: { backgroundColour: '#5B1F2E', textColour: '#FFB1B1' },
   VectorDB: { backgroundColour: '#2C3C49', textColour: '#A7D4F2' },
   React: { backgroundColour: 'rgba(58, 106, 114, 0.7)', textColour: '#B0E4E1' }, 
-  MachineLearning: { backgroundColour: 'rgba(177, 110, 78, 0.7)', textColour: '#F5C157' }, // Increased contrast for ML text
+  MachineLearning: { backgroundColour: 'rgba(177, 110, 78, 0.7)', textColour: '#F5C157' },
   JupyterNotebook: { backgroundColour: 'rgba(122, 91, 61, 0.7)', textColour: '#F1D456' },
 };
 

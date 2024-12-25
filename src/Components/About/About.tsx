@@ -1,20 +1,10 @@
 import React from 'react';
-import { motion, useInView } from 'framer-motion';
 // import { FaFilePdf, FaGithub } from 'react-icons/fa';
 import './About.scss';
 
 const About: React.FC = () => {
-  const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: true });
-
   return (
-    <motion.div
-      className="AboutContainer"
-      ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 1 }}
-    >
+    <div className="AboutContainer">
       <div className="AboutContentContainer">
         <div className="AboutContent">
           <p className="AboutText">
@@ -83,7 +73,7 @@ const About: React.FC = () => {
         </div>
         */ }
       </div>
-    </motion.div>
+    </div>
   );
 };
 

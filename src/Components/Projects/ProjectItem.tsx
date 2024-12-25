@@ -14,13 +14,16 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
   return (
     <motion.div
       className="ProjectItem"
-      initial={{ opacity: 0, scale: 0.95 }}
+      initial={{ scale: 1 }}
       animate={{
-        opacity: inView ? 1 : 0,
         scale: inView ? 1 : 0.95,
       }}
       transition={{ duration: 0.6 }}
       ref={ref}
+      whileHover={{
+        scale: 1.02,
+        transition: { duration: 0.1, ease: 'linear' },
+      }}
     >
       <div className="ProjectContent">
         <h2 className="ProjectTitle">{project.title}</h2>
