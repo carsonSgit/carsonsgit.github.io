@@ -26,8 +26,15 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
         <h2 className="ProjectTitle">{project.title}</h2>
         <div className="ProjectLanguages">
           {project.languages.map((language, index) => (
-            <span key={index} className="ProjectLanguagePill">
-              {language}
+            <span
+              key={index}
+              className="ProjectLanguagePill"
+              style={{
+                backgroundColor: language.backgroundColour,
+                color: language.textColour,
+              }}
+            >
+              {language.name}
             </span>
           ))}
         </div>
@@ -42,7 +49,9 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
               className="ProjectLink"
               target="_blank"
               rel="noopener noreferrer"
-            ><FaGithub /></a>
+            >
+              <FaGithub />
+            </a>
           )}
           {project.website && (
             <a
@@ -50,7 +59,9 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
               className="ProjectLink"
               target="_blank"
               rel="noopener noreferrer"
-            ><FaExternalLinkAlt /></a>
+            >
+              <FaExternalLinkAlt />
+            </a>
           )}
         </div>
       </div>
