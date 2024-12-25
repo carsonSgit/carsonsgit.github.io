@@ -14,12 +14,12 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
   return (
     <motion.div
       className="ProjectItem"
-      style={{
-        backgroundImage: `url(${process.env.PUBLIC_URL}/${project.image})`,
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{
+        opacity: inView ? 1 : 0,
+        scale: inView ? 1 : 0.95,
       }}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: inView ? 1 : 0, scale: inView ? 1 : 0.99 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.6 }}
       ref={ref}
     >
       <div className="ProjectContent">
@@ -42,9 +42,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
               className="ProjectLink"
               target="_blank"
               rel="noopener noreferrer"
-            >
-              <FaGithub /> GitHub
-            </a>
+            ><FaGithub /></a>
           )}
           {project.website && (
             <a
@@ -52,9 +50,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
               className="ProjectLink"
               target="_blank"
               rel="noopener noreferrer"
-            >
-              <FaExternalLinkAlt /> Website
-            </a>
+            ><FaExternalLinkAlt /></a>
           )}
         </div>
       </div>

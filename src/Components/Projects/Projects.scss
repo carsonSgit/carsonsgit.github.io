@@ -1,211 +1,97 @@
 $primary-color: #2af598;
-$secondary-color: #00715f;
-$tertiary-color: #33b072;
-$quaternary-color: #95b9b0;
 $background-color: #262f2aec;
 $text-color: #fafff0;
-$font-color: #61665b;
+$hover-scale: 1.05;
+$transition-duration: 0.3s;
 
 a {
   text-decoration: none;
   color: $primary-color;
 }
+
 .ProjectsContainer {
-  padding: 0px 20px;
-  color: $text-color;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 15px 55px;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  margin: 0 auto;
-  margin-bottom: 30px;
+  gap: 20px;
+  padding: 20px;
+  color: $text-color;
+  grid-auto-rows: auto;
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
   }
 
-  @media (min-width: 1200px) {
-    padding: 0px 40px;
-    grid-template-columns: repeat(2, 1fr);
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 1440px) {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 .ProjectsTitle {
-  font-size: 2.8em;
-  margin-bottom: 40px;
+  font-size: 2.5em;
+  margin-bottom: 20px;
   text-align: center;
   color: $text-color;
-
-  @media (min-width: 768px) and (max-width: 1200px) {
-    font-size: 3.5em;
-  }
-
-  @media (min-width: 1200px) {
-    font-size: 4.5em;
-  }
-}
-
-.ProjectsTitleAnimated {
-  margin-bottom: 40px;
-  color: transparent;
-  background: linear-gradient(
-    45deg,
-    $primary-color,
-    $secondary-color,
-    $tertiary-color,
-    $quaternary-color
-  );
-  background-size: 400% 400%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  animation: gradientAnimation 5s ease infinite;
-  font-size: inherit;
-}
-
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 
 .ProjectItem {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: relative;
-  color: #fff;
-  min-height: 200px;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-
-  &:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.417);
-  }
-
-  @media (max-width: 767px) {
-    width: 100%;
-    height: auto;
-    min-height: 200px;
-  }
-
-  @media (min-width: 768px) and (max-width: 1200px) {
-    height: auto;
-    min-height: 400px;
-  }
-
-  @media (min-width: 1200px) {
-    width: 100%;
-    height: auto;
-    min-height: 500px;
-  }
-}
-
-.ProjectContent {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 15px;
-  background-color: rgba(0, 0, 0, 0.6);
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  gap: 10px;
-  box-sizing: border-box;
-  transition: transform 0.3s ease;
-
-  @media (max-width: 767px) {
-    position: relative;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-  }
+  background-color: $background-color;
+  border-radius: 12px;
+  padding: 20px;
+  height: fit-content;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .ProjectTitle {
-  font-size: 1.4em;
-  color: #fff;
-  margin-bottom: 0px;
+  font-size: 1.6em;
+  color: $text-color;
+  margin-bottom: 10px;
+}
+
+.ProjectDescription {
+  font-size: 1em;
+  color: lighten($text-color, 20%);
+  margin: 0;
+  flex-grow: 1;
 }
 
 .ProjectLanguages {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 10px;
+  margin-bottom: 15px;
 }
 
 .ProjectLanguagePill {
-  background-color: rgba(darken($secondary-color, 10%), 0.5);
-  border: 2px solid darken($secondary-color, 1%);
+  background-color: rgba(42, 245, 152, 0.2);
+  color: $primary-color;
   border-radius: 20px;
-  color: #fff;
-  padding: 3px 10px;
+  padding: 6px 12px;
   font-size: 0.9em;
-  font-weight: 600;
-  white-space: nowrap;
-  transition: background-color 0.3s;
+  transition: background-color $transition-duration ease;
 
   &:hover {
-    background-color: darken($tertiary-color, 20%);
-    cursor: default;
+    background-color: rgba(42, 245, 152, 0.3);
   }
-}
-
-
-.ProjectDescription {
-  font-size: 1em;
-  color: #eee;
-  text-align: left;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .ProjectLinks {
   display: flex;
-  gap: 10px;
-  margin-top: 10px;
-  align-items: center;
-}
+  gap: 15px;
+  margin-top: 2vh;
 
-.ProjectLink {
-  display: inline-flex;
-  align-items: center;
-  padding: 12px 10px;
-  background-color: $secondary-color;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  transition:
-    background-color 0.3s,
-    transform 0.3s;
+  .ProjectLink {
+    align-items: end;
+    color: #ececec;
 
-  svg {
-    margin-right: 5px;
-  }
-
-  &:hover {
-    background-color: darken($secondary-color, 10%);
+    &:hover {
+      color: #fff;
+    }
   }
 }
