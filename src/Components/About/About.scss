@@ -22,6 +22,11 @@ $tools-item-tint: darken($list-item-color, 40%);
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
+  justify-self: center;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 0px;
+  }
 }
 
 .AboutText {
@@ -34,7 +39,6 @@ $tools-item-tint: darken($list-item-color, 40%);
 @media screen and (max-width: 768px) {
   .AboutText {
     font-size: 1.4em;
-    padding-left: 20px;
   }
 }
 

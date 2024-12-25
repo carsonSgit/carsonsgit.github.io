@@ -8,37 +8,19 @@ const About: React.FC = () => {
       <div className="AboutContentContainer">
         <div className="AboutContent">
           <p className="AboutText">
-            I’m a passionate developer with a strong focus on crafting innovative, 
-            user-centric solutions that combine thoughtful design with solid engineering. 
-            My work thrives at the intersection of technology and creativity, 
-            where I strive to build seamless experiences that are as performant as they are visually striking.
+            I'm a passionate developer focused on creating user-centric solutions that blend design and engineering. I aim to build seamless, high-performance experiences that are both functional and visually appealing.
           </p>
             
-            
-            <p className='AboutText'>
-            Recently, I worked as a Software Engineering Intern at <a className="hoverLink" href="https://www.tailed.ca" target="_blank" rel="noreferrer">Tail&#39;ed</a>{' '},
-            where I worked on building and optimizing the company’s 
-            website using TypeScript, React, and Next.js. 
-            I also contributed to developing user-facing tools, 
-            including an AI-driven application built in Python leveraging a Vector DB, 
-            aiming to solve real-world problems faced by students looking for internships/positions with modern technology.
-            </p>
-            <p className='AboutText'>
-              Over the past four years, I’ve gained hands-on experience across a variety of environments — 
-              from interning at a 
-              <a className="hoverLink" href="https://www.tailed.ca" target="_blank" rel="noreferrer"> startup </a> 
-              and 
-              <a className="hoverLink" href="https://www.ville.kirkland.qc.ca/" target="_blank" rel="noreferrer"> local government</a>, 
-              to working at a 
-              <a className="hoverLink" href="https://www.linkedin.com/company/cusec/" target="_blank" rel="noreferrer"> tech conference </a> 
-              and directing my school’s 
-              <a className="hoverLink" href="https://www.linkedin.com/company/jachacks" target="_blank" rel="noreferrer"> hackathon</a>, 
-              I've had the opportunity to see the tech industry from many different angles and grow immensely through such experiences.
-            </p>
+          <p className='AboutText'>
+            Recently, as a Software Engineering Intern at <a className="hoverLink" href="https://www.tailed.ca" target="_blank" rel="noreferrer">Tail&#39;ed</a>, I worked on the company’s website using TypeScript, React, and Next.js, and developed + shipped an AI product that  using Python and a Vector DB to improve students' ability to stand out .
+          </p>
 
-            <p className='AboutText'>
-            In my free time I'm probably hanging out with my cats, at the gym, listening to music, or thinking about my next project.
-            
+          <p className='AboutText'>
+            Over the last four years, I’ve gained diverse experience, from interning at a <a className="hoverLink" href="https://www.tailed.ca" target="_blank" rel="noreferrer">startup</a> and <a className="hoverLink" href="https://www.ville.kirkland.qc.ca/" target="_blank" rel="noreferrer">local government</a>, to contributing at a <a className="hoverLink" href="https://www.linkedin.com/company/cusec/" target="_blank" rel="noreferrer">tech conference</a> and directing my school's <a className="hoverLink" href="https://www.linkedin.com/company/jachacks" target="_blank" rel="noreferrer">hackathon</a>. These experiences have given me valuable insights into the tech industry.
+          </p>
+
+          <p className='AboutText'>
+            In my free time, I’m usually with my cats, at the gym, listening to music, or brainstorming my next project.
           </p>
         </div>
 
