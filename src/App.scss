@@ -3,6 +3,7 @@
   grid-template-columns: 2fr 3fr;
   margin-left: 5%;
   margin-right: 5%;
+  gap: 120px;
 }
 
 .left-column {
@@ -16,11 +17,13 @@
   padding: 10px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .container {
-    margin: 0;
+    margin-left: 2%;
+    margin-right: 2%;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto;
+    gap: 0px;
   }
 
   .left-column, .right-column {
