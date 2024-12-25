@@ -1,8 +1,12 @@
 $primary-color: #2af598;
-$background-color: #262f2aec;
+$background-color: #303030;
 $text-color: #fafff0;
 $hover-scale: 1.05;
 $transition-duration: 0.3s;
+
+* {
+  box-sizing: border-box;  // Ensures padding doesn't affect width calculations
+}
 
 a {
   text-decoration: none;
@@ -16,16 +20,11 @@ a {
   padding: 20px;
   color: $text-color;
   grid-auto-rows: auto;
+  max-width: 100%;  
+  overflow-x: hidden;
+  width: 100%;
 
-  @media (min-width: 768px) {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  @media (min-width: 1024px) {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  @media (min-width: 1440px) {
+  @media (min-width: 1200px) {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -69,11 +68,10 @@ a {
 }
 
 .ProjectLanguagePill {
-  background-color: rgba(42, 245, 152, 0.2);
-  color: $primary-color;
-  border-radius: 20px;
-  padding: 6px 12px;
+  border-radius: 8px;
+  padding: 6px 10px;
   font-size: 0.9em;
+  font-weight: 600;
   cursor: default;
 }
 

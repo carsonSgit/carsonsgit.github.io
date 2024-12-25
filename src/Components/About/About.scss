@@ -5,7 +5,6 @@ $quaternary-color: #95b9b0;
 $background-color: #262f2aec;
 $list-item-color: #2bd4a0;
 $text-color: #fafff0;
-// $font-color: #a2aa94;
 $font-color: #000000;
 $hover-color: #ced4da;
 $box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -14,14 +13,22 @@ $language-item-tint: darken($list-item-color, 30%);
 $framework-item-tint: darken($list-item-color, 35%);
 $tools-item-tint: darken($list-item-color, 40%);
 
+* {
+  box-sizing: border-box;
+}
+
 .AboutContainer {
   margin-top: 100px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .AboutText {
   font-weight: 500;
   color: rgb(69, 69, 69);
   font-size: 1.2em;
+  width: 100%;
 }
 
 @media screen and (max-width: 768px) {
@@ -39,5 +46,3 @@ $tools-item-tint: darken($list-item-color, 40%);
 .hoverLink:hover {
   color: $hover-color;
 }
-
-

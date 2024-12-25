@@ -1,14 +1,30 @@
 import { Project } from '../Interfaces/projects';
 
+const languageColors = {
+  Python: { backgroundColour: 'rgba(33, 147, 129, 0.5)', textColour: '#A3D8D0' }, // Softer, muted text for Python
+  '.NET MAUI': { backgroundColour: '#433248', textColour: '#D0A7FF' },
+  RaspberryPi: { backgroundColour: 'rgba(109, 63, 68, 0.7)', textColour: '#FFD8D8' },
+  IoT: { backgroundColour: '#4E5B31', textColour: '#F2FF8C' },
+  Mantine: { backgroundColour: 'rgba(60, 74, 40, 0.7)', textColour: '#B8F5A9' },
+  TypeScript: { backgroundColour: 'rgba(64, 147, 178, 0.5)', textColour: '#B0E9F6' }, // Muted text for TypeScript
+  RAGAI: { backgroundColour: '#5B1F2E', textColour: '#FFB1B1' },
+  VectorDB: { backgroundColour: '#2C3C49', textColour: '#A7D4F2' },
+  React: { backgroundColour: 'rgba(58, 106, 114, 0.7)', textColour: '#B0E4E1' }, 
+  MachineLearning: { backgroundColour: 'rgba(177, 110, 78, 0.7)', textColour: '#F5C157' }, // Increased contrast for ML text
+  JupyterNotebook: { backgroundColour: 'rgba(122, 91, 61, 0.7)', textColour: '#F1D456' },
+};
+
+
+
 export const projects: Project[] = [
   {
     image: 'cropcare.webp',
     title: 'CropCare',
     languages: [
-      { name: 'Python', backgroundColour: '#306998', textColour: '#FFFFFF' },
-      { name: '.NET MAUI', backgroundColour: '#512BD4', textColour: '#FFFFFF' },
-      { name: 'Raspberry Pi', backgroundColour: '#A22846', textColour: '#FFFFFF' },
-      { name: 'IoT', backgroundColour: '#F0B323', textColour: '#FFFFFF' }
+      { name: 'Python', ...languageColors.Python },
+      { name: '.NET MAUI', ...languageColors['.NET MAUI'] },
+      { name: 'Raspberry Pi', ...languageColors.RaspberryPi },
+      { name: 'IoT', ...languageColors.IoT },
     ],
     description:
       "Developed an IoT container farm with leveraging Python, .NET MAUI, a Raspberry Pi, and Azure IoT hub for mobile monitoring and control. Our project was recognized as the top Capstone project in the history of my school's Computer Science program.",
@@ -19,10 +35,10 @@ export const projects: Project[] = [
     image: 'linky.webp',
     title: 'Linky',
     languages: [
-      { name: 'Mantine', backgroundColour: '#4A5D23', textColour: '#FFFFFF' },
-      { name: 'TypeScript', backgroundColour: '#3178C6', textColour: '#FFFFFF' },
-      { name: 'RAG AI', backgroundColour: '#FF6161', textColour: '#FFFFFF' },
-      { name: 'Vector DB', backgroundColour: '#4CBBF1', textColour: '#FFFFFF' }
+      { name: 'Mantine', ...languageColors.Mantine },
+      { name: 'TypeScript', ...languageColors.TypeScript },
+      { name: 'RAG AI', ...languageColors.RAGAI },
+      { name: 'Vector DB', ...languageColors.VectorDB },
     ],
     description:
       'Linky is a hackathon winning project made for <a href="https://www.marihacks.com/" target="_blank" rel="noopener noreferrer">MariHacks 2024</a> in under 24hrs. It is a web app that uses a RAG AI & a Vector DB to turn your links into your own chatbot letting you interact with your URLs!',
@@ -33,9 +49,9 @@ export const projects: Project[] = [
     image: 'trademind.webp',
     title: 'TradeMind',
     languages: [
-      { name: 'React', backgroundColour: '#61DAFB', textColour: '#000000' },
-      { name: 'Python', backgroundColour: '#306998', textColour: '#FFFFFF' },
-      { name: 'Machine Learning', backgroundColour: '#F7B731', textColour: '#FFFFFF' }
+      { name: 'React', ...languageColors.React },
+      { name: 'Python', ...languageColors.Python },
+      { name: 'Machine Learning', ...languageColors.MachineLearning },
     ],
     description:
       'TradeMind is a project developed for <a href="https://launchlab.ai/" target="_blank" rel="noopener noreferrer">AI Launch Lab</a>\'s <a href="https://launchlab.ai/rd-program/" target="_blank" rel="noopener noreferrer">R&D Program</a>. It is a web app that uses machine learning to predict stock prices and provide insights to users.',
@@ -46,9 +62,9 @@ export const projects: Project[] = [
     image: 'pharmahacks2024.webp',
     title: 'Mice Neural Decoding',
     languages: [
-      { name: 'Python', backgroundColour: '#306998', textColour: '#FFFFFF' },
-      { name: 'Jupyter Notebook', backgroundColour: '#F2C800', textColour: '#000000' },
-      { name: 'Machine Learning', backgroundColour: '#F7B731', textColour: '#FFFFFF' }
+      { name: 'Python', ...languageColors.Python },
+      { name: 'Jupyter Notebook', ...languageColors.JupyterNotebook },
+      { name: 'Machine Learning', ...languageColors.MachineLearning },
     ],
     description:
       'Mice Neural Decoding was a challenge at the <a href="https://pharmahacks.com/#welcome" target="_blank" rel="noopener noreferrer">PharmaHacks 2024</a> event. My group and I decoded mouse navigation decisions by analyzing L2/3 neuron activity in the retrosplenial cortex, following the findings of Tseng et al. (2022) in their Neuron Paper. Please read the README.md on the GitHub repo!',

@@ -2,7 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import './Content.scss';
 
 const LazyProjects = lazy(() => import('../Projects/Projects'));
-const LazyExperience = lazy(() => import('../Experience/Experience'));
+//const LazyExperience = lazy(() => import('../Experience/Experience'));
 const LazyAbout = lazy(() => import('../About/About'));
 
 const Content: React.FC = () => {
@@ -18,11 +18,11 @@ const Content: React.FC = () => {
           <LazyProjects />
         </Suspense>
       </div>
-      <div id="stats" className="section-container">
+      { /*<div id="stats" className="section-container">
         <Suspense fallback={<div>Loading experience...</div>}>
           <LazyExperience />
         </Suspense>
-      </div>
+      </div> */}
       
     </div>
   );
