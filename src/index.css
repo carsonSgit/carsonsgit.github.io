@@ -1,3 +1,8 @@
+/* $primary-color: #2af598;
+$secondary-color: #00715f;
+$tertiary-color: #33b072;
+$quaternary-color: #95b9b0; */
+
 body {
   margin: 0;
   font-family: 'Inter';
@@ -14,4 +19,26 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #33b07150;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00715ec2;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #00715f;
+}
+
+::selection {
+  color: #37ab97;
+  background-color: #95cbc28f;
 }
