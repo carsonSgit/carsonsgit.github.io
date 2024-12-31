@@ -44,9 +44,9 @@ $tools-item-tint: darken($list-item-color, 40%);
 
 .hoverLink {
   font-weight: 600;
-  color: $list-item-color;
+  color: darken($primary-color, 25%);
 }
 
 .hoverLink:hover {
-  color: $hover-color;
+  color: darken($primary-color, 15%);
 }

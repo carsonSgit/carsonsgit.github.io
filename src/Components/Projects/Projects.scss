@@ -13,7 +13,12 @@ $transition-duration: 0.3s;
 
 a {
   text-decoration: none;
-  color: $primary-color;
+  color: darken($primary-color, 25%);
+  font-weight: 600;
+}
+
+a:hover {
+  color: darken($primary-color, 15%);
 }
 
 .ProjectsContainer {
@@ -23,7 +28,7 @@ a {
   padding: 20px;
   color: $text-color;
   grid-auto-rows: auto;
-  max-width: 100%;  
+  max-width: 100%;
   overflow-x: hidden;
   width: 100%;
 
@@ -36,7 +41,7 @@ a {
   font-size: 2.5em;
   margin-bottom: 20px;
   text-align: center;
-  color: #131d15;
+  color: rgb(69, 69, 69);
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: 2px;
@@ -72,23 +77,47 @@ a {
 }
 
 .ProjectItem {
-  background-color: #233532f0;
+  background-color: #faf9f600;
   border-radius: 12px;
   padding: 20px;
   height: fit-content;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0px 4px rgba(0, 0, 0, 0.12);
+}
+
+.ProjectTitleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
 }
 
 .ProjectTitle {
   font-size: 1.6em;
-  color: $text-color;
-  margin-bottom: 10px;
+  color: rgb(69, 69, 69);
+  margin: 0;
+}
+
+.ProjectLinks {
+  display: flex;
+  gap: 12px;
+  font-size: 1.3em;
+  align-items: center;
+
+  .ProjectLink {
+    color: darken($tertiary-color, 20%);
+    transition: color $transition-duration ease;
+
+    &:hover {
+      color: darken($tertiary-color, 30%);
+    }
+  }
 }
 
 .ProjectDescription {
   font-size: 1em;
-  color: lighten($text-color, 20%);
+  color: rgb(69, 69, 69);
   margin: 0;
+  font-weight: 500;
   flex-grow: 1;
 }
 
@@ -104,26 +133,11 @@ a {
   padding: 6px 10px;
   font-size: 0.9em;
   font-weight: 600;
-  color: #fffffff2 !important;
+  color: #fff !important;
   cursor: default;
+  transition: transform 0.15s ease-in-out;
 }
 
-.ProjectDescription {
-  color: #ffffffdf;
+.ProjectLanguagePill:hover {
+  transform: translateY(-1px);
 }
-
-.ProjectLinks {
-  display: flex;
-  gap: 15px;
-  margin-top: 2vh;
-
-  .ProjectLink {
-    align-items: end;
-    color: #ececec;
-
-    &:hover {
-      color: #fff;
-    }
-  }
-}
-
