@@ -2,49 +2,12 @@ $primary-color: #2af598;
 $secondary-color: #00715f;
 $tertiary-color: #33b072;
 $quaternary-color: #95b9b0;
-$background-color: #262f2aec;
-$text-color: #fafff0;
+$text-color: rgb(34,34,34);
 $font-color: #a2aa94;
-$list-item-color: #2bd4a0;
-$hover-color: #ced4da;
-$box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-$border-radius: 8px;
-$language-item-tint: darken($list-item-color, 30%);
-$framework-item-tint: darken($list-item-color, 35%);
-$tools-item-tint: darken($list-item-color, 40%);
 
 .experience-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 6rem;
-  padding: 2rem;
-  max-width: 1900px;
-  margin: 0 auto;
-  align-items: start;
-
-  .category-containers {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-}
-
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@media (max-width: 768px) {
-  .experience-grid {
-    grid-template-columns: 1fr;
-    gap: 0em;
-  }
+  padding: 10px;
 }
 
 .timeline {
@@ -66,38 +29,16 @@ $tools-item-tint: darken($list-item-color, 40%);
 }
 
 .timeline-item {
-  position: relative;
-  margin-left: -15px;
+  margin-top: 20px;
   margin-bottom: 20px;
-  padding-left: 15px;
-  background: rgba(245, 245, 245, 0.015);
-  background-size: 200% 100%;
-  background-position: left;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  position: relative;
-  transform-origin: left center;
-  transition: 0.3s;
-
-  &:hover {
-    transition: 0.3s;
-    background: rgba(245, 245, 245, 0.035);
-    transform: translateY(-5px);
-  }
 
   .timeline-content {
-    padding-left: 10px;
-    margin-right: 10px;
     color: $text-color;
-    border-left: 2px solid $primary-color;
 
     h3 {
       font-size: 1.5em;
-      margin-bottom: 0.8rem;
-      margin-top: 0.8rem;
-      color: darken($primary-color, 20%);
-      transition: color 0.3s ease-in-out;
+      margin: 0;
+      color: $text-color;
 
       @media (max-width: 768px) {
         font-size: 1.3em;
@@ -106,13 +47,9 @@ $tools-item-tint: darken($list-item-color, 40%);
 
     p {
       font-size: 1em;
-      transition: 0.3s ease;
-      color: lighten($quaternary-color, 22%);
-
-      &:hover{
-        transition: 0.3s ease;
-        color: white;
-      }
+      color: $text-color;
+      font-weight: 500;
+      margin-bottom: 0;
 
       @media (max-width: 768px) {
         font-size: 0.95em;
@@ -122,41 +59,44 @@ $tools-item-tint: darken($list-item-color, 40%);
 
   .timeline-company,
   .timeline-institution {
-    color: lighten($secondary-color, 10%);
+    color: $text-color;
   }
 
   .timeline-atsign {
-    color: $text-color;
+    color: $secondary-color;
   }
 
   .timeline-date {
     margin-top: 5px;
     font-size: 0.9em;
-    color: $quaternary-color;
+    font-weight: 700;
+    color: lighten($text-color, 20%);
   }
 }
 
-.timeline-step {
-  position: absolute;
-  left: -10px;
-  top: 0;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
+.timeline-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.1s ease-in-out;
 
-.timeline-section {
-  margin-left: 20px;
-  margin-right: 20px;
+  &:hover {
+    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.3);
+    .timeline-role {
+      color: lighten($secondary-color,10%);
+      transition: color 0.1s ease-in-out;
+    }
+  }
 }
 
 .timeline-section-title {
   font-size: 2em;
   color: $text-color;
-  margin-bottom: 10px;
-  margin-left: -15px;
-  padding-left: 5px;
-  font-weight: bold;
+  font-weight: 700;
+  text-align: center;
 
   @media (max-width: 768px) {
     font-size: 1.7em;
@@ -168,43 +108,31 @@ $tools-item-tint: darken($list-item-color, 40%);
 }
 
 .timeline-stats {
-  margin-top: 5px;
-  margin-bottom: 5px;
   display: flex;
   flex-direction: column;
+  margin-top: 4px;
 
   .stat-item {
     font-size: 0.9em;
-    color: $text-color;
-    margin-bottom: 3px;
+    color: lighten($text-color, 10%);
+    margin-top: 4px;
+    font-weight: 600;
 
     strong {
-      color: $primary-color;
+      color: $secondary-color;
     }
   }
 }
 
 .timeline-description {
-  gap: 100px;
-  padding-left: 0;
+  margin-bottom: 0.5rem;
 
   li {
     position: relative;
-    margin-bottom: 0.5rem;
-    margin-left:1.5rem;
-    padding-left: 0px;
-    color: lighten($quaternary-color, 10%);
+    margin-bottom: 0.2rem;
+    margin-right: 0.5rem;
+    text-align: left;
+    color: $text-color;
     font-weight: 500;
-    transition: 0.3s ease;
-
-    &:hover::before {
-      transition: 0.3s ease;
-      color: $primary-color;
-    }
-
-    &:hover{
-      transition: 0.3s ease;
-      color: white;
-    }
   }
 }
