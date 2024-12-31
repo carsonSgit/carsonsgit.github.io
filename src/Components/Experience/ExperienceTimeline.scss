@@ -31,12 +31,11 @@ $font-color: #a2aa94;
 .timeline-item {
   margin-top: 20px;
   margin-bottom: 20px;
-  transition: opacity 0.15s ease-in-out;
-
+  transition: opacity 0.15s ease-out;
   opacity: 1;
 
   &.faded {
-    opacity: 0.4;
+    opacity: 0.5;
   }
 
   &:hover {
@@ -51,14 +50,14 @@ $font-color: #a2aa94;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.15s ease-in-out, background-color 0.15s ease-in-out;
+  transition: box-shadow 0.15s ease-out, background-color 0.15s ease-out;
 
   &:hover {
     box-shadow: 0 0px 4px rgba(0, 0, 0, 0.3);
     background-color: #f5f5f2b4;
     .timeline-role, .timeline-company, .timeline-institution, .timeline-atsign {
       color: $secondary-color;
-      transition: color 0.13s ease-in-out;
+      transition: color 0.15s ease-out;
     }
   }
 }
@@ -136,6 +135,10 @@ $font-color: #a2aa94;
 }
 
 @media (max-width: 768px) {
+  .timeline-item {
+    opacity: 1 !important;
+  }
+
   .timeline-link {
     pointer-events: none;
   }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { education } from '../Data/education';
 import { experience } from '../Data/experience';
 import { statistics } from '../Data/statistics';
@@ -7,6 +7,7 @@ import './ExperienceTimeline.scss';
 const ExperienceTimeline = () => {
   const [hoveredEducationIndex, setHoveredEducationIndex] = useState<number | null>(null);
   const [hoveredExperienceIndex, setHoveredExperienceIndex] = useState<number | null>(null);
+  const [isHovered, setIsHovered] = useState<boolean>(false);
 
   const handleEducationMouseEnter = (index: number): void => {
     setHoveredEducationIndex(index);
@@ -22,14 +23,18 @@ const ExperienceTimeline = () => {
   };
 
   return (
-    <div className="experience-grid">
+    <div
+      className="experience-grid"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div className="timeline">
         <div className="timeline-section">
           <h2 className="timeline-section-title">Education</h2>
           {education.map((item, index) => (
             <div
               key={index}
-              className={`timeline-item ${hoveredEducationIndex !== null && hoveredEducationIndex !== index ? 'faded' : ''}`}
+              className={`timeline-item ${isHovered && hoveredEducationIndex !== index ? 'faded' : ''}`}
               onMouseEnter={() => handleEducationMouseEnter(index)}
               onMouseLeave={handleEducationMouseLeave}
             >
@@ -63,13 +68,13 @@ const ExperienceTimeline = () => {
             </div>
           ))}
         </div>
-        
+
         <div className="timeline-section">
           <h2 className="timeline-section-title">Experience</h2>
           {experience.map((item, index) => (
             <div
               key={index}
-              className={`timeline-item ${hoveredExperienceIndex !== null && hoveredExperienceIndex !== index ? 'faded' : ''}`}
+              className={`timeline-item ${isHovered && hoveredExperienceIndex !== index ? 'faded' : ''}`}
               onMouseEnter={() => handleExperienceMouseEnter(index)}
               onMouseLeave={handleExperienceMouseLeave}
             >
