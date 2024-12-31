@@ -27,7 +27,7 @@ export const projects: Project[] = [
       { name: 'IoT', ...languageColors.IoT },
     ],
     description:
-      "Developed an IoT container farm with leveraging Python, .NET MAUI, a Raspberry Pi, and Azure IoT hub for mobile monitoring and control. Our project was recognized as the top Capstone project in the history of my school's Computer Science program.",
+      "Developed an IoT container farm leveraging Python, .NET MAUI, a Raspberry Pi, and Azure's IoT hub for mobile monitoring and control. Our project was recognized as the best Capstone project in the history of the school's CS program.",
     github: 'https://github.com/carsonSgit/CropCare',
     website: 'https://carsonsgit.github.io/cropcare-3d/',
   },
@@ -41,7 +41,7 @@ export const projects: Project[] = [
       { name: 'Vector DB', ...languageColors.VectorDB },
     ],
     description:
-      'Linky is a hackathon winning project made for <a href="https://www.marihacks.com/" target="_blank" rel="noopener noreferrer">MariHacks 2024</a> in under 24hrs. It is a web app that uses a RAG AI & a Vector DB to turn your links into your own chatbot letting you interact with your URLs!',
+      'Linky is a hackathon winning project made for <a href="https://www.marihacks.com/" target="_blank" rel="noopener noreferrer">MariHacks 2024</a> in under 24hrs. It\'s a web app that using a RAG AI & Vector DB which converts page content from inputed links into the knowledge base of your own AI bot, letting you interact with URLs, making your learning experience more interactive and fun!',
     github: 'https://github.com/carsonSgit/Linky',
     website: 'https://www.linky.im/',
   },
@@ -54,7 +54,7 @@ export const projects: Project[] = [
       { name: 'Machine Learning', ...languageColors.MachineLearning },
     ],
     description:
-      'TradeMind is a project developed for <a href="https://launchlab.ai/" target="_blank" rel="noopener noreferrer">AI Launch Lab</a>\'s <a href="https://launchlab.ai/rd-program/" target="_blank" rel="noopener noreferrer">R&D Program</a>. It is a web app that uses machine learning to predict stock prices and provide insights to users.',
+      'TradeMind is a project developed for <a href="https://launchlab.ai/" target="_blank" rel="noopener noreferrer">AI Launch Lab</a>\'s <a href="https://launchlab.ai/rd-program/" target="_blank" rel="noopener noreferrer">R&D Program</a>, recognized as the top project of ours & past cohorts. TradeMind is a web app that uses machine learning to predict stock prices based on various factors, and provide insights to users.',
     github: 'https://github.com/carsonSgit/TradeMind',
     website: 'https://trademind.pages.dev/',
   },
@@ -67,7 +67,7 @@ export const projects: Project[] = [
       { name: 'Machine Learning', ...languageColors.MachineLearning },
     ],
     description:
-      'Mice Neural Decoding was a challenge at the <a href="https://pharmahacks.com/#welcome" target="_blank" rel="noopener noreferrer">PharmaHacks 2024</a> event. My group and I decoded mouse navigation decisions by analyzing L2/3 neuron activity in the retrosplenial cortex, following the findings of Tseng et al. (2022) in their Neuron Paper. Please read the README.md on the GitHub repo!',
+      'Done at <a href="https://pharmahacks.com/#welcome" target="_blank" rel="noopener noreferrer">PharmaHacks 2024</a>, we decoded mouse navigation decisions by analyzing L2/3 neuron activity in the retrosplenial cortex, following the findings of Tseng et al. (2022) in their Neuron Paper. Please read the README.md in the GitHub repo for a detailed explanation of the project.',
     github: 'https://github.com/carsonSgit/Mice-Neural-Decoding-ML',
     website:
       'https://github.com/carsonSgit/Mice-Neural-Decoding-ML/blob/main/PharmaHacks%202024%20Neural%20Decoding%20Single%20File.ipynb',
