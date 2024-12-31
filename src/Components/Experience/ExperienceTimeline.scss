@@ -15,7 +15,7 @@ $tools-item-tint: darken($list-item-color, 40%);
 
 .experience-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 6rem;
   padding: 2rem;
   max-width: 1900px;
@@ -25,79 +25,6 @@ $tools-item-tint: darken($list-item-color, 40%);
   .category-containers {
     display: grid;
     grid-template-columns: 1fr;
-
-    .CategoryContainer {
-      padding: 1rem;
-      border-radius: 8px;
-
-      .CategoryTitle {
-        font-size: 1.5rem;
-        color: $text-color;
-        text-align: center;
-        &:not(:first-child) {
-          margin-top: 0;
-        }
-      }
-
-      .TechList {
-        font-family: 'Poppins', sans-serif;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.5rem;
-        list-style-type: none;
-        padding: 0;
-        margin: 0 auto;
-        max-width: 600px;
-        width: 100%;
-
-        li {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: darken(white, 5%);
-          padding: 1rem;
-          font-weight: 500;
-          font-size: 1.1rem;
-          border-radius: $border-radius;
-          transition:
-            transform 0.3s ease,
-            background-color 0.3s ease;
-
-          svg {
-            margin-right: 0.5rem;
-            color: white;
-          }
-        }
-
-        li:hover {
-          cursor: default;
-          background: linear-gradient(
-            120deg,
-            $secondary-color,
-            darken($tertiary-color, 10%),
-            darken($list-item-color, 10%)
-          );
-
-          background-size: 300% 300%;
-          animation: gradientAnimation 4s ease-in-out infinite;
-          transition: transform 0.3s ease-in-out;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .TechList {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 0.5rem;
-          margin: 0 auto;
-          max-width: 100%;
-        }
-      }
-      @media (max-width: 392px) {
-        .TechList {
-          margin-left: -8px;
-        }
-      }
-    }
   }
 }
 
@@ -118,18 +45,6 @@ $tools-item-tint: darken($list-item-color, 40%);
     grid-template-columns: 1fr;
     gap: 0em;
   }
-}
-
-.TechList.programming-languages li {
-  background-color: $language-item-tint;
-}
-
-.TechList.frameworks-libraries li {
-  background-color: $framework-item-tint;
-}
-
-.TechList.tools-platforms li {
-  background-color: $tools-item-tint;
 }
 
 .timeline {
@@ -293,4 +208,3 @@ $tools-item-tint: darken($list-item-color, 40%);
     }
   }
 }
-
