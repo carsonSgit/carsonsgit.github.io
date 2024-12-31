@@ -31,47 +31,6 @@ $font-color: #a2aa94;
 .timeline-item {
   margin-top: 20px;
   margin-bottom: 20px;
-
-  .timeline-content {
-    color: $text-color;
-
-    h3 {
-      font-size: 1.5em;
-      margin: 0;
-      color: $text-color;
-
-      @media (max-width: 768px) {
-        font-size: 1.3em;
-      }
-    }
-
-    p {
-      font-size: 1em;
-      color: $text-color;
-      font-weight: 500;
-      margin-bottom: 0;
-
-      @media (max-width: 768px) {
-        font-size: 0.95em;
-      }
-    }
-  }
-
-  .timeline-company,
-  .timeline-institution {
-    color: $text-color;
-  }
-
-  .timeline-atsign {
-    color: $secondary-color;
-  }
-
-  .timeline-date {
-    margin-top: 5px;
-    font-size: 0.9em;
-    font-weight: 700;
-    color: lighten($text-color, 20%);
-  }
 }
 
 .timeline-link {
@@ -81,30 +40,57 @@ $font-color: #a2aa94;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.1s ease-in-out;
 
   &:hover {
     box-shadow: 0 0px 4px rgba(0, 0, 0, 0.3);
-    .timeline-role {
-      color: lighten($secondary-color,10%);
-      transition: color 0.1s ease-in-out;
+    .timeline-role, .timeline-company, .timeline-institution, .timeline-atsign {
+      color: $secondary-color;
+      transition: color 0.07s ease-in-out;
     }
   }
 }
 
-.timeline-section-title {
-  font-size: 2em;
+.timeline-content {
   color: $text-color;
+
+  h3 {
+    font-size: 1.5em;
+    margin: 0;
+    color: $text-color;
+
+    @media (max-width: 768px) {
+      font-size: 1.3em;
+    }
+  }
+
+  p {
+    font-size: 1em;
+    color: $text-color;
+    font-weight: 500;
+    margin-bottom: 0;
+
+    @media (max-width: 768px) {
+      font-size: 0.95em;
+    }
+  }
+}
+
+.timeline-company,
+.timeline-institution,
+.timeline-atsign {
+  color: $text-color;
+}
+
+.timeline-atsign {
+  font-weight: 200;
+}
+
+
+.timeline-date {
+  margin-top: 5px;
+  font-size: 0.9em;
   font-weight: 700;
-  text-align: center;
-
-  @media (max-width: 768px) {
-    font-size: 1.7em;
-  }
-
-  @media (max-width: 430px) {
-    font-size: 1.4em;
-  }
+  color: lighten($text-color, 20%);
 }
 
 .timeline-stats {
@@ -134,5 +120,26 @@ $font-color: #a2aa94;
     text-align: left;
     color: $text-color;
     font-weight: 500;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-link {
+    pointer-events: none;
+  }
+}
+
+.timeline-section-title {
+  font-size: 2em;
+  color: $text-color;
+  font-weight: 700;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 1.7em;
+  }
+
+  @media (max-width: 430px) {
+    font-size: 1.4em;
   }
 }
