@@ -31,7 +31,6 @@ const Footer: React.FC = () => {
           <FaMedium />
         </a>
       </div>
-      <div className="FooterText">Coded and Designed by @carsonSgit</div>
     </footer>
   );
 };

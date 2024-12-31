@@ -1,18 +1,24 @@
 .HeroContainer {
-  flex: 1;
   display: flex;
-  flex-direction: column; 
-  justify-content: start;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: start;
+  min-height: 100vh;
   margin-top: 50px;
   padding: 20px;
 
   @media screen and (max-width: 768px) {
-    flex-direction: column; 
+    flex-direction: column;
     margin: 0;
     padding: 10px;
+    justify-content: flex-start; 
+    min-height: min-content;
+  }
+  @media screen and (max-width: 1024px) {
+    min-height: 0;
   }
 }
+
 
 h1 {
   font-size: 4em;

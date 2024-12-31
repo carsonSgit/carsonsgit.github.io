@@ -27,6 +27,9 @@ $tools-item-tint: darken($list-item-color, 40%);
   @media screen and (max-width: 768px) {
     margin-top: 0px;
   }
+  @media screen and (max-width: 1024px) {
+    margin-top: 0px;
+  }
 }
 
 .AboutText {
