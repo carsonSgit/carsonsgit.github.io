@@ -4,7 +4,7 @@ export const education = [
     title: 'Bachelors of Economics',
     institution: 'Concordia University',
     description:
-      'Continuing my education exploring the world of economics and finance to bridge the gap between tech and business.',
+      'Currently getting prerequisite credits before transferring into the Bachelors of Computer Science while exploring the world of economics and finance in hopes of expanding my capabilities.',
     statsKey: 'Economics',
     link: 'https://www.concordia.ca/',
   },

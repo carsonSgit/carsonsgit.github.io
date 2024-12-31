@@ -8,7 +8,7 @@ const About: React.FC = () => {
       <div className="AboutContentContainer">
         <div className="AboutContent">
           <p className="AboutText">
-            I'm a passionate developer focused on creating user-centric solutions that blend design and engineering. I aim to build seamless, high-performance experiences that are both functional and visually appealing.
+            I'm a recent CS grad from John Abbott College, currently continuing my studies at Concordia University where I'm taking some missing prerequisites before transferring into a BCompSc. I've been coding for 7 years, with a recent focus on the implementations of AI and Machine Learning.
           </p>
             
           <p className='AboutText'>
@@ -20,7 +20,7 @@ const About: React.FC = () => {
           </p>
 
           <p className='AboutText'>
-            In my free time, I’m usually with my cats, at the gym, listening to music, or brainstorming my next project.
+            If I'm not coding, I'm probably with my cats, at the gym, listening to music, or doomscrolling...
           </p>
         </div>
 
