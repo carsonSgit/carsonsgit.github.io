@@ -1,15 +1,33 @@
 import React from 'react';
-import Navbar from './Components/Navbar/Navbar';
 import Content from './Components/Content/Content';
-import Footer from './Components/Footer/Footer';
 import './App.scss';
+import Hero from './Components/Hero/Hero';
 
-const App: React.FC = () => {
+const LeftColumn = () => {
+  return (
+    <div className="left-column">
+      <Hero />
+    </div>
+  );
+};
+
+const RightColumn = () => {
+  return (
+    <div className="right-column">
+      <Content />
+    </div>
+  );
+};
+
+const App = () => {
   return (
     <div className="App">
-      <Navbar />
-      <Content />
-      <Footer />
+      <div className="FixedSection">
+        <div className="container">
+          <LeftColumn />
+          <RightColumn />
+        </div>
+      </div>
     </div>
   );
 };

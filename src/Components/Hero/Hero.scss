@@ -1,0 +1,41 @@
+.HeroContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  min-height: 100vh;
+  margin-top: 50px;
+  padding: 20px;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    margin: 0;
+    padding: 10px;
+    justify-content: flex-start; 
+    min-height: min-content;
+  }
+  @media screen and (max-width: 1024px) {
+    min-height: 0;
+  }
+}
+
+
+h1 {
+  font-size: 4em;
+  margin-bottom: 0px;
+  color: rgb(34,34,34);
+
+  @media screen and (max-width: 768px) {
+    font-size: 2em;
+  }
+}
+
+h2 {
+  margin-top: 0px;
+  font-size: 2em;
+  color: rgb(69,69,69);
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.5em;
+  }
+}

@@ -1,89 +1,30 @@
 import React from 'react';
-import { motion, useInView } from 'framer-motion';
-import { FaFilePdf, FaGithub } from 'react-icons/fa';
+// import { FaFilePdf, FaGithub } from 'react-icons/fa';
 import './About.scss';
 
 const About: React.FC = () => {
-  const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: true });
-
   return (
-    <motion.div
-      className="AboutContainer"
-      ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 1 }}
-    >
+    <div className="AboutContainer">
       <div className="AboutContentContainer">
         <div className="AboutContent">
           <p className="AboutText">
-            Hi, my name is Carson! I&#39;m a recent grad from John Abbott
-            College&#39;s Computer Science degree continuing my education over
-            at Concordia University!
-            <br />
-            <br />
-            This summer, I interned @{' '}
-            <a
-              className="hoverLink"
-              href="https://www.tailed.ca"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Tail&#39;ed
-            </a>{' '}
-            as a Software Developer, working on the company website using
-            TypeScript, React, and Next.js. Alongside that, I also worked on
-            some tools for users written in Python (notably, an AI-tool).
-            <br />
-            <br />
-            In my free time, I&#39;m usually working on a personal project,
-            learning a new technology, or wallowing in some imposter syndrome.
-            Aside from that, my interests are geared towards AI/ML and their
-            potential impact on environmental solutions.
-            <br />
-            <br />
-            I&#39;m not hard to track down, but you can find me on{' '}
-            <a
-              className="hoverLink"
-              href="https://linkedin.com/in/carsonspriggs"
-              target="_blank"
-              rel="noreferrer"
-            >
-              LinkedIn
-            </a>{' '}
-            or{' '}
-            <a
-              className="hoverLink"
-              href="https://github.com/carsonSgit"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub
-            </a>
-            . I also dabble in a bit of writing on my{' '}
-            <a
-              className="hoverLink"
-              href="https://dev.to/carsonsgit"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Dev.to
-            </a>{' '}
-            and{' '}
-            <a
-              className="hoverLink"
-              href="https://medium.com/@carsonspriggs6"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Medium
-            </a>{' '}
-            pages.
+            I'm a recent CS grad from John Abbott College, currently continuing my studies at Concordia University where I'm taking some missing prerequisites before transferring into a BCompSc. I've been coding for 7 years, with a recent focus on the implementations of AI and Machine Learning.
+          </p>
+            
+          <p className='AboutText'>
+            Recently, as a Software Engineering Intern at <a className="hoverLink" href="https://www.tailed.ca" target="_blank" rel="noreferrer">Tail&#39;ed</a>, I worked on the company’s website using TypeScript, React, and Next.js, and developed + shipped an AI product that  using Python and a Vector DB to improve students' ability to stand out .
+          </p>
+
+          <p className='AboutText'>
+            Over the last four years, I’ve gained diverse experience, from interning at a <a className="hoverLink" href="https://www.tailed.ca" target="_blank" rel="noreferrer">startup</a> and <a className="hoverLink" href="https://www.ville.kirkland.qc.ca/" target="_blank" rel="noreferrer">local government</a>, to contributing at a <a className="hoverLink" href="https://www.linkedin.com/company/cusec/" target="_blank" rel="noreferrer">tech conference</a> and directing my school's <a className="hoverLink" href="https://www.linkedin.com/company/jachacks" target="_blank" rel="noreferrer">hackathon</a>. These experiences have given me valuable insights into the tech industry.
+          </p>
+
+          <p className='AboutText'>
+            If I'm not coding, I'm probably with my cats, at the gym, listening to music, or doomscrolling...
           </p>
         </div>
 
-        <div className="AboutImageContainer">
+        { /* <div className="AboutImageContainer">
           <img
             className="AboutImage"
             src={`${process.env.PUBLIC_URL}/aboutImage.webp`}
@@ -111,10 +52,10 @@ const About: React.FC = () => {
               </button>
             </a>
           </div>
-
         </div>
+        */ }
       </div>
-    </motion.div>
+    </div>
   );
 };
 

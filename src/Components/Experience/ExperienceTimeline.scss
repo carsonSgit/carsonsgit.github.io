@@ -2,134 +2,12 @@ $primary-color: #2af598;
 $secondary-color: #00715f;
 $tertiary-color: #33b072;
 $quaternary-color: #95b9b0;
-$background-color: #262f2aec;
-$text-color: #fafff0;
+$text-color: rgb(34,34,34);
 $font-color: #a2aa94;
-$list-item-color: #2bd4a0;
-$hover-color: #ced4da;
-$box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-$border-radius: 8px;
-$language-item-tint: darken($list-item-color, 30%);
-$framework-item-tint: darken($list-item-color, 35%);
-$tools-item-tint: darken($list-item-color, 40%);
 
 .experience-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
-  padding: 2rem;
-  max-width: 1900px;
-  margin: 0 auto;
-  align-items: start;
-
-  .category-containers {
-    display: grid;
-    grid-template-columns: 1fr;
-
-    .CategoryContainer {
-      padding: 1rem;
-      border-radius: 8px;
-
-      .CategoryTitle {
-        font-size: 1.5rem;
-        color: $text-color;
-        text-align: center;
-        &:not(:first-child) {
-          margin-top: 0;
-        }
-      }
-
-      .TechList {
-        font-family: 'Poppins', sans-serif;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.5rem;
-        list-style-type: none;
-        padding: 0;
-        margin: 0 auto;
-        max-width: 600px;
-        width: 100%;
-
-        li {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: darken(white, 5%);
-          padding: 1rem;
-          font-weight: 500;
-          font-size: 1.1rem;
-          border-radius: $border-radius;
-          transition:
-            transform 0.3s ease,
-            background-color 0.3s ease;
-
-          svg {
-            margin-right: 0.5rem;
-            color: white;
-          }
-        }
-
-        li:hover {
-          cursor: default;
-          background: linear-gradient(
-            120deg,
-            $secondary-color,
-            darken($tertiary-color, 10%),
-            darken($list-item-color, 10%)
-          );
-
-          background-size: 300% 300%;
-          animation: gradientAnimation 4s ease-in-out infinite;
-          transition: transform 0.3s ease-in-out;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .TechList {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 0.5rem;
-          margin: 0 auto;
-          max-width: 100%;
-        }
-      }
-      @media (max-width: 392px) {
-        .TechList {
-          margin-left: -8px;
-        }
-      }
-    }
-  }
-}
-
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@media (max-width: 768px) {
-  .experience-grid {
-    grid-template-columns: 1fr;
-    gap: 0em;
-  }
-}
-
-.TechList.programming-languages li {
-  background-color: $language-item-tint;
-}
-
-.TechList.frameworks-libraries li {
-  background-color: $framework-item-tint;
-}
-
-.TechList.tools-platforms li {
-  background-color: $tools-item-tint;
+  padding: 10px;
 }
 
 .timeline {
@@ -151,97 +29,138 @@ $tools-item-tint: darken($list-item-color, 40%);
 }
 
 .timeline-item {
-  position: relative;
-  margin-left: -15px;
+  margin-top: 20px;
   margin-bottom: 20px;
-  padding-left: 15px;
-  background: rgba(245, 245, 245, 0.015);
-  background-size: 200% 100%;
-  background-position: left;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  position: relative;
-  transform-origin: left center;
-  transition: 0.3s;
+  opacity: 1;
+  transition: opacity 0.15s ease-out;
+
+  &.faded {
+    opacity: 0.5;
+  }
 
   &:hover {
-    transition: 0.3s;
-    background: rgba(245, 245, 245, 0.035);
-    transform: translateY(-5px);
+    opacity: 1;
+  }
+}
+
+.timeline-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.15s ease-out, background-color 0.15s ease-out;
+
+  &:hover {
+    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.3);
+    background-color: #f5f5f2b4;
   }
 
-  .timeline-content {
-    padding-left: 10px;
-    margin-right: 10px;
-    color: $text-color;
-    border-left: 2px solid $primary-color;
-
-    h3 {
-      font-size: 1.5em;
-      margin-bottom: 0.8rem;
-      margin-top: 0.8rem;
-      color: darken($primary-color, 20%);
-      transition: color 0.3s ease-in-out;
-
-      @media (max-width: 768px) {
-        font-size: 1.3em;
-      }
-    }
-
-    p {
-      font-size: 1em;
-      transition: 0.3s ease;
-      color: lighten($quaternary-color, 22%);
-
-      &:hover{
-        transition: 0.3s ease;
-        color: white;
-      }
-
-      @media (max-width: 768px) {
-        font-size: 0.95em;
-      }
-    }
-  }
-
+  .timeline-role,
   .timeline-company,
-  .timeline-institution {
-    color: lighten($secondary-color, 10%);
-  }
-
+  .timeline-institution,
   .timeline-atsign {
     color: $text-color;
+    transition: color 0.15s ease-out;
   }
 
-  .timeline-date {
-    margin-top: 5px;
-    font-size: 0.9em;
-    color: $quaternary-color;
+  &:hover .timeline-role,
+  &:hover .timeline-company,
+  &:hover .timeline-institution,
+  &:hover .timeline-atsign {
+    color: $secondary-color;
   }
 }
 
-.timeline-step {
-  position: absolute;
-  left: -10px;
-  top: 0;
-  height: 100%;
+.timeline-content {
+  color: $text-color;
+
+  h3 {
+    font-size: 1.5em;
+    margin: 0;
+    color: $text-color;
+
+    @media (max-width: 768px) {
+      font-size: 1.3em;
+    }
+  }
+
+  p {
+    font-size: 1em;
+    color: $text-color;
+    font-weight: 500;
+    margin-bottom: 0;
+
+    @media (max-width: 768px) {
+      font-size: 0.95em;
+    }
+  }
+}
+
+.timeline-company,
+.timeline-institution,
+.timeline-atsign {
+  color: $text-color;
+}
+
+.timeline-atsign {
+  font-weight: 200;
+}
+
+.timeline-date {
+  margin-top: 5px;
+  font-size: 0.9em;
+  font-weight: 700;
+  color: lighten($text-color, 20%);
+}
+
+.timeline-stats {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  margin-top: 4px;
+
+  .stat-item {
+    font-size: 0.9em;
+    color: lighten($text-color, 10%);
+    margin-top: 4px;
+    font-weight: 600;
+
+    strong {
+      color: $secondary-color;
+    }
+  }
 }
 
-.timeline-section {
-  margin-left: 20px;
-  margin-right: 20px;
+.timeline-description {
+  margin-bottom: 0.5rem;
+
+  li {
+    position: relative;
+    margin-bottom: 0.2rem;
+    margin-right: 0.5rem;
+    text-align: left;
+    color: $text-color;
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-item {
+    opacity: 1 !important;
+  }
+
+  .timeline-link {
+    pointer-events: none;
+    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.2);
+  }
 }
 
 .timeline-section-title {
   font-size: 2em;
   color: $text-color;
-  margin-bottom: 10px;
-  margin-left: -15px;
-  padding-left: 5px;
-  font-weight: bold;
+  font-weight: 700;
+  text-align: center;
 
   @media (max-width: 768px) {
     font-size: 1.7em;
@@ -251,46 +170,3 @@ $tools-item-tint: darken($list-item-color, 40%);
     font-size: 1.4em;
   }
 }
-
-.timeline-stats {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  display: flex;
-  flex-direction: column;
-
-  .stat-item {
-    font-size: 0.9em;
-    color: $text-color;
-    margin-bottom: 3px;
-
-    strong {
-      color: $primary-color;
-    }
-  }
-}
-
-.timeline-description {
-  gap: 100px;
-  padding-left: 0;
-
-  li {
-    position: relative;
-    margin-bottom: 0.5rem;
-    margin-left:1.5rem;
-    padding-left: 0px;
-    color: lighten($quaternary-color, 10%);
-    font-weight: 500;
-    transition: 0.3s ease;
-
-    &:hover::before {
-      transition: 0.3s ease;
-      color: $primary-color;
-    }
-
-    &:hover{
-      transition: 0.3s ease;
-      color: white;
-    }
-  }
-}
-

@@ -1,6 +1,5 @@
 export const links = [
-  { id: 'hero', label: 'HOME' },
+  { id: 'about', label: 'LORE' },
   { id: 'projects', label: 'PROJECTS' },
-  { id: 'stats', label: 'STATS' },
-  { id: 'about', label: 'ABOUT' },
+  { id: 'stats', label: 'SKILLTREE' },
 ];
