@@ -1,7 +1,6 @@
 export interface Language {
   name: string;
   backgroundColour: string;
-  textColour: string;
 }
 
 export interface Project {

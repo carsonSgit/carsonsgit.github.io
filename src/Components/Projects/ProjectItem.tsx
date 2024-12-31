@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGithub, FaLink} from 'react-icons/fa';
 import { ProjectItemProps } from '../Interfaces/projectItemProps';
 import './Projects.scss';
 
@@ -27,7 +27,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaExternalLinkAlt />
+                <FaLink />
               </a>
             )}
           </div>
@@ -38,8 +38,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
               key={index}
               className="ProjectLanguagePill"
               style={{
-                backgroundColor: language.backgroundColour,
-                color: language.textColour,
+                backgroundColor: language.backgroundColour
               }}
             >
               {language.name}

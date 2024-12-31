@@ -41,7 +41,7 @@ a:hover {
   font-size: 2.5em;
   margin-bottom: 20px;
   text-align: center;
-  color: rgb(69, 69, 69);
+  color:  rgb(34, 34, 34);
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: 2px;
@@ -87,7 +87,7 @@ a:hover {
 .ProjectTitleContainer {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: end;
   margin-bottom: 16px;
 }
 
@@ -104,11 +104,10 @@ a:hover {
   align-items: center;
 
   .ProjectLink {
-    color: darken($tertiary-color, 20%);
-    transition: color $transition-duration ease;
+    color: rgb(34, 34, 34);
 
     &:hover {
-      color: darken($tertiary-color, 30%);
+      color: rgb(137, 137, 137);
     }
   }
 }

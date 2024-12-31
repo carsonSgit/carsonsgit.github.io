@@ -1,17 +1,18 @@
 import { Project } from '../Interfaces/projects';
 
 const languageColors = {
-  Python: { backgroundColour: 'rgb(27, 84, 33)', textColour: '#A3D8D0' },
-  '.NET MAUI': { backgroundColour: 'rgb(87, 27, 127)', textColour: '#D0A7FF' },
-  RaspberryPi: { backgroundColour: 'rgb(163, 26, 138)', textColour: '#FFD8D8' },
-  IoT: { backgroundColour: 'rgb(52, 52, 52)', textColour: '#F2FF8C' },
-  Mantine: { backgroundColour: 'rgb(12, 149, 173)', textColour: '#B8F5A9' },
-  TypeScript: { backgroundColour: '#3160d6', textColour: '#B0E9F6' }, 
-  RAGAI: { backgroundColour: 'rgb(52, 52, 52)', textColour: '#FFB1B1' },
-  VectorDB: { backgroundColour: 'rgb(52, 52, 52)', textColour: '#A7D4F2' },
-  React: { backgroundColour: 'rgb(23, 52, 125)', textColour: '#B0E4E1' }, 
-  MachineLearning: { backgroundColour: 'rgb(52, 52, 52)', textColour: '#F5C157' },
-  JupyterNotebook: { backgroundColour: 'rgb(202, 101, 0)', textColour: '#F1D456' },
+  Python: { backgroundColour: 'rgb(45, 55, 94)'},
+  'C#': { backgroundColour: 'rgb(27, 84, 33)'},
+  '.NET MAUI': { backgroundColour: 'rgb(87, 27, 127)'},
+  RaspberryPi: { backgroundColour: 'rgb(163, 26, 138)'},
+  IoT: { backgroundColour: 'rgb(52, 52, 52)'},
+  Mantine: { backgroundColour: 'rgb(12, 149, 173)'},
+  TypeScript: { backgroundColour: '#3160d6'}, 
+  RAGAI: { backgroundColour: 'rgb(52, 52, 52)'},
+  VectorDB: { backgroundColour: 'rgb(52, 52, 52)'},
+  React: { backgroundColour: 'rgb(23, 52, 125)'}, 
+  MachineLearning: { backgroundColour: 'rgb(52, 52, 52)'},
+  JupyterNotebook: { backgroundColour: 'rgb(202, 101, 0)'},
 };
 
 
@@ -22,6 +23,7 @@ export const projects: Project[] = [
     title: 'CropCare',
     languages: [
       { name: 'Python', ...languageColors.Python },
+      { name: 'C#', ...languageColors['C#'] },
       { name: '.NET MAUI', ...languageColors['.NET MAUI'] },
       { name: 'Raspberry Pi', ...languageColors.RaspberryPi },
       { name: 'IoT', ...languageColors.IoT },
