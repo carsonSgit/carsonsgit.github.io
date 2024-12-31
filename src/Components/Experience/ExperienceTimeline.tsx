@@ -1,20 +1,37 @@
+import React, { useState } from 'react';
 import { education } from '../Data/education';
 import { experience } from '../Data/experience';
 import { statistics } from '../Data/statistics';
 import './ExperienceTimeline.scss';
 
 const ExperienceTimeline = () => {
+  const [hoveredEducationIndex, setHoveredEducationIndex] = useState<number | null>(null);
+  const [hoveredExperienceIndex, setHoveredExperienceIndex] = useState<number | null>(null);
+
+  const handleEducationMouseEnter = (index: number): void => {
+    setHoveredEducationIndex(index);
+  };
+  const handleEducationMouseLeave = (): void => {
+    setHoveredEducationIndex(null);
+  };
+  const handleExperienceMouseEnter = (index: number): void => {
+    setHoveredExperienceIndex(index);
+  };
+  const handleExperienceMouseLeave = (): void => {
+    setHoveredExperienceIndex(null);
+  };
 
   return (
     <div className="experience-grid">
       <div className="timeline">
-
         <div className="timeline-section">
           <h2 className="timeline-section-title">Education</h2>
           {education.map((item, index) => (
             <div
               key={index}
-              className="timeline-item"
+              className={`timeline-item ${hoveredEducationIndex !== null && hoveredEducationIndex !== index ? 'faded' : ''}`}
+              onMouseEnter={() => handleEducationMouseEnter(index)}
+              onMouseLeave={handleEducationMouseLeave}
             >
               <a
                 href={item.link}
@@ -33,12 +50,12 @@ const ExperienceTimeline = () => {
                   <p className="timeline-education-description">{item.description}</p>
                   <div className="timeline-stats">
                     {Object.entries(statistics[item.statsKey] || {}).map(
-                      ([key, value]: [string, number | string]) => (
+                      ([key, value]) => (
                         <div key={key} className="stat-item">
                           <strong>{value}</strong>{' '}
                           {key.replace(/([A-Z])/g, ' $1').toLowerCase()}
                         </div>
-                      ),
+                      )
                     )}
                   </div>
                 </div>
@@ -46,11 +63,15 @@ const ExperienceTimeline = () => {
             </div>
           ))}
         </div>
+        
         <div className="timeline-section">
+          <h2 className="timeline-section-title">Experience</h2>
           {experience.map((item, index) => (
             <div
               key={index}
-              className="timeline-item"
+              className={`timeline-item ${hoveredExperienceIndex !== null && hoveredExperienceIndex !== index ? 'faded' : ''}`}
+              onMouseEnter={() => handleExperienceMouseEnter(index)}
+              onMouseLeave={handleExperienceMouseLeave}
             >
               <a
                 href={item.link}
@@ -73,12 +94,12 @@ const ExperienceTimeline = () => {
                   </ul>
                   <div className="timeline-stats">
                     {Object.entries(statistics[item.statsKey] || {}).map(
-                      ([key, value]: [string, number | string]) => (
+                      ([key, value]) => (
                         <div key={key} className="stat-item">
                           <strong>{value}</strong>{' '}
                           {key.replace(/([A-Z])/g, ' $1').toLowerCase()}
                         </div>
-                      ),
+                      )
                     )}
                   </div>
                 </div>
