@@ -2,10 +2,21 @@ import React from 'react';
 import ProjectItem from './ProjectItem';
 import { projects } from '../Data/portfolioProjects';
 import './Projects.scss';
+import { motion } from 'framer-motion';
 
 const Projects: React.FC = () => {
   return (
-    <div>
+    <motion.div
+      initial={{ y: 50, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ 
+        type: "spring",
+        stiffness: 100,
+        damping: 10,
+        mass: 1
+      }}
+    >
       <h1 className="ProjectsTitle">
         <span className="ProjectsTitleAnimated">Notable</span> projects
       </h1>
@@ -14,7 +25,7 @@ const Projects: React.FC = () => {
           <ProjectItem key={index} project={project} />
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

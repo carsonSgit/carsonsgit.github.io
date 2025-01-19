@@ -2,10 +2,21 @@ import React from 'react';
 import { FaGithub, FaLink} from 'react-icons/fa';
 import { ProjectItemProps } from '../Interfaces/projectItemProps';
 import './Projects.scss';
+import { motion } from 'framer-motion';
 
 const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
   return (
-    <div className="ProjectItem">
+    <motion.div className="ProjectItem"
+    initial={{ y: 50, opacity: 0 }}
+    whileInView={{ y: 0, opacity: 1 }}
+    viewport={{ once: true }}
+    transition={{ 
+      type: "spring",
+      stiffness: 100,
+      damping: 10,
+      mass: 1
+    }}
+    >
       <div className="ProjectContent">
         <div className="ProjectTitleContainer">
           <h2 className="ProjectTitle">{project.title}</h2>
@@ -50,7 +61,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
           dangerouslySetInnerHTML={{ __html: project.description }}
         />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

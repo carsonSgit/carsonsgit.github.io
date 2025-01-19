@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { education } from '../Data/education';
 import { experience } from '../Data/experience';
 import { statistics } from '../Data/statistics';
@@ -22,6 +23,18 @@ const ExperienceTimeline = () => {
     setHoveredExperienceIndex(null);
   };
 
+  const animationProps = {
+    initial: { y: 50, opacity: 0 },
+    whileInView: { y: 0, opacity: 1 },
+    viewport: { once: true },
+    transition: {
+      type: 'spring',
+      stiffness: 100,
+      damping: 10,
+      mass: 1,
+    },
+  };
+
   return (
     <div
       className="experience-grid"
@@ -32,11 +45,12 @@ const ExperienceTimeline = () => {
         <div className="timeline-section">
           <h2 className="timeline-section-title">Education</h2>
           {education.map((item, index) => (
-            <div
+            <motion.div
               key={index}
               className={`timeline-item ${isHovered && hoveredEducationIndex !== index ? 'faded' : ''}`}
               onMouseEnter={() => handleEducationMouseEnter(index)}
               onMouseLeave={handleEducationMouseLeave}
+              {...animationProps} 
             >
               <a
                 href={item.link}
@@ -48,7 +62,8 @@ const ExperienceTimeline = () => {
 
                 <div className="timeline-content">
                   <h3>
-                    <span className="timeline-role">{item.title}</span> <span className="timeline-atsign">• </span>
+                    <span className="timeline-role">{item.title}</span>{' '}
+                    <span className="timeline-atsign">• </span>
                     <span className="timeline-institution">{item.institution}</span>
                   </h3>
                   <div className="timeline-date">{item.date}</div>
@@ -65,18 +80,19 @@ const ExperienceTimeline = () => {
                   </div>
                 </div>
               </a>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         <div className="timeline-section">
           <h2 className="timeline-section-title">Experience</h2>
           {experience.map((item, index) => (
-            <div
+            <motion.div
               key={index}
               className={`timeline-item ${isHovered && hoveredExperienceIndex !== index ? 'faded' : ''}`}
               onMouseEnter={() => handleExperienceMouseEnter(index)}
               onMouseLeave={handleExperienceMouseLeave}
+              {...animationProps} 
             >
               <a
                 href={item.link}
@@ -88,7 +104,8 @@ const ExperienceTimeline = () => {
 
                 <div className="timeline-content">
                   <h3>
-                    <span className="timeline-role">{item.title}</span> <span className="timeline-atsign">• </span>
+                    <span className="timeline-role">{item.title}</span>{' '}
+                    <span className="timeline-atsign">• </span>
                     <span className="timeline-company">{item.company}</span>
                   </h3>
                   <div className="timeline-date">{item.date}</div>
@@ -109,7 +126,7 @@ const ExperienceTimeline = () => {
                   </div>
                 </div>
               </a>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
