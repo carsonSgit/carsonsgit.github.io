@@ -83,6 +83,10 @@ a:hover {
   padding: 20px;
   height: fit-content;
   box-shadow: 0 0px 4px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.1s ease-in-out;
+}
+.ProjectItem:hover {
+  box-shadow: 0 0px 6px rgba(0, 0, 0, 0.4);
 }
 
 .ProjectTitleContainer {

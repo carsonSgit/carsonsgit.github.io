@@ -9,17 +9,17 @@ const Content: React.FC = () => {
   return (
     <div className="content-container">
       <div id="about" className="section-container">
-        <Suspense fallback={<div>Loading about...</div>}>
+        <Suspense>
           <LazyAbout />
         </Suspense>
       </div>
       <div id="projects" className="section-container">
-        <Suspense fallback={<div>Loading projects...</div>}>
+        <Suspense>
           <LazyProjects />
         </Suspense>
       </div>
       <div id="stats" className="section-container">
-        <Suspense fallback={<div>Loading experience...</div>}>
+        <Suspense>
           <LazyExperience />
         </Suspense>
       </div>

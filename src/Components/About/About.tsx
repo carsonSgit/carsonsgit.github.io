@@ -18,17 +18,11 @@ const About: React.FC = () => {
     >
       <div className="AboutContentContainer">
         <div className="AboutContent">
-          <p className="AboutText">
-            I'm a recent CS grad from John Abbott College, currently continuing my studies at Concordia University where I'm taking some missing prerequisites before transferring into a BCompSc. I've been coding for 7 years, with a recent focus on the implementations of AI and Machine Learning.
-          </p>
           <p className='AboutText'>
-            Recently, as a Software Engineering Intern at <a className="hoverLink" href="https://www.tailed.ca" target="_blank" rel="noreferrer">Tail&#39;ed</a>, I worked on the company’s website using TypeScript, React, and Next.js, and developed + shipped an AI product that uses Python and a Vector DB to improve students' ability to stand out.
-          </p>
-          <p className='AboutText'>
-            Over the last four years, I’ve gained diverse experience, from interning at a <a className="hoverLink" href="https://www.tailed.ca" target="_blank" rel="noreferrer">startup</a> and <a className="hoverLink" href="https://www.ville.kirkland.qc.ca/" target="_blank" rel="noreferrer">local government</a>, to contributing at a <a className="hoverLink" href="https://www.linkedin.com/company/cusec/" target="_blank" rel="noreferrer">tech conference</a> and directing my school's <a className="hoverLink" href="https://www.linkedin.com/company/jachacks" target="_blank" rel="noreferrer">hackathon</a>. These experiences have given me valuable insights into the tech industry.
-          </p>
-          <p className='AboutText'>
-            If I'm not coding, I'm probably with my cats, at the gym, listening to music, or doomscrolling...
+            I'm a CS student @ <a className="hoverLink" id="cU" href="https://www.concordia.ca" target="_blank" rel="noreferrer">Concordia University</a> and a CS alumni from <a className="hoverLink" id="jac" href="https://www.concordia.ca" target="_blank" rel="noreferrer">John Abbott College</a>. 
+            This summer I'm interning @ <a className="hoverLink" id="intern" href="https://www.concordia.ca" target="_blank" rel="noreferrer">Fundica</a> in downtown Montreal.
+            During my free time, I'm probably <i>at</i> or <i>waiting</i> for a <a className='hoverLink' id="status" href="https://devpost.com/carsonSgit?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav" target="_blank" rel="noreferrer">hackathon</a> to attend. 
+            Throughout the 8+ years I've been coding, I've made some pretty <a className='hoverLink' id="hint" href="https://github.com/carsonSgit" target="_blank" rel="noreferrer">cool projects</a>, and I'm always working on improving and learning more.
           </p>
         </div>
       </div>

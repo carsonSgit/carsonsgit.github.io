@@ -19,10 +19,11 @@ $tools-item-tint: darken($list-item-color, 40%);
 
 .AboutContainer {
   margin-top: 100px;
+  margin-bottom: 100px;
   width: 100%;
   max-width: 100%;
+  padding: 20px;
   overflow-x: hidden;
-  justify-self: center;
 
   @media screen and (max-width: 768px) {
     margin-top: 0px;
@@ -33,15 +34,23 @@ $tools-item-tint: darken($list-item-color, 40%);
 }
 
 .AboutText {
-  font-weight: 500;
-  color: rgb(34,34,34);
-  font-size: 1.2em;
+  font-weight: 550;
+  color: rgb(37, 37, 37);
+  font-size: 1.6em;
   width: 100%;
+  text-align: left;
+  line-height: 1.5em;
 }
 
 @media screen and (max-width: 768px) {
   .AboutText {
-    font-size: 1.4em;
+    font-size: 1.2em;
+    margin-bottom: 0;
+    text-align: justify;
+  }
+  .AboutContainer{
+    padding-bottom: 0px;
+    padding-left: 10px;
   }
 }
 
@@ -52,4 +61,45 @@ $tools-item-tint: darken($list-item-color, 40%);
 
 .hoverLink:hover {
   color: darken($primary-color, 15%);
+}
+
+
+#cU{
+  color: #8e2a3d;
+  transition: color 0.1s;
+}
+#cU:hover{
+  color: #db3453
+}
+
+#jac{
+  color: #1454c2;
+  transition: color 0.1s;
+}
+#jac:hover{
+  color: #6797e9
+}
+
+#intern{
+  color: #328ef1;
+  transition: color 0.1s;
+}
+#intern:hover{
+  color: #225f9c
+}
+
+#status{
+  color: #852794;
+  transition: color 0.1s;
+}
+#status:hover{
+  color: #c11fda
+}
+
+#hint{
+  color: #419b7e;
+  transition: color 0.1s;
+}
+#hint:hover{
+  color: #44d6a8
 }
