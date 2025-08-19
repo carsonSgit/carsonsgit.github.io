@@ -8,8 +8,16 @@ body {
   font-family: 'Inter';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  background-color: #FAF9F6; /* CHANGE THIS TO THE BACKGROUND I DECIDE ON */
+  /* Global grid with per-cell hover highlight (no cursor glow) */
+  --grid-size: 24px;
+  background-color: #FAF9F6;
+  /* The highlighted tiles are injected dynamically from App.tsx via background layers */
+  background-image:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size), var(--grid-size) var(--grid-size);
+  background-position: 0 0, 0 0;
+  background-repeat: repeat, repeat;
 }
 
 @font-face {
@@ -39,5 +47,6 @@ code {
 }
 
 ::selection {
-  background-color: #95cbc28f;
+  background-color: #ffffff;
+  color: #000000;
 }

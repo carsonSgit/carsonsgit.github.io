@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { education } from '../Data/education';
 import { experience } from '../Data/experience';
@@ -9,6 +9,7 @@ const ExperienceTimeline = () => {
   const [hoveredEducationIndex, setHoveredEducationIndex] = useState<number | null>(null);
   const [hoveredExperienceIndex, setHoveredExperienceIndex] = useState<number | null>(null);
   const [isHovered, setIsHovered] = useState<boolean>(false);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   const handleEducationMouseEnter = (index: number): void => {
     setHoveredEducationIndex(index);
@@ -38,12 +39,15 @@ const ExperienceTimeline = () => {
   return (
     <div
       className="experience-grid"
+      ref={containerRef}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="timeline">
         <div className="timeline-section">
-          <h2 className="timeline-section-title">Education</h2>
+          <h1 className="ProjectsTitle">EDUCATION
+              <span className="ProjectsTitleAnimated"></span> 
+            </h1>
           {education.map((item, index) => (
             <motion.div
               key={index}
@@ -52,19 +56,24 @@ const ExperienceTimeline = () => {
               onMouseLeave={handleEducationMouseLeave}
               {...animationProps} 
             >
-              <a
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="timeline-link"
-              >
+              <div className="timeline-link">
                 <div className="timeline-step education-step"></div>
 
                 <div className="timeline-content">
                   <h3>
-                    <span className="timeline-role">{item.title}</span>{' '}
-                    <span className="timeline-atsign">• </span>
-                    <span className="timeline-institution">{item.institution}</span>
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="timeline-title-link"
+                      style={{
+                        '--hover-institution-color': item.hoverColors?.institution || '#00715f'
+                      } as React.CSSProperties}
+                    >
+                      <span className="timeline-role">{item.title}</span>{' '}
+                      <span className="timeline-atsign">• </span>
+                      <span className="timeline-institution">{item.institution}</span>
+                    </a>
                   </h3>
                   <div className="timeline-date">{item.date}</div>
                   <p className="timeline-education-description">{item.description}</p>
@@ -79,13 +88,15 @@ const ExperienceTimeline = () => {
                     )}
                   </div>
                 </div>
-              </a>
+              </div>
             </motion.div>
           ))}
         </div>
 
-        <div className="timeline-section">
-          <h2 className="timeline-section-title">Experience</h2>
+          <div className="timeline-section">
+            <h1 className="ProjectsTitle">EXPERIENCE 
+              <span className="ProjectsTitleAnimated"></span> 
+            </h1>
           {experience.map((item, index) => (
             <motion.div
               key={index}
@@ -94,19 +105,24 @@ const ExperienceTimeline = () => {
               onMouseLeave={handleExperienceMouseLeave}
               {...animationProps} 
             >
-              <a
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="timeline-link"
-              >
+              <div className="timeline-link">
                 <div className="timeline-step experience-step"></div>
 
                 <div className="timeline-content">
                   <h3>
-                    <span className="timeline-role">{item.title}</span>{' '}
-                    <span className="timeline-atsign">• </span>
-                    <span className="timeline-company">{item.company}</span>
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="timeline-title-link"
+                      style={{
+                        '--hover-company-color': item.hoverColors?.company || '#00715f'
+                      } as React.CSSProperties}
+                    >
+                      <span className="timeline-role">{item.title}</span>{' '}
+                      <span className="timeline-atsign">• </span>
+                      <span className="timeline-company">{item.company}</span>
+                    </a>
                   </h3>
                   <div className="timeline-date">{item.date}</div>
                   <ul className="timeline-description">
@@ -125,7 +141,7 @@ const ExperienceTimeline = () => {
                     )}
                   </div>
                 </div>
-              </a>
+              </div>
             </motion.div>
           ))}
         </div>

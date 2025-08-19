@@ -7,6 +7,12 @@ $text-color: #f0f0f0;
 $hover-scale: 1.05;
 $transition-duration: 0.3s;
 
+$glass-bg: rgba(255, 255, 255, 0.55);
+$glass-border: rgba(255, 255, 255, 0.25);
+$accent-green-1: #3b7a57; // jade
+$accent-green-2: #7aa289; // sage
+$accent-green-3: #6b8e23; // olive
+
 * {
   box-sizing: border-box;
 }
@@ -25,7 +31,6 @@ a:hover {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
-  padding: 20px;
   color: $text-color;
   grid-auto-rows: auto;
   max-width: 100%;
@@ -38,14 +43,20 @@ a:hover {
   }
 }
 
+.ProjectsTitleContainer {
+  text-align: center;
+}
+
 .ProjectsTitle {
   font-size: 2.5em;
   margin-bottom: 20px;
-  text-align: center;
-  color:  rgb(34, 34, 34);
+  color: rgb(34, 34, 34);
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: 2px;
+  background-color: #fff;
+  display: inline-block;
+  padding: 0 8px;
 }
 
 .ProjectsTitleAnimated {
@@ -78,15 +89,31 @@ a:hover {
 }
 
 .ProjectItem {
-  background-color: #faf9f600;
-  border-radius: 12px;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid $glass-border;
+  border-radius: 14px;
   padding: 20px;
   height: fit-content;
-  box-shadow: 0 0px 4px rgba(0, 0, 0, 0.2);
-  transition: box-shadow 0.1s ease-in-out;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    
+    pointer-events: none;
+    opacity: 0.35;
+  }
 }
 .ProjectItem:hover {
-  box-shadow: 0 0px 6px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+
+  &::before { opacity: 0.7; }
 }
 
 .ProjectTitleContainer {
@@ -133,6 +160,7 @@ a:hover {
 }
 
 .ProjectLanguagePill {
+  /* Revert back to your previous pill look while keeping small polish */
   border-radius: 12px;
   padding: 4px 10px;
   font-size: 0.9em;

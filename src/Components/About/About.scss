@@ -22,7 +22,6 @@ $tools-item-tint: darken($list-item-color, 40%);
   margin-bottom: 100px;
   width: 100%;
   max-width: 100%;
-  padding: 20px;
   overflow-x: hidden;
 
   @media screen and (max-width: 768px) {
@@ -34,6 +33,8 @@ $tools-item-tint: darken($list-item-color, 40%);
 }
 
 .AboutText {
+  text-shadow: 0 0 15px rgb(255, 255, 255);
+  -webkit-text-stroke: 0.03px rgb(255, 255, 255,0.5);
   font-weight: 550;
   color: rgb(37, 37, 37);
   font-size: 1.6em;
@@ -50,12 +51,12 @@ $tools-item-tint: darken($list-item-color, 40%);
   }
   .AboutContainer{
     padding-bottom: 0px;
-    padding-left: 10px;
   }
 }
 
 .hoverLink {
   font-weight: 600;
+  background-color: #fff;
   color: darken($primary-color, 25%);
 }
 
@@ -66,40 +67,45 @@ $tools-item-tint: darken($list-item-color, 40%);
 
 #cU{
   color: #8e2a3d;
+  text-shadow: 0 0 0;
   transition: color 0.1s;
 }
 #cU:hover{
-  color: #db3453
+  color: #db3453;
 }
 
 #jac{
   color: #1454c2;
+  text-shadow: 0 0 0;
   transition: color 0.1s;
 }
 #jac:hover{
-  color: #6797e9
+  color: #6797e9;
 }
 
 #intern{
   color: #328ef1;
+  text-shadow: 0 0 0;
   transition: color 0.1s;
 }
 #intern:hover{
-  color: #225f9c
+  color: #225f9c;
 }
 
 #status{
   color: #852794;
+  text-shadow: 0 0 0;
   transition: color 0.1s;
 }
 #status:hover{
-  color: #c11fda
+  color: #c11fda;
 }
 
 #hint{
   color: #419b7e;
+  text-shadow: 0 0 0;
   transition: color 0.1s;
 }
 #hint:hover{
-  color: #44d6a8
+  color: #2ab387;
 }

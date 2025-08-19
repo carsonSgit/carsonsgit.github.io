@@ -17,9 +17,11 @@ const Projects: React.FC = () => {
         mass: 1
       }}
     >
-      <h1 className="ProjectsTitle">
-        <span className="ProjectsTitleAnimated">Notable</span> projects
-      </h1>
+      <div className="ProjectsTitleContainer">
+        <h1 className="ProjectsTitle">
+          <span className="ProjectsTitleAnimated">Notable</span> projects
+        </h1>
+      </div>
       <div className="ProjectsContainer">
         {projects.map((project, index) => (
           <ProjectItem key={index} project={project} />

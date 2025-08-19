@@ -1,37 +1,61 @@
-export const experience = [
+import { ExperienceItem } from '../Interfaces/types';
+
+export const experience: ExperienceItem[] = [
   {
-    date: 'March 2024 - Ongoing',
-    title: 'HD Montreal & Sponsors',
+    date: 'May 2025 - Present',
+    title: 'Software QA Specialist Intern',
+    company: 'Fundica',
+    description: [
+      'Conducting end-to-end QA testing, debugging complex issues and providing actionable resolution recommendations.',
+      'Building an automated CI/CD AI WCAG accessibility tool reducing audit times by 99%.'
+    ],
+    statsKey: 'Software QA Specialist Intern',
+    link: 'https://fundica.com',
+    hoverColors: {
+      company: '#FF4500', // Orange red placeholder
+    },
+  },
+  {
+    date: 'May 2025 - Present',
+    title: 'Director of Logistics',
     company: 'CUSEC',
     description: [
-      'Leading the delegation of post-secondary students across Montreal for the annual conference.',
-      'Negotiating sponsorships with companies to secure their sponsorship of the NPO conference.'
+      "Leading logistics for Canada's largest student tech conference, with 350+ attendees from 15+ universities nationwide.",
+      'Negotiating contracts & event planning with various hotels & vendors.'
     ],
-    statsKey: 'Head Delegate Montreal',
-    link: 'https://2024.cusec.net/',
+    statsKey: 'Director of Logistics',
+    link: 'https://2025.cusec.net/',
+    hoverColors: {
+      company: '#9370DB', // Medium purple placeholder
+    },
   },
   {
-    date: 'May 2024 - August 2024',
-    title: 'SDE Intern',
+    date: 'May 2024 - Aug 2024',
+    title: 'Software Developer Intern',
     company: "Tail'ed",
     description: [
-      'Worked on the company website using Next.js and React.',
-      'Developed an AI model to rank user skills in regards to a job position based on their CV.'
+      'Improved UI/UX, ensuring responsiveness and consistency. (Next.js, TypeScript, Docker)',
+      'Built an AI recruitment tool using Python, vector databases, and AWS Lambda, improving accuracy by 90%'
     ],
-    statsKey: 'SDE Intern',
+    statsKey: 'Software Developer Intern',
     link: 'https://tailed.ca',
+    hoverColors: {
+      company: '#DC143C', // Crimson placeholder
+    },
   },
   {
-    date: 'January 2024 - May 2024',
+    date: 'Jan 2024 - May 2024',
     title: 'IT Intern',
-    company: 'Town of Kirkland',
+    company: 'Ville de Kirkland',
     description: [
-      'Delivered technical support to government employees across 5 municipal buildings.',
-      'Analysed and resolved 4500+ Cybersecurity vulnerabilities in our network using CrowdStrike Falcon.',
-      'Set up, maintained, and managed 100+ workstations to ensure employee productivity.'
+      'Resolved 100+ critical IT incidents across municipal infrastructure, ensuring uninterrupted city services.',
+      'Performed cybersecurity remediation using CrowdStrike Falcon, eliminating 4,500+ vulnerabilities.'
     ],
     statsKey: 'IT Intern',
     link: 'https://www.ville.kirkland.qc.ca/',
+    hoverColors: {
+      company: '#4169E1', // Royal blue placeholder
+    },
   },
   {
     date: 'March 2024 - July 2024',
@@ -43,6 +67,9 @@ export const experience = [
     ],
     statsKey: 'Director',
     link: 'https://jachacks.pages.dev/',
+    hoverColors: {
+      company: '#FF1493', // Deep pink placeholder
+    },
   },
   {
     date: 'February 2024 - April 2024',
@@ -56,5 +83,8 @@ export const experience = [
     ],
     statsKey: 'R&D Fellowship',
     link: 'https://launchlab.ai/rd-program/',
+    hoverColors: {
+      company: '#8A2BE2', // Blue violet placeholder
+    },
   },
 ];

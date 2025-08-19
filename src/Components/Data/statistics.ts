@@ -1,12 +1,15 @@
 import { Statistics } from '../Interfaces/types';
 
 export const statistics: Statistics = {
-  'SDE Intern': {
-    productsMade: 3,
-    languagesAndFrameworksUsed: 5,
+  'Software QA Specialist Intern': {
+    accessibilityAuditTimeReduction: '99%',
   },
-  'Head Delegate Montreal': {
-    schools: '10+',
+  'Director of Logistics': {
+    attendees: '350+',
+    universities: '15+',
+  },
+  'Software Developer Intern': {
+    aiRecruitmentAccuracyImprovement: '90%',
   },
   'IT Intern': {
     supportCasesResolved: '100+',
