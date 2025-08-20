@@ -8,7 +8,6 @@
   align-items: flex-start;
 
   @media screen and (max-width: 768px) {
-    // no navbar on mobile :)
     display: none;
   }
 }
@@ -18,6 +17,7 @@
   color: #333;
   font-weight: bold;
   font-size: 1.2em;
+  opacity: 1 !important;
   transition: color 0.3s ease;
 
   &:hover {

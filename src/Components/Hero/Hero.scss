@@ -18,11 +18,10 @@
   }
 }
 
-
 h1 {
   font-size: 4em;
   margin-bottom: 0px;
-  color: rgb(34,34,34);
+  color: rgb(34, 34, 34);
 
   @media screen and (max-width: 768px) {
     font-size: 2em;
@@ -32,7 +31,7 @@ h1 {
 h2 {
   margin-top: 0px;
   font-size: 2em;
-  color: rgb(69,69,69);
+  color: rgb(69, 69, 69);
 
   @media screen and (max-width: 768px) {
     font-size: 1.5em;

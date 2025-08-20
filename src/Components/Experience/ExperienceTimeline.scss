@@ -12,6 +12,7 @@ $glass-bg: rgba(255, 255, 255, 0.55);
 $glass-border: rgba(255, 255, 255, 0.25);
 
 .experience-grid {
+  justify-content: center;
   display: grid;
   padding-top: 20px;
 }
@@ -19,7 +20,6 @@ $glass-border: rgba(255, 255, 255, 0.25);
 .timeline {
   position: relative;
   padding: 15px 0;
-  margin-left: 10px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -36,7 +36,6 @@ $glass-border: rgba(255, 255, 255, 0.25);
 }
 
 .timeline-item {
-  margin-top: 20px;
   margin-bottom: 20px;
   opacity: 1;
   transition: opacity 0.15s ease-out;
@@ -51,7 +50,10 @@ $glass-border: rgba(255, 255, 255, 0.25);
 }
 
 .timeline-link {
-  background-color: #fff;
+  background-image: linear-gradient(90deg, #ffffff6b 0px), linear-gradient(0deg, #ffffff71 0px);
+  background-size: 100% 100%, 100% 100%;
+  background-position: 0 0, 0 0;
+  background-repeat: no-repeat;
   display: flex;
   gap: 16px;
   align-items: flex-start;
@@ -87,19 +89,18 @@ $glass-border: rgba(255, 255, 255, 0.25);
   .timeline-institution,
   .timeline-atsign {
     color: $text-color;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-block;
   }
   
   .timeline-role {
-    font-weight: 600;
-    letter-spacing: 0.3px;
+    font-weight: bold;
   }
   
   .timeline-company,
   .timeline-institution {
-    font-weight: 500;
-  }
+    font-weight: bold;
+    font-size: 0.8em;
+  } 
   
   .timeline-atsign {
     font-weight: 200;
@@ -130,11 +131,13 @@ $glass-border: rgba(255, 255, 255, 0.25);
   display: inline;
   transition: color 0.25s ease;
 
-  &:hover .timeline-company {
+  .timeline-company {
     color: var(--hover-company-color, #00715f);
+    font-weight: bold;
+    font-size: 0.8em;
   }
 
-  &:hover .timeline-institution {
+  .timeline-institution {
     color: var(--hover-institution-color, #00715f);
   }
 }
@@ -177,9 +180,9 @@ $glass-border: rgba(255, 255, 255, 0.25);
   flex-wrap: wrap;
   gap: 6px 8px;
   margin-top: 8px;
+  
 
   .stat-item {
-    display: inline-flex;
     align-items: center;
     gap: 6px;
     font-size: 0.85em;
@@ -204,6 +207,16 @@ $glass-border: rgba(255, 255, 255, 0.25);
     color: $text-color;
     font-weight: 500;
     line-height: 1.4;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.timeline-education-description {
+  @media (max-width: 768px) {
+    display: none;
   }
 }
 
@@ -238,6 +251,7 @@ $glass-border: rgba(255, 255, 255, 0.25);
 
 .timeline-section {
   text-align: center;
+  width: 100%;
   
   .ProjectsTitle {
     display: inline-block;

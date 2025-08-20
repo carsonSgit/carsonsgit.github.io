@@ -51,14 +51,12 @@ const ExperienceTimeline = () => {
           {education.map((item, index) => (
             <motion.div
               key={index}
-              className={`timeline-item ${isHovered && hoveredEducationIndex !== index ? 'faded' : ''}`}
+              className={`timeline-item ${isHovered && hoveredEducationIndex !== index ? '' : ''}`}
               onMouseEnter={() => handleEducationMouseEnter(index)}
               onMouseLeave={handleEducationMouseLeave}
               {...animationProps} 
             >
               <div className="timeline-link">
-                <div className="timeline-step education-step"></div>
-
                 <div className="timeline-content">
                   <h3>
                     <a
@@ -70,13 +68,17 @@ const ExperienceTimeline = () => {
                         '--hover-institution-color': item.hoverColors?.institution || '#00715f'
                       } as React.CSSProperties}
                     >
-                      <span className="timeline-role">{item.title}</span>{' '}
-                      <span className="timeline-atsign">• </span>
-                      <span className="timeline-institution">{item.institution}</span>
+                    <span className="timeline-role">{item.title}</span>
+                    <br />
+                    <span className="timeline-institution">{item.institution}</span>
                     </a>
                   </h3>
                   <div className="timeline-date">{item.date}</div>
-                  <p className="timeline-education-description">{item.description}</p>
+                  <ul className="timeline-description timeline-education-description">
+                    {item.description.map((desc, descIndex) => (
+                      <li key={descIndex}>{desc}</li>
+                    ))}
+                  </ul>
                   <div className="timeline-stats">
                     {Object.entries(statistics[item.statsKey] || {}).map(
                       ([key, value]) => (
@@ -106,7 +108,6 @@ const ExperienceTimeline = () => {
               {...animationProps} 
             >
               <div className="timeline-link">
-                <div className="timeline-step experience-step"></div>
 
                 <div className="timeline-content">
                   <h3>
@@ -119,8 +120,8 @@ const ExperienceTimeline = () => {
                         '--hover-company-color': item.hoverColors?.company || '#00715f'
                       } as React.CSSProperties}
                     >
-                      <span className="timeline-role">{item.title}</span>{' '}
-                      <span className="timeline-atsign">• </span>
+                      <span className="timeline-role">{item.title}</span>
+                      <br />
                       <span className="timeline-company">{item.company}</span>
                     </a>
                   </h3>

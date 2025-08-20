@@ -12,7 +12,7 @@ export const experience: ExperienceItem[] = [
     statsKey: 'Software QA Specialist Intern',
     link: 'https://fundica.com',
     hoverColors: {
-      company: '#FF4500', // Orange red placeholder
+      company: '#FF4500',
     },
   },
   {
@@ -26,7 +26,7 @@ export const experience: ExperienceItem[] = [
     statsKey: 'Director of Logistics',
     link: 'https://2025.cusec.net/',
     hoverColors: {
-      company: '#9370DB', // Medium purple placeholder
+      company: '#9370DB',
     },
   },
   {
@@ -40,7 +40,7 @@ export const experience: ExperienceItem[] = [
     statsKey: 'Software Developer Intern',
     link: 'https://tailed.ca',
     hoverColors: {
-      company: '#DC143C', // Crimson placeholder
+      company: '#DC143C',
     },
   },
   {
@@ -54,7 +54,7 @@ export const experience: ExperienceItem[] = [
     statsKey: 'IT Intern',
     link: 'https://www.ville.kirkland.qc.ca/',
     hoverColors: {
-      company: '#4169E1', // Royal blue placeholder
+      company: '#4169E1',
     },
   },
   {
@@ -68,7 +68,7 @@ export const experience: ExperienceItem[] = [
     statsKey: 'Director',
     link: 'https://jachacks.pages.dev/',
     hoverColors: {
-      company: '#FF1493', // Deep pink placeholder
+      company: '#FF1493',
     },
   },
   {
@@ -84,7 +84,7 @@ export const experience: ExperienceItem[] = [
     statsKey: 'R&D Fellowship',
     link: 'https://launchlab.ai/rd-program/',
     hoverColors: {
-      company: '#8A2BE2', // Blue violet placeholder
+      company: '#8A2BE2',
     },
   },
 ];

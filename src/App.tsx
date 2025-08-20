@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Content from './Components/Content/Content';
 import './App.scss';
 import Hero from './Components/Hero/Hero';
 import RootFooter from './Components/Footer/RootFooter';
-import { useEffect, useRef } from 'react';
 
 const LeftColumn = () => {
   return (

@@ -23,7 +23,6 @@ const Content: React.FC = () => {
           <LazyExperience />
         </Suspense>
       </div>
-      
     </div>
   );
 };

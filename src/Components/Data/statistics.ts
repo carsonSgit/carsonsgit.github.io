@@ -27,5 +27,5 @@ export const statistics: Statistics = {
     semesterlyAwardedScholarship: '$1500',
     capstoneProjectInDepartmentHistory: 'Best',
   },
-  Economics: null, // I have no stats yet
+  Economics: null,
 };

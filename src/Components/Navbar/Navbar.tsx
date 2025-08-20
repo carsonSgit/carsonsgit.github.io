@@ -49,10 +49,10 @@ const Navbar: React.FC = () => {
           href={`#${link.id}`}
           className={`nav-link ${activeSection === link.id ? 'active' : ''}`}
           onClick={(event) => handleLinkClick(event, link.id, index)}
-          initial={{ x: 10, opacity: 0.5 }}
-          animate={{ x: activeSection === link.id ? 15 : 0, opacity: activeSection === link.id ? 1 : 0.7 }}
+          initial={{ x: 10, opacity: 1 }}
+          animate={{ x: activeSection === link.id ? 15 : 0 }}
           transition={{ type: "spring", stiffness: 200, damping: 20 }}
-          style={{ display: 'flex', alignItems: 'center', gap: '8px' , color: activeSection === link.id ? '#23aa7f' : '#000' }}
+          style={{ display: 'flex', alignItems: 'center', gap: '8px' , color: activeSection === link.id ? '#23aa7f' : '#333' }}
         >
           {link.label}
         </motion.a>

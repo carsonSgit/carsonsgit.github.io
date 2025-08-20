@@ -1,17 +1,10 @@
-/* $primary-color: #2af598;
-$secondary-color: #00715f;
-$tertiary-color: #33b072;
-$quaternary-color: #95b9b0; */
-
 body {
   margin: 0;
   font-family: 'Inter';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Global grid with per-cell hover highlight (no cursor glow) */
   --grid-size: 24px;
   background-color: #FAF9F6;
-  /* The highlighted tiles are injected dynamically from App.tsx via background layers */
   background-image:
     linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
     linear-gradient(0deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
@@ -30,6 +23,7 @@ code {
 }
 
 ::-webkit-scrollbar {
+  display: none;
   width: 12px;
   height: 8px;
 }
@@ -47,6 +41,6 @@ code {
 }
 
 ::selection {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #000000e5;
+  color: #f0f0f0;
 }

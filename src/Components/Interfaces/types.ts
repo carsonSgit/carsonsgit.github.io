@@ -14,7 +14,7 @@ export interface EducationItem {
   date: string;
   title: string;
   institution: string;
-  description: string;
+  description: string[];
   statsKey: string;
   link: string;
   hoverColors?: HoverColors;

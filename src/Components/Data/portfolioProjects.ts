@@ -50,7 +50,6 @@ export const projects: Project[] = [
     github: 'https://github.com/carsonSgit/Linky',
     website: 'https://www.linky.im/',
   },
-  
   {
     image: 'empty.webp',
     title: 'Pathfinder',
@@ -82,7 +81,6 @@ export const projects: Project[] = [
     website:
       'https://github.com/carsonSgit/Mice-Neural-Decoding-ML/blob/main/PharmaHacks%202024%20Neural%20Decoding%20Single%20File.ipynb',
   },
-  
   {
     image: 'trademind.webp',
     title: 'TradeMind',

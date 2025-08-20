@@ -29,17 +29,14 @@ a:hover {
 
 .ProjectsContainer {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: auto;
+  grid-auto-flow: row;
   gap: 20px;
   color: $text-color;
-  grid-auto-rows: auto;
-  max-width: 100%;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  width: 100%;
 
-  @media (min-width: 1200px) {
-    grid-template-columns: 1fr 1fr;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -59,44 +56,18 @@ a:hover {
   padding: 0 8px;
 }
 
-.ProjectsTitleAnimated {
-  margin-bottom: 40px;
-  color: transparent;
-  background: linear-gradient(
-    45deg,
-    $primary-color,
-    $secondary-color,
-    $tertiary-color,
-    $quaternary-color
-  );
-  background-size: 400% 400%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  animation: gradientAnimation 5s ease infinite;
-  font-size: inherit;
-}
-
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 .ProjectItem {
   position: relative;
-  background-color: #fff;
+  background-image: linear-gradient(90deg, #ffffff6b 0px), linear-gradient(0deg, #ffffff71 0px);
+  background-size: 100% 100%, 100% 100%;
+  background-position: 0 0, 0 0;
+  background-repeat: no-repeat;
   border: 1px solid $glass-border;
   border-radius: 14px;
   padding: 20px;
   height: fit-content;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 
   &::before {
     content: '';
@@ -150,6 +121,10 @@ a:hover {
   margin: 0;
   font-weight: 500;
   flex-grow: 1;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .ProjectLanguages {
@@ -160,16 +135,11 @@ a:hover {
 }
 
 .ProjectLanguagePill {
-  /* Revert back to your previous pill look while keeping small polish */
   border-radius: 12px;
   padding: 4px 10px;
   font-size: 0.9em;
   font-weight: 600;
   color: #fff !important;
   cursor: default;
-  transition: transform 0.15s ease-in-out;
 }
 
-.ProjectLanguagePill:hover {
-  transform: translateY(-1px);
-}
