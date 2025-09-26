@@ -1,15 +1,19 @@
-import { useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+import { useRef, useState, useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { education } from '../Data/education';
 import { experience } from '../Data/experience';
 import { statistics } from '../Data/statistics';
 import './ExperienceTimeline.scss';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ExperienceTimeline = () => {
   const [hoveredEducationIndex, setHoveredEducationIndex] = useState<number | null>(null);
   const [hoveredExperienceIndex, setHoveredExperienceIndex] = useState<number | null>(null);
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const timelineItemsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   const handleEducationMouseEnter = (index: number): void => {
     setHoveredEducationIndex(index);
@@ -24,17 +28,38 @@ const ExperienceTimeline = () => {
     setHoveredExperienceIndex(null);
   };
 
-  const animationProps = {
-    initial: { y: 50, opacity: 0 },
-    whileInView: { y: 0, opacity: 1 },
-    viewport: { once: true },
-    transition: {
-      type: 'spring',
-      stiffness: 100,
-      damping: 10,
-      mass: 1,
-    },
-  };
+
+  useEffect(() => {
+    gsap.set(timelineItemsRef.current, {
+      y: 50,
+      opacity: 0,
+    });
+
+    timelineItemsRef.current.forEach((item, index) => {
+      if (item) {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: item,
+            start: "top 85%",
+            end: "bottom 15%",
+            toggleActions: "play none none none", 
+          },
+        });
+
+        tl.to(item, {
+          y: 0,
+          opacity: 1,
+          duration: 0.4, 
+          ease: "back.out(1.7)",
+          delay: index * 0.05,
+        });
+      }
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
 
   return (
     <div
@@ -49,12 +74,12 @@ const ExperienceTimeline = () => {
               <span className="ProjectsTitleAnimated"></span> 
             </h1>
           {education.map((item, index) => (
-            <motion.div
+            <div
               key={index}
+              ref={(el) => (timelineItemsRef.current[index] = el)}
               className={`timeline-item ${isHovered && hoveredEducationIndex !== index ? '' : ''}`}
               onMouseEnter={() => handleEducationMouseEnter(index)}
               onMouseLeave={handleEducationMouseLeave}
-              {...animationProps} 
             >
               <div className="timeline-link">
                 <div className="timeline-content">
@@ -91,7 +116,7 @@ const ExperienceTimeline = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
@@ -100,12 +125,12 @@ const ExperienceTimeline = () => {
               <span className="ProjectsTitleAnimated"></span> 
             </h1>
           {experience.map((item, index) => (
-            <motion.div
+            <div
               key={index}
+              ref={(el) => (timelineItemsRef.current[education.length + index] = el)}
               className={`timeline-item ${isHovered && hoveredExperienceIndex !== index ? 'faded' : ''}`}
               onMouseEnter={() => handleExperienceMouseEnter(index)}
               onMouseLeave={handleExperienceMouseLeave}
-              {...animationProps} 
             >
               <div className="timeline-link">
 
@@ -143,7 +168,7 @@ const ExperienceTimeline = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
