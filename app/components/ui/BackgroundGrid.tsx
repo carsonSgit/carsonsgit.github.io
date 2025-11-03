@@ -1,0 +1,138 @@
+import React, { useEffect, useRef } from 'react';
+import { Highlight } from '../../types/types';
+
+const BackgroundGrid: React.FC = () => {
+  const animationFrameRef = useRef<number | null>(null);
+  const highlightsRef = useRef<Map<string, Highlight>>(new Map());
+
+  useEffect(() => {
+    const GRID_SIZE = 100;
+    const DECAY_MS = 1500;
+    const MAX_TILES = 50;
+
+    const highlights = highlightsRef.current;
+
+    const palette = [
+      'rgba(50, 206, 162, 0.35)',
+      'rgba(95, 204, 45, 0.35)',
+      'rgba(24, 167, 95, 0.35)',
+      'rgba(35, 114, 84, 0.35)',
+      'rgba(68, 172, 108, 0.35)'
+    ];
+
+    const makeKey = (x: number, y: number) => `${x},${y}`;
+
+    const addHighlight = (pageX: number, pageY: number) => {
+      const x = Math.floor(pageX / GRID_SIZE) * GRID_SIZE;
+      const y = Math.floor(pageY / GRID_SIZE) * GRID_SIZE;
+      const key = makeKey(x, y);
+      const now = Date.now();
+      const base = palette[Math.floor(Math.random() * palette.length)];
+      const alpha = 0.32 + Math.random() * 0.3;
+      const color = base.replace(/0\.35\)/, `${alpha})`);
+      const existing = highlights.get(key);
+      if (existing) {
+        existing.createdAt = now;
+      } else {
+        highlights.set(key, { x, y, color, createdAt: now });
+        if (highlights.size > MAX_TILES) {
+          const sorted = Array.from(highlights.values()).sort((a, b) => a.createdAt - b.createdAt);
+          for (let i = 0; i < sorted.length - MAX_TILES; i++) {
+            highlights.delete(makeKey(sorted[i].x, sorted[i].y));
+          }
+        }
+      }
+    };
+
+    const renderWithColors = () => {
+      const now = Date.now();
+      const highlights = highlightsRef.current;
+      
+      // Remove expired highlights
+      highlights.forEach((h, key) => {
+        if (now - h.createdAt > DECAY_MS) highlights.delete(key);
+      });
+
+      const tiles = Array.from(highlights.values());
+      
+      // If no highlights, reset to base grid and stop animation
+      if (tiles.length === 0) {
+        const body = document.body;
+        body.style.backgroundImage = 
+          'linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px), ' +
+          'linear-gradient(0deg, rgba(0,0,0,0.04) 1px, transparent 1px)';
+        body.style.backgroundSize = `${GRID_SIZE}px ${GRID_SIZE}px, ${GRID_SIZE}px ${GRID_SIZE}px`;
+        body.style.backgroundPosition = '0 0, 0 0';
+        body.style.backgroundRepeat = 'repeat, repeat';
+        animationFrameRef.current = null;
+        return;
+      }
+
+      const images = [
+        ...tiles.map((t) => `linear-gradient(${t.color}, ${t.color})`),
+        'linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px)',
+        'linear-gradient(0deg, rgba(0,0,0,0.04) 1px, transparent 1px)'
+      ].join(',');
+      const sizes = [
+        ...tiles.map(() => `${GRID_SIZE}px ${GRID_SIZE}px`),
+        `${GRID_SIZE}px ${GRID_SIZE}px`,
+        `${GRID_SIZE}px ${GRID_SIZE}px`
+      ].join(',');
+      const positions = [
+        ...tiles.map((t) => `${t.x}px ${t.y}px`),
+        '0 0',
+        '0 0'
+      ].join(',');
+      const repeats = [
+        ...tiles.map(() => 'no-repeat'),
+        'repeat',
+        'repeat'
+      ].join(',');
+
+      // Update styles
+      const body = document.body;
+      body.style.backgroundImage = images;
+      body.style.backgroundSize = sizes;
+      body.style.backgroundPosition = positions;
+      body.style.backgroundRepeat = repeats;
+
+      // Schedule next frame if there are still highlights
+      animationFrameRef.current = requestAnimationFrame(renderWithColors);
+    };
+
+    const onMouseMove = (e: MouseEvent) => {
+      addHighlight(e.pageX, e.pageY);
+      
+      // Start animation loop if not already running
+      if (animationFrameRef.current === null) {
+        animationFrameRef.current = requestAnimationFrame(renderWithColors);
+      }
+    };
+
+    // Grid is already initialized in CSS (globals.scss), so we don't need to set it here
+    // The component will enhance it with highlights on mouse move
+
+    window.addEventListener('mousemove', onMouseMove, { passive: true });
+
+    return () => {
+      window.removeEventListener('mousemove', onMouseMove);
+      if (animationFrameRef.current !== null) {
+        cancelAnimationFrame(animationFrameRef.current);
+        animationFrameRef.current = null;
+      }
+      // Reset to base grid on cleanup
+      const body = document.body;
+      body.style.backgroundImage = 
+        'linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px), ' +
+        'linear-gradient(0deg, rgba(0,0,0,0.04) 1px, transparent 1px)';
+      body.style.backgroundSize = `${GRID_SIZE}px ${GRID_SIZE}px, ${GRID_SIZE}px ${GRID_SIZE}px`;
+      body.style.backgroundPosition = '0 0, 0 0';
+      body.style.backgroundRepeat = 'repeat, repeat';
+    };
+  }, []);
+
+  return null;
+};
+
+export default BackgroundGrid;
+
