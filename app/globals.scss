@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  font-family: 'Inter';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #FAF9F6;
+  /* Base grid pattern - will be enhanced by BackgroundGrid component */
+  background-image:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px;
+  background-position: 0 0, 0 0;
+  background-repeat: repeat, repeat;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  width: 12px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #33b07150;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00715ec2;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #00715f;
+}
+
+::selection {
+  background-color: #000000e5;
+  color: #f0f0f0;
+}
+
