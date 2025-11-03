@@ -22,7 +22,7 @@
     "build": "next build",
     "start": "npx serve@latest ./out",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d out -t true",
+    "deploy": "gh-pages -d out --dotfiles",
     "lint": "next lint"
   },
   "devDependencies": {
