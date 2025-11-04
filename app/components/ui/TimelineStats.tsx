@@ -1,5 +1,7 @@
 import React from 'react';
 import { Statistics } from '../../types/types';
+import { Badge } from './badge';
+import { getStatBorders } from '../../data/statistics';
 
 interface TimelineStatsProps {
   statsKey: string;
@@ -7,17 +9,29 @@ interface TimelineStatsProps {
 }
 
 const TimelineStats: React.FC<TimelineStatsProps> = ({ statsKey, statistics }) => {
-  const stats = statistics[statsKey];
-  if (!stats) return null;
+  const statGroup = statistics[statsKey];
+  if (!statGroup) return null;
 
   return (
-    <div className="timeline-stats">
-      {Object.entries(stats).map(([key, value]) => (
-        <div key={key} className="stat-item">
-          <strong>{value}</strong>{' '}
-          {key.replace(/([A-Z])/g, ' $1').toLowerCase()}
-        </div>
-      ))}
+    <div className="flex flex-row flex-wrap gap-2 justify-start items-center mt-2">
+      {statGroup.stats.map((stat, index) => {
+        const borderStyle = getStatBorders(stat.backgroundColour);
+        return (
+          <Badge 
+            key={`${stat.label}-${index}`} 
+            variant="default" 
+            className="text-xs text-gray-800 hover:cursor-default border" 
+            style={{ 
+              backgroundColor: stat.backgroundColour,
+              borderColor: borderStyle.borderColor,
+              color: borderStyle.color
+            }}
+          >
+            <strong>{stat.value}</strong>{' '}
+            {stat.label}
+          </Badge>
+        );
+      })}
     </div>
   );
 };

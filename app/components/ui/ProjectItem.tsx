@@ -1,59 +1,59 @@
-import React from 'react';
-import { FaGithub, FaLink} from 'react-icons/fa';
-import { ProjectItemProps } from '../../types/projects';
-import '../../styles/components.scss';
-import '../../styles/sections.scss';
+'use client'
+
+import React from 'react'
+import { Card } from './card' // adjust path to your Card component
+import { ProjectItemProps } from '../../types/projects'
+import { Button } from './button'
+import { Github, Link } from 'lucide-react'
+import { Badge } from './badge'
+import { languageBorders } from '../../data/portfolioProjects'
 
 const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
   return (
-    <div className="ProjectItem">
-      <div className="ProjectContent">
-        <div className="ProjectTitleContainer">
-          <h2 className="ProjectTitle">{project.title}</h2>
-          <div className="ProjectLinks">
-            {project.github && (
-              <a
-                href={project.github}
-                className="ProjectLink"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaGithub />
-              </a>
-            )}
-            {project.website && (
-              <a
-                href={project.website}
-                className="ProjectLink"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaLink />
-              </a>
-            )}
-          </div>
-        </div>
-        <div className="ProjectLanguages">
-          {project.languages.map((language, index) => (
-            <span
-              key={index}
-              className="ProjectLanguagePill"
-              style={{
-                backgroundColor: language.backgroundColour
-              }}
-            >
-              {language.name}
-            </span>
-          ))}
-        </div>
-        <p
-          className="ProjectDescription"
-          dangerouslySetInnerHTML={{ __html: project.description }}
-        />
+    <Card className="p-5" variant="default">
+      <div className="flex items-center justify-between mb-4">
+
+      <h2 className="text-lg font-bold text-gray-800">{project.title}</h2>
+
+      <div className="flex gap-2 text-sm text-gray-800">
+        {project.github && (
+          <Button variant="ghost" size="icon" asChild>
+            <a href={project.github} target="_blank" rel="noopener noreferrer">
+              <Github />
+            </a>
+          </Button>
+        )}
+
+        {project.website && (
+          <Button variant="ghost" size="icon" asChild>
+            <a href={project.website} target="_blank" rel="noopener noreferrer">
+            <Link />  
+            </a>
+          </Button>
+        )}
       </div>
-    </div>
-  );
-};
+      </div>
 
-export default ProjectItem;
+      <div className="flex gap-1 flex-wrap">
+        {project.languages.map((language, i) => (
+          <Badge
+            key={i}
+            variant="default"
+            style={{ backgroundColor: language.backgroundColour, borderColor: languageBorders(language.backgroundColour).borderColor,
+              color: languageBorders(language.backgroundColour).color }}
+            className="font-regular"
+          >
+            {language.name}
+          </Badge>
+        ))} 
+      </div>
 
+      <div
+        className="mt-3 text-sm font-medium text-gray-800"
+        dangerouslySetInnerHTML={{ __html: project.description }}
+      />
+    </Card>
+  )
+}
+
+export default ProjectItem

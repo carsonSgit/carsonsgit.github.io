@@ -55,7 +55,7 @@ const Navbar: React.FC = () => {
         <motion.a
           key={index}
           href={`#${link.id}`}
-          className={`nav-link ${activeSection === link.id ? 'active' : ''}`}
+          className={`nav-link font-semibold text-lg ${activeSection === link.id ? 'active' : ''}`}
           onClick={(event) => handleLinkClick(event, link.id, index)}
           initial={{ x: 10, opacity: 1 }}
           animate={{ x: activeSection === link.id ? 15 : 0 }}

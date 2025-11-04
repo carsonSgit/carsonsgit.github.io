@@ -1,8 +1,12 @@
-// TECH DEBT: Statistics type is overly permissive. Consider using discriminated unions or const assertions
-// for better type safety when migrating to Next.js
+export interface StatBadge {
+  label: string;
+  value: string | number;
+  backgroundColour: string;
+}
+
 export type Statistics = {
   [key: string]: {
-    [key: string]: number | string;
+    stats: StatBadge[];
   } | null;
 };
 

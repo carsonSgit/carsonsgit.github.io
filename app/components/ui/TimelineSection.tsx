@@ -8,10 +8,12 @@ interface TimelineSectionProps {
 const TimelineSection: React.FC<TimelineSectionProps> = ({ title, children }) => {
   return (
     <div className="timeline-section">
+      <div className="ProjectsTitleContainer">
       <h1 className="ProjectsTitle">
+        
         {title}
-        <span className="ProjectsTitleAnimated"></span>
       </h1>
+      </div>
       {children}
     </div>
   );

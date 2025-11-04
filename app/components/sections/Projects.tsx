@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import ProjectItem from '../ui/ProjectItem';
+import ProjectItem from '../../components/ui/ProjectItem';
 import ProjectTitle from '../ui/ProjectTitle';
 import { projects } from '../../data/portfolioProjects';
 import '../../styles/sections.scss';

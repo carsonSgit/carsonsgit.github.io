@@ -11,8 +11,8 @@ const App = () => {
   return (
     <div className="App" ref={rootRef}>
       <BackgroundGrid />
-      <div className="FixedSection">
-        <div className="container">
+      <div className="FixedSection flex justify-center">
+        <div className="container max-w-[100%] justify-center mx-auto">
           <LeftColumn />
           <RightColumn />
         </div>

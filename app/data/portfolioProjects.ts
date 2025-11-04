@@ -1,21 +1,41 @@
 import { Project } from '../types/projects';
 
+
 const languageColors = {
-  Python: { backgroundColour: 'rgb(45, 55, 94)'},
-  'C#': { backgroundColour: 'rgb(27, 84, 33)'},
-  '.NET MAUI': { backgroundColour: 'rgb(87, 27, 127)'},
-  RaspberryPi: { backgroundColour: 'rgb(163, 26, 138)'},
-  IoT: { backgroundColour: 'rgb(52, 52, 52)'},
-  Mantine: { backgroundColour: 'rgb(12, 149, 173)'},
-  TypeScript: { backgroundColour: '#3160d6'}, 
-  RAGAI: { backgroundColour: 'rgb(52, 52, 52)'},
-  VectorDB: { backgroundColour: 'rgb(52, 52, 52)'},
-  React: { backgroundColour: 'rgb(23, 52, 125)'}, 
-  MachineLearning: { backgroundColour: 'rgb(52, 52, 52)'},
-  JupyterNotebook: { backgroundColour: 'rgb(202, 101, 0)'},
-  'Three.js': { backgroundColour: 'rgb(167, 3, 3)'},
-  Tailwind: { backgroundColour: 'rgb(43, 200, 174)'},
-  Zustand: { backgroundColour: 'rgb(52, 52, 52)'},
+  Python: { backgroundColour: 'rgba(179, 194, 255, 0.5)'},
+  'C#': { backgroundColour: 'rgba(89, 218, 102, 0.5)'},
+  '.NET MAUI': { backgroundColour: 'rgba(165, 86, 218, 0.5)'},
+  RaspberryPi: { backgroundColour: 'rgba(223, 104, 201, 0.5)'},
+  IoT: { backgroundColour: 'rgba(167, 167, 167, 0.5)'},
+  Mantine: { backgroundColour: 'rgba(123, 208, 223, 0.5)'},
+  TypeScript: { backgroundColour: 'rgba(162, 192, 255, 0.5)'}, 
+  RAGAI: { backgroundColour: 'rgba(167, 167, 167, 0.5)'},
+  VectorDB: { backgroundColour: 'rgba(167, 167, 167, 0.5)'},
+  React: { backgroundColour: 'rgba(105, 96, 231, 0.5)'}, 
+  MachineLearning: { backgroundColour: 'rgba(167, 167, 167, 0.5)'},
+  JupyterNotebook: { backgroundColour: 'rgba(255, 175, 2, 0.5)'},
+  'Three.js': { backgroundColour: 'rgba(235, 11, 11, 0.5)'},
+  Tailwind: { backgroundColour: 'rgba(43, 200, 174,  0.5)'},
+  Zustand: { backgroundColour: 'rgba(167, 167, 167, 0.5)'},
+};
+
+export const languageBorders = (colour: string) => {
+  // Extract RGB values from rgba(r, g, b, a) format
+  const rgbaMatch = colour.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+  
+  if (rgbaMatch) {
+    const [, r, g, b] = rgbaMatch;
+    return {
+      borderColor: `rgba(${r}, ${g}, ${b}, 0.7)`,
+      color: `#000000`,
+    };
+  }
+  
+  // Fallback in case the format is unexpected
+  return {
+    borderColor: colour,
+    color: colour,
+  };
 };
 
 

@@ -27,8 +27,6 @@ $glass-bg: rgba(255, 255, 255, 0.911);
 .nav-link {
   text-decoration: none;
   color: var(--inactive-color);
-  font-weight: bold;
-  font-size: 1.2em;
   opacity: 1 !important;
   transition: color 0.3s ease;
 
@@ -423,122 +421,14 @@ $glass-bg: rgba(255, 255, 255, 0.911);
 
 // Timeline
 .experience-grid {
-  justify-content: center;
-  display: grid;
   padding-top: 20px;
 }
 
-.timeline {
-  position: relative;
-  padding: 15px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  z-index: 1;
 
-  @media (max-width: 768px) {
-    margin-left: 15px;
-  }
-
-  @media (max-width: 430px) {
-    margin-left: 5px;
-    padding: 5px 0;
-  }
-}
-
-.timeline-item {
-  margin-bottom: 20px;
-  opacity: 1;
-  transition: opacity 0.15s ease-out;
-
-  &.faded {
-    opacity: 0.5;
-  }
-
-  &:hover {
-    opacity: 1;
-  }
-}
-
-.timeline-link {
-  background-image: linear-gradient(90deg, #ffffff6b 0px), linear-gradient(0deg, #ffffff71 0px);
-  background-size: 100% 100%, 100% 100%;
-  background-position: 0 0, 0 0;
-  background-repeat: no-repeat;
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-  padding: 20px;
-  border-radius: 14px;
-  border: 1px solid $glass-border;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  position: relative;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    border-radius: inherit;
-    padding: 1px;
-    pointer-events: none;
-    opacity: 0.35;
-  }
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
-
-    &::before {
-      opacity: 0.75;
-    }
-  }
-
-  .timeline-role,
-  .timeline-company,
-  .timeline-institution,
-  .timeline-atsign {
-    color: $text-color;
-    display: inline-block;
-  }
-  
-  .timeline-role {
-    font-weight: bold;
-  }
-  
-  .timeline-company,
-  .timeline-institution {
-    font-weight: bold;
-    font-size: 0.8em;
-  } 
-  
-  .timeline-atsign {
-    font-weight: 200;
-    font-size: 1.1em;
-    margin: 0 4px;
-  }
-
-  .timeline-step {
-    flex: 0 0 6px;
-    align-self: stretch;
-    border-radius: 999px;
-    box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.3) inset;
-    background: $glass-bg;
-  }
-
-  .education-step {
-    background: #34d399;
-  }
-
-  .experience-step {
-    background: #f472b6;
-  }
-}
 
 .timeline-title-link {
   text-decoration: none;
   color: inherit;
-  display: inline;
   transition: color 0.25s ease;
 
   .timeline-company {
@@ -551,103 +441,7 @@ $glass-bg: rgba(255, 255, 255, 0.911);
     color: var(--hover-institution-color, #00715f);
   }
 }
-
-.timeline-content {
-  color: $text-color;
-
-  h3 {
-    font-size: 1.5em;
-    margin: 0;
-    color: $text-color;
-
-    @media (max-width: 768px) {
-      font-size: 1.3em;
-    }
-  }
-
-  p {
-    font-size: 1em;
-    color: $text-color;
-    font-weight: 500;
-    margin-bottom: 0;
-
-    @media (max-width: 768px) {
-      font-size: 0.95em;
-    }
-  }
-}
-
-.timeline-date {
-  margin-top: 5px;
-  font-size: 0.9em;
-  font-weight: 700;
-  color: lighten($text-color, 20%);
-}
-
-.timeline-stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 8px;
-  margin-top: 8px;
-
-  .stat-item {
-    align-items: center;
-    gap: 6px;
-    font-size: 0.85em;
-    color: darken($text-color, 5%);
-    padding: 6px 10px;
-    border-radius: 999px;
-    border: 1px solid rgba(99, 102, 241, 0.25);
-    font-weight: 600;
-
-    strong { color: $secondary-color; }
-  }
-}
-
-.timeline-description {
-  margin-bottom: 0.5rem;
-
-  li {
-    position: relative;
-    margin-bottom: 0.35rem;
-    margin-right: 0.5rem;
-    text-align: left;
-    color: $text-color;
-    font-weight: 500;
-    line-height: 1.4;
-  }
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-}
-
-.timeline-education-description {
-  @media (max-width: 768px) {
-    display: none;
-  }
-}
-
-.timeline-section-title {
-  font-size: 2em;
-  color: $text-color;
-  font-weight: 700;
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-
-  @media (max-width: 768px) {
-    font-size: 1.7em;
-  }
-
-  @media (max-width: 430px) {
-    font-size: 1.4em;
-  }
-}
-
 .timeline-section {
-  text-align: center;
   width: 100%;
   
   .ProjectsTitle {
