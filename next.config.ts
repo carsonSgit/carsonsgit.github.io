@@ -5,13 +5,11 @@ const nextConfig: NextConfig = {
   basePath: '',
   images: {
     unoptimized: true,
+    domains: ['api.microlink.io']
   },
   sassOptions: {
     includePaths: ['./app'],
-  },
-  // Next.js 16: Turbopack is now default, no need to configure
-  // React Compiler: Can be enabled if needed
-  // reactCompiler: true,
+  }
 };
 
 export default nextConfig;
