@@ -48,14 +48,12 @@ const BackgroundGrid: React.FC = () => {
       const now = Date.now();
       const highlights = highlightsRef.current;
       
-      // Remove expired highlights
       highlights.forEach((h, key) => {
         if (now - h.createdAt > DECAY_MS) highlights.delete(key);
       });
 
       const tiles = Array.from(highlights.values());
       
-      // If no highlights, reset to base grid and stop animation
       if (tiles.length === 0) {
         const body = document.body;
         body.style.backgroundImage = 
@@ -89,28 +87,27 @@ const BackgroundGrid: React.FC = () => {
         'repeat'
       ].join(',');
 
-      // Update styles
       const body = document.body;
       body.style.backgroundImage = images;
       body.style.backgroundSize = sizes;
       body.style.backgroundPosition = positions;
       body.style.backgroundRepeat = repeats;
 
-      // Schedule next frame if there are still highlights
       animationFrameRef.current = requestAnimationFrame(renderWithColors);
     };
 
     const onMouseMove = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.closest('[data-prevent-grid-highlight]')) {
+        return; 
+      }
+
       addHighlight(e.pageX, e.pageY);
-      
-      // Start animation loop if not already running
+
       if (animationFrameRef.current === null) {
         animationFrameRef.current = requestAnimationFrame(renderWithColors);
       }
     };
-
-    // Grid is already initialized in CSS (globals.scss), so we don't need to set it here
-    // The component will enhance it with highlights on mouse move
 
     window.addEventListener('mousemove', onMouseMove, { passive: true });
 
@@ -120,7 +117,6 @@ const BackgroundGrid: React.FC = () => {
         cancelAnimationFrame(animationFrameRef.current);
         animationFrameRef.current = null;
       }
-      // Reset to base grid on cleanup
       const body = document.body;
       body.style.backgroundImage = 
         'linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px), ' +

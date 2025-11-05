@@ -139,7 +139,7 @@ export function Card({ variant = 'default', className, ...props }: CardProps) {
   const Component = variantComponent || variants[FALLBACK_INDEX].component
 
   return (
-    <Slot.Root className="w-full max-w-[350px]">
+    <Slot.Root className="w-full max-w-[350px]" data-prevent-grid-highlight>
       <Component {...props} className={className} />
     </Slot.Root>
   )
