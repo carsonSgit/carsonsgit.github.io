@@ -4,7 +4,6 @@ export interface Language {
 }
 
 export interface Project {
-  image: string;
   title: string;
   languages: Language[];
   description: string;

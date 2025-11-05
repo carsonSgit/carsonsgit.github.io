@@ -2,21 +2,29 @@ import { Project } from '../types/projects';
 
 
 const languageColors = {
-  Python: { backgroundColour: 'rgba(179, 194, 255, 0.5)'},
+  Python: { backgroundColour: 'rgba(54, 216, 176, 0.5)'},
   'C#': { backgroundColour: 'rgba(89, 218, 102, 0.5)'},
   '.NET MAUI': { backgroundColour: 'rgba(165, 86, 218, 0.5)'},
   RaspberryPi: { backgroundColour: 'rgba(223, 104, 201, 0.5)'},
-  IoT: { backgroundColour: 'rgba(167, 167, 167, 0.5)'},
+  IoT: { backgroundColour: 'rgba(192, 231, 102, 0.5)'},
   Mantine: { backgroundColour: 'rgba(123, 208, 223, 0.5)'},
-  TypeScript: { backgroundColour: 'rgba(162, 192, 255, 0.5)'}, 
+  TypeScript: { backgroundColour: 'rgba(134, 122, 240, 0.5)'}, 
   RAGAI: { backgroundColour: 'rgba(167, 167, 167, 0.5)'},
   VectorDB: { backgroundColour: 'rgba(167, 167, 167, 0.5)'},
   React: { backgroundColour: 'rgba(105, 96, 231, 0.5)'}, 
-  MachineLearning: { backgroundColour: 'rgba(167, 167, 167, 0.5)'},
+  MachineLearning: { backgroundColour: 'rgba(214, 224, 66, 0.5)'},
   JupyterNotebook: { backgroundColour: 'rgba(255, 175, 2, 0.5)'},
   'Three.js': { backgroundColour: 'rgba(235, 11, 11, 0.5)'},
   Tailwind: { backgroundColour: 'rgba(43, 200, 174,  0.5)'},
-  Zustand: { backgroundColour: 'rgba(167, 167, 167, 0.5)'},
+  Zustand: { backgroundColour: 'rgba(218, 214, 214, 0.5)'},
+  PostgreSQL: { backgroundColour: 'rgba(157, 209, 243, 0.5)'},
+  RTMP: { backgroundColour: 'rgba(241, 122, 172, 0.5)'},
+  ComputerVision: { backgroundColour: 'rgba(113, 240, 187, 0.5)'},
+  AI: { backgroundColour: 'rgba(196, 138, 235, 0.5)'},
+  Hardware: { backgroundColour: 'rgba(206, 203, 14, 0.5)'},
+  Azure: { backgroundColour: 'rgba(131, 188, 255, 0.5)'},
+  Neuroscience: { backgroundColour: 'rgba(224, 123, 224, 0.5)'},
+  RnD: { backgroundColour: 'rgba(53, 197, 241, 0.5)'},
 };
 
 export const languageBorders = (colour: string) => {
@@ -42,75 +50,82 @@ export const languageBorders = (colour: string) => {
 
 export const projects: Project[] = [
   {
-    image: 'cropcare.webp',
+    title: 'Argus',
+    languages: [
+      { name: 'AI', ...languageColors.AI },
+      { name: 'Computer Vision', ...languageColors.ComputerVision },
+      { name: 'TypeScript', ...languageColors.TypeScript },
+      { name: 'PostgreSQL', ...languageColors.PostgreSQL },
+      { name: 'RTMP', ...languageColors.RTMP },
+    ],
+    description:
+      "All-in-one AI-native surveillance suite for monitoring and analyzing live feeds from various sources autonomously.",
+    github: 'https://github.com/GodPuffin/Argus',
+    website: 'https://devpost.com/software/argus-w6i0pv',
+  },
+  {
     title: 'CropCare',
     languages: [
       { name: 'Python', ...languageColors.Python },
       { name: 'C#', ...languageColors['C#'] },
-      { name: '.NET MAUI', ...languageColors['.NET MAUI'] },
-      { name: 'Raspberry Pi', ...languageColors.RaspberryPi },
+      { name: 'Hardware', ...languageColors.Hardware},
+      { name: 'Azure', ...languageColors.Azure },
       { name: 'IoT', ...languageColors.IoT },
     ],
     description:
-      "Developed an IoT container farm leveraging Python, .NET MAUI, a Raspberry Pi, and Azure's IoT hub for mobile monitoring and control. Our project was recognized as the best Capstone project in the history of the school's CS program.",
+      "IoT-based smart farming solution for automated plant monitoring and control through a bi-directional MQTT Azure pipeline.",
     github: 'https://github.com/carsonSgit/CropCare',
     website: 'https://carsonsgit.github.io/cropcare-3d/',
   },
   {
-    image: 'linky.webp',
     title: 'Linky',
     languages: [
       { name: 'Mantine', ...languageColors.Mantine },
       { name: 'TypeScript', ...languageColors.TypeScript },
-      { name: 'RAG AI', ...languageColors.RAGAI },
-      { name: 'Vector DB', ...languageColors.VectorDB },
+      { name: 'AI', ...languageColors.AI },
+      { name: 'Vector DB', ...languageColors.PostgreSQL },
     ],
     description:
-      'Linky is a hackathon winning project made for <a className="hoverLink" href="https://www.marihacks.com/" target="_blank" rel="noopener noreferrer">MariHacks 2024</a> in under 24hrs. It\'s a web app that using a RAG AI & Vector DB which converts page content from inputed links into the knowledge base of your own AI bot, letting you interact with URLs, making your learning experience more interactive and fun!',
+      'AI-powered URL-based knowledge base for interactive learning and exploration using RAG AI and a Vector database for infomration storage and retrieval.',
     github: 'https://github.com/carsonSgit/Linky',
     website: 'https://www.linky.im/',
   },
   {
-    image: 'empty.webp',
     title: 'Pathfinder',
     languages: [
       { name: 'Three.js', ...languageColors['Three.js'] },
-      { name: 'React', ...languageColors.React },
       { name: 'TypeScript', ...languageColors.TypeScript },
-      { name: 'Tailwind', ...languageColors.Tailwind },
-      { name: 'GenAI', ...languageColors.RAGAI },
+      { name: 'AI', ...languageColors.AI },
       { name: 'Zustand', ...languageColors.Zustand },
 
     ],
     description:
-      'Made in 24hrs at <a className="hoverLink" href="https://www.conuhacks.io/" target="_blank" rel="noopener noreferrer">ConUHacks IX</a>, Pathfinder is a gamified AI career coach. Creating a world through Three.js, we used GenAI to generate personalized questions based off of your answers to help you find your career path.',
+      '3D interactive career coach for exploring and discovering career paths using AI and complex data analysis.',
     github: 'https://github.com/xsachax/pathfinder_conuhacks-2025',
     website: 'https://www.pathfinderhelpsyoudecidewhereyouwantto.work/?',  
   },
   {
-    image: 'pharmahacks2024.webp',
     title: 'Mice Neural Decoding',
     languages: [
       { name: 'Python', ...languageColors.Python },
-      { name: 'Jupyter Notebook', ...languageColors.JupyterNotebook },
       { name: 'Machine Learning', ...languageColors.MachineLearning },
+      { name: 'Neuroscience', ...languageColors.Neuroscience },
     ],
     description:
-      'Done at <a className="hoverLink" href="https://pharmahacks.com/#welcome" target="_blank" rel="noopener noreferrer">PharmaHacks 2024</a>, we decoded mouse navigation decisions by analyzing L2/3 neuron activity in the retrosplenial cortex, following the findings of Tseng et al. (2022) in their Neuron Paper.',
+      'Neural decoding of the retrosplenial cortex of mice through Machine Learning analysis of L2/3 neuron activity to predict mouse navigation decisions.',
     github: 'https://github.com/carsonSgit/Mice-Neural-Decoding-ML',
     website:
       'https://github.com/carsonSgit/Mice-Neural-Decoding-ML/blob/main/PharmaHacks%202024%20Neural%20Decoding%20Single%20File.ipynb',
   },
   {
-    image: 'trademind.webp',
     title: 'TradeMind',
     languages: [
-      { name: 'React', ...languageColors.React },
       { name: 'Python', ...languageColors.Python },
       { name: 'Machine Learning', ...languageColors.MachineLearning },
+      { name: 'R&D', ...languageColors.RnD },
     ],
     description:
-      'TradeMind is a project developed for <a className="hoverLink" href="https://launchlab.ai/" target="_blank" rel="noopener noreferrer">AI Launch Lab</a>\'s <a className="hoverLink" href="https://launchlab.ai/rd-program/" target="_blank" rel="noopener noreferrer">R&D Program</a>, recognized as the top project of ours & past cohorts. TradeMind is a web app that uses machine learning to predict stock prices based on various factors, and provide insights to users.',
+      'R&D Fellowship project covering various Machine Learning models to analyze stock market data and provide insights to users.',
     github: 'https://github.com/carsonSgit/TradeMind',
     website: 'https://trademind.pages.dev/',
   },
