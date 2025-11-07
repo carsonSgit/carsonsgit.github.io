@@ -3,8 +3,8 @@
 4:I[29285,["/_next/static/chunks/ec146663a775c209.js"],"MetadataBoundary"]
 5:"$Sreact.suspense"
 7:I[57697,["/_next/static/chunks/ec146663a775c209.js"],"IconMark"]
-:HL["/_next/static/chunks/62d3b91dee019a2c.css","style"]
+:HL["/_next/static/chunks/abfdc17d4dac9762.css","style"]
 :HL["/_next/static/chunks/3a7e293a4731ee89.css","style"]
-0:{"buildId":"STup8AFw6v7cVwm9FenXR","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"head":["$","$1","h",{"children":[null,["$","$L2",null,{"children":"$@3"}],["$","div",null,{"hidden":true,"children":["$","$L4",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":"$@6"}]}]}],null]}],"isHeadPartial":false,"staleTime":300}
+0:{"buildId":"LEEa0kxwdDEUI8TQSqVyW","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"head":["$","$1","h",{"children":[null,["$","$L2",null,{"children":"$@3"}],["$","div",null,{"hidden":true,"children":["$","$L4",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":"$@6"}]}]}],null]}],"isHeadPartial":false,"staleTime":300}
 3:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#FAF9F6"}]]
 6:[["$","title","0",{"children":"carsonSgit"}],["$","meta","1",{"name":"description","content":"Personal Portfolio website, coded by me :]"}],["$","link","2",{"rel":"manifest","href":"/manifest.json"}],["$","link","3",{"rel":"icon","href":"/favicon.ico"}],["$","link","4",{"rel":"apple-touch-icon","href":"/logo192.png"}],["$","$L7","5",{}]]
