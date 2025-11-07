@@ -1,10 +1,19 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { links } from '../../data/navbarLinks';
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from './dialog';
+import { Button } from './button';
+import ColourfulText from '../../../components/ui/colourful-text';
 import '../../styles/components.scss';
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  isSnakeActive?: boolean;
+  onSnakeToggle?: () => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ isSnakeActive = false, onSnakeToggle }) => {
   const [activeSection, setActiveSection] = useState<string>(links[0].id);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const tickingRef = useRef(false);
 
   useEffect(() => {
@@ -49,6 +58,19 @@ const Navbar: React.FC = () => {
     }
   }, []);
 
+  const handleSnakeClick = useCallback(() => {
+    if (isSnakeActive) {
+      onSnakeToggle?.();
+    } else {
+      setIsDialogOpen(true);
+    }
+  }, [isSnakeActive, onSnakeToggle]);
+
+  const handleStartGame = useCallback(() => {
+    setIsDialogOpen(false);
+    onSnakeToggle?.();
+  }, [onSnakeToggle]);
+
   return (
     <nav className="navbar">
       {links.map((link, index) => (
@@ -69,6 +91,58 @@ const Navbar: React.FC = () => {
           {link.label}
         </motion.a>
       ))}
+      {onSnakeToggle && (
+        <>
+          <motion.button
+            onClick={handleSnakeClick}
+            className={`nav-link font-semibold text-lg `}
+            initial={{ x: 10, opacity: 1 }}
+            animate={{ x: isSnakeActive ? 15 : 0 }} 
+            transition={{ type: "spring", stiffness: 200, damping: 20 }}
+            style={{ 
+              display: 'flex', 
+              alignItems: 'center', 
+              gap: '8px',
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              padding: 0,
+            }}
+          >
+            SNAKE
+          </motion.button>
+
+          <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle className="text-2xl text-primary">
+                  Play Snake
+                </DialogTitle>
+              </DialogHeader>
+              <DialogDescription className="text-md text-foreground">
+                Are you sure you want to play Snake? Well, you won't <i>really</i>  be playing Snake, 
+                <br />
+                <br />
+                <span className="text-muted-foreground">But a Snake using A* will be playing in the grid.</span>
+                </DialogDescription>
+              <DialogFooter className="gap-2 sm:gap-0">
+                <Button
+                  variant="ghost"
+                  onClick={handleStartGame}
+                >
+                  Yes
+                </Button>
+                <Button
+                  variant="secondary"
+                  onClick={() => setIsDialogOpen(false)}
+                >
+                  No
+                </Button>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
+        </>
+      )}
     </nav>
   );
 };

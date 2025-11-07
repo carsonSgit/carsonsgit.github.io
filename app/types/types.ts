@@ -43,3 +43,20 @@ export interface Highlight {
   createdAt: number;
 }
 
+export interface SnakeSegment {
+  x: number;
+  y: number;
+  color: string;
+}
+
+export interface FoodTile {
+  x: number;
+  y: number;
+}
+
+export interface SnakeGameState {
+  isActive: boolean;
+  snake: SnakeSegment[];
+  food: FoodTile[];
+}
+

@@ -1,7 +1,17 @@
 import React, { useEffect, useRef } from 'react';
-import { Highlight } from '../../types/types';
+import { Highlight, SnakeSegment, FoodTile } from '../../types/types';
 
-const BackgroundGrid: React.FC = () => {
+interface BackgroundGridProps {
+  snakeSegments?: SnakeSegment[];
+  foodTiles?: FoodTile[];
+  isSnakeActive?: boolean;
+}
+
+const BackgroundGrid: React.FC<BackgroundGridProps> = ({ 
+  snakeSegments = [], 
+  foodTiles = [], 
+  isSnakeActive = false 
+}) => {
   const animationFrameRef = useRef<number | null>(null);
   const highlightsRef = useRef<Map<string, Highlight>>(new Map());
 
@@ -54,7 +64,12 @@ const BackgroundGrid: React.FC = () => {
 
       const tiles = Array.from(highlights.values());
       
-      if (tiles.length === 0) {
+      // Add snake and food tiles when active
+      const hasSnake = snakeSegments.length > 0;
+      const hasFood = foodTiles.length > 0;
+      const hasHighlights = tiles.length > 0;
+      
+      if (!hasHighlights && !hasSnake && !hasFood) {
         const body = document.body;
         body.style.backgroundImage = 
           'linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px), ' +
@@ -67,21 +82,36 @@ const BackgroundGrid: React.FC = () => {
       }
 
       const images = [
+        // Food tiles (rendered first, below snake)
+        ...foodTiles.map(() => `linear-gradient(rgba(255, 0, 0, 0.6), rgba(255, 0, 0, 0.6))`),
+        ...snakeSegments.map((s) => `linear-gradient(${s.color}, ${s.color})`),
+        
+        // Hover highlights (when not in snake mode)
         ...tiles.map((t) => `linear-gradient(${t.color}, ${t.color})`),
+        // Grid lines
         'linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px)',
         'linear-gradient(0deg, rgba(0,0,0,0.04) 1px, transparent 1px)'
       ].join(',');
+      
       const sizes = [
+        ...foodTiles.map(() => `${GRID_SIZE}px ${GRID_SIZE}px`),
+        ...snakeSegments.map(() => `${GRID_SIZE}px ${GRID_SIZE}px`),
         ...tiles.map(() => `${GRID_SIZE}px ${GRID_SIZE}px`),
         `${GRID_SIZE}px ${GRID_SIZE}px`,
         `${GRID_SIZE}px ${GRID_SIZE}px`
       ].join(',');
+      
       const positions = [
+        ...foodTiles.map((f) => `${f.x}px ${f.y}px`),
+        ...snakeSegments.map((s) => `${s.x}px ${s.y}px`),
         ...tiles.map((t) => `${t.x}px ${t.y}px`),
         '0 0',
         '0 0'
       ].join(',');
+      
       const repeats = [
+        ...foodTiles.map(() => 'no-repeat'),
+        ...snakeSegments.map(() => 'no-repeat'),
         ...tiles.map(() => 'no-repeat'),
         'repeat',
         'repeat'
@@ -97,6 +127,10 @@ const BackgroundGrid: React.FC = () => {
     };
 
     const onMouseMove = (e: MouseEvent) => {
+      if (isSnakeActive) {
+        return;
+      }
+
       const target = e.target as HTMLElement;
       if (target.closest('[data-prevent-grid-highlight]')) {
         return; 
@@ -110,6 +144,10 @@ const BackgroundGrid: React.FC = () => {
     };
 
     window.addEventListener('mousemove', onMouseMove, { passive: true });
+
+    if ((snakeSegments.length > 0 || foodTiles.length > 0) && animationFrameRef.current === null) {
+      animationFrameRef.current = requestAnimationFrame(renderWithColors);
+    }
 
     return () => {
       window.removeEventListener('mousemove', onMouseMove);
@@ -125,7 +163,7 @@ const BackgroundGrid: React.FC = () => {
       body.style.backgroundPosition = '0 0, 0 0';
       body.style.backgroundRepeat = 'repeat, repeat';
     };
-  }, []);
+  }, [snakeSegments, foodTiles, isSnakeActive]);
 
   return null;
 };

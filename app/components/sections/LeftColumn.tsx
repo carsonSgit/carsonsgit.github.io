@@ -15,10 +15,15 @@ const ANIMATION_PROPS = {
   style: { willChange: 'opacity' }
 } as const;
 
-const LeftColumn: React.FC = () => {
+interface LeftColumnProps {
+  isSnakeActive?: boolean;
+  onSnakeToggle?: () => void;
+}
+
+const LeftColumn: React.FC<LeftColumnProps> = ({ isSnakeActive, onSnakeToggle }) => {
   return (
     <motion.div className="left-column" {...ANIMATION_PROPS}>
-      <Hero />
+      <Hero isSnakeActive={isSnakeActive} onSnakeToggle={onSnakeToggle} />
     </motion.div>
   );
 };
