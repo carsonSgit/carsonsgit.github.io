@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { links } from '../../data/navbarLinks';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from './dialog';
 import { Button } from './button';
-import ColourfulText from '../../../components/ui/colourful-text';
 import '../../styles/components.scss';
 
 interface NavbarProps {
