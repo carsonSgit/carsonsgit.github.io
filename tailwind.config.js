@@ -22,7 +22,7 @@ module.exports = {
   			'primary-foreground': 'var(--primary-foreground)',
   			'primary-muted': 'var(--primary-muted)',
   			'primary-invert': 'var(--primary-invert)',
-  			border: 'hsl(var(--border))',
+  			border: 'hsl(0, 100%, 100%)',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

@@ -35,7 +35,7 @@ const FooterLinks: React.FC = () => {
           <span className="link-text">Devpost</span>
         </a>
         <a
-          href="https://drive.google.com/file/d/1szKkdtBrg0s7XmvujozgV5G1UnuUO7Iu/view?usp=sharing"
+          href="https://drive.google.com/file/d/1GgcJwxiAON-9YTvuM6vi1hQmuCVQgDg1/view?usp=sharing"
           target="_blank"
           rel="noreferrer"
           className="footer-link-item"
