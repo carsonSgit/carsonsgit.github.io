@@ -1,6 +1,12 @@
+export interface StatBadge {
+	label: string;
+	value: string | number;
+	backgroundColour: string;
+}
+
 export type Statistics = {
 	[key: string]: {
-		stats: string[];
+		stats: StatBadge[];
 	} | null;
 };
 
