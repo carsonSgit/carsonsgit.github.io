@@ -8,11 +8,8 @@ import { cn } from "@/lib/utils";
 
 const Dialog = DialogPrimitive.Root;
 
-const _DialogTrigger = DialogPrimitive.Trigger;
-
 const DialogPortal = DialogPrimitive.Portal;
 
-const _DialogClose = DialogPrimitive.Close;
 
 const DialogOverlay = React.forwardRef<
 	React.ElementRef<typeof DialogPrimitive.Overlay>,
