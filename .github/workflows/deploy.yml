@@ -30,7 +30,7 @@ jobs:
         run: pnpm install --no-frozen-lockfile
 
       - name: Build
-        run: pnpm build && pnpm export
+        run: pnpm build
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
