@@ -2,7 +2,7 @@ name: Deployment
 
 on:
   push:
-    branches: ["main"]
+    branches: ['main']
 
 permissions:
   contents: write
@@ -23,8 +23,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: "pnpm"
+          package-json: "./package.json"
 
       - name: Install Dependencies
         run: pnpm install --no-frozen-lockfile
@@ -35,8 +34,8 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "./out"
-  
+          path: './out'
+
   deploy:
     needs: build
     runs-on: ubuntu-latest

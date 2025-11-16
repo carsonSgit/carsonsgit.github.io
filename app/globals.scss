@@ -7,13 +7,17 @@ body {
   font-family: 'Inter';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #FAF9F6;
+  background-color: #faf9f6;
   /* Base grid pattern - will be enhanced by BackgroundGrid component */
   background-image:
     linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
     linear-gradient(0deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
-  background-size: 100px 100px, 100px 100px;
-  background-position: 0 0, 0 0;
+  background-size:
+    100px 100px,
+    100px 100px;
+  background-position:
+    0 0,
+    0 0;
   background-repeat: repeat, repeat;
 }
 
@@ -23,8 +27,8 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family:
+    source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 ::-webkit-scrollbar {
@@ -50,7 +54,6 @@ code {
   color: #f0f0f0;
 }
 
-
 :root {
   --main: oklch(0.97 0 0);
   --main-secondary: oklch(97% 0 0);
@@ -58,34 +61,24 @@ code {
   --main-muted: oklch(0.96 0 0);
   --main-background: oklch(1 0 0);
   --main-invert: oklch(0.205 0 0);
-  
+
   --primary: oklch(0 0 0);
   --primary-foreground: oklch(37.1% 0 0);
   --primary-muted: oklch(0.556 0 0);
   --primary-invert: oklch(1 0 0);
-  
+}
+
+@keyframes shine {
+  from {
+    background-position: 0 0;
   }
-  
-  
-  
-  @keyframes shine {
-    from {
-      background-position: 0 0;
-    }
-    to {
-      background-position: -400% 0;
-    }
+  to {
+    background-position: -400% 0;
   }
-  
-  
-  
-  
-  
-  
-  
-  @layer base {
+}
+
+@layer base {
   :root {
-    
     --dark-primary-foreground: 0 0% 9%;
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
@@ -138,14 +131,8 @@ code {
     --chart-5: 340 75% 55%;
   }
 }
-  
-  
-  
-  
-  
-  
-  
-  @layer base {
+
+@layer base {
   * {
     @apply border-border;
   }

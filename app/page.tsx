@@ -1,6 +1,5 @@
-import { ClientOnly } from './client';
+import { ClientOnly } from "./client";
 
 export default function Page() {
-  return <ClientOnly />;
+	return <ClientOnly />;
 }
-

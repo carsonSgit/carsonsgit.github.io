@@ -1,4 +1,3 @@
-
 # 🐧 carsonSgit's Awesome Portfolio 🐧
 
 Welcome to my **portfolio!** My site showcases my journey as a CS student/career, projects, experiences, and achievements!

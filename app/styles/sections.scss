@@ -1,4 +1,6 @@
 // Shared variables
+@use 'sass:color';
+
 $primary-color: #2af598;
 $secondary-color: #00715f;
 $text-color: rgb(34, 34, 34);
@@ -16,7 +18,7 @@ $text-color: rgb(34, 34, 34);
     flex-direction: column;
     margin: 0;
     padding: 10px;
-    justify-content: flex-start; 
+    justify-content: flex-start;
     min-height: min-content;
   }
   @media screen and (max-width: 1024px) {
@@ -62,7 +64,7 @@ h2 {
 
 .AboutText {
   text-shadow: 0 0 15px rgb(255, 255, 255);
-  -webkit-text-stroke: 0.03px rgb(255, 255, 255,0.5);
+  -webkit-text-stroke: 0.03px rgb(255, 255, 255, 0.5);
   font-weight: 550;
   color: rgb(37, 37, 37);
   font-size: 1.6em;
@@ -77,7 +79,7 @@ h2 {
     margin-bottom: 0;
     text-align: justify;
   }
-  .AboutContainer{
+  .AboutContainer {
     padding-bottom: 0px;
   }
 }
@@ -85,60 +87,64 @@ h2 {
 .hoverLink {
   font-weight: 600;
   background-color: #fff;
-  color: darken($primary-color, 25%);
+  color: color.adjust($primary-color, $lightness: -25%);
   text-decoration: none;
 }
 
 .hoverLink:hover {
-  color: darken($primary-color, 15%);
+  color: color.adjust($primary-color, $lightness: -15%);
 }
 
-#mU{
+#mU {
   color: #e42649 !important;
   text-shadow: 0 0 0;
   transition: color 0.1s;
 }
-#mU:hover{
+#mU:hover {
   color: #b31431 !important;
 }
 
-#jac{
+#jac {
   color: #1063f1 !important;
   text-shadow: 0 0 0;
   transition: color 0.1s;
 }
-#jac:hover{
+#jac:hover {
   color: #0b43a3 !important;
 }
 
-#intern{
+#intern {
   color: #0f55ec !important;
   text-shadow: 0 0 0;
   transition: color 0.1s;
 }
-#intern:hover{
+#intern:hover {
   color: #0b43a3 !important;
 }
 
-#status{
+#status {
   color: #f811d9 !important;
   text-shadow: 0 0 0;
   transition: color 0.1s;
 }
-#status:hover{
+#status:hover {
   color: #b60fcf !important;
 }
 
-#hint{
+#hint {
   color: rgb(2, 182, 98) !important;
   text-shadow: 0 0 0;
   transition: color 0.1s;
 }
-#hint:hover{
+#hint:hover {
   color: #117c5a !important;
 }
 
-#mU::selection, #jac::selection, #intern::selection, #status::selection, #hint::selection {
+#mU::selection,
+#jac::selection,
+#intern::selection,
+#status::selection,
+#hint::selection {
   background-color: #ffffff !important;
 }
 
@@ -179,4 +185,3 @@ h2 {
     margin: 0 auto;
   }
 }
-

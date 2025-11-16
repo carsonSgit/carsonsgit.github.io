@@ -1,5 +1,4 @@
 export interface NavbarLink {
-  id: string;
-  label: string;
+	id: string;
+	label: string;
 }
-

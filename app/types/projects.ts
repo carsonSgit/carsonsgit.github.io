@@ -1,17 +1,17 @@
-export interface Language {
-  name: string;
-  backgroundColour: string;
+export interface Project {
+	title: string;
+	description: string;
+	github?: string;
+	website?: string;
+	languages: ProjectLanguage[];
 }
 
-export interface Project {
-  title: string;
-  languages: Language[];
-  description: string;
-  github?: string;
-  website?: string;
+export interface ProjectLanguage {
+	name: string;
+	backgroundColour: string;
 }
 
 export interface ProjectItemProps {
-  project: Project;
+	languages: ProjectLanguage[];
+	project: Project;
 }
-
