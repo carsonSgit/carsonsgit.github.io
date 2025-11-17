@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.scss";
+import Script from "next/script";
 
 export const metadata: Metadata = {
 	title: "carsonSgit",
@@ -21,6 +22,13 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
+			<head />
+			<Script
+				src="https://cloud.umami.is/script.js"
+				data-website-id="3a4253fc-dee7-4c4e-bd4a-a5eba54a2df1"
+				strategy="afterInteractive"
+				defer
+			/>
 			<body>{children}</body>
 		</html>
 	);
