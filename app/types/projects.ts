@@ -12,6 +12,5 @@ export interface ProjectLanguage {
 }
 
 export interface ProjectItemProps {
-	languages: ProjectLanguage[];
 	project: Project;
 }

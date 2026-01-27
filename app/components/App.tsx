@@ -1,50 +1,37 @@
-import { useCallback, useRef, useState } from "react";
-import type { FoodTile, SnakeSegment } from "../types/types";
-import LeftColumn from "./sections/LeftColumn";
-import RightColumn from "./sections/RightColumn";
-import BackgroundGrid from "./ui/BackgroundGrid";
-import RootFooter from "./ui/RootFooter";
-import SnakeGame from "./ui/SnakeGame";
-import "../styles/app.scss";
+"use client";
+
+import { useCallback, useEffect, useState } from "react";
+import type { ThemeId } from "../core/types/theme";
+import ClassicTheme from "../themes/classic";
+import MonoTheme from "../themes/mono";
+
+const THEME_STORAGE_KEY = "portfolio-theme";
+const DEFAULT_THEME: ThemeId = "mono";
 
 const App = () => {
-	const rootRef = useRef<HTMLDivElement | null>(null);
-	const [isSnakeActive, setIsSnakeActive] = useState(false);
-	const [snakeSegments, setSnakeSegments] = useState<SnakeSegment[]>([]);
-	const [foodTiles, setFoodTiles] = useState<FoodTile[]>([]);
+	const [theme, setTheme] = useState<ThemeId>(() => {
+		if (typeof window === "undefined") return DEFAULT_THEME;
+		const saved = localStorage.getItem(THEME_STORAGE_KEY) as ThemeId | null;
+		return saved && (saved === "classic" || saved === "mono") ? saved : DEFAULT_THEME;
+	});
 
-	const handleSnakeToggle = useCallback(() => {
-		setIsSnakeActive((prev) => !prev);
+	// Persist theme to localStorage
+	useEffect(() => {
+		localStorage.setItem(THEME_STORAGE_KEY, theme);
+		document.documentElement.setAttribute("data-theme", theme);
+		document.body.classList.remove("theme-classic", "theme-mono");
+		document.body.classList.add(`theme-${theme}`);
+	}, [theme]);
+
+	const handleThemeSelect = useCallback((newTheme: ThemeId) => {
+		setTheme(newTheme);
 	}, []);
 
-	const handleSnakeUpdate = useCallback(
-		(snake: SnakeSegment[], food: FoodTile[]) => {
-			setSnakeSegments(snake);
-			setFoodTiles(food);
-		},
-		[],
-	);
+	if (theme === "mono") {
+		return <MonoTheme onThemeSelect={handleThemeSelect} />;
+	}
 
-	return (
-		<div className="App" ref={rootRef}>
-			<BackgroundGrid
-				snakeSegments={snakeSegments}
-				foodTiles={foodTiles}
-				isSnakeActive={isSnakeActive}
-			/>
-			<SnakeGame isActive={isSnakeActive} onSnakeUpdate={handleSnakeUpdate} />
-			<div className="FixedSection flex justify-center">
-				<div className="container max-w-[100%] justify-center mx-auto">
-					<LeftColumn
-						isSnakeActive={isSnakeActive}
-						onSnakeToggle={handleSnakeToggle}
-					/>
-					<RightColumn />
-				</div>
-			</div>
-			<RootFooter />
-		</div>
-	);
+	return <ClassicTheme onThemeSelect={handleThemeSelect} />;
 };
 
 export default App;

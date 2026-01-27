@@ -26,25 +26,6 @@ const languageColors = {
 	RnD: { backgroundColour: "rgba(53, 197, 241, 0.5)" },
 };
 
-export const languageBorders = (colour: string) => {
-	// Extract RGB values from rgba(r, g, b, a) format
-	const rgbaMatch = colour.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
-
-	if (rgbaMatch) {
-		const [, r, g, b] = rgbaMatch;
-		return {
-			borderColor: `rgba(${r}, ${g}, ${b}, 0.7)`,
-			color: `#000000`,
-		};
-	}
-
-	// Fallback in case the format is unexpected
-	return {
-		borderColor: colour,
-		color: colour,
-	};
-};
-
 export const projects: Project[] = [
 	{
 		title: "Argus",

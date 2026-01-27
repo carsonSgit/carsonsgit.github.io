@@ -10,7 +10,7 @@ const FooterLinks: React.FC = () => {
 				<a
 					href="https://github.com/carsonSgit"
 					target="_blank"
-					rel="noreferrer"
+					rel="noopener noreferrer"
 					className="footer-link-item"
 				>
 					<FaGithub className="link-icon" />
@@ -19,7 +19,7 @@ const FooterLinks: React.FC = () => {
 				<a
 					href="https://www.linkedin.com/in/carsonspriggs"
 					target="_blank"
-					rel="noreferrer"
+					rel="noopener noreferrer"
 					className="footer-link-item"
 				>
 					<FaLinkedin className="link-icon" />
@@ -28,7 +28,7 @@ const FooterLinks: React.FC = () => {
 				<a
 					href="https://devpost.com/carsonSgit?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav"
 					target="_blank"
-					rel="noreferrer"
+					rel="noopener noreferrer"
 					className="footer-link-item"
 				>
 					<SiDevpost className="link-icon" />
@@ -37,7 +37,7 @@ const FooterLinks: React.FC = () => {
 				<a
 					href="https://drive.google.com/file/d/1GgcJwxiAON-9YTvuM6vi1hQmuCVQgDg1/view?usp=sharing"
 					target="_blank"
-					rel="noreferrer"
+					rel="noopener noreferrer"
 					className="footer-link-item"
 				>
 					<FaFilePdf className="link-icon" />

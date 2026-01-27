@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.scss";
+import "./styles/guide-modal.scss";
 import Script from "next/script";
 
 export const metadata: Metadata = {
@@ -21,7 +22,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en">
+		<html lang="en" data-theme="mono">
 			<head />
 			<Script
 				src="https://cloud.umami.is/script.js"
@@ -29,7 +30,7 @@ export default function RootLayout({
 				strategy="afterInteractive"
 				defer
 			/>
-			<body>{children}</body>
+			<body className="theme-mono">{children}</body>
 		</html>
 	);
 }

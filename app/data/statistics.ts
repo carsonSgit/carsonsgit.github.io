@@ -11,23 +11,6 @@ const statColors = {
 	peach: { backgroundColour: "rgba(255, 218, 185, 0.5)" },
 };
 
-export const getStatBorders = (colour: string) => {
-	const rgbaMatch = colour.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
-
-	if (rgbaMatch) {
-		const [, r, g, b] = rgbaMatch;
-		return {
-			borderColor: `rgba(${r}, ${g}, ${b}, 0.7)`,
-			color: `#000000`,
-		};
-	}
-
-	return {
-		borderColor: colour,
-		color: colour,
-	};
-};
-
 export const statistics: Statistics = {
 	"Software QA Specialist Intern": {
 		stats: [{ label: "efficiency boost", value: "99%", ...statColors.coral }],
