@@ -135,5 +135,10 @@ dist
 # misc
 .DS_Store
 
+# AI/IDE config
+.agents/
+.claude/
+.cursor/
+
 # testing
 /coverage

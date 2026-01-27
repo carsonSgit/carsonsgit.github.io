@@ -1,7 +1,7 @@
 import type React from "react";
 import ProjectItem from "./ProjectItem";
 import { projects } from "../../../data/portfolioProjects";
-import ProjectTitle from "../../../components/ui/ProjectTitle";
+import ProjectTitle from "./ProjectTitle";
 import { motion } from "framer-motion";
 import { SLIDE_UP_ANIMATION } from "../../../utils/animations";
 

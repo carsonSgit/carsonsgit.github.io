@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import type React from "react";
-import { SLIDE_UP_ANIMATION } from "../../utils/animations";
-import "../../styles/components.scss";
+import { SLIDE_UP_ANIMATION } from "../../../utils/animations";
 
 interface ProjectTitleProps {
 	animatedText: string;
