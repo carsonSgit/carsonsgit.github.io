@@ -1,57 +1,82 @@
 // v2 Mono Portfolio Styles
-// Botpress-inspired dark theme
-// All styles scoped under .mono-portfolio
 
-// Full-page background wrapper
+$grid-size: 60px;
+$grid-color: rgba(255, 255, 255, 0.035);
+
 .mono-portfolio-wrapper {
   min-height: 100vh;
-  background: #0a0a0b;
+  background: #0d0d0f;
   position: relative;
+  
+  &::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: 
+      linear-gradient($grid-color 1px, transparent 1px),
+      linear-gradient(90deg, $grid-color 1px, transparent 1px);
+    background-size: $grid-size $grid-size;
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+.grid-hover-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .mono-portfolio {
-  // Dark theme inspired by Botpress
-  --bg: #0f0f10;
-  --bg-surface: #1a1a1c;
-  --bg-hover: #242428;
-  --text: #f0f0f2;
-  --text-muted: #8b8b8f;
-  --border: #2a2a2e;
-  --accent: #3778f0;
-  --accent-soft: rgba(55, 120, 240, 0.15);
-  --selection-bg: #3778f0;
+  --bg: #050506;
+  --bg-surface: rgba(255, 255, 255, 0.03);
+  --bg-hover: rgba(255, 255, 255, 0.06);
+  --text: #e8e8ec;
+  --text-muted: #71717a;
+  --border: rgba(255, 255, 255, 0.1);
+  --accent: #60a5fa;
+  --accent-soft: rgba(96, 165, 250, 0.15);
+  --selection-bg: #60a5fa;
   --selection-fg: #ffffff;
 
-  // Tag colors (brighter for dark background contrast)
-  --tag-ai: #b89eff;
-  --tag-cv: #7ed9c0;
-  --tag-ts: #8b9fff;
-  --tag-py: #6ad9c0;
-  --tag-csharp: #7ecc7e;
-  --tag-hardware: #d9c85e;
-  --tag-azure: #7eb8f0;
-  --tag-iot: #a8d97e;
-  --tag-ml: #e8c85e;
-  --tag-threejs: #f08b8b;
-  --tag-db: #8bc0f0;
-  --tag-rtmp: #f098c0;
-  --tag-neuro: #e098f0;
-  --tag-rnd: #6ed0f0;
-  --tag-default: #a0a0a4;
+  --tag-ai: #a78bfa;
+  --tag-cv: #5eead4;
+  --tag-ts: #93c5fd;
+  --tag-py: #6ee7b7;
+  --tag-csharp: #86efac;
+  --tag-hardware: #fcd34d;
+  --tag-azure: #7dd3fc;
+  --tag-iot: #a3e635;
+  --tag-ml: #fbbf24;
+  --tag-threejs: #fca5a5;
+  --tag-db: #7dd3fc;
+  --tag-rtmp: #f9a8d4;
+  --tag-neuro: #d8b4fe;
+  --tag-rnd: #67e8f9;
+  --tag-default: #a1a1aa;
 
   font-family: 'CommitMono', monospace;
   max-width: 768px;
   margin: 0 auto;
-  padding: 3rem 1.5rem;
+  padding: 3rem 2.5rem;
   color: var(--text);
   background: var(--bg);
+  border: 1px solid var(--border);
   line-height: 1.6;
   min-height: 100vh;
   position: relative;
+  z-index: 2;
   transform-origin: top center;
 
   @media (max-width: 768px) {
-    padding: 2rem 1rem;
+    padding: 2rem 1.5rem;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 1.5rem 1rem;
   }
 
   ::selection {
@@ -59,7 +84,6 @@
     color: var(--selection-fg);
   }
 
-  // Typography
   h1 {
     font-size: 2rem;
     font-weight: 700;
@@ -89,14 +113,12 @@
     font-size: 0.9375rem;
   }
 
-  // Horizontal rules
   hr {
     border: none;
     border-top: 1px solid var(--border);
     margin: 2rem 0;
   }
 
-  // Skip to content
   .skip-link {
     position: absolute;
     left: -9999px;
@@ -113,7 +135,6 @@
     }
   }
 
-  // Intro section
   .intro {
     margin-bottom: 0;
 
@@ -136,11 +157,11 @@
     }
   }
 
-  // Bracket-style links
   .bracket-link {
     font-size: 0.875rem;
     color: var(--text);
     text-decoration: none;
+    cursor: pointer;
     transition: color 150ms ease;
 
     &::before { content: '['; color: var(--text-muted); }
@@ -160,7 +181,6 @@
     }
   }
 
-  // Section list (projects, experience, education)
   .section-list {
     list-style: none;
     margin: 0;
@@ -170,7 +190,7 @@
       position: relative;
       padding: 0.375rem 0 0.375rem 1.5rem;
       font-size: 0.9375rem;
-      cursor: default;
+      cursor: pointer;
       transition: background-color 150ms ease, border-color 150ms ease;
       border-left: 2px solid transparent;
 
@@ -258,24 +278,24 @@
       background: var(--bg-surface);
       color: var(--text-muted);
       border: 1px solid var(--border);
+      font-weight: 500;
 
-      // Color variants (dark mode optimized)
-      &--ai { color: var(--tag-ai); border-color: rgba(184, 158, 255, 0.4); background: rgba(184, 158, 255, 0.12); }
-      &--cv, &--computer-vision { color: var(--tag-cv); border-color: rgba(126, 217, 192, 0.4); background: rgba(126, 217, 192, 0.12); }
-      &--ts, &--typescript { color: var(--tag-ts); border-color: rgba(139, 159, 255, 0.4); background: rgba(139, 159, 255, 0.12); }
-      &--py, &--python { color: var(--tag-py); border-color: rgba(106, 217, 192, 0.4); background: rgba(106, 217, 192, 0.12); }
-      &--csharp, &--c\# { color: var(--tag-csharp); border-color: rgba(126, 204, 126, 0.4); background: rgba(126, 204, 126, 0.12); }
-      &--hardware { color: var(--tag-hardware); border-color: rgba(217, 200, 94, 0.4); background: rgba(217, 200, 94, 0.12); }
-      &--azure { color: var(--tag-azure); border-color: rgba(126, 184, 240, 0.4); background: rgba(126, 184, 240, 0.12); }
-      &--iot { color: var(--tag-iot); border-color: rgba(168, 217, 126, 0.4); background: rgba(168, 217, 126, 0.12); }
-      &--ml, &--machine-learning { color: var(--tag-ml); border-color: rgba(232, 200, 94, 0.4); background: rgba(232, 200, 94, 0.12); }
-      &--threejs, &--three\.js { color: var(--tag-threejs); border-color: rgba(240, 139, 139, 0.4); background: rgba(240, 139, 139, 0.12); }
-      &--db, &--postgresql, &--vector-db { color: var(--tag-db); border-color: rgba(139, 192, 240, 0.4); background: rgba(139, 192, 240, 0.12); }
-      &--rtmp { color: var(--tag-rtmp); border-color: rgba(240, 152, 192, 0.4); background: rgba(240, 152, 192, 0.12); }
-      &--neuro, &--neuroscience { color: var(--tag-neuro); border-color: rgba(224, 152, 240, 0.4); background: rgba(224, 152, 240, 0.12); }
-      &--rnd, &--r\&d { color: var(--tag-rnd); border-color: rgba(110, 208, 240, 0.4); background: rgba(110, 208, 240, 0.12); }
-      &--mantine { color: var(--tag-azure); border-color: rgba(126, 184, 240, 0.4); background: rgba(126, 184, 240, 0.12); }
-      &--zustand { color: var(--text-muted); border-color: var(--border); background: rgba(160, 160, 164, 0.1); }
+      &--ai { color: var(--tag-ai); border-color: rgba(167, 139, 250, 0.3); background: rgba(167, 139, 250, 0.1); }
+      &--cv, &--computer-vision { color: var(--tag-cv); border-color: rgba(94, 234, 212, 0.3); background: rgba(94, 234, 212, 0.1); }
+      &--ts, &--typescript { color: var(--tag-ts); border-color: rgba(147, 197, 253, 0.3); background: rgba(147, 197, 253, 0.1); }
+      &--py, &--python { color: var(--tag-py); border-color: rgba(110, 231, 183, 0.3); background: rgba(110, 231, 183, 0.1); }
+      &--csharp, &--c\# { color: var(--tag-csharp); border-color: rgba(134, 239, 172, 0.3); background: rgba(134, 239, 172, 0.1); }
+      &--hardware { color: var(--tag-hardware); border-color: rgba(252, 211, 77, 0.3); background: rgba(252, 211, 77, 0.1); }
+      &--azure { color: var(--tag-azure); border-color: rgba(125, 211, 252, 0.3); background: rgba(125, 211, 252, 0.1); }
+      &--iot { color: var(--tag-iot); border-color: rgba(163, 230, 53, 0.3); background: rgba(163, 230, 53, 0.1); }
+      &--ml, &--machine-learning { color: var(--tag-ml); border-color: rgba(251, 191, 36, 0.3); background: rgba(251, 191, 36, 0.1); }
+      &--threejs, &--three\.js { color: var(--tag-threejs); border-color: rgba(252, 165, 165, 0.3); background: rgba(252, 165, 165, 0.1); }
+      &--db, &--postgresql, &--vector-db { color: var(--tag-db); border-color: rgba(125, 211, 252, 0.3); background: rgba(125, 211, 252, 0.1); }
+      &--rtmp { color: var(--tag-rtmp); border-color: rgba(249, 168, 212, 0.3); background: rgba(249, 168, 212, 0.1); }
+      &--neuro, &--neuroscience { color: var(--tag-neuro); border-color: rgba(216, 180, 254, 0.3); background: rgba(216, 180, 254, 0.1); }
+      &--rnd, &--r\&d { color: var(--tag-rnd); border-color: rgba(103, 232, 249, 0.3); background: rgba(103, 232, 249, 0.1); }
+      &--mantine { color: var(--tag-azure); border-color: rgba(125, 211, 252, 0.3); background: rgba(125, 211, 252, 0.1); }
+      &--zustand { color: var(--text-muted); border-color: var(--border); background: rgba(161, 161, 170, 0.08); }
     }
 
     &__date {
@@ -293,6 +313,7 @@
     &__company-link {
       color: var(--text);
       text-decoration: none;
+      cursor: pointer;
       transition: color 150ms ease;
 
       &:hover,
@@ -309,7 +330,6 @@
     }
   }
 
-  // Detail panel (expanded content)
   .detail-panel {
     overflow: hidden;
     max-height: 0;
@@ -321,14 +341,15 @@
     &--open {
       max-height: 300px;
       opacity: 1;
-      margin-top: 0.5rem;
+      margin-top: 0.75rem;
     }
 
     &__content {
-      padding: 0.5rem 0 0.5rem 0;
-      border-left: 1px solid var(--border);
+      padding: 0.75rem 1rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 2px;
       margin-left: 0;
-      padding-left: 1rem;
     }
 
     &__description {
@@ -367,7 +388,6 @@
       display: flex;
       gap: 0.75rem;
 
-      // Subgroup focus style - thin, low contrast border, no rounding
       .bracket-link:focus,
       .bracket-link:focus-visible {
         outline: none;
@@ -379,7 +399,6 @@
     }
   }
 
-  // ASCII footer
   .ascii-footer {
     text-align: center;
     margin-top: 0;
@@ -400,7 +419,6 @@
     }
   }
 
-  // Inline keyboard shortcuts section
   .keyboard-shortcuts {
     margin-top: 0;
 
@@ -451,25 +469,11 @@
   }
 }
 
-// Reduced motion
 @media (prefers-reduced-motion: reduce) {
   .mono-portfolio {
-    .detail-panel {
-      transition: none;
-    }
-
-    .keyboard-hint {
-      transition: none;
-    }
-
-    .bracket-link {
-      transition: none;
-    }
-
-    .section-list__item {
-      transition: none;
-    }
-
+    .detail-panel,
+    .bracket-link,
+    .section-list__item,
     .section-list__marker {
       transition: none;
     }

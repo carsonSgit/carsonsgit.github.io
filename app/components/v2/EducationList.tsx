@@ -21,7 +21,6 @@ const EducationList = () => {
 	}, []);
 
 	const handleKeyDown = useCallback((e: React.KeyboardEvent, index: number) => {
-		// Only handle Enter/Space for accessibility - vim keys (l, j, k, i) are handled by useVimNavigation
 		if (e.key === "Enter" || e.key === " ") {
 			e.preventDefault();
 			toggleExpanded(index);

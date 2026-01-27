@@ -146,7 +146,7 @@ const GuideModal: React.FC<GuideModalProps> = ({ isOpen, onClose, onVersionSelec
 									<div className="guide-modal__shortcut-group">
 										<div className="guide-modal__shortcut">
 											<span className="guide-modal__keys">
-												<kbd>j</kbd> / <kbd>k</kbd>
+												<kbd>i</kbd> / <kbd>k</kbd>
 											</span>
 											<span className="guide-modal__action">up / down</span>
 										</div>
@@ -158,7 +158,7 @@ const GuideModal: React.FC<GuideModalProps> = ({ isOpen, onClose, onVersionSelec
 										</div>
 										<div className="guide-modal__shortcut">
 											<span className="guide-modal__keys">
-												<kbd>h</kbd> / <kbd>q</kbd>
+												<kbd>j</kbd> / <kbd>q</kbd>
 											</span>
 											<span className="guide-modal__action">collapse / exit</span>
 										</div>
