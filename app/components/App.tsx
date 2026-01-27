@@ -1,112 +1,37 @@
-import { useCallback, useEffect, useState } from "react";
-import type { FoodTile, SnakeSegment } from "../types/types";
-import LeftColumn from "./sections/LeftColumn";
-import RightColumn from "./sections/RightColumn";
-import BackgroundGrid from "./ui/BackgroundGrid";
-import RootFooter from "./ui/RootFooter";
-import SnakeGame from "./ui/SnakeGame";
-import MonoPortfolio from "./v2/MonoPortfolio";
-import GuideModal from "./v2/GuideModal";
-import "../styles/app.scss";
+"use client";
 
-type AppView = "v1" | "v2";
+import { useCallback, useEffect, useState } from "react";
+import type { ThemeId } from "../core/types/theme";
+import ClassicTheme from "../themes/classic";
+import MonoTheme from "../themes/mono";
+
+const THEME_STORAGE_KEY = "portfolio-theme";
+const DEFAULT_THEME: ThemeId = "mono";
 
 const App = () => {
-	const [view, setView] = useState<AppView>("v2");
-	const [isSnakeActive, setIsSnakeActive] = useState(false);
-	const [snakeSegments, setSnakeSegments] = useState<SnakeSegment[]>([]);
-	const [foodTiles, setFoodTiles] = useState<FoodTile[]>([]);
-	const [isGuideOpen, setIsGuideOpen] = useState(false);
+	const [theme, setTheme] = useState<ThemeId>(() => {
+		if (typeof window === "undefined") return DEFAULT_THEME;
+		const saved = localStorage.getItem(THEME_STORAGE_KEY) as ThemeId | null;
+		return saved && (saved === "classic" || saved === "mono") ? saved : DEFAULT_THEME;
+	});
 
-	const handleSnakeToggle = useCallback(() => {
-		setIsSnakeActive((prev) => !prev);
-	}, []);
-
-	const handleSnakeUpdate = useCallback(
-		(snake: SnakeSegment[], food: FoodTile[]) => {
-			setSnakeSegments(snake);
-			setFoodTiles(food);
-		},
-		[],
-	);
-
-	const handleVersionSelect = useCallback((version: "v1" | "v2") => {
-		setIsGuideOpen(false);
-		setView(version);
-	}, []);
-
-	const handleOpenGuide = useCallback(() => {
-		setIsGuideOpen(true);
-	}, []);
-
-	const handleCloseGuide = useCallback(() => {
-		setIsGuideOpen(false);
-	}, []);
-
-	// Listen for ? key to open guide in v1 view
+	// Persist theme to localStorage
 	useEffect(() => {
-		if (view !== "v1") return;
+		localStorage.setItem(THEME_STORAGE_KEY, theme);
+		document.documentElement.setAttribute("data-theme", theme);
+		document.body.classList.remove("theme-classic", "theme-mono");
+		document.body.classList.add(`theme-${theme}`);
+	}, [theme]);
 
-		const handleKeyDown = (e: KeyboardEvent) => {
-			if (
-				e.target instanceof HTMLInputElement ||
-				e.target instanceof HTMLTextAreaElement
-			) {
-				return;
-			}
+	const handleThemeSelect = useCallback((newTheme: ThemeId) => {
+		setTheme(newTheme);
+	}, []);
 
-			if (e.key === "?" && !isGuideOpen) {
-				e.preventDefault();
-				handleOpenGuide();
-			}
-		};
-
-		window.addEventListener("keydown", handleKeyDown);
-		return () => window.removeEventListener("keydown", handleKeyDown);
-	}, [view, isGuideOpen, handleOpenGuide]);
-
-	if (view === "v2") {
-		return <MonoPortfolio onVersionSelect={handleVersionSelect} />;
+	if (theme === "mono") {
+		return <MonoTheme onThemeSelect={handleThemeSelect} />;
 	}
 
-	return (
-		<div className="App">
-			<BackgroundGrid
-				snakeSegments={snakeSegments}
-				foodTiles={foodTiles}
-				isSnakeActive={isSnakeActive}
-			/>
-			<SnakeGame isActive={isSnakeActive} onSnakeUpdate={handleSnakeUpdate} />
-			<div className="FixedSection flex justify-center">
-				<div className="container max-w-[100%] justify-center mx-auto">
-					<LeftColumn
-						isSnakeActive={isSnakeActive}
-						onSnakeToggle={handleSnakeToggle}
-					/>
-					<RightColumn />
-				</div>
-			</div>
-			<RootFooter />
-
-			{/* Guide trigger button */}
-			<button
-				className="guide-trigger guide-trigger--v1"
-				onClick={handleOpenGuide}
-				aria-label="Open guide"
-				title="Press ? for guide"
-			>
-				<kbd>?</kbd>
-			</button>
-
-			<GuideModal
-				isOpen={isGuideOpen}
-				onClose={handleCloseGuide}
-				onVersionSelect={handleVersionSelect}
-				currentVersion="v1"
-				theme="v1"
-			/>
-		</div>
-	);
+	return <ClassicTheme onThemeSelect={handleThemeSelect} />;
 };
 
 export default App;

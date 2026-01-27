@@ -1,5 +1,5 @@
-import { projects } from "../../data/portfolioProjects";
-import { useExpandableList } from "../../core/hooks";
+import { projects } from "../../../data/portfolioProjects";
+import { useExpandableList } from "../../../core/hooks";
 import ProjectDetail from "./ProjectDetail";
 
 // Map language names to CSS class modifiers

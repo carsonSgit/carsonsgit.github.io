@@ -1,8 +1,8 @@
+@use './styles/guide-modal.scss';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import './styles/guide-modal.scss';
 
 body {
   margin: 0;

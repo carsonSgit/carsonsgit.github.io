@@ -1,19 +1,19 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import Intro from "./Intro";
-import ProjectList from "./ProjectList";
-import ExperienceList from "./ExperienceList";
-import EducationList from "./EducationList";
-import KeyboardShortcuts from "./KeyboardShortcuts";
-import AsciiFooter from "./AsciiFooter";
-import GuideModal from "./GuideModal";
-import { useVimNavigation } from "./useVimNavigation";
+import Intro from "./components/Intro";
+import ProjectList from "./components/ProjectList";
+import ExperienceList from "./components/ExperienceList";
+import EducationList from "./components/EducationList";
+import KeyboardShortcuts from "./components/KeyboardShortcuts";
+import AsciiFooter from "./components/AsciiFooter";
+import GuideModal from "../../components/shared/GuideModal";
+import { useVimNavigation } from "./hooks/useVimNavigation";
 import { monoThemeConfig } from "../../core/types/theme";
-import "../../styles/v2.scss";
+import "./styles/v2.scss";
 
-interface MonoPortfolioProps {
-	onVersionSelect?: (version: "v1" | "v2") => void;
+interface MonoThemeProps {
+	onThemeSelect?: (theme: "classic" | "mono") => void;
 }
 
 const { gridSize: GRID_SIZE, decayMs: DECAY_MS, maxTiles: MAX_TILES, palette: COLOR_PALETTE } = monoThemeConfig.grid;
@@ -25,7 +25,7 @@ interface GridHighlight {
 	createdAt: number;
 }
 
-const MonoPortfolio: React.FC<MonoPortfolioProps> = ({ onVersionSelect }) => {
+const MonoTheme: React.FC<MonoThemeProps> = ({ onThemeSelect }) => {
 	const containerRef = useRef<HTMLDivElement>(null);
 	const canvasRef = useRef<HTMLCanvasElement>(null);
 	const highlightsRef = useRef<Map<string, GridHighlight>>(new Map());
@@ -41,7 +41,6 @@ const MonoPortfolio: React.FC<MonoPortfolioProps> = ({ onVersionSelect }) => {
 		const ctx = canvas.getContext("2d");
 		if (!ctx) return;
 
-		// Resize canvas to match document
 		const resizeCanvas = () => {
 			const docHeight = Math.max(
 				document.body.scrollHeight,
@@ -138,9 +137,10 @@ const MonoPortfolio: React.FC<MonoPortfolioProps> = ({ onVersionSelect }) => {
 	const handleVersionSelect = useCallback(
 		(version: "v1" | "v2") => {
 			setIsGuideOpen(false);
-			onVersionSelect?.(version);
+			const themeMap = { v1: "classic", v2: "mono" } as const;
+			onThemeSelect?.(themeMap[version]);
 		},
-		[onVersionSelect]
+		[onThemeSelect]
 	);
 
 	useEffect(() => {
@@ -163,7 +163,7 @@ const MonoPortfolio: React.FC<MonoPortfolioProps> = ({ onVersionSelect }) => {
 	}, [isGuideOpen, handleOpenGuide]);
 
 	return (
-		<div className="mono-portfolio-wrapper">
+		<div className="mono-portfolio-wrapper theme-mono">
 			<canvas
 				ref={canvasRef}
 				className="grid-hover-canvas"
@@ -218,4 +218,4 @@ const MonoPortfolio: React.FC<MonoPortfolioProps> = ({ onVersionSelect }) => {
 	);
 };
 
-export default MonoPortfolio;
+export default MonoTheme;

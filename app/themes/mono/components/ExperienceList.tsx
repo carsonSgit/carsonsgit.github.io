@@ -1,5 +1,5 @@
-import { experience } from "../../data/experience";
-import { useExpandableList } from "../../core/hooks";
+import { experience } from "../../../data/experience";
+import { useExpandableList } from "../../../core/hooks";
 
 const ExperienceList = () => {
 	const { isExpanded, toggleExpanded, handleKeyDown } = useExpandableList(experience);

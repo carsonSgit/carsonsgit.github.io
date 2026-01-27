@@ -1,5 +1,5 @@
-import { useState, useCallback } from "react";
 import { education } from "../../data/education";
+import { useExpandableList } from "../../core/hooks";
 
 function formatDateRange(dateStr: string): string {
 	const parts = dateStr.split(" - ");
@@ -14,33 +14,22 @@ function formatDateRange(dateStr: string): string {
 }
 
 const EducationList = () => {
-	const [expandedIndex, setExpandedIndex] = useState(-1);
-
-	const toggleExpanded = useCallback((index: number) => {
-		setExpandedIndex((prev) => (prev === index ? -1 : index));
-	}, []);
-
-	const handleKeyDown = useCallback((e: React.KeyboardEvent, index: number) => {
-		if (e.key === "Enter" || e.key === " ") {
-			e.preventDefault();
-			toggleExpanded(index);
-		}
-	}, [toggleExpanded]);
+	const { isExpanded, toggleExpanded, handleKeyDown } = useExpandableList(education);
 
 	return (
 		<section>
 			<h2>Education</h2>
 			<div className="section-list" role="list" aria-label="Education">
 				{education.map((item, index) => {
-					const isExpanded = expandedIndex === index;
+					const expanded = isExpanded(index);
 					const dateRange = formatDateRange(item.date);
 
 					return (
 						<div
 							key={`${item.title}-${item.institution}`}
-							className={`section-list__item ${isExpanded ? "section-list__item--expanded" : ""}`}
+							className={`section-list__item ${expanded ? "section-list__item--expanded" : ""}`}
 							role="listitem"
-							aria-expanded={isExpanded}
+							aria-expanded={expanded}
 							tabIndex={0}
 							onClick={() => toggleExpanded(index)}
 							onKeyDown={(e) => handleKeyDown(e, index)}
@@ -65,10 +54,10 @@ const EducationList = () => {
 								</span>
 							</div>
 							<div
-								className={`detail-panel ${isExpanded ? "detail-panel--open" : ""}`}
-								aria-hidden={!isExpanded}
+								className={`detail-panel ${expanded ? "detail-panel--open" : ""}`}
+								aria-hidden={!expanded}
 							>
-								{isExpanded && (
+								{expanded && (
 									<div className="detail-panel__content">
 										<ul className="detail-panel__description-list">
 											{item.description.map((desc) => (

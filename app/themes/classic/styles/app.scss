@@ -1,0 +1,43 @@
+.container {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  margin-left: 5%;
+  margin-right: 5%;
+  gap: 120px;
+  zoom: 1.25;
+}
+
+.left-column {
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.right-column {
+  padding: 10px;
+}
+
+.footer-wave-wrapper {
+  position: relative;
+  min-height: 200px;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    margin-left: 2%;
+    margin-right: 2%;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 0px;
+  }
+
+  .left-column,
+  .right-column {
+    position: relative;
+    height: auto;
+  }
+  .right-column {
+    padding: 0;
+  }
+}

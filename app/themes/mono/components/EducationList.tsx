@@ -1,20 +1,32 @@
-import { experience } from "../../data/experience";
-import { useExpandableList } from "../../core/hooks";
+import { education } from "../../../data/education";
+import { useExpandableList } from "../../../core/hooks";
 
-const ExperienceList = () => {
-	const { isExpanded, toggleExpanded, handleKeyDown } = useExpandableList(experience);
+function formatDateRange(dateStr: string): string {
+	const parts = dateStr.split(" - ");
+	const start = parts[0]?.split(" ");
+	const end = parts[1]?.split(" ");
+
+	const startYear = start?.[start.length - 1] ?? "";
+	const endPart = end?.[end.length - 1]?.toLowerCase() ?? "";
+	const endLabel = endPart === "ongoing" ? "now" : endPart;
+
+	return `${startYear}-${endLabel}`;
+}
+
+const EducationList = () => {
+	const { isExpanded, toggleExpanded, handleKeyDown } = useExpandableList(education);
 
 	return (
 		<section>
-			<h2>Experience</h2>
-			<div className="section-list" role="list" aria-label="Experience">
-				{experience.map((item, index) => {
+			<h2>Education</h2>
+			<div className="section-list" role="list" aria-label="Education">
+				{education.map((item, index) => {
 					const expanded = isExpanded(index);
-					const year = item.date.split(" ")[0].replace(",", "");
+					const dateRange = formatDateRange(item.date);
 
 					return (
 						<div
-							key={`${item.title}-${item.company}`}
+							key={`${item.title}-${item.institution}`}
 							className={`section-list__item ${expanded ? "section-list__item--expanded" : ""}`}
 							role="listitem"
 							aria-expanded={expanded}
@@ -26,7 +38,7 @@ const ExperienceList = () => {
 								&gt;
 							</span>
 							<div className="section-list__header">
-								<span className="section-list__date">{year}</span>
+								<span className="section-list__date">{dateRange}</span>
 								<span className="section-list__role">
 									{item.title}{" "}
 									<a
@@ -37,7 +49,7 @@ const ExperienceList = () => {
 										onClick={(e) => e.stopPropagation()}
 										onKeyDown={(e) => e.stopPropagation()}
 									>
-										@ {item.company}
+										@ {item.institution}
 									</a>
 								</span>
 							</div>
@@ -63,4 +75,4 @@ const ExperienceList = () => {
 	);
 };
 
-export default ExperienceList;
+export default EducationList;

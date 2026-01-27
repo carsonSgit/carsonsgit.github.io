@@ -1,7 +1,7 @@
 import type React from "react";
 import { useEffect, useRef, useCallback } from "react";
-import type { FoodTile, SnakeSegment } from "../../types/types";
-import { classicThemeConfig } from "../../core/types/theme";
+import type { FoodTile, SnakeSegment } from "../../../types/types";
+import { classicThemeConfig } from "../../../core/types/theme";
 
 interface BackgroundGridProps {
 	snakeSegments?: SnakeSegment[];
