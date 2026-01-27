@@ -1,0 +1,218 @@
+$text-color: rgb(34, 34, 34);
+$font-color: rgb(69, 69, 69);
+$glass-border: rgba(255, 255, 255, 0.25);
+$glass-bg: rgba(255, 255, 255, 0.911);
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #faf9f6;
+  background-image:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 100px 100px;
+  background-repeat: repeat;
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  padding: 24px;
+}
+
+.menu-header {
+  text-align: center;
+}
+
+.menu-title {
+  font-size: 2.4em;
+  font-weight: 800;
+  color: $text-color;
+  letter-spacing: 3px;
+  margin: 0 0 8px;
+}
+
+.menu-subtitle {
+  font-size: 1em;
+  font-weight: 500;
+  color: $font-color;
+  letter-spacing: 1px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.menu-cards {
+  display: flex;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.menu-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 200px;
+  padding: 32px 24px;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: $glass-bg;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  outline: none;
+  font-family: inherit;
+  transition:
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+  overflow: hidden;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.14);
+  }
+
+  &:focus-visible {
+    border-color: $text-color;
+    box-shadow:
+      0 12px 32px rgba(0, 0, 0, 0.1),
+      0 0 0 2px rgba(34, 34, 34, 0.15);
+  }
+
+  &--focused:not(:disabled) {
+    border-color: $text-color;
+    box-shadow:
+      0 12px 32px rgba(0, 0, 0, 0.1),
+      0 0 0 2px rgba(34, 34, 34, 0.15);
+    transform: translateY(-2px);
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+
+    .menu-card__label,
+    .menu-card__desc {
+      color: rgba(69, 69, 69, 0.6);
+    }
+  }
+
+  &__tag {
+    display: inline-block;
+    font-size: 0.65em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $font-color;
+    background: rgba(0, 0, 0, 0.04);
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+
+  &__label {
+    font-size: 2.8em;
+    font-weight: 800;
+    color: $text-color;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+  &__desc {
+    font-size: 0.85em;
+    font-weight: 500;
+    color: $font-color;
+    text-align: center;
+  }
+
+  &__indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: $text-color;
+    border-radius: 3px 3px 0 0;
+  }
+}
+
+.menu-legend {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  &__row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__key {
+    display: flex;
+    gap: 4px;
+
+    kbd {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 28px;
+      height: 28px;
+      padding: 0 8px;
+      font-family: inherit;
+      font-size: 0.75em;
+      font-weight: 600;
+      color: $font-color;
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 6px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+    }
+  }
+
+  &__action {
+    font-size: 0.8em;
+    font-weight: 500;
+    color: $font-color;
+    letter-spacing: 0.5px;
+  }
+
+  &__divider {
+    width: 1px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Responsive
+@media screen and (max-width: 480px) {
+  .menu-title {
+    font-size: 1.8em;
+  }
+
+  .menu-cards {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .menu-card {
+    width: 180px;
+  }
+
+  .menu-card__label {
+    font-size: 2.2em;
+  }
+}
+
+// Reduced motion
+@media (prefers-reduced-motion: reduce) {
+  .menu-card {
+    transition: none;
+  }
+}
