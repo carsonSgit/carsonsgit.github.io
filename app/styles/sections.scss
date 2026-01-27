@@ -26,23 +26,26 @@ $text-color: rgb(34, 34, 34);
   }
 }
 
-h1 {
-  font-size: 4em;
-  margin-bottom: 0px;
-  color: $text-color;
+.HeroContainer {
+  h1 {
+    font-size: 4em;
+    margin-bottom: 12px;
+    line-height: 1.2;
+    color: $text-color;
 
-  @media screen and (max-width: 768px) {
-    font-size: 2em;
+    @media screen and (max-width: 768px) {
+      font-size: 2em;
+    }
   }
-}
 
-h2 {
-  margin-top: 0px;
-  font-size: 2em;
-  color: rgb(69, 69, 69);
+  h2 {
+    margin-top: 0px;
+    font-size: 2em;
+    color: rgb(69, 69, 69);
 
-  @media screen and (max-width: 768px) {
-    font-size: 1.5em;
+    @media screen and (max-width: 768px) {
+      font-size: 1.5em;
+    }
   }
 }
 

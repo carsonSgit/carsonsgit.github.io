@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useState } from "react";
 import type { FoodTile, SnakeSegment } from "../types/types";
 import LeftColumn from "./sections/LeftColumn";
 import RightColumn from "./sections/RightColumn";
@@ -8,7 +8,6 @@ import SnakeGame from "./ui/SnakeGame";
 import "../styles/app.scss";
 
 const App = () => {
-	const rootRef = useRef<HTMLDivElement | null>(null);
 	const [isSnakeActive, setIsSnakeActive] = useState(false);
 	const [snakeSegments, setSnakeSegments] = useState<SnakeSegment[]>([]);
 	const [foodTiles, setFoodTiles] = useState<FoodTile[]>([]);
@@ -26,7 +25,7 @@ const App = () => {
 	);
 
 	return (
-		<div className="App" ref={rootRef}>
+		<div className="App">
 			<BackgroundGrid
 				snakeSegments={snakeSegments}
 				foodTiles={foodTiles}

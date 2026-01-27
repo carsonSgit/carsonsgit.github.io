@@ -1,5 +1,5 @@
 import type React from "react";
-import { getStatBorders } from "../../data/statistics";
+import { getBorderColors } from "../../utils/colors";
 import type { StatBadge, Statistics } from "../../types/types";
 import { Badge } from "./badge";
 
@@ -18,7 +18,7 @@ const TimelineStats: React.FC<TimelineStatsProps> = ({
 	return (
 		<div className="flex flex-row flex-wrap gap-2 justify-start items-center mt-2">
 			{statGroup.stats.map((stat: StatBadge, index: number) => {
-				const borderStyle = getStatBorders(stat.backgroundColour);
+				const borderStyle = getBorderColors(stat.backgroundColour);
 				return (
 					<Badge
 						key={`${stat.label}-${index}`}

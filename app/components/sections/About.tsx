@@ -2,24 +2,13 @@
 
 import { motion } from "framer-motion";
 import type React from "react";
+import { SLIDE_UP_ANIMATION } from "../../utils/animations";
 import "../../styles/sections.scss";
 import { LinkPreview } from "../ui/link-preview";
 
-const ANIMATION_PROPS = {
-	initial: { y: 50, opacity: 0 },
-	whileInView: { y: 0, opacity: 1 },
-	viewport: { once: true },
-	transition: {
-		type: "spring" as const,
-		stiffness: 100,
-		damping: 10,
-		mass: 1,
-	},
-} as const;
-
 const About: React.FC = () => {
 	return (
-		<motion.div className="AboutContainer" {...ANIMATION_PROPS}>
+		<motion.div className="AboutContainer" {...SLIDE_UP_ANIMATION}>
 			<div className="AboutContentContainer">
 				<div className="AboutContent">
 					<p className="AboutText">

@@ -18,6 +18,11 @@
   padding: 10px;
 }
 
+.footer-wave-wrapper {
+  position: relative;
+  min-height: 200px;
+}
+
 @media screen and (max-width: 1024px) {
   .container {
     margin-left: 2%;

@@ -53,13 +53,7 @@ export const LinkPreview = ({
 
 	const [isOpen, setOpen] = React.useState(false);
 
-	const [_isMounted, setIsMounted] = React.useState(false);
-
 	const previewRef = React.useRef<HTMLDivElement>(null);
-
-	React.useEffect(() => {
-		setIsMounted(true);
-	}, []);
 
 	const springConfig = { stiffness: 100, damping: 15 };
 	const x = useMotionValue(0);

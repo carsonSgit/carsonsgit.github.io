@@ -2,11 +2,11 @@
 
 import { Github, Link } from "lucide-react";
 import type React from "react";
-import { languageBorders } from "../../data/portfolioProjects";
+import { getBorderColors } from "../../utils/colors";
 import type { ProjectItemProps, ProjectLanguage } from "../../types/projects";
 import { Badge } from "./badge";
 import { Button } from "./button";
-import { Card } from "./card"; // adjust path to your Card component
+import { Card } from "./card";
 
 const ProjectItem: React.FC<ProjectItemProps> = ({
 	project,
@@ -50,9 +50,9 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
 						variant="default"
 						style={{
 							backgroundColor: language.backgroundColour,
-							borderColor: languageBorders(language.backgroundColour)
+							borderColor: getBorderColors(language.backgroundColour)
 								.borderColor,
-							color: languageBorders(language.backgroundColour).color,
+							color: getBorderColors(language.backgroundColour).color,
 						}}
 						className="font-regular"
 					>
