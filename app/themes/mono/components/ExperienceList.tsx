@@ -1,18 +1,20 @@
 import { Accordion } from "@base-ui/react/accordion";
-import { experience } from "../../../data/experience";
+import { professionalExp } from "../../../data/experiences";
+import { Badge } from "@/components/ui/badge";
+import { getBadgeStyle } from "@/utils/colors";
 
 const ExperienceList = () => {
 	return (
 		<section>
 			<h2>Experience</h2>
 			<Accordion.Root multiple className="section-list" aria-label="Experience">
-				{experience.map((item) => {
-					const year = item.date.split(" ")[0].replace(",", "");
+				{professionalExp.map((item) => {
+					const dateRange = item.date.join(" - ");
 
 					return (
 						<Accordion.Item
-							key={`${item.title}-${item.company}`}
-							value={`${item.title}-${item.company}`}
+							key={`${item.title}-${item.institution}`}
+							value={`${item.title}-${item.institution}`}
 							className="section-list__item"
 						>
 							<Accordion.Header>
@@ -21,7 +23,7 @@ const ExperienceList = () => {
 										&gt;
 									</span>
 									<div className="section-list__header">
-										<span className="section-list__date">{year}</span>
+										<span className="section-list__date">{dateRange}</span>
 										<span className="section-list__role">
 											{item.title}{" "}
 											<a
@@ -32,7 +34,7 @@ const ExperienceList = () => {
 												onClick={(e) => e.stopPropagation()}
 												onKeyDown={(e) => e.stopPropagation()}
 											>
-												@ {item.company}
+												@ {item.institution}
 											</a>
 										</span>
 									</div>
@@ -45,6 +47,17 @@ const ExperienceList = () => {
 											<li key={desc}>{desc}</li>
 										))}
 									</ul>
+									<div className="detail-panel__badges flex flex-row flex-wrap gap-2 mt-2">
+										{Object.values(item.experienceBadges).map((badge) => (
+											<Badge key={badge.label} className="detail-panel__badge rounded-none text-xs hover:cursor-default" 
+											style={{ 
+												backgroundColor: getBadgeStyle(badge.backgroundColour).background,
+												borderColor: getBadgeStyle(badge.backgroundColour).foreground,
+												color: getBadgeStyle(badge.backgroundColour).foreground, }}>
+												{badge.label}
+											</Badge>
+										))}
+									</div>
 								</div>
 							</Accordion.Panel>
 						</Accordion.Item>

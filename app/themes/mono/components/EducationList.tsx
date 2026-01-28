@@ -1,25 +1,15 @@
 import { Accordion } from "@base-ui/react/accordion";
-import { education } from "../../../data/education";
-
-function formatDateRange(dateStr: string): string {
-	const parts = dateStr.split(" - ");
-	const start = parts[0]?.split(" ");
-	const end = parts[1]?.split(" ");
-
-	const startYear = start?.[start.length - 1] ?? "";
-	const endPart = end?.[end.length - 1]?.toLowerCase() ?? "";
-	const endLabel = endPart === "present" ? "NOW" : endPart;
-
-	return `${startYear}-${endLabel}`;
-}
+import { educationExp } from "../../../data/experiences";
+import { Badge } from "@/components/ui/badge";
+import { getBadgeStyle } from "@/utils/colors";
 
 const EducationList = () => {
 	return (
 		<section>
 			<h2>Education</h2>
 			<Accordion.Root multiple className="section-list" aria-label="Education">
-				{education.map((item) => {
-					const dateRange = formatDateRange(item.date);
+				{educationExp.map((item) => {
+					const dateRange = item.date.join(" - ");
 
 					return (
 						<Accordion.Item
@@ -57,6 +47,17 @@ const EducationList = () => {
 											<li key={desc}>{desc}</li>
 										))}
 									</ul>
+									<div className="detail-panel__badges flex flex-row flex-wrap gap-2 mt-2">
+										{Object.values(item.experienceBadges).map((badge) => (
+											<Badge key={badge.label} className="detail-panel__badge rounded-none text-xs hover:cursor-default" 
+											style={{ 
+												backgroundColor: getBadgeStyle(badge.backgroundColour).background,
+											 	borderColor: getBadgeStyle(badge.backgroundColour).foreground,
+											 	color: getBadgeStyle(badge.backgroundColour).foreground, }}>
+												{badge.label}
+											</Badge>
+										))}
+									</div>
 								</div>
 							</Accordion.Panel>
 						</Accordion.Item>
