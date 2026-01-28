@@ -353,18 +353,12 @@ export function useVimNavigation({ containerRef, disabled = false }: UseVimNavig
 				case "s":
 				case "ArrowDown":
 					e.preventDefault();
-					if (active?.getAttribute("aria-expanded") === "true") {
-						active.click();
-					}
 					focusDown();
 					break;
 				case "i":
 				case "w":
 				case "ArrowUp":
 					e.preventDefault();
-					if (active?.getAttribute("aria-expanded") === "true") {
-						active.click();
-					}
 					focusUp();
 					break;
 				case "l":
