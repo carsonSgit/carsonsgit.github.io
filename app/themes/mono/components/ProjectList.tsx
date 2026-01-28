@@ -1,5 +1,5 @@
+import { Accordion } from "@base-ui/react/accordion";
 import { projects } from "../../../data/portfolioProjects";
-import { useExpandableList } from "../../../core/hooks";
 import ProjectDetail from "./ProjectDetail";
 
 // Map language names to CSS class modifiers
@@ -28,57 +28,46 @@ function getTagClass(name: string): string {
 }
 
 const ProjectList = () => {
-	const { isExpanded, toggleExpanded, handleKeyDown } = useExpandableList(projects);
-
 	return (
 		<section>
 			<h2>Projects</h2>
-			<div className="section-list" role="list" aria-label="Projects">
-				{projects.map((project, index) => {
-					const expanded = isExpanded(index);
-
-					return (
-						<div
-							key={project.title}
-							className={`section-list__item ${expanded ? "section-list__item--expanded" : ""}`}
-							role="listitem"
-							aria-expanded={expanded}
-							tabIndex={0}
-							onClick={() => toggleExpanded(index)}
-							onKeyDown={(e) => handleKeyDown(e, index)}
-						>
-							<span className="section-list__marker" aria-hidden="true">
-								&gt;
-							</span>
-							<div className="section-list__header">
-								<span className="section-list__title">{project.title}</span>
-								<span className="section-list__tags">
-									{project.languages.map((lang) => (
-										<span
-											key={lang.name}
-											className={`section-list__tag section-list__tag--${getTagClass(lang.name)}`}
-										>
-											{lang.name.toLowerCase()}
-										</span>
-									))}
+			<Accordion.Root multiple className="section-list" aria-label="Projects">
+				{projects.map((project) => (
+					<Accordion.Item
+						key={project.title}
+						value={project.title}
+						className="section-list__item"
+					>
+						<Accordion.Header>
+							<Accordion.Trigger className="section-list__trigger">
+								<span className="section-list__marker" aria-hidden="true">
+									&gt;
 								</span>
-							</div>
-							<div
-								className={`detail-panel ${expanded ? "detail-panel--open" : ""}`}
-								aria-hidden={!expanded}
-							>
-								{expanded && (
-									<ProjectDetail
-										description={project.description}
-										github={project.github}
-										website={project.website}
-									/>
-								)}
-							</div>
-						</div>
-					);
-				})}
-			</div>
+								<div className="section-list__header">
+									<span className="section-list__title">{project.title}</span>
+									<span className="section-list__tags">
+										{project.languages.map((lang) => (
+											<span
+												key={lang.name}
+												className={`section-list__tag section-list__tag--${getTagClass(lang.name)}`}
+											>
+												{lang.name.toLowerCase()}
+											</span>
+										))}
+									</span>
+								</div>
+							</Accordion.Trigger>
+						</Accordion.Header>
+						<Accordion.Panel className="detail-panel" keepMounted>
+							<ProjectDetail
+								description={project.description}
+								github={project.github}
+								website={project.website}
+							/>
+						</Accordion.Panel>
+					</Accordion.Item>
+				))}
+			</Accordion.Root>
 		</section>
 	);
 };
