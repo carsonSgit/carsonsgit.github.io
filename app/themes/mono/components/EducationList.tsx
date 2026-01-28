@@ -20,7 +20,7 @@ const EducationList = () => {
 							<Accordion.Header>
 								<Accordion.Trigger className="section-list__trigger">
 									<span className="section-list__marker" aria-hidden="true">
-										&gt;
+										*
 									</span>
 									<div className="section-list__header">
 										<span className="section-list__date">{dateRange}</span>

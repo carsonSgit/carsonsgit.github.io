@@ -1,38 +1,17 @@
+import * as z from "zod";
 import { Accordion } from "@base-ui/react/accordion";
-import { projects } from "../../../data/portfolioProjects";
 import ProjectDetail from "./ProjectDetail";
-
-// Map language names to CSS class modifiers
-function getTagClass(name: string): string {
-	const normalized = name.toLowerCase().replace(/\s+/g, "-").replace(/\./g, "");
-	const classMap: Record<string, string> = {
-		ai: "ai",
-		"computer-vision": "cv",
-		typescript: "ts",
-		python: "py",
-		"c#": "csharp",
-		hardware: "hardware",
-		azure: "azure",
-		iot: "iot",
-		"machine-learning": "ml",
-		"threejs": "threejs",
-		postgresql: "db",
-		"vector-db": "db",
-		rtmp: "rtmp",
-		neuroscience: "neuro",
-		"r&d": "rnd",
-		mantine: "mantine",
-		zustand: "zustand",
-	};
-	return classMap[normalized] || "default";
-}
+import { projects } from "../../../data/projects";
+import { projectSchema } from "@/types/zodTypes";
+import { getBadgeStyle } from "@/utils/colors";
+import { Badge } from "@/components/ui/badge";
 
 const ProjectList = () => {
 	return (
 		<section>
 			<h2>Projects</h2>
 			<Accordion.Root multiple className="section-list" aria-label="Projects">
-				{projects.map((project) => (
+				{projects.map((project: z.infer<typeof projectSchema>) => (
 					<Accordion.Item
 						key={project.title}
 						value={project.title}
@@ -40,21 +19,23 @@ const ProjectList = () => {
 					>
 						<Accordion.Header>
 							<Accordion.Trigger className="section-list__trigger">
-								<span className="section-list__marker" aria-hidden="true">
-									&gt;
+								<span className="section-list__marker mt-0.5 ml-1" aria-hidden="true">
+									*
 								</span>
-								<div className="section-list__header">
+								<div className="section-list__header ml-2">
+									<span className="section-list__year">{project.year}</span>
 									<span className="section-list__title">{project.title}</span>
-									<span className="section-list__tags">
-										{project.languages.map((lang) => (
-											<span
-												key={lang.name}
-												className={`section-list__tag section-list__tag--${getTagClass(lang.name)}`}
-											>
-												{lang.name.toLowerCase()}
-											</span>
+									<div className="section-list__badges flex flex-row flex-wrap gap-2 mt-2">
+										{Object.values(project.languages).map((lang) => (
+											<Badge key={lang.name} className="section-list__badge rounded-none text-xs" 
+											style={{ 
+												backgroundColor: getBadgeStyle(lang.backgroundColour).background,
+												borderColor: getBadgeStyle(lang.backgroundColour).foreground,
+												color: getBadgeStyle(lang.backgroundColour).foreground, }}>
+												{lang.name}
+											</Badge>
 										))}
-									</span>
+									</div>
 								</div>
 							</Accordion.Trigger>
 						</Accordion.Header>

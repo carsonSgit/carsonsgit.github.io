@@ -86,7 +86,7 @@ $grid-color: rgba(255, 255, 255, 0.035);
 
   h1 {
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: -0.02em;
     line-height: 1.3;
     margin: 0 0 0.25rem;
@@ -94,7 +94,7 @@ $grid-color: rgba(255, 255, 255, 0.035);
 
   h2 {
     font-size: 1.25rem;
-    font-weight: 700;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     line-height: 1.3;
@@ -103,7 +103,7 @@ $grid-color: rgba(255, 255, 255, 0.035);
 
   h3 {
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.3;
     margin: 0;
   }
@@ -227,12 +227,6 @@ $grid-color: rgba(255, 255, 255, 0.035);
           color: var(--accent);
         }
       }
-
-      &--expanded {
-        .section-list__title {
-          font-weight: 700;
-        }
-      }
     }
 
     &__marker {
@@ -278,24 +272,7 @@ $grid-color: rgba(255, 255, 255, 0.035);
       background: var(--bg-surface);
       color: var(--text-muted);
       border: 1px solid var(--border);
-      font-weight: 500;
-
-      &--ai { color: var(--tag-ai); border-color: rgba(167, 139, 250, 0.3); background: rgba(167, 139, 250, 0.1); }
-      &--cv, &--computer-vision { color: var(--tag-cv); border-color: rgba(94, 234, 212, 0.3); background: rgba(94, 234, 212, 0.1); }
-      &--ts, &--typescript { color: var(--tag-ts); border-color: rgba(147, 197, 253, 0.3); background: rgba(147, 197, 253, 0.1); }
-      &--py, &--python { color: var(--tag-py); border-color: rgba(110, 231, 183, 0.3); background: rgba(110, 231, 183, 0.1); }
-      &--csharp, &--c\# { color: var(--tag-csharp); border-color: rgba(134, 239, 172, 0.3); background: rgba(134, 239, 172, 0.1); }
-      &--hardware { color: var(--tag-hardware); border-color: rgba(252, 211, 77, 0.3); background: rgba(252, 211, 77, 0.1); }
-      &--azure { color: var(--tag-azure); border-color: rgba(125, 211, 252, 0.3); background: rgba(125, 211, 252, 0.1); }
-      &--iot { color: var(--tag-iot); border-color: rgba(163, 230, 53, 0.3); background: rgba(163, 230, 53, 0.1); }
-      &--ml, &--machine-learning { color: var(--tag-ml); border-color: rgba(251, 191, 36, 0.3); background: rgba(251, 191, 36, 0.1); }
-      &--threejs, &--three\.js { color: var(--tag-threejs); border-color: rgba(252, 165, 165, 0.3); background: rgba(252, 165, 165, 0.1); }
-      &--db, &--postgresql, &--vector-db { color: var(--tag-db); border-color: rgba(125, 211, 252, 0.3); background: rgba(125, 211, 252, 0.1); }
-      &--rtmp { color: var(--tag-rtmp); border-color: rgba(249, 168, 212, 0.3); background: rgba(249, 168, 212, 0.1); }
-      &--neuro, &--neuroscience { color: var(--tag-neuro); border-color: rgba(216, 180, 254, 0.3); background: rgba(216, 180, 254, 0.1); }
-      &--rnd, &--r\&d { color: var(--tag-rnd); border-color: rgba(103, 232, 249, 0.3); background: rgba(103, 232, 249, 0.1); }
-      &--mantine { color: var(--tag-azure); border-color: rgba(125, 211, 252, 0.3); background: rgba(125, 211, 252, 0.1); }
-      &--zustand { color: var(--text-muted); border-color: var(--border); background: rgba(161, 161, 170, 0.08); }
+      font-weight: 400;
     }
 
     &__date {
