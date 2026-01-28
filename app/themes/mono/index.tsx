@@ -12,10 +12,6 @@ import { useVimNavigation } from "./hooks/useVimNavigation";
 import { monoThemeConfig } from "../../core/types/theme";
 import "./styles/v2.scss";
 
-interface MonoThemeProps {
-	onThemeSelect?: (theme: "classic" | "mono") => void;
-}
-
 const { gridSize: GRID_SIZE, decayMs: DECAY_MS, maxTiles: MAX_TILES, palette: COLOR_PALETTE } = monoThemeConfig.grid;
 
 interface GridHighlight {
@@ -25,7 +21,7 @@ interface GridHighlight {
 	createdAt: number;
 }
 
-const MonoTheme: React.FC<MonoThemeProps> = ({ onThemeSelect }) => {
+const MonoTheme: React.FC = () => {
 	const containerRef = useRef<HTMLDivElement>(null);
 	const canvasRef = useRef<HTMLCanvasElement>(null);
 	const highlightsRef = useRef<Map<string, GridHighlight>>(new Map());
@@ -134,15 +130,6 @@ const MonoTheme: React.FC<MonoThemeProps> = ({ onThemeSelect }) => {
 		setIsGuideOpen(false);
 	}, []);
 
-	const handleVersionSelect = useCallback(
-		(version: "v1" | "v2") => {
-			setIsGuideOpen(false);
-			const themeMap = { v1: "classic", v2: "mono" } as const;
-			onThemeSelect?.(themeMap[version]);
-		},
-		[onThemeSelect]
-	);
-
 	useEffect(() => {
 		const handleKeyDown = (e: KeyboardEvent) => {
 			if (
@@ -211,8 +198,6 @@ const MonoTheme: React.FC<MonoThemeProps> = ({ onThemeSelect }) => {
 			<GuideModal
 				isOpen={isGuideOpen}
 				onClose={handleCloseGuide}
-				onVersionSelect={handleVersionSelect}
-				currentVersion="v2"
 			/>
 		</div>
 	);

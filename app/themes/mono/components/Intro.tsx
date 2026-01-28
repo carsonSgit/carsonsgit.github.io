@@ -16,14 +16,14 @@ const Intro = () => {
 				</Avatar.Root>
 				<div className="intro__title-group">
 					<h1 tabIndex={0}>Carson</h1>
-					<p className="intro__subtitle" tabIndex={0}>Software Developer</p>
+					<p className="intro__subtitle" tabIndex={0}>Software Developer @ Botpress</p>
 				</div>
 			</div>
 			<p className="intro__about" tabIndex={0}>
-				Engineering Technology student at Memorial University, CS alumni from
-				John Abbott College. I build things with TypeScript, Python, and
-				whatever else gets the job done. When I'm not coding, I'm probably at a
-				hackathon or tinkering with IoT hardware.
+			I'm a full-time student studying Engineering Technology and Applied Sciences @ Memorial University
+			and a CS alumni from John Abbott College. I also am a Software Developer @ Botpress and the Co-Chair of CUSEC!
+			In my free time I'm most likely tinkering with whatever cool tech I come across, going to hackathons, or working on my own projects.
+			Also, I really like penguins.
 			</p>
 			<nav className="intro__links" aria-label="Social links">
 				{LINKS.map((link) => (
