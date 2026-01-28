@@ -6,26 +6,10 @@
 
 body {
   margin: 0;
-  font-family: 'Inter';
+  font-family: 'CommitMono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #faf9f6;
-  /* Base grid pattern - will be enhanced by BackgroundGrid component */
-  background-image:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
-  background-size:
-    100px 100px,
-    100px 100px;
-  background-position:
-    0 0,
-    0 0;
-  background-repeat: repeat, repeat;
-}
-
-@font-face {
-  font-family: 'Inter';
-  src: url('/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+  background-color: #0d0d0f;
 }
 
 @font-face {

@@ -54,21 +54,12 @@ export function useVimNavigation({ containerRef, disabled = false }: UseVimNavig
 			if (socialLinks.length > 0) rows.push(socialLinks);
 		}
 
-		const projectItems = containerRef.current.querySelectorAll<HTMLElement>(
-			".section-list__item[role='listitem']"
+		// Get all accordion triggers (the actual focusable elements)
+		const allTriggers = containerRef.current.querySelectorAll<HTMLElement>(
+			".section-list__trigger"
 		);
-		for (const item of projectItems) {
-			rows.push([item]);
-		}
-
-		const expEduItems = containerRef.current.querySelectorAll<HTMLElement>(
-			"section:not(:first-child) .section-list__item[role='listitem']"
-		);
-		const existingItems = new Set(rows.flat());
-		for (const item of expEduItems) {
-			if (!existingItems.has(item)) {
-				rows.push([item]);
-			}
+		for (const trigger of allTriggers) {
+			rows.push([trigger]);
 		}
 
 		return rows;
@@ -76,13 +67,13 @@ export function useVimNavigation({ containerRef, disabled = false }: UseVimNavig
 
 	const getSubgroupLinks = useCallback((): HTMLElement[] => {
 		const active = document.activeElement as HTMLElement;
-		const activePanel = active?.closest(".detail-panel--open");
+		const activePanel = active?.closest(".detail-panel[data-open]");
 		if (activePanel) {
 			return Array.from(
 				activePanel.querySelectorAll<HTMLElement>(".detail-panel__links a"),
 			);
 		}
-		const openPanel = containerRef.current?.querySelector(".detail-panel--open");
+		const openPanel = containerRef.current?.querySelector(".detail-panel[data-open]");
 		if (!openPanel) return [];
 		return Array.from(
 			openPanel.querySelectorAll<HTMLElement>(".detail-panel__links a"),
@@ -146,11 +137,23 @@ export function useVimNavigation({ containerRef, disabled = false }: UseVimNavig
 		const rows = getNavigationRows();
 		const { row, col } = getCurrentPosition();
 
-		if (row === -1) return;
+		if (row === -1) {
+			if (rows.length > 0 && rows[0].length > 0) {
+				focusElement(rows[0][0]);
+			}
+			return;
+		}
 
 		const currentRow = rows[row];
 		if (col < currentRow.length - 1) {
+			// Move right within current row
 			focusElement(currentRow[col + 1]);
+		} else if (row < rows.length - 1) {
+			// At end of row, wrap to start of next row
+			focusElement(rows[row + 1][0]);
+		} else {
+			// At end of last row, wrap to start of first row
+			focusElement(rows[0][0]);
 		}
 	}, [getNavigationRows, getCurrentPosition, focusElement]);
 
@@ -158,11 +161,26 @@ export function useVimNavigation({ containerRef, disabled = false }: UseVimNavig
 		const rows = getNavigationRows();
 		const { row, col } = getCurrentPosition();
 
-		if (row === -1) return;
+		if (row === -1) {
+			if (rows.length > 0) {
+				const lastRow = rows[rows.length - 1];
+				focusElement(lastRow[lastRow.length - 1]);
+			}
+			return;
+		}
 
 		const currentRow = rows[row];
 		if (col > 0) {
+			// Move left within current row
 			focusElement(currentRow[col - 1]);
+		} else if (row > 0) {
+			// At start of row, wrap to end of previous row
+			const prevRow = rows[row - 1];
+			focusElement(prevRow[prevRow.length - 1]);
+		} else {
+			// At start of first row, wrap to end of last row
+			const lastRow = rows[rows.length - 1];
+			focusElement(lastRow[lastRow.length - 1]);
 		}
 	}, [getNavigationRows, getCurrentPosition, focusElement]);
 
@@ -213,9 +231,15 @@ export function useVimNavigation({ containerRef, disabled = false }: UseVimNavig
 		return active?.closest(".detail-panel__links") !== null;
 	}, []);
 
-	const getParentListItem = useCallback((): HTMLElement | null => {
+	const getParentTrigger = useCallback((): HTMLElement | null => {
 		const active = document.activeElement as HTMLElement;
-		return active?.closest(".section-list__item") as HTMLElement | null;
+		// First check if we're in a detail panel, then find the associated trigger
+		const panel = active?.closest(".detail-panel");
+		if (panel) {
+			const item = panel.closest(".section-list__item");
+			return item?.querySelector(".section-list__trigger") as HTMLElement | null;
+		}
+		return active?.closest(".section-list__trigger") as HTMLElement | null;
 	}, []);
 
 	useEffect(() => {
@@ -250,14 +274,16 @@ export function useVimNavigation({ containerRef, disabled = false }: UseVimNavig
 
 			if (inSubgroupLink) {
 				switch (e.key) {
-					case "l": {
+					case "l":
+					case "d":
+					case "ArrowRight": {
 						e.preventDefault();
 						const links = getSubgroupLinks();
 						const currentIdx = links.indexOf(active);
 						if (currentIdx !== -1 && currentIdx < links.length - 1) {
 							links[currentIdx + 1].focus();
 						} else {
-							const parentItem = getParentListItem();
+							const parentItem = getParentTrigger();
 							if (parentItem) {
 								parentItem.click();
 								parentItem.focus();
@@ -266,23 +292,27 @@ export function useVimNavigation({ containerRef, disabled = false }: UseVimNavig
 						}
 						return;
 					}
-					case "j": {
+					case "j":
+					case "a":
+					case "ArrowLeft": {
 						e.preventDefault();
 						const links = getSubgroupLinks();
 						const currentIdx = links.indexOf(active);
 						if (currentIdx > 0) {
 							links[currentIdx - 1].focus();
 						} else {
-							const parentItem = getParentListItem();
+							const parentItem = getParentTrigger();
 							if (parentItem) {
 								parentItem.focus();
 							}
 						}
 						return;
 					}
-					case "k": {
+					case "k":
+					case "s":
+					case "ArrowDown": {
 						e.preventDefault();
-						const parentItem = getParentListItem();
+						const parentItem = getParentTrigger();
 						if (parentItem) {
 							parentItem.click();
 							parentItem.focus();
@@ -290,9 +320,11 @@ export function useVimNavigation({ containerRef, disabled = false }: UseVimNavig
 						}
 						return;
 					}
-					case "i": {
+					case "i":
+					case "w":
+					case "ArrowUp": {
 						e.preventDefault();
-						const parentItem = getParentListItem();
+						const parentItem = getParentTrigger();
 						if (parentItem) {
 							parentItem.click();
 							parentItem.focus();
@@ -303,7 +335,7 @@ export function useVimNavigation({ containerRef, disabled = false }: UseVimNavig
 					case "q":
 					case "Escape": {
 						e.preventDefault();
-						const parentItem = getParentListItem();
+						const parentItem = getParentTrigger();
 						if (parentItem) {
 							parentItem.click();
 							parentItem.focus();
@@ -318,25 +350,25 @@ export function useVimNavigation({ containerRef, disabled = false }: UseVimNavig
 
 			switch (e.key) {
 				case "k":
+				case "s":
+				case "ArrowDown":
 					e.preventDefault();
-					if (active?.getAttribute("aria-expanded") === "true") {
-						active.click();
-					}
 					focusDown();
 					break;
 				case "i":
+				case "w":
+				case "ArrowUp":
 					e.preventDefault();
-					if (active?.getAttribute("aria-expanded") === "true") {
-						active.click();
-					}
 					focusUp();
 					break;
 				case "l":
+				case "d":
+				case "ArrowRight":
 					if (isInContainer && active) {
 						const isExpanded = active.getAttribute("aria-expanded") === "true";
-						const isListItem = active.getAttribute("role") === "listitem";
+						const isTrigger = active.classList.contains("section-list__trigger");
 
-						if (isListItem) {
+						if (isTrigger) {
 							if (isExpanded) {
 								e.preventDefault();
 								const links = getSubgroupLinks();
@@ -354,20 +386,30 @@ export function useVimNavigation({ containerRef, disabled = false }: UseVimNavig
 							e.preventDefault();
 							focusRight();
 						}
+					} else {
+						// Not in container or no active element - start navigation
+						e.preventDefault();
+						focusRight();
 					}
 					break;
 				case "j":
+				case "a":
+				case "ArrowLeft":
 					if (isInContainer && active) {
 						const isExpanded = active.getAttribute("aria-expanded") === "true";
-						const isListItem = active.getAttribute("role") === "listitem";
+						const isTrigger = active.classList.contains("section-list__trigger");
 
-						if (isListItem && isExpanded) {
+						if (isTrigger && isExpanded) {
 							e.preventDefault();
 							active.click();
-						} else if (!isListItem) {
+						} else {
 							e.preventDefault();
 							focusLeft();
 						}
+					} else {
+						// Not in container or no active element - start navigation
+						e.preventDefault();
+						focusLeft();
 					}
 					break;
 				case "q":
@@ -391,9 +433,15 @@ export function useVimNavigation({ containerRef, disabled = false }: UseVimNavig
 					lastKeyTimeRef.current = now;
 					return;
 				case "G":
+				case "End":
 					e.preventDefault();
 					focusLast();
 					window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+					break;
+				case "Home":
+					e.preventDefault();
+					focusFirst();
+					window.scrollTo({ top: 0, behavior: "smooth" });
 					break;
 				default:
 					if (e.key >= "1" && e.key <= "4") {
@@ -432,7 +480,7 @@ export function useVimNavigation({ containerRef, disabled = false }: UseVimNavig
 		focusPrevInSubgroup,
 		getSubgroupLinks,
 		isInSubgroupLink,
-		getParentListItem,
+		getParentTrigger,
 		zoomIn,
 		zoomOut,
 	]);

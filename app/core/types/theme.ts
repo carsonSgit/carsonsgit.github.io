@@ -1,4 +1,4 @@
-export type ThemeId = "classic" | "mono";
+export type ThemeId = "mono";
 
 export interface ThemeColors {
 	primary: string;
@@ -31,35 +31,7 @@ export interface ThemeContextValue {
 	config: ThemeConfig;
 }
 
-// Classic (V1) theme configuration
-export const classicThemeConfig: ThemeConfig = {
-	id: "classic",
-	name: "Classic",
-	description: "The original portfolio",
-	colors: {
-		primary: "#32CEA2",
-		background: "#FAF9F6",
-		text: "#1a1a1a",
-		muted: "#666666",
-		accent: "#5FCC2D",
-		border: "rgba(0, 0, 0, 0.1)",
-	},
-	grid: {
-		gridSize: 100,
-		decayMs: 1500,
-		maxTiles: 50,
-		palette: [
-			"rgba(50, 206, 162, 0.35)",
-			"rgba(95, 204, 45, 0.35)",
-			"rgba(24, 167, 95, 0.35)",
-			"rgba(35, 114, 84, 0.35)",
-			"rgba(68, 172, 108, 0.35)",
-		],
-	},
-	fontFamily: "Inter, Poppins, sans-serif",
-};
-
-// Mono (V2) theme configuration
+// Mono theme configuration
 export const monoThemeConfig: ThemeConfig = {
 	id: "mono",
 	name: "Mono",
@@ -96,6 +68,5 @@ export const monoThemeConfig: ThemeConfig = {
 };
 
 export const themeConfigs: Record<ThemeId, ThemeConfig> = {
-	classic: classicThemeConfig,
 	mono: monoThemeConfig,
 };

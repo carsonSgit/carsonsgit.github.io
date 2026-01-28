@@ -1,3 +1,5 @@
+import BracketLink from "./BracketLink";
+
 interface ProjectDetailProps {
 	description: string;
 	github?: string;
@@ -10,24 +12,22 @@ const ProjectDetail = ({ description, github, website }: ProjectDetailProps) => 
 			<p className="detail-panel__description">{description}</p>
 			<div className="detail-panel__links">
 				{github && (
-					<a
+					<BracketLink
 						href={github}
-						className="bracket-link"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
 						github
-					</a>
+					</BracketLink>
 				)}
 				{website && (
-					<a
+					<BracketLink
 						href={website}
-						className="bracket-link"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
 						website
-					</a>
+					</BracketLink>
 				)}
 			</div>
 		</div>
