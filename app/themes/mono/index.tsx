@@ -149,6 +149,15 @@ const MonoTheme: React.FC = () => {
 		return () => window.removeEventListener("keydown", handleKeyDown);
 	}, [isGuideOpen, handleOpenGuide]);
 
+	const sections: {id: string, component: React.ReactNode}[] = [
+		{id: "intro", component: <Intro />},
+		{id: "project-list", component: <ProjectList />},
+		{id: "experience", component: <ExperienceList />},
+		{id: "education", component: <EducationList />},
+		{id: "keyboard-shortcuts", component: <KeyboardShortcuts />},
+		{id: "ascii-footer", component: <AsciiFooter />},
+	];
+
 	return (
 		<div className="mono-portfolio-wrapper theme-mono">
 			<canvas
@@ -171,27 +180,11 @@ const MonoTheme: React.FC = () => {
 				</button>
 
 				<main id="main-content">
-					<Intro />
-
-					<hr />
-
-					<ProjectList />
-
-					<hr />
-
-					<ExperienceList />
-
-					<hr />
-
-					<EducationList />
-
-					<hr />
-
-					<KeyboardShortcuts />
-
-					<hr />
-
-					<AsciiFooter />
+					{sections.map((section) => (
+						<section key={section.id}>
+							{section.component}<hr />
+						</section>
+					))}
 				</main>
 			</div>
 

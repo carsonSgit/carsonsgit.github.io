@@ -12,8 +12,10 @@ const Intro = () => {
 		<section className="intro">
 			<div className="intro__header">
 				<Avatar.Root className="intro__avatar">
+					<Avatar.Image src="/klungo.png" alt="Carson Spriggs" />
 					<Avatar.Fallback>CS</Avatar.Fallback>
 				</Avatar.Root>
+				
 				<div className="intro__title-group">
 					<h1 tabIndex={0}>Carson</h1>
 					<p className="intro__subtitle" tabIndex={0}>Software Developer @ Botpress</p>

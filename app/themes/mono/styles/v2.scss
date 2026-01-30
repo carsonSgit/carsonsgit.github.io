@@ -1,4 +1,5 @@
 // v2 Mono Portfolio Styles
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 $grid-size: 60px;
 $grid-color: rgba(255, 255, 255, 0.035);
@@ -36,9 +37,11 @@ $grid-color: rgba(255, 255, 255, 0.035);
   --bg-surface-open: rgba(255, 255, 255, 0.05);
   --bg-hover: rgba(255, 255, 255, 0.06);
   --text: #e8e8ec;
+  --text-soft: #b6b6b6;
   --text-muted: #71717a;
   --border: rgba(255, 255, 255, 0.1);
   --accent: #60a5fa;
+  --accent-hover: #3b82f6;
   --accent-soft: rgba(96, 165, 250, 0.15);
   --selection-bg: #60a5fa;
   --selection-fg: #ffffff;
@@ -109,9 +112,12 @@ $grid-color: rgba(255, 255, 255, 0.035);
     margin: 0;
   }
 
-  p {
-    margin: 0 0 1rem;
+  p , li{
     font-size: 0.9375rem;
+    margin: 0 0 1.25rem;
+    letter-spacing: -0.02em;
+    line-height: 1.8;
+    color: var(--text-soft) !important;
   }
 
   hr {
@@ -152,12 +158,13 @@ $grid-color: rgba(255, 255, 255, 0.035);
       justify-content: center;
       width: 3.5rem;
       height: 3.5rem;
-      border-radius: 4px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
+      border-radius: 0px;
+      background: var(--bg);
+      border: 1px solid /* var(--border) */ transparent;
       color: var(--text);
       font-size: 1.125rem;
       font-weight: 600;
+      padding: 0.25rem;
       letter-spacing: 0.02em;
       flex-shrink: 0;
     }
@@ -185,6 +192,8 @@ $grid-color: rgba(255, 255, 255, 0.035);
     &__about {
       font-size: 0.9375rem;
       margin: 0 0 1.25rem;
+      letter-spacing: -0.02em;
+      line-height: 1.7;
     }
 
     &__links {
@@ -196,7 +205,7 @@ $grid-color: rgba(255, 255, 255, 0.035);
 
   .bracket-link {
     font-size: 0.875rem;
-    color: var(--text);
+    color: var(--accent);
     text-decoration: none;
     cursor: pointer;
     transition: color 150ms ease;
@@ -206,8 +215,8 @@ $grid-color: rgba(255, 255, 255, 0.035);
 
     &:hover,
     &:focus {
-      color: var(--accent);
-      text-decoration: underline;
+      color: var(--accent-hover);
+      text-decoration: none;
       text-decoration-color: var(--accent);
       outline: none;
     }
@@ -422,10 +431,10 @@ $grid-color: rgba(255, 255, 255, 0.035);
         position: relative;
 
         &::before {
-          content: '-';
+          content: '*';
           position: absolute;
           left: 0;
-          color: var(--text-muted);
+          color: var(--accent-hover);
         }
       }
 

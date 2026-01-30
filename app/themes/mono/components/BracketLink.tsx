@@ -11,7 +11,6 @@ const BracketLink = ({ children, onClick, ...props }: BracketLinkProps) => {
 			if (onClick) {
 				onClick(e as unknown as React.MouseEvent<HTMLAnchorElement>);
 			} else if (props.href) {
-				// Trigger the default link behavior
 				window.open(
 					props.href,
 					props.target || "_self",
