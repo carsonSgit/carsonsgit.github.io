@@ -184,24 +184,6 @@ export function useVimNavigation({ containerRef, disabled = false }: UseVimNavig
 		}
 	}, [getNavigationRows, getCurrentPosition, focusElement]);
 
-	const _focusNextInSubgroup = useCallback(() => {
-		const links = getSubgroupLinks();
-		const active = document.activeElement as HTMLElement;
-		const currentIdx = links.indexOf(active);
-		if (currentIdx !== -1 && currentIdx < links.length - 1) {
-			links[currentIdx + 1].focus();
-		}
-	}, [getSubgroupLinks]);
-
-	const _focusPrevInSubgroup = useCallback(() => {
-		const links = getSubgroupLinks();
-		const active = document.activeElement as HTMLElement;
-		const currentIdx = links.indexOf(active);
-		if (currentIdx > 0) {
-			links[currentIdx - 1].focus();
-		}
-	}, [getSubgroupLinks]);
-
 
 	const focusFirst = useCallback(() => {
 		const rows = getNavigationRows();
