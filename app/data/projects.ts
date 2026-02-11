@@ -1,5 +1,5 @@
-import * as z from "zod";
-import { projectSchema } from "../types/zodTypes";
+import type * as z from "zod";
+import type { projectSchema } from "../types/zodTypes";
 import { colours } from "./colours";
 
 export const projects: z.infer<typeof projectSchema>[] = [
@@ -34,7 +34,7 @@ export const projects: z.infer<typeof projectSchema>[] = [
     {
         year: 2025,
         title: "Linky",
-        description: "AI-powered URL-based knowledge base for interactive learning and exploration using RAG AI and a Vector database for infomration storage and retrieval.",
+        description: "AI-powered URL-based knowledge base for interactive learning and exploration using RAG AI and a Vector database for information storage and retrieval.",
         languages: {
             mantine: { name: "Mantine", backgroundColour: colours.mantine },
             ts: { name: "TypeScript", backgroundColour: colours.ts },

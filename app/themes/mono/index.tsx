@@ -5,12 +5,12 @@ import Intro from "./components/Intro";
 import ProjectList from "./components/ProjectList";
 import ExperienceList from "./components/ExperienceList";
 import EducationList from "./components/EducationList";
-import KeyboardShortcuts from "./components/KeyboardShortcuts";
 import AsciiFooter from "./components/AsciiFooter";
 import GuideModal from "../../components/shared/GuideModal";
 import { useVimNavigation } from "./hooks/useVimNavigation";
-import { monoThemeConfig } from "../../core/types/theme";
+import { monoThemeConfig } from "../../types/theme";
 import "./styles/v2.scss";
+import Shader from "@/components/ui/shader";
 
 const { gridSize: GRID_SIZE, decayMs: DECAY_MS, maxTiles: MAX_TILES, palette: COLOR_PALETTE } = monoThemeConfig.grid;
 
@@ -149,22 +149,9 @@ const MonoTheme: React.FC = () => {
 		return () => window.removeEventListener("keydown", handleKeyDown);
 	}, [isGuideOpen, handleOpenGuide]);
 
-	const sections: {id: string, component: React.ReactNode}[] = [
-		{id: "intro", component: <Intro />},
-		{id: "project-list", component: <ProjectList />},
-		{id: "experience", component: <ExperienceList />},
-		{id: "education", component: <EducationList />},
-		{id: "keyboard-shortcuts", component: <KeyboardShortcuts />},
-		{id: "ascii-footer", component: <AsciiFooter />},
-	];
-
 	return (
 		<div className="mono-portfolio-wrapper theme-mono">
-			<canvas
-				ref={canvasRef}
-				className="grid-hover-canvas"
-				aria-hidden="true"
-			/>
+
 			<div className="mono-portfolio" ref={containerRef}>
 				<a href="#main-content" className="skip-link">
 					Skip to content
@@ -179,13 +166,32 @@ const MonoTheme: React.FC = () => {
 					<kbd>?</kbd>
 				</button>
 
-				<main id="main-content">
-					{sections.map((section) => (
-						<section key={section.id}>
-							{section.component}<hr />
-						</section>
-					))}
+				<main id="main-content" className="portfolio-grid">
+					<div className="portfolio-grid__left">
+						<Shader />
+						<div className="intro-terminal">
+							<div className="intro-terminal__titlebar">
+								<span className="intro-terminal__dots">
+									<span className="intro-terminal__dot intro-terminal__dot--red" />
+									<span className="intro-terminal__dot intro-terminal__dot--yellow" />
+									<span className="intro-terminal__dot intro-terminal__dot--green" />
+								</span>
+								<span className="intro-terminal__title">carson@portfolio:~</span>
+							</div>
+							<Intro />
+						</div>
+					</div>
+					<div className="portfolio-grid__right">
+						<ProjectList />
+						<hr />
+						<ExperienceList />
+						<hr />
+						<EducationList />
+						<hr />
+						<AsciiFooter />
+					</div>
 				</main>
+
 			</div>
 
 			<GuideModal

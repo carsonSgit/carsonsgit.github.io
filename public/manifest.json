@@ -10,8 +10,8 @@
 	],
 	"start_url": ".",
 	"display": "standalone",
-	"theme_color": "#1c5722",
-	"background_color": "#23272b",
+	"theme_color": "#0d0d0f",
+	"background_color": "#0d0d0f",
 	"description": "Welcome to my personal portfolio!",
 	"lang": "en-US"
 }

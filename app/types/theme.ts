@@ -25,12 +25,6 @@ export interface ThemeConfig {
 	fontFamily: string;
 }
 
-export interface ThemeContextValue {
-	theme: ThemeId;
-	setTheme: (theme: ThemeId) => void;
-	config: ThemeConfig;
-}
-
 // Mono theme configuration
 export const monoThemeConfig: ThemeConfig = {
 	id: "mono",
@@ -67,6 +61,3 @@ export const monoThemeConfig: ThemeConfig = {
 	fontFamily: "CommitMono, monospace",
 };
 
-export const themeConfigs: Record<ThemeId, ThemeConfig> = {
-	mono: monoThemeConfig,
-};

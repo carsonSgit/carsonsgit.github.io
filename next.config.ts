@@ -5,7 +5,6 @@ const nextConfig: NextConfig = {
 	basePath: "",
 	images: {
 		unoptimized: true,
-		remotePatterns: [{ hostname: "api.microlink.io" }],
 	},
 	sassOptions: {
 		includePaths: ["./app"],

@@ -446,9 +446,9 @@ export function useVimNavigation({ containerRef, disabled = false }: UseVimNavig
 				default:
 					if (e.key >= "1" && e.key <= "4") {
 						e.preventDefault();
-						const sectionIndex = Number.parseInt(e.key) - 1;
+						const sectionIndex = Number.parseInt(e.key, 10) - 1;
 						const sections = containerRef.current?.querySelectorAll("section");
-						if (sections && sections[sectionIndex]) {
+						if (sections?.[sectionIndex]) {
 							const section = sections[sectionIndex];
 							section.scrollIntoView({ behavior: "smooth", block: "start" });
 							const firstFocusable = section.querySelector<HTMLElement>(
@@ -476,8 +476,6 @@ export function useVimNavigation({ containerRef, disabled = false }: UseVimNavig
 		focusRight,
 		focusFirst,
 		focusLast,
-		focusNextInSubgroup,
-		focusPrevInSubgroup,
 		getSubgroupLinks,
 		isInSubgroupLink,
 		getParentTrigger,
