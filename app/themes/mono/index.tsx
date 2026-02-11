@@ -158,6 +158,7 @@ const MonoTheme: React.FC = () => {
 				</a>
 
 				<button
+					type="button"
 					className="guide-trigger"
 					onClick={handleOpenGuide}
 					aria-label="Open guide"

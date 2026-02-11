@@ -21,6 +21,8 @@ const BracketLink = ({ children, onClick, ...props }: BracketLinkProps) => {
 	};
 
 	return (
+		// biome-ignore lint/a11y/useValidAnchor: BracketLink is a styled anchor that always receives href from callers
+		// biome-ignore lint/a11y/noStaticElementInteractions: keyboard handler enhances existing link behavior
 		<a className="bracket-link" onKeyDown={handleKeyDown} onClick={onClick} {...props}>
 			{children}
 		</a>

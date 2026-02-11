@@ -17,11 +17,11 @@ const Intro = () => {
 				</Avatar.Root>
 				
 				<div className="intro__title-group">
-					<h1 tabIndex={0}>Carson</h1>
-					<p className="intro__subtitle" tabIndex={0}>Software Developer @ Botpress</p>
+					<h1>Carson</h1>
+					<p className="intro__subtitle">Software Developer @ Botpress</p>
 				</div>
 			</div>
-			<p className="intro__about" tabIndex={0}>
+			<p className="intro__about">
 			I'm a full-time student studying Engineering Technology and Applied Sciences @ Memorial University
 			and a CS alumni from John Abbott College. I also am a Software Developer @ Botpress and the Co-Chair of CUSEC!
 			In my free time I'm most likely tinkering with whatever cool tech I come across, going to hackathons, or working on my own projects.

@@ -62,11 +62,12 @@ const GuideModal: React.FC<GuideModalProps> = ({ isOpen, onClose }) => {
 					>
 						<div className="guide-modal__header">
 							<h2>Guide</h2>
-							<button
-								className="guide-modal__close"
-								onClick={onClose}
-								aria-label="Close guide"
-							>
+						<button
+							type="button"
+							className="guide-modal__close"
+							onClick={onClose}
+							aria-label="Close guide"
+						>
 								<kbd>?</kbd> / <kbd>Esc</kbd>
 							</button>
 						</div>

@@ -184,7 +184,7 @@ export function useVimNavigation({ containerRef, disabled = false }: UseVimNavig
 		}
 	}, [getNavigationRows, getCurrentPosition, focusElement]);
 
-	const focusNextInSubgroup = useCallback(() => {
+	const _focusNextInSubgroup = useCallback(() => {
 		const links = getSubgroupLinks();
 		const active = document.activeElement as HTMLElement;
 		const currentIdx = links.indexOf(active);
@@ -193,7 +193,7 @@ export function useVimNavigation({ containerRef, disabled = false }: UseVimNavig
 		}
 	}, [getSubgroupLinks]);
 
-	const focusPrevInSubgroup = useCallback(() => {
+	const _focusPrevInSubgroup = useCallback(() => {
 		const links = getSubgroupLinks();
 		const active = document.activeElement as HTMLElement;
 		const currentIdx = links.indexOf(active);

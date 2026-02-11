@@ -1,8 +1,8 @@
-import * as z from "zod";
+import type * as z from "zod";
 import { Accordion } from "@base-ui/react/accordion";
 import ProjectDetail from "./ProjectDetail";
 import { projects } from "../../../data/projects";
-import { projectSchema } from "@/types/zodTypes";
+import type { projectSchema } from "@/types/zodTypes";
 import { getBadgeStyle } from "@/utils/colors";
 import { Badge } from "@/components/ui/badge";
 
