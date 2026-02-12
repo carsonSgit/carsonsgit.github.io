@@ -1,7 +1,13 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
-import GuideModal from "../../components/shared/GuideModal";
+import {
+	lazy,
+	Suspense,
+	useCallback,
+	useEffect,
+	useRef,
+	useState,
+} from "react";
 import { monoThemeConfig } from "../../types/theme";
 import AsciiFooter from "./components/AsciiFooter";
 import EducationList from "./components/EducationList";
@@ -11,6 +17,8 @@ import ProjectList from "./components/ProjectList";
 import { useVimNavigation } from "./hooks/useVimNavigation";
 import "./styles/v2.scss";
 import Shader from "@/components/ui/shader";
+
+const GuideModal = lazy(() => import("../../components/shared/GuideModal"));
 
 const {
 	gridSize: GRID_SIZE,
@@ -32,6 +40,7 @@ const MonoTheme: React.FC = () => {
 	const highlightsRef = useRef<Map<string, GridHighlight>>(new Map());
 	const animationFrameRef = useRef<number | null>(null);
 	const [isGuideOpen, setIsGuideOpen] = useState(false);
+	const [guideEverOpened, setGuideEverOpened] = useState(false);
 
 	useVimNavigation({ containerRef, disabled: isGuideOpen });
 
@@ -130,6 +139,7 @@ const MonoTheme: React.FC = () => {
 
 	const handleOpenGuide = useCallback(() => {
 		setIsGuideOpen(true);
+		setGuideEverOpened(true);
 	}, []);
 
 	const handleCloseGuide = useCallback(() => {
@@ -201,7 +211,11 @@ const MonoTheme: React.FC = () => {
 				</main>
 			</div>
 
-			<GuideModal isOpen={isGuideOpen} onClose={handleCloseGuide} />
+			{guideEverOpened && (
+				<Suspense>
+					<GuideModal isOpen={isGuideOpen} onClose={handleCloseGuide} />
+				</Suspense>
+			)}
 		</div>
 	);
 };

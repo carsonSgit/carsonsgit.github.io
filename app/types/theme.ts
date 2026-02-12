@@ -1,13 +1,13 @@
-export type ThemeId = "mono";
+type ThemeId = "mono";
 
-export interface GridConfig {
+interface GridConfig {
 	gridSize: number;
 	decayMs: number;
 	maxTiles: number;
 	palette: string[];
 }
 
-export interface ThemeConfig {
+interface ThemeConfig {
 	id: ThemeId;
 	name: string;
 	description: string;

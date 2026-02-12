@@ -42,9 +42,16 @@ export default function RootLayout({
 			<head>
 				<link
 					rel="preload"
-					href="/fonts/CommitMono-400-Regular.otf"
+					href="/fonts/CommitMono-400-Regular.woff2"
 					as="font"
-					type="font/opentype"
+					type="font/woff2"
+					crossOrigin="anonymous"
+				/>
+				<link
+					rel="preload"
+					href="/fonts/CommitMono-700-Regular.woff2"
+					as="font"
+					type="font/woff2"
 					crossOrigin="anonymous"
 				/>
 			</head>
