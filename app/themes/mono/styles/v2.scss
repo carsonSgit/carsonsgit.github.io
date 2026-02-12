@@ -1,5 +1,4 @@
 // v2 Mono Portfolio Styles
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 $grid-size: 60px;
 $grid-color: rgba(255, 255, 255, 0.035);
@@ -22,15 +21,6 @@ $grid-color: rgba(255, 255, 255, 0.035);
   }
 }
 
-.grid-hover-canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  pointer-events: none;
-  z-index: 0;
-}
-
 .mono-portfolio {
   --bg: #050506;
   --bg-surface: rgba(255, 255, 255, 0.03);
@@ -46,21 +36,6 @@ $grid-color: rgba(255, 255, 255, 0.035);
   --selection-bg: #60a5fa;
   --selection-fg: #ffffff;
 
-  --tag-ai: #a78bfa;
-  --tag-cv: #5eead4;
-  --tag-ts: #93c5fd;
-  --tag-py: #6ee7b7;
-  --tag-csharp: #86efac;
-  --tag-hardware: #fcd34d;
-  --tag-azure: #7dd3fc;
-  --tag-iot: #a3e635;
-  --tag-ml: #fbbf24;
-  --tag-threejs: #fca5a5;
-  --tag-db: #7dd3fc;
-  --tag-rtmp: #f9a8d4;
-  --tag-neuro: #d8b4fe;
-  --tag-rnd: #67e8f9;
-  --tag-default: #a1a1aa;
 
   font-family: 'CommitMono', monospace;
   max-width: 100%;
@@ -405,39 +380,6 @@ $grid-color: rgba(255, 255, 255, 0.035);
       white-space: nowrap;
     }
 
-    &__tags {
-      display: flex;
-      gap: 0.25rem;
-      flex-wrap: wrap;
-    }
-
-    &__tag {
-      font-size: 0.6875rem;
-      padding: 0.125rem 0.375rem;
-      border-radius: 2px;
-      background: var(--bg-surface);
-      color: var(--text-muted);
-      border: 1px solid var(--border);
-      font-weight: 500;
-
-      &--ai { color: var(--tag-ai); border-color: rgba(167, 139, 250, 0.3); background: rgba(167, 139, 250, 0.1); }
-      &--cv, &--computer-vision { color: var(--tag-cv); border-color: rgba(94, 234, 212, 0.3); background: rgba(94, 234, 212, 0.1); }
-      &--ts, &--typescript { color: var(--tag-ts); border-color: rgba(147, 197, 253, 0.3); background: rgba(147, 197, 253, 0.1); }
-      &--py, &--python { color: var(--tag-py); border-color: rgba(110, 231, 183, 0.3); background: rgba(110, 231, 183, 0.1); }
-      &--csharp, &--c\# { color: var(--tag-csharp); border-color: rgba(134, 239, 172, 0.3); background: rgba(134, 239, 172, 0.1); }
-      &--hardware { color: var(--tag-hardware); border-color: rgba(252, 211, 77, 0.3); background: rgba(252, 211, 77, 0.1); }
-      &--azure { color: var(--tag-azure); border-color: rgba(125, 211, 252, 0.3); background: rgba(125, 211, 252, 0.1); }
-      &--iot { color: var(--tag-iot); border-color: rgba(163, 230, 53, 0.3); background: rgba(163, 230, 53, 0.1); }
-      &--ml, &--machine-learning { color: var(--tag-ml); border-color: rgba(251, 191, 36, 0.3); background: rgba(251, 191, 36, 0.1); }
-      &--threejs, &--three\.js { color: var(--tag-threejs); border-color: rgba(252, 165, 165, 0.3); background: rgba(252, 165, 165, 0.1); }
-      &--db, &--postgresql, &--vector-db { color: var(--tag-db); border-color: rgba(125, 211, 252, 0.3); background: rgba(125, 211, 252, 0.1); }
-      &--rtmp { color: var(--tag-rtmp); border-color: rgba(249, 168, 212, 0.3); background: rgba(249, 168, 212, 0.1); }
-      &--neuro, &--neuroscience { color: var(--tag-neuro); border-color: rgba(216, 180, 254, 0.3); background: rgba(216, 180, 254, 0.1); }
-      &--rnd, &--r\&d { color: var(--tag-rnd); border-color: rgba(103, 232, 249, 0.3); background: rgba(103, 232, 249, 0.1); }
-      &--mantine { color: var(--tag-azure); border-color: rgba(125, 211, 252, 0.3); background: rgba(125, 211, 252, 0.1); }
-      &--zustand { color: var(--text-muted); border-color: var(--border); background: rgba(161, 161, 170, 0.08); }
-    }
-
     &__date {
       font-size: 0.8125rem;
       color: var(--text-muted);
@@ -547,61 +489,6 @@ $grid-color: rgba(255, 255, 255, 0.035);
       line-height: 1.4;
       color: var(--text);
       margin-bottom: 1rem;
-    }
-
-    &__tagline {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      letter-spacing: 0.02em;
-    }
-  }
-
-  .keyboard-shortcuts {
-    margin-top: 0;
-
-    &__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem 2rem;
-
-      @media (max-width: 480px) {
-        grid-template-columns: 1fr;
-        gap: 0.75rem;
-      }
-    }
-
-    &__group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.375rem;
-    }
-
-    &__row {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 0.8125rem;
-    }
-
-    &__keys {
-      display: flex;
-      align-items: center;
-      gap: 0.125rem;
-      min-width: 5.5rem;
-
-      kbd {
-        font-family: 'CommitMono', monospace;
-        font-size: 0.6875rem;
-        padding: 0.125rem 0.375rem;
-        border: 1px solid var(--border);
-        background: var(--bg-surface);
-        border-radius: 2px;
-      }
-    }
-
-    &__action {
-      color: var(--text-muted);
-      font-size: 0.75rem;
     }
   }
 }

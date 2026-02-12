@@ -3,8 +3,8 @@ import BracketLink from "./BracketLink";
 
 const LINKS = [
 	{ label: "github", href: "https://github.com/carsonSgit" },
-		{ label: "linkedin", href: "https://linkedin.com/in/carsonspriggs" },
-		{ label: "email", href: "mailto:carsonspriggs6@gmail.com" },
+	{ label: "linkedin", href: "https://linkedin.com/in/carsonspriggs" },
+	{ label: "email", href: "mailto:carsonspriggs6@gmail.com" },
 ];
 
 const Intro = () => {
@@ -15,17 +15,19 @@ const Intro = () => {
 					<Avatar.Image src="/klungo.png" alt="Carson Spriggs" />
 					<Avatar.Fallback>CS</Avatar.Fallback>
 				</Avatar.Root>
-				
+
 				<div className="intro__title-group">
 					<h1>Carson</h1>
 					<p className="intro__subtitle">Software Developer @ Botpress</p>
 				</div>
 			</div>
 			<p className="intro__about">
-			I'm a full-time student studying Engineering Technology and Applied Sciences @ Memorial University
-			and a CS alumni from John Abbott College. I also am a Software Developer @ Botpress and the Co-Chair of CUSEC!
-			In my free time I'm most likely tinkering with whatever cool tech I come across, going to hackathons, or working on my own projects.
-			Also, I really like penguins.
+				I'm a full-time student studying Engineering Technology and Applied
+				Sciences @ Memorial University and a CS alumni from John Abbott College.
+				I also am a Software Developer @ Botpress and the Co-Chair of CUSEC! In
+				my free time I'm most likely tinkering with whatever cool tech I come
+				across, going to hackathons, or working on my own projects. Also, I
+				really like penguins.
 			</p>
 			<nav className="intro__links" aria-label="Social links">
 				{LINKS.map((link) => (

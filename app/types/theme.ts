@@ -1,14 +1,5 @@
 export type ThemeId = "mono";
 
-export interface ThemeColors {
-	primary: string;
-	background: string;
-	text: string;
-	muted: string;
-	accent: string;
-	border: string;
-}
-
 export interface GridConfig {
 	gridSize: number;
 	decayMs: number;
@@ -20,9 +11,7 @@ export interface ThemeConfig {
 	id: ThemeId;
 	name: string;
 	description: string;
-	colors: ThemeColors;
 	grid: GridConfig;
-	fontFamily: string;
 }
 
 // Mono theme configuration
@@ -30,14 +19,6 @@ export const monoThemeConfig: ThemeConfig = {
 	id: "mono",
 	name: "Mono",
 	description: "Mono, keyboard-first",
-	colors: {
-		primary: "#a78bfa",
-		background: "#0d0d0f",
-		text: "#e4e4e7",
-		muted: "#71717a",
-		accent: "#5eead4",
-		border: "rgba(255, 255, 255, 0.1)",
-	},
 	grid: {
 		gridSize: 60,
 		decayMs: 1200,
@@ -58,6 +39,4 @@ export const monoThemeConfig: ThemeConfig = {
 			"rgba(103, 232, 249, 0.35)", // sky (rnd)
 		],
 	},
-	fontFamily: "CommitMono, monospace",
 };
-

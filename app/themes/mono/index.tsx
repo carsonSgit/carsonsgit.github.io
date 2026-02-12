@@ -1,18 +1,23 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import GuideModal from "../../components/shared/GuideModal";
+import { monoThemeConfig } from "../../types/theme";
+import AsciiFooter from "./components/AsciiFooter";
+import EducationList from "./components/EducationList";
+import ExperienceList from "./components/ExperienceList";
 import Intro from "./components/Intro";
 import ProjectList from "./components/ProjectList";
-import ExperienceList from "./components/ExperienceList";
-import EducationList from "./components/EducationList";
-import AsciiFooter from "./components/AsciiFooter";
-import GuideModal from "../../components/shared/GuideModal";
 import { useVimNavigation } from "./hooks/useVimNavigation";
-import { monoThemeConfig } from "../../types/theme";
 import "./styles/v2.scss";
 import Shader from "@/components/ui/shader";
 
-const { gridSize: GRID_SIZE, decayMs: DECAY_MS, maxTiles: MAX_TILES, palette: COLOR_PALETTE } = monoThemeConfig.grid;
+const {
+	gridSize: GRID_SIZE,
+	decayMs: DECAY_MS,
+	maxTiles: MAX_TILES,
+	palette: COLOR_PALETTE,
+} = monoThemeConfig.grid;
 
 interface GridHighlight {
 	x: number;
@@ -40,7 +45,7 @@ const MonoTheme: React.FC = () => {
 		const resizeCanvas = () => {
 			const docHeight = Math.max(
 				document.body.scrollHeight,
-				document.documentElement.scrollHeight
+				document.documentElement.scrollHeight,
 			);
 			canvas.width = window.innerWidth;
 			canvas.height = docHeight;
@@ -50,7 +55,8 @@ const MonoTheme: React.FC = () => {
 		window.addEventListener("resize", resizeCanvas);
 
 		const makeKey = (x: number, y: number) => `${x},${y}`;
-		const getRandomColor = () => COLOR_PALETTE[Math.floor(Math.random() * COLOR_PALETTE.length)];
+		const getRandomColor = () =>
+			COLOR_PALETTE[Math.floor(Math.random() * COLOR_PALETTE.length)];
 
 		const addHighlight = (pageX: number, pageY: number) => {
 			const x = Math.floor(pageX / GRID_SIZE) * GRID_SIZE;
@@ -66,7 +72,7 @@ const MonoTheme: React.FC = () => {
 				highlights.set(key, { x, y, color: getRandomColor(), createdAt: now });
 				if (highlights.size > MAX_TILES) {
 					const sorted = Array.from(highlights.entries()).sort(
-						(a, b) => a[1].createdAt - b[1].createdAt
+						(a, b) => a[1].createdAt - b[1].createdAt,
 					);
 					for (let i = 0; i < sorted.length - MAX_TILES; i++) {
 						highlights.delete(sorted[i][0]);
@@ -151,7 +157,6 @@ const MonoTheme: React.FC = () => {
 
 	return (
 		<div className="mono-portfolio-wrapper theme-mono">
-
 			<div className="mono-portfolio" ref={containerRef}>
 				<a href="#main-content" className="skip-link">
 					Skip to content
@@ -177,7 +182,9 @@ const MonoTheme: React.FC = () => {
 									<span className="intro-terminal__dot intro-terminal__dot--yellow" />
 									<span className="intro-terminal__dot intro-terminal__dot--green" />
 								</span>
-								<span className="intro-terminal__title">carson@portfolio:~</span>
+								<span className="intro-terminal__title">
+									carson@portfolio:~
+								</span>
 							</div>
 							<Intro />
 						</div>
@@ -192,13 +199,9 @@ const MonoTheme: React.FC = () => {
 						<AsciiFooter />
 					</div>
 				</main>
-
 			</div>
 
-			<GuideModal
-				isOpen={isGuideOpen}
-				onClose={handleCloseGuide}
-			/>
+			<GuideModal isOpen={isGuideOpen} onClose={handleCloseGuide} />
 		</div>
 	);
 };

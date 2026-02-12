@@ -1,7 +1,7 @@
 "use client";
 
-import { useCallback, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import { useCallback, useEffect, useRef } from "react";
 import "../../styles/guide-modal.scss";
 
 interface GuideModalProps {
@@ -31,7 +31,7 @@ const GuideModal: React.FC<GuideModalProps> = ({ isOpen, onClose }) => {
 					break;
 			}
 		},
-		[isOpen, onClose]
+		[isOpen, onClose],
 	);
 
 	useEffect(() => {
@@ -62,12 +62,12 @@ const GuideModal: React.FC<GuideModalProps> = ({ isOpen, onClose }) => {
 					>
 						<div className="guide-modal__header">
 							<h2>Guide</h2>
-						<button
-							type="button"
-							className="guide-modal__close"
-							onClick={onClose}
-							aria-label="Close guide"
-						>
+							<button
+								type="button"
+								className="guide-modal__close"
+								onClick={onClose}
+								aria-label="Close guide"
+							>
 								<kbd>?</kbd> / <kbd>Esc</kbd>
 							</button>
 						</div>
@@ -88,19 +88,24 @@ const GuideModal: React.FC<GuideModalProps> = ({ isOpen, onClose }) => {
 											<span className="guide-modal__keys">
 												<kbd>l</kbd> / <kbd>Enter</kbd>
 											</span>
-											<span className="guide-modal__action">expand / enter</span>
+											<span className="guide-modal__action">
+												expand / enter
+											</span>
 										</div>
 										<div className="guide-modal__shortcut">
 											<span className="guide-modal__keys">
 												<kbd>j</kbd> / <kbd>q</kbd>
 											</span>
-											<span className="guide-modal__action">collapse / exit</span>
+											<span className="guide-modal__action">
+												collapse / exit
+											</span>
 										</div>
 									</div>
 									<div className="guide-modal__shortcut-group">
 										<div className="guide-modal__shortcut">
 											<span className="guide-modal__keys">
-												<kbd>g</kbd><kbd>g</kbd> / <kbd>G</kbd>
+												<kbd>g</kbd>
+												<kbd>g</kbd> / <kbd>G</kbd>
 											</span>
 											<span className="guide-modal__action">top / bottom</span>
 										</div>
@@ -108,7 +113,9 @@ const GuideModal: React.FC<GuideModalProps> = ({ isOpen, onClose }) => {
 											<span className="guide-modal__keys">
 												<kbd>1</kbd>-<kbd>4</kbd>
 											</span>
-											<span className="guide-modal__action">jump to section</span>
+											<span className="guide-modal__action">
+												jump to section
+											</span>
 										</div>
 										<div className="guide-modal__shortcut">
 											<span className="guide-modal__keys">

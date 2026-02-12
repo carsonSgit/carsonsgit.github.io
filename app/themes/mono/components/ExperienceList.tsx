@@ -1,7 +1,7 @@
 import { Accordion } from "@base-ui/react/accordion";
-import { professionalExp } from "../../../data/experiences";
 import { Badge } from "@/components/ui/badge";
 import { getBadgeStyle } from "@/utils/colors";
+import { professionalExp } from "../../../data/experiences";
 
 const ExperienceList = () => {
 	return (
@@ -49,11 +49,18 @@ const ExperienceList = () => {
 									</ul>
 									<div className="detail-panel__badges flex flex-row flex-wrap gap-2 mt-2">
 										{Object.values(item.experienceBadges).map((badge) => (
-											<Badge key={badge.label} className="detail-panel__badge rounded-none text-xs hover:cursor-default" 
-											style={{ 
-												backgroundColor: getBadgeStyle(badge.backgroundColour).background,
-												borderColor: getBadgeStyle(badge.backgroundColour).foreground,
-												color: getBadgeStyle(badge.backgroundColour).foreground, }}>
+											<Badge
+												key={badge.label}
+												className="detail-panel__badge rounded-none text-xs hover:cursor-default"
+												style={{
+													backgroundColor: getBadgeStyle(badge.backgroundColour)
+														.background,
+													borderColor: getBadgeStyle(badge.backgroundColour)
+														.foreground,
+													color: getBadgeStyle(badge.backgroundColour)
+														.foreground,
+												}}
+											>
 												{badge.label}
 											</Badge>
 										))}

@@ -9,7 +9,10 @@ const ZOOM_LEVELS = [0.8, 0.9, 1.0, 1.1, 1.2];
 const ZOOM_DEFAULT_INDEX = 2;
 const ZOOM_STORAGE_KEY = "mono-portfolio-zoom";
 
-export function useVimNavigation({ containerRef, disabled = false }: UseVimNavigationOptions) {
+export function useVimNavigation({
+	containerRef,
+	disabled = false,
+}: UseVimNavigationOptions) {
 	const lastKeyRef = useRef<string>("");
 	const lastKeyTimeRef = useRef<number>(0);
 
@@ -30,7 +33,8 @@ export function useVimNavigation({ containerRef, disabled = false }: UseVimNavig
 	useEffect(() => {
 		if (containerRef.current) {
 			const scale = ZOOM_LEVELS[zoomIndex];
-			containerRef.current.style.transform = scale === 1 ? "" : `scale(${scale})`;
+			containerRef.current.style.transform =
+				scale === 1 ? "" : `scale(${scale})`;
 		}
 		localStorage.setItem(ZOOM_STORAGE_KEY, zoomIndex.toString());
 	}, [zoomIndex, containerRef]);
@@ -45,7 +49,7 @@ export function useVimNavigation({ containerRef, disabled = false }: UseVimNavig
 			const subtitle = intro.querySelector(".intro__subtitle");
 			const about = intro.querySelector(".intro__about");
 			const socialLinks = Array.from(
-				intro.querySelectorAll<HTMLElement>(".intro__links .bracket-link")
+				intro.querySelectorAll<HTMLElement>(".intro__links .bracket-link"),
 			);
 
 			if (title) rows.push([title as HTMLElement]);
@@ -56,7 +60,7 @@ export function useVimNavigation({ containerRef, disabled = false }: UseVimNavig
 
 		// Get all accordion triggers (the actual focusable elements)
 		const allTriggers = containerRef.current.querySelectorAll<HTMLElement>(
-			".section-list__trigger"
+			".section-list__trigger",
 		);
 		for (const trigger of allTriggers) {
 			rows.push([trigger]);
@@ -73,7 +77,9 @@ export function useVimNavigation({ containerRef, disabled = false }: UseVimNavig
 				activePanel.querySelectorAll<HTMLElement>(".detail-panel__links a"),
 			);
 		}
-		const openPanel = containerRef.current?.querySelector(".detail-panel[data-open]");
+		const openPanel = containerRef.current?.querySelector(
+			".detail-panel[data-open]",
+		);
 		if (!openPanel) return [];
 		return Array.from(
 			openPanel.querySelectorAll<HTMLElement>(".detail-panel__links a"),
@@ -184,7 +190,6 @@ export function useVimNavigation({ containerRef, disabled = false }: UseVimNavig
 		}
 	}, [getNavigationRows, getCurrentPosition, focusElement]);
 
-
 	const focusFirst = useCallback(() => {
 		const rows = getNavigationRows();
 		if (rows.length > 0 && rows[0].length > 0) {
@@ -219,7 +224,9 @@ export function useVimNavigation({ containerRef, disabled = false }: UseVimNavig
 		const panel = active?.closest(".detail-panel");
 		if (panel) {
 			const item = panel.closest(".section-list__item");
-			return item?.querySelector(".section-list__trigger") as HTMLElement | null;
+			return item?.querySelector(
+				".section-list__trigger",
+			) as HTMLElement | null;
 		}
 		return active?.closest(".section-list__trigger") as HTMLElement | null;
 	}, []);
@@ -348,7 +355,9 @@ export function useVimNavigation({ containerRef, disabled = false }: UseVimNavig
 				case "ArrowRight":
 					if (isInContainer && active) {
 						const isExpanded = active.getAttribute("aria-expanded") === "true";
-						const isTrigger = active.classList.contains("section-list__trigger");
+						const isTrigger = active.classList.contains(
+							"section-list__trigger",
+						);
 
 						if (isTrigger) {
 							if (isExpanded) {
@@ -379,7 +388,9 @@ export function useVimNavigation({ containerRef, disabled = false }: UseVimNavig
 				case "ArrowLeft":
 					if (isInContainer && active) {
 						const isExpanded = active.getAttribute("aria-expanded") === "true";
-						const isTrigger = active.classList.contains("section-list__trigger");
+						const isTrigger = active.classList.contains(
+							"section-list__trigger",
+						);
 
 						if (isTrigger && isExpanded) {
 							e.preventDefault();
@@ -404,7 +415,10 @@ export function useVimNavigation({ containerRef, disabled = false }: UseVimNavig
 					}
 					break;
 				case "g":
-					if (lastKeyRef.current === "g" && now - lastKeyTimeRef.current < 500) {
+					if (
+						lastKeyRef.current === "g" &&
+						now - lastKeyTimeRef.current < 500
+					) {
 						e.preventDefault();
 						focusFirst();
 						window.scrollTo({ top: 0, behavior: "smooth" });
@@ -418,7 +432,10 @@ export function useVimNavigation({ containerRef, disabled = false }: UseVimNavig
 				case "End":
 					e.preventDefault();
 					focusLast();
-					window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+					window.scrollTo({
+						top: document.body.scrollHeight,
+						behavior: "smooth",
+					});
 					break;
 				case "Home":
 					e.preventDefault();
@@ -434,7 +451,7 @@ export function useVimNavigation({ containerRef, disabled = false }: UseVimNavig
 							const section = sections[sectionIndex];
 							section.scrollIntoView({ behavior: "smooth", block: "start" });
 							const firstFocusable = section.querySelector<HTMLElement>(
-								'[tabindex="0"], a[href]'
+								'[tabindex="0"], a[href]',
 							);
 							firstFocusable?.focus();
 						}

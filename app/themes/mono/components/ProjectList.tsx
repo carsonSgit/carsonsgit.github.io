@@ -1,10 +1,10 @@
-import type * as z from "zod";
 import { Accordion } from "@base-ui/react/accordion";
-import ProjectDetail from "./ProjectDetail";
-import { projects } from "../../../data/projects";
+import type * as z from "zod";
+import { Badge } from "@/components/ui/badge";
 import type { projectSchema } from "@/types/zodTypes";
 import { getBadgeStyle } from "@/utils/colors";
-import { Badge } from "@/components/ui/badge";
+import { projects } from "../../../data/projects";
+import ProjectDetail from "./ProjectDetail";
 
 const ProjectList = () => {
 	return (
@@ -19,7 +19,10 @@ const ProjectList = () => {
 					>
 						<Accordion.Header>
 							<Accordion.Trigger className="section-list__trigger">
-								<span className="section-list__marker mt-0.5 ml-1" aria-hidden="true">
+								<span
+									className="section-list__marker mt-0.5 ml-1"
+									aria-hidden="true"
+								>
 									*
 								</span>
 								<div className="section-list__header ml-2">
@@ -27,11 +30,18 @@ const ProjectList = () => {
 									<span className="section-list__title">{project.title}</span>
 									<div className="section-list__badges flex flex-row flex-wrap gap-2 mt-2">
 										{Object.values(project.languages).map((lang) => (
-											<Badge key={lang.name} className="section-list__badge rounded-none text-xs" 
-											style={{ 
-												backgroundColor: getBadgeStyle(lang.backgroundColour).background,
-												borderColor: getBadgeStyle(lang.backgroundColour).foreground,
-												color: getBadgeStyle(lang.backgroundColour).foreground, }}>
+											<Badge
+												key={lang.name}
+												className="section-list__badge rounded-none text-xs"
+												style={{
+													backgroundColor: getBadgeStyle(lang.backgroundColour)
+														.background,
+													borderColor: getBadgeStyle(lang.backgroundColour)
+														.foreground,
+													color: getBadgeStyle(lang.backgroundColour)
+														.foreground,
+												}}
+											>
 												{lang.name}
 											</Badge>
 										))}

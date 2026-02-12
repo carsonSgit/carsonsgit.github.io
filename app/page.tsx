@@ -1,5 +1,5 @@
-import { ClientOnly } from "./client";
+import MonoTheme from "./themes/mono";
 
 export default function Page() {
-	return <ClientOnly />;
+	return <MonoTheme />;
 }

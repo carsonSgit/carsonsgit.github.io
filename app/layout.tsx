@@ -5,14 +5,16 @@ import Script from "next/script";
 
 export const metadata: Metadata = {
 	title: "carsonSgit Portfolio",
-	description: "My personal portfolio. Showcasing my projects, experience, and more.",
+	description:
+		"My personal portfolio. Showcasing my projects, experience, and more.",
 	icons: {
 		icon: "/favicon.ico",
 	},
 	manifest: "/manifest.json",
 	openGraph: {
 		title: "carsonSgit Portfolio",
-		description: "My personal portfolio. Showcasing my projects, experience, and more.",
+		description:
+			"My personal portfolio. Showcasing my projects, experience, and more.",
 		url: "https://carsonsgit.github.io",
 		siteName: "carsonSgit Portfolio",
 		locale: "en_US",
@@ -21,7 +23,8 @@ export const metadata: Metadata = {
 	twitter: {
 		card: "summary",
 		title: "carsonSgit Portfolio",
-		description: "My personal portfolio. Showcasing my projects, experience, and more.",
+		description:
+			"My personal portfolio. Showcasing my projects, experience, and more.",
 	},
 };
 
@@ -37,7 +40,13 @@ export default function RootLayout({
 	return (
 		<html lang="en" data-theme="mono">
 			<head>
-				<link rel="preload" href="/fonts/CommitMono-400-Regular.otf" as="font" type="font/opentype" crossOrigin="anonymous" />
+				<link
+					rel="preload"
+					href="/fonts/CommitMono-400-Regular.otf"
+					as="font"
+					type="font/opentype"
+					crossOrigin="anonymous"
+				/>
 			</head>
 			<Script
 				src="https://cloud.umami.is/script.js"
