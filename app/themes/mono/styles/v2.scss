@@ -7,12 +7,12 @@ $grid-color: rgba(255, 255, 255, 0.035);
   min-height: 100vh;
   background: #0d0d0f;
   position: relative;
-  
+
   &::before {
     content: '';
     position: fixed;
     inset: 0;
-    background-image: 
+    background-image:
       linear-gradient($grid-color 1px, transparent 1px),
       linear-gradient(90deg, $grid-color 1px, transparent 1px);
     background-size: $grid-size $grid-size;
@@ -28,7 +28,8 @@ $grid-color: rgba(255, 255, 255, 0.035);
   --bg-hover: rgba(255, 255, 255, 0.06);
   --text: #e8e8ec;
   --text-soft: #b6b6b6;
-  --text-muted: #71717a;
+  // Increased from #71717a → #8a8a94 for WCAG AA contrast (≥ 4.5:1 on #050506 bg)
+  --text-muted: #8a8a94;
   --border: rgba(255, 255, 255, 0.1);
   --accent: #60a5fa;
   --accent-hover: #3b82f6;
@@ -38,7 +39,8 @@ $grid-color: rgba(255, 255, 255, 0.035);
 
 
   font-family: 'CommitMono', monospace;
-  max-width: 100%;
+  // Cap width on ultra-wide displays while staying fluid within that
+  max-width: 1600px;
   margin: 0 auto;
   padding: 3rem 2.5rem;
   color: var(--text);
@@ -50,10 +52,14 @@ $grid-color: rgba(255, 255, 255, 0.035);
   z-index: 2;
   transform-origin: top center;
 
+  @media (max-width: 1200px) {
+    padding: 2.5rem 2rem;
+  }
+
   @media (max-width: 900px) {
     padding: 2rem 1.5rem;
   }
-  
+
   @media (max-width: 480px) {
     padding: 1.5rem 1rem;
   }
@@ -87,12 +93,13 @@ $grid-color: rgba(255, 255, 255, 0.035);
     margin: 0;
   }
 
-  p , li{
+  // Removed !important — more specific rules in detail-panel can now override correctly
+  p, li {
     font-size: 0.9375rem;
     margin: 0 0 1.25rem;
     letter-spacing: -0.02em;
     line-height: 1.8;
-    color: var(--text-soft) !important;
+    color: var(--text-soft);
   }
 
   hr {
@@ -106,6 +113,11 @@ $grid-color: rgba(255, 255, 255, 0.035);
     grid-template-columns: 2fr 3fr;
     gap: 12rem;
     align-items: start;
+
+    // Tighten the gap at mid-range widths to avoid cramped columns
+    @media (max-width: 1200px) {
+      gap: 5rem;
+    }
 
     &__left {
       position: sticky;
@@ -186,7 +198,7 @@ $grid-color: rgba(255, 255, 255, 0.035);
       width: 0.5rem;
       height: 0.5rem;
       border-radius: 50%;
-      
+
       &--red { background: #ff5f57; }
       &--yellow { background: #febc2e; }
       &--green { background: #28c840; }
@@ -275,11 +287,13 @@ $grid-color: rgba(255, 255, 255, 0.035);
     &::before { content: '['; color: var(--text-muted); }
     &::after { content: ']'; color: var(--text-muted); }
 
-    &:hover,
-    &:focus {
+    &:hover {
       color: var(--accent-hover);
       text-decoration: none;
-      text-decoration-color: var(--accent);
+    }
+
+    &:focus {
+      color: var(--accent-hover);
       outline: none;
     }
 
@@ -294,7 +308,7 @@ $grid-color: rgba(255, 255, 255, 0.035);
     margin: 0;
     padding: 0;
 
-    
+
     &__year {
       font-size: 0.875rem;
       color: var(--text-muted);
@@ -340,6 +354,8 @@ $grid-color: rgba(255, 255, 255, 0.035);
 
       &:focus-visible {
         background-color: var(--bg-surface);
+        outline: 2px solid var(--accent);
+        outline-offset: -2px;
       }
 
       &:focus,
@@ -398,11 +414,15 @@ $grid-color: rgba(255, 255, 255, 0.035);
       cursor: pointer;
       transition: color 150ms ease;
 
-      &:hover,
-      &:focus {
+      &:hover {
         color: var(--accent);
         text-decoration: underline;
         text-decoration-color: var(--accent);
+      }
+
+      &:focus {
+        color: var(--accent);
+        outline: none;
       }
 
       &:focus-visible {
@@ -456,6 +476,7 @@ $grid-color: rgba(255, 255, 255, 0.035);
         font-size: 0.875rem;
         color: var(--text);
         line-height: 1.6;
+        margin: 0;
         padding-left: 1rem;
         position: relative;
 
@@ -489,6 +510,17 @@ $grid-color: rgba(255, 255, 255, 0.035);
       line-height: 1.4;
       color: var(--text);
       margin-bottom: 1rem;
+
+      // Prevent horizontal overflow on narrow screens
+      @media (max-width: 600px) {
+        font-size: 0.625rem;
+        overflow-x: auto;
+        max-width: 100%;
+      }
+
+      @media (max-width: 400px) {
+        display: none;
+      }
     }
   }
 }

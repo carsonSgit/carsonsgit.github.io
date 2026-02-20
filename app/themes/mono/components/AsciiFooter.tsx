@@ -26,6 +26,7 @@ const AsciiFooter = () => {
 			<pre className="ascii-footer__art" aria-hidden="true">
 				{PENGUIN}
 			</pre>
+			<p className="sr-only">Thanks for stopping by!</p>
 		</footer>
 	);
 };

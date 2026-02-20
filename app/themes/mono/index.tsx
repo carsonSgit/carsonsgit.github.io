@@ -167,6 +167,17 @@ const MonoTheme: React.FC = () => {
 
 	return (
 		<div className="mono-portfolio-wrapper theme-mono">
+			<canvas
+				ref={canvasRef}
+				aria-hidden="true"
+				style={{
+					position: "absolute",
+					top: 0,
+					left: 0,
+					pointerEvents: "none",
+					zIndex: 0,
+				}}
+			/>
 			<div className="mono-portfolio" ref={containerRef}>
 				<a href="#main-content" className="skip-link">
 					Skip to content

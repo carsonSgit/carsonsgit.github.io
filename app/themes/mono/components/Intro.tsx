@@ -9,15 +9,20 @@ const LINKS = [
 
 const Intro = () => {
 	return (
-		<section className="intro">
+		<section className="intro" aria-labelledby="intro-heading">
 			<div className="intro__header">
 				<Avatar.Root className="intro__avatar">
-					<Avatar.Image src="/klungo.png" alt="Carson Spriggs" />
+					<Avatar.Image
+						src="/klungo.png"
+						alt="Carson Spriggs"
+						width={56}
+						height={56}
+					/>
 					<Avatar.Fallback>CS</Avatar.Fallback>
 				</Avatar.Root>
 
 				<div className="intro__title-group">
-					<h1>Carson</h1>
+					<h1 id="intro-heading">Carson</h1>
 					<p className="intro__subtitle">Software Developer @ Botpress</p>
 				</div>
 			</div>
