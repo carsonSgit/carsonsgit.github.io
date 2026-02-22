@@ -251,10 +251,7 @@ export function useVimNavigation({
 	const handleDoubleKeySequence = useCallback(
 		(key: string, now: number): boolean => {
 			if (key === "g") {
-				if (
-					lastKeyRef.current === "g" &&
-					now - lastKeyTimeRef.current < 500
-				) {
+				if (lastKeyRef.current === "g" && now - lastKeyTimeRef.current < 500) {
 					focusFirst();
 					window.scrollTo({ top: 0, behavior: "smooth" });
 					lastKeyRef.current = "";
