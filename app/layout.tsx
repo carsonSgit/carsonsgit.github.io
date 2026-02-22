@@ -3,43 +3,84 @@ import "./globals.scss";
 import "./styles/guide-modal.scss";
 import Script from "next/script";
 
+const BASE_URL = "https://carsonspriggs.me";
+
 export const metadata: Metadata = {
-	title: "carsonSgit Portfolio",
+	title: "carsonSgit",
 	description:
-		"My personal portfolio. Showcasing my projects, experience, and more.",
+		"Portfolio of Carson Spriggs. Fullstack developer, AI research, UI/UX.",
+	authors: [{ name: "Carson Spriggs" }],
+	keywords: [
+		"Carson Spriggs",
+		"software developer",
+		"portfolio",
+		"full-stack",
+		"AI",
+		"Memorial University",
+		"Concordia University",
+		"CUSEC",
+		"John Abbott College",
+	],
 	icons: {
 		icon: "/favicon.ico",
 	},
 	manifest: "/manifest.json",
-	openGraph: {
-		title: "carsonSgit Portfolio",
-		description:
-			"My personal portfolio. Showcasing my projects, experience, and more.",
-		url: "https://carsonsgit.github.io",
-		siteName: "carsonSgit Portfolio",
-		locale: "en_US",
-		type: "website",
-	},
-	twitter: {
-		card: "summary",
-		title: "carsonSgit Portfolio",
-		description:
-			"My personal portfolio. Showcasing my projects, experience, and more.",
-	},
 };
 
 export const viewport: Viewport = {
 	themeColor: "#0d0d0f",
 };
 
+const jsonLd = {
+	"@context": "https://schema.org",
+	"@type": "Person",
+	name: "Carson Spriggs",
+	url: BASE_URL,
+	sameAs: [
+		"https://github.com/carsonSgit",
+		"https://linkedin.com/in/carsonspriggs",
+	],
+	jobTitle: "Software Developer",
+	worksFor: {
+		"@type": "Organization",
+		name: "Botpress",
+	},
+	alumniOf: [
+		{
+			"@type": "CollegeOrUniversity",
+			name: "Memorial University of Newfoundland",
+			url: "https://www.mun.ca/",
+		},
+		{
+			"@type": "CollegeOrUniversity",
+			name: "Concordia University",
+			url: "https://www.concordia.ca/",
+		},
+		{
+			"@type": "CollegeOrUniversity",
+			name: "John Abbott College",
+			url: "https://www.johnabbott.qc.ca/",
+		},
+	],
+	knowsAbout: [
+		"Software Development",
+		"Artificial Intelligence",
+		"IoT",
+		"Full-Stack Development",
+		"DevOps",
+		"Machine Learning",
+	],
+};
+
 export default function RootLayout({
 	children,
 }: {
-	children: React.ReactNode;
+	readonly children: React.ReactNode;
 }) {
 	return (
 		<html lang="en" data-theme="mono">
 			<head>
+				<link rel="preconnect" href="https://cloud.umami.is" />
 				<link
 					rel="preload"
 					href="/fonts/CommitMono-400-Regular.woff2"
@@ -54,14 +95,22 @@ export default function RootLayout({
 					type="font/woff2"
 					crossOrigin="anonymous"
 				/>
+				<script
+					type="application/ld+json"
+					// biome-ignore lint/security/noDangerouslySetInnerHtml: static JSON-LD, no user input
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+				/>
 			</head>
-			<Script
-				src="https://cloud.umami.is/script.js"
-				data-website-id="3a4253fc-dee7-4c4e-bd4a-a5eba54a2df1"
-				strategy="afterInteractive"
-				defer
-			/>
-			<body className="theme-mono">{children}</body>
+			<body className="theme-mono">
+				{children}
+				<Script
+					src="https://cloud.umami.is/script.js"
+					data-website-id="3a4253fc-dee7-4c4e-bd4a-a5eba54a2df1"
+					data-cache="false"
+					strategy="afterInteractive"
+					defer
+				/>
+			</body>
 		</html>
 	);
 }

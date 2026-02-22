@@ -8,8 +8,8 @@ import ProjectDetail from "./ProjectDetail";
 
 const ProjectList = () => {
 	return (
-		<section>
-			<h2>Projects</h2>
+		<section aria-labelledby="projects-heading">
+			<h2 id="projects-heading">Projects</h2>
 			<Accordion.Root multiple className="section-list" aria-label="Projects">
 				{projects.map((project: z.infer<typeof projectSchema>) => (
 					<Accordion.Item

@@ -1,13 +1,9 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef } from "react";
 
 interface UseVimNavigationOptions {
 	containerRef: React.RefObject<HTMLElement | null>;
 	disabled?: boolean;
 }
-
-const ZOOM_LEVELS = [0.8, 0.9, 1.0, 1.1, 1.2];
-const ZOOM_DEFAULT_INDEX = 2;
-const ZOOM_STORAGE_KEY = "mono-portfolio-zoom";
 
 export function useVimNavigation({
 	containerRef,
@@ -15,29 +11,6 @@ export function useVimNavigation({
 }: UseVimNavigationOptions) {
 	const lastKeyRef = useRef<string>("");
 	const lastKeyTimeRef = useRef<number>(0);
-
-	// Zoom state
-	const [zoomIndex, setZoomIndex] = useState<number>(() => {
-		if (typeof window === "undefined") return ZOOM_DEFAULT_INDEX;
-		const stored = localStorage.getItem(ZOOM_STORAGE_KEY);
-		if (stored) {
-			const parsed = Number.parseInt(stored, 10);
-			if (parsed >= 0 && parsed < ZOOM_LEVELS.length) {
-				return parsed;
-			}
-		}
-		return ZOOM_DEFAULT_INDEX;
-	});
-
-	// Apply zoom on mount and when zoomIndex changes
-	useEffect(() => {
-		if (containerRef.current) {
-			const scale = ZOOM_LEVELS[zoomIndex];
-			containerRef.current.style.transform =
-				scale === 1 ? "" : `scale(${scale})`;
-		}
-		localStorage.setItem(ZOOM_STORAGE_KEY, zoomIndex.toString());
-	}, [zoomIndex, containerRef]);
 
 	const getNavigationRows = useCallback((): HTMLElement[][] => {
 		if (!containerRef.current) return [];
@@ -58,7 +31,6 @@ export function useVimNavigation({
 			if (socialLinks.length > 0) rows.push(socialLinks);
 		}
 
-		// Get all accordion triggers (the actual focusable elements)
 		const allTriggers = containerRef.current.querySelectorAll<HTMLElement>(
 			".section-list__trigger",
 		);
@@ -127,8 +99,10 @@ export function useVimNavigation({
 
 		if (row === -1) {
 			if (rows.length > 0) {
-				const lastRow = rows[rows.length - 1];
-				focusElement(lastRow[lastRow.length - 1]);
+				const lastRow = rows.at(-1);
+				if (lastRow && lastRow.length > 0) {
+					focusElement(lastRow.at(-1)!);
+				}
 			}
 			return;
 		}
@@ -169,8 +143,10 @@ export function useVimNavigation({
 
 		if (row === -1) {
 			if (rows.length > 0) {
-				const lastRow = rows[rows.length - 1];
-				focusElement(lastRow[lastRow.length - 1]);
+				const lastRow = rows.at(-1);
+				if (lastRow && lastRow.length > 0) {
+					focusElement(lastRow.at(-1)!);
+				}
 			}
 			return;
 		}
@@ -182,11 +158,13 @@ export function useVimNavigation({
 		} else if (row > 0) {
 			// At start of row, wrap to end of previous row
 			const prevRow = rows[row - 1];
-			focusElement(prevRow[prevRow.length - 1]);
+			focusElement(prevRow.at(-1)!);
 		} else {
 			// At start of first row, wrap to end of last row
-			const lastRow = rows[rows.length - 1];
-			focusElement(lastRow[lastRow.length - 1]);
+			const lastRow = rows.at(-1);
+			if (lastRow) {
+				focusElement(lastRow.at(-1)!);
+			}
 		}
 	}, [getNavigationRows, getCurrentPosition, focusElement]);
 
@@ -200,18 +178,12 @@ export function useVimNavigation({
 	const focusLast = useCallback(() => {
 		const rows = getNavigationRows();
 		if (rows.length > 0) {
-			const lastRow = rows[rows.length - 1];
-			focusElement(lastRow[lastRow.length - 1]);
+			const lastRow = rows.at(-1);
+			if (lastRow) {
+				focusElement(lastRow.at(-1)!);
+			}
 		}
 	}, [getNavigationRows, focusElement]);
-
-	const zoomIn = useCallback(() => {
-		setZoomIndex((prev) => Math.min(prev + 1, ZOOM_LEVELS.length - 1));
-	}, []);
-
-	const zoomOut = useCallback(() => {
-		setZoomIndex((prev) => Math.max(prev - 1, 0));
-	}, []);
 
 	const isInSubgroupLink = useCallback((): boolean => {
 		const active = document.activeElement as HTMLElement;
@@ -228,8 +200,227 @@ export function useVimNavigation({
 				".section-list__trigger",
 			) as HTMLElement | null;
 		}
-		return active?.closest(".section-list__trigger") as HTMLElement | null;
+		return active?.closest(".section-list__trigger");
 	}, []);
+
+	// Key mapping constants
+	const DOWN_KEYS = new Set(["k", "s", "ArrowDown"]);
+	const UP_KEYS = new Set(["i", "w", "ArrowUp"]);
+	const RIGHT_KEYS = new Set(["l", "d", "ArrowRight"]);
+	const LEFT_KEYS = new Set(["j", "a", "ArrowLeft"]);
+
+	// Helper function for parent trigger actions
+	const handleParentTriggerAction = useCallback(
+		(action: "focus" | "click" | "clickAndFocus", then?: () => void) => {
+			const parentItem = getParentTrigger();
+			if (parentItem) {
+				if (action === "click" || action === "clickAndFocus") {
+					parentItem.click();
+				}
+				if (action === "focus" || action === "clickAndFocus") {
+					parentItem.focus();
+				}
+				if (then) {
+					setTimeout(then, 0);
+				}
+			}
+		},
+		[getParentTrigger],
+	);
+
+	// Handle section navigation (number keys 1-4)
+	const handleSectionNavigation = useCallback(
+		(key: string) => {
+			if (key >= "1" && key <= "4") {
+				const sectionIndex = Number.parseInt(key, 10) - 1;
+				const sections = containerRef.current?.querySelectorAll("section");
+				if (sections?.[sectionIndex]) {
+					const section = sections[sectionIndex];
+					section.scrollIntoView({ behavior: "smooth", block: "start" });
+					const firstFocusable = section.querySelector<HTMLElement>(
+						'[tabindex="0"], a[href]',
+					);
+					firstFocusable?.focus();
+				}
+			}
+		},
+		[containerRef],
+	);
+
+	// Handle double-key sequence (gg for focusFirst)
+	const handleDoubleKeySequence = useCallback(
+		(key: string, now: number): boolean => {
+			if (key === "g") {
+				if (lastKeyRef.current === "g" && now - lastKeyTimeRef.current < 500) {
+					focusFirst();
+					window.scrollTo({ top: 0, behavior: "smooth" });
+					lastKeyRef.current = "";
+					return true;
+				}
+				lastKeyRef.current = "g";
+				lastKeyTimeRef.current = now;
+				return true;
+			}
+			return false;
+		},
+		[focusFirst],
+	);
+
+	// Handle subgroup link navigation
+	const handleSubgroupLinkKey = useCallback(
+		(e: KeyboardEvent): boolean => {
+			const active = document.activeElement as HTMLElement;
+
+			if (RIGHT_KEYS.has(e.key)) {
+				e.preventDefault();
+				const links = getSubgroupLinks();
+				const currentIdx = links.indexOf(active);
+				if (currentIdx !== -1 && currentIdx < links.length - 1) {
+					links[currentIdx + 1].focus();
+				} else {
+					handleParentTriggerAction("clickAndFocus", focusDown);
+				}
+				return true;
+			}
+
+			if (LEFT_KEYS.has(e.key)) {
+				e.preventDefault();
+				const links = getSubgroupLinks();
+				const currentIdx = links.indexOf(active);
+				if (currentIdx > 0) {
+					links[currentIdx - 1].focus();
+				} else {
+					handleParentTriggerAction("focus");
+				}
+				return true;
+			}
+
+			if (DOWN_KEYS.has(e.key)) {
+				e.preventDefault();
+				handleParentTriggerAction("clickAndFocus", focusDown);
+				return true;
+			}
+
+			if (UP_KEYS.has(e.key)) {
+				e.preventDefault();
+				handleParentTriggerAction("clickAndFocus", focusUp);
+				return true;
+			}
+
+			if (e.key === "q" || e.key === "Escape") {
+				e.preventDefault();
+				handleParentTriggerAction("clickAndFocus");
+				return true;
+			}
+
+			if (e.key === "Enter" || e.key === " ") {
+				return true;
+			}
+
+			return false;
+		},
+		[getSubgroupLinks, handleParentTriggerAction, focusDown, focusUp],
+	);
+
+	// Handle main navigation keys
+	const handleMainNavigationKey = useCallback(
+		(e: KeyboardEvent, isInContainer: boolean, active: HTMLElement) => {
+			if (DOWN_KEYS.has(e.key)) {
+				e.preventDefault();
+				focusDown();
+				return;
+			}
+
+			if (UP_KEYS.has(e.key)) {
+				e.preventDefault();
+				focusUp();
+				return;
+			}
+
+			if (RIGHT_KEYS.has(e.key)) {
+				e.preventDefault();
+				if (isInContainer && active) {
+					const isExpanded = active.getAttribute("aria-expanded") === "true";
+					const isTrigger = active.classList.contains("section-list__trigger");
+
+					if (isTrigger) {
+						if (isExpanded) {
+							const links = getSubgroupLinks();
+							if (links.length > 0) {
+								links[0].focus();
+							} else {
+								active.click();
+								focusDown();
+							}
+						} else {
+							active.click();
+						}
+					} else {
+						focusRight();
+					}
+				} else {
+					focusRight();
+				}
+				return;
+			}
+
+			if (LEFT_KEYS.has(e.key)) {
+				e.preventDefault();
+				if (isInContainer && active) {
+					const isExpanded = active.getAttribute("aria-expanded") === "true";
+					const isTrigger = active.classList.contains("section-list__trigger");
+
+					if (isTrigger && isExpanded) {
+						active.click();
+					} else {
+						focusLeft();
+					}
+				} else {
+					focusLeft();
+				}
+				return;
+			}
+
+			if (e.key === "q" || e.key === "Escape") {
+				if (isInContainer && active) {
+					if (active.getAttribute("aria-expanded") === "true") {
+						e.preventDefault();
+						active.click();
+					}
+				}
+				return;
+			}
+
+			if (e.key === "G" || e.key === "End") {
+				e.preventDefault();
+				focusLast();
+				window.scrollTo({
+					top: document.body.scrollHeight,
+					behavior: "smooth",
+				});
+				return;
+			}
+
+			if (e.key === "Home") {
+				e.preventDefault();
+				focusFirst();
+				window.scrollTo({ top: 0, behavior: "smooth" });
+				return;
+			}
+
+			handleSectionNavigation(e.key);
+		},
+		[
+			focusDown,
+			focusUp,
+			focusRight,
+			focusLeft,
+			focusFirst,
+			focusLast,
+			getSubgroupLinks,
+			handleSectionNavigation,
+		],
+	);
 
 	useEffect(() => {
 		const handleKeyDown = (e: KeyboardEvent) => {
@@ -243,242 +434,44 @@ export function useVimNavigation({
 			}
 
 			const now = Date.now();
-			const isInContainer = containerRef.current?.contains(
-				document.activeElement,
-			);
-
-			if (e.key === "+" || e.key === "=") {
-				e.preventDefault();
-				zoomIn();
-				return;
-			}
-			if (e.key === "-") {
-				e.preventDefault();
-				zoomOut();
-				return;
-			}
-
+			const isInContainer: boolean =
+				containerRef.current?.contains(document.activeElement) ?? false;
 			const active = document.activeElement as HTMLElement;
-			const inSubgroupLink = isInSubgroupLink();
 
-			if (inSubgroupLink) {
-				switch (e.key) {
-					case "l":
-					case "d":
-					case "ArrowRight": {
-						e.preventDefault();
-						const links = getSubgroupLinks();
-						const currentIdx = links.indexOf(active);
-						if (currentIdx !== -1 && currentIdx < links.length - 1) {
-							links[currentIdx + 1].focus();
-						} else {
-							const parentItem = getParentTrigger();
-							if (parentItem) {
-								parentItem.click();
-								parentItem.focus();
-								setTimeout(() => focusDown(), 0);
-							}
-						}
-						return;
+			// Handle subgroup link navigation
+			if (isInSubgroupLink()) {
+				if (handleSubgroupLinkKey(e)) {
+					if (e.key !== "g") {
+						lastKeyRef.current = e.key;
+						lastKeyTimeRef.current = now;
 					}
-					case "j":
-					case "a":
-					case "ArrowLeft": {
-						e.preventDefault();
-						const links = getSubgroupLinks();
-						const currentIdx = links.indexOf(active);
-						if (currentIdx > 0) {
-							links[currentIdx - 1].focus();
-						} else {
-							const parentItem = getParentTrigger();
-							if (parentItem) {
-								parentItem.focus();
-							}
-						}
-						return;
-					}
-					case "k":
-					case "s":
-					case "ArrowDown": {
-						e.preventDefault();
-						const parentItem = getParentTrigger();
-						if (parentItem) {
-							parentItem.click();
-							parentItem.focus();
-							setTimeout(() => focusDown(), 0);
-						}
-						return;
-					}
-					case "i":
-					case "w":
-					case "ArrowUp": {
-						e.preventDefault();
-						const parentItem = getParentTrigger();
-						if (parentItem) {
-							parentItem.click();
-							parentItem.focus();
-							setTimeout(() => focusUp(), 0);
-						}
-						return;
-					}
-					case "q":
-					case "Escape": {
-						e.preventDefault();
-						const parentItem = getParentTrigger();
-						if (parentItem) {
-							parentItem.click();
-							parentItem.focus();
-						}
-						return;
-					}
-					case "Enter":
-					case " ":
-						return;
+					return;
 				}
 			}
 
-			switch (e.key) {
-				case "k":
-				case "s":
-				case "ArrowDown":
-					e.preventDefault();
-					focusDown();
-					break;
-				case "i":
-				case "w":
-				case "ArrowUp":
-					e.preventDefault();
-					focusUp();
-					break;
-				case "l":
-				case "d":
-				case "ArrowRight":
-					if (isInContainer && active) {
-						const isExpanded = active.getAttribute("aria-expanded") === "true";
-						const isTrigger = active.classList.contains(
-							"section-list__trigger",
-						);
-
-						if (isTrigger) {
-							if (isExpanded) {
-								e.preventDefault();
-								const links = getSubgroupLinks();
-								if (links.length > 0) {
-									links[0].focus();
-								} else {
-									active.click();
-									focusDown();
-								}
-							} else {
-								e.preventDefault();
-								active.click();
-							}
-						} else {
-							e.preventDefault();
-							focusRight();
-						}
-					} else {
-						// Not in container or no active element - start navigation
-						e.preventDefault();
-						focusRight();
-					}
-					break;
-				case "j":
-				case "a":
-				case "ArrowLeft":
-					if (isInContainer && active) {
-						const isExpanded = active.getAttribute("aria-expanded") === "true";
-						const isTrigger = active.classList.contains(
-							"section-list__trigger",
-						);
-
-						if (isTrigger && isExpanded) {
-							e.preventDefault();
-							active.click();
-						} else {
-							e.preventDefault();
-							focusLeft();
-						}
-					} else {
-						// Not in container or no active element - start navigation
-						e.preventDefault();
-						focusLeft();
-					}
-					break;
-				case "q":
-				case "Escape":
-					if (isInContainer && active) {
-						if (active.getAttribute("aria-expanded") === "true") {
-							e.preventDefault();
-							active.click();
-						}
-					}
-					break;
-				case "g":
-					if (
-						lastKeyRef.current === "g" &&
-						now - lastKeyTimeRef.current < 500
-					) {
-						e.preventDefault();
-						focusFirst();
-						window.scrollTo({ top: 0, behavior: "smooth" });
-						lastKeyRef.current = "";
-						return;
-					}
-					lastKeyRef.current = "g";
-					lastKeyTimeRef.current = now;
-					return;
-				case "G":
-				case "End":
-					e.preventDefault();
-					focusLast();
-					window.scrollTo({
-						top: document.body.scrollHeight,
-						behavior: "smooth",
-					});
-					break;
-				case "Home":
-					e.preventDefault();
-					focusFirst();
-					window.scrollTo({ top: 0, behavior: "smooth" });
-					break;
-				default:
-					if (e.key >= "1" && e.key <= "4") {
-						e.preventDefault();
-						const sectionIndex = Number.parseInt(e.key, 10) - 1;
-						const sections = containerRef.current?.querySelectorAll("section");
-						if (sections?.[sectionIndex]) {
-							const section = sections[sectionIndex];
-							section.scrollIntoView({ behavior: "smooth", block: "start" });
-							const firstFocusable = section.querySelector<HTMLElement>(
-								'[tabindex="0"], a[href]',
-							);
-							firstFocusable?.focus();
-						}
-					}
+			// Handle double-key sequence (gg)
+			if (handleDoubleKeySequence(e.key, now)) {
+				return;
 			}
 
+			// Handle main navigation
+			handleMainNavigationKey(e, isInContainer, active);
+
+			// Update key tracking
 			if (e.key !== "g") {
 				lastKeyRef.current = e.key;
 				lastKeyTimeRef.current = now;
 			}
 		};
 
-		window.addEventListener("keydown", handleKeyDown);
-		return () => window.removeEventListener("keydown", handleKeyDown);
+		globalThis.addEventListener("keydown", handleKeyDown);
+		return () => globalThis.removeEventListener("keydown", handleKeyDown);
 	}, [
-		containerRef,
 		disabled,
-		focusDown,
-		focusUp,
-		focusLeft,
-		focusRight,
-		focusFirst,
-		focusLast,
-		getSubgroupLinks,
+		containerRef,
 		isInSubgroupLink,
-		getParentTrigger,
-		zoomIn,
-		zoomOut,
+		handleSubgroupLinkKey,
+		handleDoubleKeySequence,
+		handleMainNavigationKey,
 	]);
 }

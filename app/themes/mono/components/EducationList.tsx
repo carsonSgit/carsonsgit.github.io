@@ -5,8 +5,8 @@ import { educationExp } from "../../../data/experiences";
 
 const EducationList = () => {
 	return (
-		<section>
-			<h2>Education</h2>
+		<section aria-labelledby="education-heading">
+			<h2 id="education-heading">Education</h2>
 			<Accordion.Root multiple className="section-list" aria-label="Education">
 				{educationExp.map((item) => {
 					const dateRange = item.date.join(" - ");
@@ -35,6 +35,7 @@ const EducationList = () => {
 												onKeyDown={(e) => e.stopPropagation()}
 											>
 												@ {item.institution}
+												<span className="sr-only">(opens in new tab)</span>
 											</a>
 										</span>
 									</div>

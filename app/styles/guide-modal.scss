@@ -6,7 +6,8 @@
   --guide-modal-border: rgba(255, 255, 255, 0.1);
   --guide-modal-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   --guide-text: #e8e8ec;
-  --guide-text-muted: #71717a;
+  // Increased from #71717a → #8a8a94 for WCAG AA contrast on modal background
+  --guide-text-muted: #8a8a94;
   --guide-border: rgba(255, 255, 255, 0.1);
   --guide-surface: rgba(255, 255, 255, 0.03);
   --guide-accent: #60a5fa;
@@ -36,11 +37,19 @@
   kbd {
     font-family: 'CommitMono', monospace;
     font-size: 0.875rem;
-    color: #71717a;
+    color: #8a8a94;
     transition: color 150ms ease;
   }
 
-  &:hover,
+  &:hover {
+    border-color: #60a5fa;
+    background: rgba(255, 255, 255, 0.06);
+
+    kbd {
+      color: #e8e8ec;
+    }
+  }
+
   &:focus {
     border-color: #60a5fa;
     background: rgba(255, 255, 255, 0.06);
@@ -49,6 +58,11 @@
     kbd {
       color: #e8e8ec;
     }
+  }
+
+  &:focus-visible {
+    outline: 2px solid #60a5fa;
+    outline-offset: 2px;
   }
 
   @media (max-width: 768px) {
@@ -138,6 +152,16 @@
 
     &:hover {
       color: var(--guide-text);
+    }
+
+    &:focus {
+      color: var(--guide-text);
+      outline: none;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--guide-accent);
+      outline-offset: 2px;
     }
   }
 
