@@ -2,7 +2,7 @@
 	"name": "carsonsgit.github.io",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": "http://carsonsgit.github.io",
+	"homepage": "https://carsonspriggs.me",
 	"dependencies": {
 		"@base-ui/react": "^1.1.0",
 		"@paper-design/shaders-react": "^0.0.71",

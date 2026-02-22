@@ -17,62 +17,6 @@
   --guide-font: 'CommitMono', monospace;
 }
 
-.guide-trigger {
-  position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 2px;
-  cursor: pointer;
-  z-index: 50;
-  transition: border-color 150ms ease, background-color 150ms ease;
-
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-
-  kbd {
-    font-family: 'CommitMono', monospace;
-    font-size: 0.875rem;
-    color: #8a8a94;
-    transition: color 150ms ease;
-  }
-
-  &:hover {
-    border-color: #60a5fa;
-    background: rgba(255, 255, 255, 0.06);
-
-    kbd {
-      color: #e8e8ec;
-    }
-  }
-
-  &:focus {
-    border-color: #60a5fa;
-    background: rgba(255, 255, 255, 0.06);
-    outline: none;
-
-    kbd {
-      color: #e8e8ec;
-    }
-  }
-
-  &:focus-visible {
-    outline: 2px solid #60a5fa;
-    outline-offset: 2px;
-  }
-
-  @media (max-width: 768px) {
-    bottom: 1rem;
-    right: 1rem;
-    width: 2.25rem;
-    height: 2.25rem;
-  }
-}
-
 .guide-modal-overlay {
   position: fixed;
   inset: 0;
@@ -231,14 +175,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .guide-trigger {
-    transition: none;
-
-    kbd {
-      transition: none;
-    }
-  }
-
   .guide-modal-overlay,
   .guide-modal {
     animation: none;

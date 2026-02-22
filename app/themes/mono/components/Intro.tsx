@@ -2,9 +2,21 @@ import { Avatar } from "@base-ui/react/avatar";
 import BracketLink from "./BracketLink";
 
 const LINKS = [
-	{ label: "github", href: "https://github.com/carsonSgit" },
-	{ label: "linkedin", href: "https://linkedin.com/in/carsonspriggs" },
-	{ label: "email", href: "mailto:carsonspriggs6@gmail.com" },
+	{
+		label: "github",
+		href: "https://github.com/carsonSgit",
+		srContext: "GitHub profile",
+	},
+	{
+		label: "linkedin",
+		href: "https://linkedin.com/in/carsonspriggs",
+		srContext: "LinkedIn profile",
+	},
+	{
+		label: "email",
+		href: "mailto:carsonspriggs6@gmail.com",
+		srContext: "Email Carson",
+	},
 ];
 
 const Intro = () => {
@@ -13,7 +25,7 @@ const Intro = () => {
 			<div className="intro__header">
 				<Avatar.Root className="intro__avatar">
 					<Avatar.Image
-						src="/klungo.png"
+						src="/klungo.webp"
 						alt="Carson Spriggs"
 						width={56}
 						height={56}
@@ -41,6 +53,7 @@ const Intro = () => {
 						href={link.href}
 						target="_blank"
 						rel="noopener noreferrer"
+						srContext={link.srContext}
 					>
 						{link.label}
 					</BracketLink>
