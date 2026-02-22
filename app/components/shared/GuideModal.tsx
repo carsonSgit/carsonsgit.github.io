@@ -16,14 +16,12 @@ const GuideModal: React.FC<GuideModalProps> = ({ isOpen, onClose }) => {
 	const modalRef = useRef<HTMLDivElement>(null);
 	const closeButtonRef = useRef<HTMLButtonElement>(null);
 
-	// Focus the close button when modal opens
 	useEffect(() => {
 		if (isOpen) {
 			closeButtonRef.current?.focus();
 		}
 	}, [isOpen]);
 
-	// Focus trap + close key handling
 	const handleKeyDown = useCallback(
 		(e: KeyboardEvent) => {
 			if (!isOpen) return;
@@ -34,7 +32,6 @@ const GuideModal: React.FC<GuideModalProps> = ({ isOpen, onClose }) => {
 				return;
 			}
 
-			// Tab trap: keep focus inside the modal
 			if (e.key === "Tab") {
 				const modal = modalRef.current;
 				if (!modal) return;
@@ -68,8 +65,8 @@ const GuideModal: React.FC<GuideModalProps> = ({ isOpen, onClose }) => {
 	);
 
 	useEffect(() => {
-		window.addEventListener("keydown", handleKeyDown);
-		return () => window.removeEventListener("keydown", handleKeyDown);
+		globalThis.addEventListener("keydown", handleKeyDown);
+		return () => globalThis.removeEventListener("keydown", handleKeyDown);
 	}, [handleKeyDown]);
 
 	return (

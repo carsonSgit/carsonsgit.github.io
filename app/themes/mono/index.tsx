@@ -50,8 +50,8 @@ const MonoTheme: React.FC = () => {
 			}
 		};
 
-		window.addEventListener("keydown", handleKeyDown);
-		return () => window.removeEventListener("keydown", handleKeyDown);
+		globalThis.addEventListener("keydown", handleKeyDown);
+		return () => globalThis.removeEventListener("keydown", handleKeyDown);
 	}, [isGuideOpen, handleOpenGuide]);
 
 	return (

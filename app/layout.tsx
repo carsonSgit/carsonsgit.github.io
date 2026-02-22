@@ -72,45 +72,44 @@ const jsonLd = {
 	],
 };
 
-export default function RootLayout
-	(
-		{ children }: 
-		{ readonly children: React.ReactNode; }
-	) 
-	{
-		return (
-			<html lang="en" data-theme="mono">
-				<head>
-					<link rel="preconnect" href="https://cloud.umami.is" />
-					<link
-						rel="preload"
-						href="/fonts/CommitMono-400-Regular.woff2"
-						as="font"
-						type="font/woff2"
-						crossOrigin="anonymous"
-					/>
-					<link
-						rel="preload"
-						href="/fonts/CommitMono-700-Regular.woff2"
-						as="font"
-						type="font/woff2"
-						crossOrigin="anonymous"
-					/>
-					<script
-						type="application/ld+json"
-						// biome-ignore lint/security/noDangerouslySetInnerHtml: static JSON-LD, no user input
-						dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-					/>
-				</head>
-				<body className="theme-mono">
-					{children}
-					<Script
-						src="https://cloud.umami.is/script.js"
-						data-website-id="3a4253fc-dee7-4c4e-bd4a-a5eba54a2df1"
-						strategy="afterInteractive"
-						defer
-					/>
-				</body>
-			</html>
-		);
-	}
+export default function RootLayout({
+	children,
+}: {
+	readonly children: React.ReactNode;
+}) {
+	return (
+		<html lang="en" data-theme="mono">
+			<head>
+				<link rel="preconnect" href="https://cloud.umami.is" />
+				<link
+					rel="preload"
+					href="/fonts/CommitMono-400-Regular.woff2"
+					as="font"
+					type="font/woff2"
+					crossOrigin="anonymous"
+				/>
+				<link
+					rel="preload"
+					href="/fonts/CommitMono-700-Regular.woff2"
+					as="font"
+					type="font/woff2"
+					crossOrigin="anonymous"
+				/>
+				<script
+					type="application/ld+json"
+					// biome-ignore lint/security/noDangerouslySetInnerHtml: static JSON-LD, no user input
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+				/>
+			</head>
+			<body className="theme-mono">
+				{children}
+				<Script
+					src="https://cloud.umami.is/script.js"
+					data-website-id="3a4253fc-dee7-4c4e-bd4a-a5eba54a2df1"
+					strategy="afterInteractive"
+					defer
+				/>
+			</body>
+		</html>
+	);
+}
