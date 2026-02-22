@@ -2,4 +2,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://carsonsgit.github.io/sitemap.xml
+Sitemap: https://carsonspriggs.me/sitemap.xml

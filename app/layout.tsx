@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.scss";
-import "./styles/guide-modal.scss";
 import Script from "next/script";
 
 const BASE_URL = "https://carsonspriggs.me";
@@ -9,6 +8,10 @@ export const metadata: Metadata = {
 	title: "carsonSgit",
 	description:
 		"Portfolio of Carson Spriggs. Fullstack developer, AI research, UI/UX.",
+	metadataBase: new URL(BASE_URL),
+	alternates: {
+		canonical: "/",
+	},
 	authors: [{ name: "Carson Spriggs" }],
 	keywords: [
 		"Carson Spriggs",
@@ -23,6 +26,21 @@ export const metadata: Metadata = {
 	],
 	icons: {
 		icon: "/favicon.ico",
+	},
+	openGraph: {
+		title: "carsonSgit",
+		description:
+			"Portfolio of Carson Spriggs. Fullstack developer, AI research, UI/UX.",
+		url: BASE_URL,
+		siteName: "carsonSgit",
+		locale: "en_US",
+		type: "website",
+	},
+	twitter: {
+		card: "summary",
+		title: "carsonSgit",
+		description:
+			"Portfolio of Carson Spriggs. Fullstack developer, AI research, UI/UX.",
 	},
 	manifest: "/manifest.json",
 };

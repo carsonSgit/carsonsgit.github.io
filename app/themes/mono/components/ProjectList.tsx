@@ -52,6 +52,7 @@ const ProjectList = () => {
 						<Accordion.Panel className="detail-panel" keepMounted>
 							<ProjectDetail
 								description={project.description}
+								projectTitle={project.title}
 								github={project.github}
 								website={project.website}
 							/>

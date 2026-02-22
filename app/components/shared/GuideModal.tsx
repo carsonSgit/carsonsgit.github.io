@@ -152,12 +152,6 @@ const GuideModal: React.FC<GuideModalProps> = ({ isOpen, onClose }) => {
 												jump to section
 											</span>
 										</div>
-										<div className="guide-modal__shortcut">
-											<span className="guide-modal__keys">
-												<kbd>+</kbd> / <kbd>-</kbd>
-											</span>
-											<span className="guide-modal__action">zoom in / out</span>
-										</div>
 									</div>
 								</div>
 							</section>
