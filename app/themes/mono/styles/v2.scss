@@ -1,24 +1,9 @@
 // v2 Mono Portfolio Styles
 
-$grid-size: 60px;
-$grid-color: rgba(255, 255, 255, 0.035);
-
 .mono-portfolio-wrapper {
   min-height: 100vh;
   background: #0d0d0f;
   position: relative;
-
-  &::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image:
-      linear-gradient($grid-color 1px, transparent 1px),
-      linear-gradient(90deg, $grid-color 1px, transparent 1px);
-    background-size: $grid-size $grid-size;
-    pointer-events: none;
-    z-index: 1;
-  }
 }
 
 .mono-portfolio {
@@ -500,9 +485,10 @@ $grid-color: rgba(255, 255, 255, 0.035);
   }
 
   .ascii-footer {
-    text-align: left;
+    text-align: center;
     margin-top: 0;
     padding-top: 0;
+    overflow-x: clip;
 
     &__art {
       white-space: pre;
@@ -511,15 +497,9 @@ $grid-color: rgba(255, 255, 255, 0.035);
       color: var(--text);
       margin-bottom: 1rem;
 
-      // Prevent horizontal overflow on narrow screens
       @media (max-width: 600px) {
-        font-size: 0.625rem;
-        overflow-x: auto;
-        max-width: 100%;
-      }
-
-      @media (max-width: 400px) {
-        display: none;
+        font-size: 0.5rem;
+        line-height: 1.2;
       }
     }
   }
