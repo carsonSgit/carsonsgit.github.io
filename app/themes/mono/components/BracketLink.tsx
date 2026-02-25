@@ -16,9 +16,7 @@ const BracketLink = ({
 			{children}
 			{target === "_blank" && (
 				<span className="sr-only">
-					{srContext
-						? ` (${srContext}, opens in new tab)`
-						: " (opens in new tab)"}
+					{srContext ? ` (${srContext}, opens in new tab)` : " (opens in new tab)"}
 				</span>
 			)}
 		</a>
