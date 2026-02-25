@@ -1,15 +1,37 @@
-# 🐧 carsonSgit's Awesome Portfolio 🐧
+<div align="center">
 
-Welcome to my **portfolio!** My site showcases my journey as a CS student/career, projects, experiences, and achievements!
+# 🎨 carsonSgit's Portfolio
 
-![DEMO](https://github.com/user-attachments/assets/1104857e-20e5-43c8-a5ec-ce08421c441f)
+**A showcase of my journey, projects, and passion for Computer Science.**
 
-## 🔗 Important Links
+![Portfolio Demo](https://github.com/user-attachments/assets/e679fa8a-290a-4823-9ff0-188cbf169f4c)
 
-- 📚 **Development Resources:** Here are some [helpful links](https://github.com/carsonSgit/carsonsgit.github.io/issues/9) I made use of during development.
-- 🔍 **Commit/Merge Prefixes:** I used these [commit message prefixes](https://github.com/carsonSgit/carsonsgit.github.io/issues/14) to improve my `Git` habits.
+---
+
+<br/>
+
+### Made with
+
+![Next.js](https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-black?style=for-the-badge&logo=framer&logoColor=white)
+![Biome](https://img.shields.io/badge/Biome-60A5FA?style=for-the-badge&logo=biome&logoColor=white)
+
+</div>
+
+## About
+
+This portfolio is designed to be a reflection of my work and my growth as a developer. I love to build random things and look into new technologies, so this gets updated / iterated on quite often.
+
+## 📬 Connect
+
+If you're interested in my work or want to chat, you can reach me here:
+
+- Reach me at: [carsonspriggs8@gmail.com](mailto:carsonspriggs8@gmail.com)
+- LinkedIn: [https://www.linkedin.com/in/carsonspriggs](https://www.linkedin.com/in/carsonspriggs)
 
 > [!NOTE]
-> If you have any questions/are interested in my process, don't hesitate to reach out to me!
+> Feel free to reach out if you have questions about my projects or process!
 
-**Thank you for visiting my portfolio! 🎉**
+**Thanks for stopping by!** 🎉
