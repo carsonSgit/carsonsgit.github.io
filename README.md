@@ -4,7 +4,7 @@
 
 **A showcase of my journey, projects, and passion for Computer Science.**
 
-![Portfolio Demo](https://github.com/user-attachments/assets/1104857e-20e5-43c8-a5ec-ce08421c441f)
+![Portfolio Demo](./public/portfolio-demo.png)
 
 ---
 
@@ -26,8 +26,8 @@ Welcome to my personal corner of the web! This portfolio is designed to be a ref
 
 I believe in documenting the process and maintaining high standards. Here are some resources that guide my development:
 
-- 📚 **[Development Resources](https://github.com/carsonSgit/carsonsgit.github.io/issues/9)** - Tools and links I find helpful.
-- 🔍 **[Commit Convention](https://github.com/carsonSgit/carsonsgit.github.io/issues/14)** - My guide for clean and meaningful commit messages.
+- 📚 **[Next.js Documentation](https://nextjs.org/docs)** - The framework used for this portfolio.
+- 🔍 **[Conventional Commits](https://www.conventionalcommits.org/)** - My guide for clean and meaningful commit messages.
 
 ## 📬 Connect
 
