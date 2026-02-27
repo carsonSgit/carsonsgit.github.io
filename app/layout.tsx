@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import "./globals.scss";
 import Script from "next/script";
 
@@ -128,6 +129,7 @@ export default function RootLayout({
 					strategy="afterInteractive"
 					defer
 				/>
+				<SpeedInsights />
 			</body>
 		</html>
 	);
