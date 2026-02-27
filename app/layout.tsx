@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import "./globals.scss";
 import Script from "next/script";
@@ -99,7 +100,6 @@ export default function RootLayout({
 	return (
 		<html lang="en" data-theme="mono">
 			<head>
-				<link rel="preconnect" href="https://cloud.umami.is" />
 				<link
 					rel="preload"
 					href="/fonts/CommitMono-400-Regular.woff2"
@@ -122,13 +122,7 @@ export default function RootLayout({
 			</head>
 			<body className="theme-mono">
 				{children}
-				<Script
-					src="https://cloud.umami.is/script.js"
-					data-website-id="3a4253fc-dee7-4c4e-bd4a-a5eba54a2df1"
-					data-cache="false"
-					strategy="afterInteractive"
-					defer
-				/>
+				<Analytics />
 				<SpeedInsights />
 			</body>
 		</html>
