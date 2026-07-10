@@ -56,7 +56,7 @@ export default function Shader({ className }: ShaderProps) {
 					frame={82692.5619999984}
 					colorBack="#00000000"
 					colorFront="#305C3FCC"
-					className="!h-full !w-full absolute left-0 top-0 bg-[#0000004D] opacity-100"
+					className="shader-stack__layer shader-stack__layer--dark"
 				/>
 				<SmokeRing
 					speed={0.32}
@@ -71,7 +71,7 @@ export default function Shader({ className }: ShaderProps) {
 					frame={4659.999999999622}
 					colors={["#FFFFFF80"]}
 					colorBack="#00000000"
-					className="!h-full !w-full absolute left-0 top-0"
+					className="shader-stack__layer"
 				/>
 				<Dithering
 					speed={0.08}
@@ -82,7 +82,7 @@ export default function Shader({ className }: ShaderProps) {
 					frame={82692.5619999984}
 					colorBack="#00000000"
 					colorFront="#3A5B37CC"
-					className="!h-full !w-full absolute left-0 top-0 bg-[#FFF6F44D] opacity-100"
+					className="shader-stack__layer shader-stack__layer--light"
 				/>
 				<PaperTexture
 					contrast={0.3}
@@ -100,7 +100,7 @@ export default function Shader({ className }: ShaderProps) {
 					fit="cover"
 					colorBack="#00000000"
 					colorFront="#21914B"
-					className="!h-full !w-full absolute left-0 top-0 bg-[#FFFFFF63] opacity-45"
+					className="shader-stack__layer shader-stack__layer--paper"
 				/>
 			</div>
 		</div>

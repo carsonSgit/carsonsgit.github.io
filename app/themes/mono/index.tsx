@@ -1,24 +1,17 @@
-"use client";
-
-import { useRef } from "react";
+import Shader from "@/components/ui/shader";
 import AsciiFooter from "./components/AsciiFooter";
 import EducationList from "./components/EducationList";
 import ExperienceList from "./components/ExperienceList";
 import Intro from "./components/Intro";
+import KeyboardNavigation from "./components/KeyboardNavigation";
 import ProjectList from "./components/ProjectList";
-import { useVimNavigation } from "./hooks/useVimNavigation";
-import "@/styles.scss";
-import "./motion-polish.scss";
-import Shader from "@/components/ui/shader";
+import "@/home.scss";
 
-const MonoTheme: React.FC = () => {
-	const containerRef = useRef<HTMLDivElement>(null);
-
-	useVimNavigation({ containerRef });
-
+const MonoTheme = () => {
 	return (
 		<div className="mono-portfolio-wrapper theme-mono">
-			<div className="mono-portfolio" ref={containerRef}>
+			<div className="mono-portfolio" data-keyboard-navigation>
+				<KeyboardNavigation />
 				<a href="#main-content" className="skip-link">
 					Skip to content
 				</a>

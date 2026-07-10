@@ -1,8 +1,5 @@
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
-import Script from "next/script";
-import CommandPaletteProvider from "@/components/shared/CommandPaletteProvider";
+import CommandPalette from "@/components/shared/CommandPalette";
 import {
 	absoluteUrl,
 	BASE_URL,
@@ -12,6 +9,7 @@ import {
 	DEFAULT_TITLE,
 	SITE_NAME,
 } from "@/lib/seo";
+import "./command-palette.scss";
 import "./globals.scss";
 
 const HOME_KEYWORDS = [
@@ -177,19 +175,6 @@ export default function RootLayout({
 					// biome-ignore lint/security/noDangerouslySetInnerHtml: static bootstrap to prevent FOUC, no user input
 					dangerouslySetInnerHTML={{ __html: COLOR_MODE_BOOTSTRAP }}
 				/>
-				{process.env.NODE_ENV === "development" && (
-					<Script
-						src="//unpkg.com/react-grab/dist/index.global.js"
-						crossOrigin="anonymous"
-						strategy="beforeInteractive"
-					/>
-				)}
-				{process.env.NODE_ENV === "development" && (
-					<Script
-						src="//unpkg.com/@react-grab/mcp/dist/client.global.js"
-						strategy="lazyOnload"
-					/>
-				)}
 				<script
 					type="application/ld+json"
 					// biome-ignore lint/security/noDangerouslySetInnerHtml: static JSON-LD, no user input
@@ -197,10 +182,8 @@ export default function RootLayout({
 				/>
 			</head>
 			<body className="theme-mono">
-				<CommandPaletteProvider />
+				<CommandPalette />
 				{children}
-				<Analytics />
-				<SpeedInsights />
 			</body>
 		</html>
 	);

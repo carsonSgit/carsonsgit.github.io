@@ -6,9 +6,6 @@ const nextConfig: NextConfig = {
 	images: {
 		unoptimized: true,
 	},
-	sassOptions: {
-		includePaths: ["./app"],
-	},
 };
 
 export default nextConfig;

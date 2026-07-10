@@ -1,12 +1,10 @@
-import type * as z from "zod";
-import type { projectLinkSchema } from "@/types/zodTypes";
 import BracketLink from "./BracketLink";
 
 interface ProjectDetailProps {
 	projectTitle: string;
-	links: z.infer<typeof projectLinkSchema>[];
+	links: readonly { label: string; href: string }[];
 	caseStudySlug?: string;
-	stack: { name: string }[];
+	stack: string[];
 	year: number;
 }
 
@@ -33,12 +31,12 @@ const ProjectDetail = ({
 				aria-label={`${projectTitle} stack`}
 			>
 				{stack.map((item) => (
-					<li key={item.name} className="detail-panel__tech-item">
-						<span className="detail-panel__tech-pill">{item.name}</span>
+					<li key={item} className="detail-panel__tech-item">
+						<span className="detail-panel__tech-pill">{item}</span>
 					</li>
 				))}
 			</ul>
-			<div className="detail-panel__links detail-panel__links--editorial">
+			<div className="detail-panel__links">
 				{caseStudySlug && (
 					<BracketLink
 						href={`/case-studies/${caseStudySlug}`}

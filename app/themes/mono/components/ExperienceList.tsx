@@ -1,6 +1,4 @@
-import { Accordion } from "@base-ui/react/accordion";
 import { professionalExp } from "../../../data/experiences";
-import { preventToggleWhileSelecting } from "../../../utils/triggerSelection";
 
 const ExperienceList = () => {
 	return (
@@ -16,43 +14,26 @@ const ExperienceList = () => {
 					Experience
 				</h2>
 			</div>
-			<Accordion.Root multiple className="section-list" aria-label="Experience">
+			<div className="section-list">
 				{professionalExp.map((item) => {
 					const dateRange = item.date.join(" - ");
 
 					return (
-						<Accordion.Item
+						<details
 							key={`${item.title}-${item.institution}`}
-							value={`${item.title}-${item.institution}`}
 							className="section-list__item"
 						>
-							<Accordion.Header>
-								<Accordion.Trigger
-									className="section-list__trigger"
-									onClick={preventToggleWhileSelecting}
-								>
-									<div className="section-list__header">
-										<span className="section-list__role">
-											{item.title}{" "}
-											<a
-												href={item.link}
-												className="section-list__company-link"
-												target="_blank"
-												rel="noopener noreferrer"
-												onClick={(e) => e.stopPropagation()}
-												onKeyDown={(e) => e.stopPropagation()}
-											>
-												@ {item.institution}
-												<span className="sr-only">(opens in new tab)</span>
-											</a>
-										</span>
-										<p className="section-list__summary">
-											{item.tagline ?? item.description[0]}
-										</p>
-									</div>
-								</Accordion.Trigger>
-							</Accordion.Header>
-							<Accordion.Panel className="detail-panel" keepMounted>
+							<summary className="section-list__trigger">
+								<div className="section-list__header">
+									<span className="section-list__role">
+										{item.title} @ {item.institution}
+									</span>
+									<p className="section-list__summary">
+										{item.tagline ?? item.description[0]}
+									</p>
+								</div>
+							</summary>
+							<div className="detail-panel">
 								<div className="detail-panel__inner">
 									<div className="detail-panel__content">
 										<div className="detail-panel__intro">
@@ -69,9 +50,9 @@ const ExperienceList = () => {
 											))}
 										</ul>
 										<div className="detail-panel__badges">
-											{Object.values(item.experienceBadges).map((badge) => (
-												<span key={badge.label} className="detail-panel__badge">
-													{badge.label}
+											{item.experienceBadges.map((badge) => (
+												<span key={badge} className="detail-panel__badge">
+													{badge}
 												</span>
 											))}
 										</div>
@@ -108,7 +89,7 @@ const ExperienceList = () => {
 												))}
 											</div>
 										)}
-										<div className="detail-panel__links detail-panel__links--editorial">
+										<div className="detail-panel__links">
 											{item.caseStudySlug && (
 												<a
 													href={`/case-studies/${item.caseStudySlug}`}
@@ -129,11 +110,11 @@ const ExperienceList = () => {
 										</div>
 									</div>
 								</div>
-							</Accordion.Panel>
-						</Accordion.Item>
+							</div>
+						</details>
 					);
 				})}
-			</Accordion.Root>
+			</div>
 		</section>
 	);
 };

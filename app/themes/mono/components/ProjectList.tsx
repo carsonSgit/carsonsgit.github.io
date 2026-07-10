@@ -1,8 +1,4 @@
-import { Accordion } from "@base-ui/react/accordion";
-import type * as z from "zod";
-import type { projectSchema } from "@/types/zodTypes";
 import { projects } from "../../../data/projects";
-import { preventToggleWhileSelecting } from "../../../utils/triggerSelection";
 import ProjectDetail from "./ProjectDetail";
 
 const ProjectList = () => {
@@ -19,52 +15,33 @@ const ProjectList = () => {
 					Projects
 				</h2>
 			</div>
-			<Accordion.Root
-				multiple
-				className="section-list section-list--projects"
-				aria-label="Hackathon projects"
-			>
-				{projects.map((project: z.infer<typeof projectSchema>) => {
-					const stack = Object.values(project.languages);
-
+			<div className="section-list section-list--projects">
+				{projects.map((project) => {
 					return (
-						<Accordion.Item
-							key={project.title}
-							value={project.title}
-							className="section-list__item"
-						>
-							<Accordion.Header>
-								<Accordion.Trigger
-									className="section-list__trigger"
-									onClick={preventToggleWhileSelecting}
-								>
-									<div className="section-list__header">
-										<div className="section-list__meta">
-											<span className="section-list__title">
-												{project.title}
-											</span>
-										</div>
-										<p className="section-list__summary">
-											{project.description}
-										</p>
+						<details key={project.title} className="section-list__item">
+							<summary className="section-list__trigger">
+								<div className="section-list__header">
+									<div className="section-list__meta">
+										<span className="section-list__title">{project.title}</span>
 									</div>
-								</Accordion.Trigger>
-							</Accordion.Header>
-							<Accordion.Panel className="detail-panel" keepMounted>
+									<p className="section-list__summary">{project.description}</p>
+								</div>
+							</summary>
+							<div className="detail-panel">
 								<div className="detail-panel__inner">
 									<ProjectDetail
 										projectTitle={project.title}
 										links={project.links}
 										caseStudySlug={project.caseStudySlug}
-										stack={stack}
+										stack={project.languages}
 										year={project.year}
 									/>
 								</div>
-							</Accordion.Panel>
-						</Accordion.Item>
+							</div>
+						</details>
 					);
 				})}
-			</Accordion.Root>
+			</div>
 		</section>
 	);
 };

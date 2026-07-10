@@ -15,7 +15,7 @@ This is a **statically-exported Next.js 16 portfolio site** (no backend, no data
 
 ### Non-obvious notes
 
-- Package manager is **pnpm 10.30.3** (declared via `packageManager` field in `package.json`). The environment ships with this version via nvm.
+- Package manager is **pnpm 10.33.0** (declared via `packageManager` field in `package.json`). The environment ships with this version via nvm.
 - `next.config.ts` uses `output: "export"` — the build produces static HTML in `./out`, not a Node.js server. `pnpm start` serves this via `npx serve`.
 - Biome is used for both formatting and linting (not ESLint/Prettier). The config lives in `biome.json`.
 - There are no automated test suites (no jest, vitest, or similar). `knip` is the closest lint-level check for dead code.

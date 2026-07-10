@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import "@/styles.scss";
+import "@/case-studies.scss";
 import { caseStudies } from "@/data/caseStudies";
 import { createPageMetadata } from "@/lib/seo";
 
