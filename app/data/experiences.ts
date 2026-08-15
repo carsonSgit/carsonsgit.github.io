@@ -3,7 +3,7 @@ import type { experienceSchema } from "../types/zodTypes";
 
 export const professionalExp: z.infer<typeof experienceSchema>[] = [
 	{
-		date: ["June 2026", "Present"],
+		date: ["Jun 2026", "Present"],
 		title: "AI Automation Software Developer",
 		institution: "Qohash",
 		tagline:
@@ -24,11 +24,10 @@ export const professionalExp: z.infer<typeof experienceSchema>[] = [
 			"Building software integrations to connect customer's services with Agentic AI systems.",
 			"Engineered an end-to-end product for generating insights based on customer support data with custom AI inference flows, data classification, logic gating and deduplication.",
 		],
-		caseStudySlug: "botpress",
 		link: "https://botpress.com/",
 	},
 	{
-		date: ["May 2025", "April 2026"],
+		date: ["May 2025", "Apr 2026"],
 		title: "Junior Software Developer",
 		institution: "Fundica",
 		tagline:
@@ -78,7 +77,7 @@ export const extraCurricularExp: z.infer<typeof experienceSchema>[] = [
 		link: "https://2026.cusec.net/",
 	},
 	{
-		date: ["March 2024", "July 2024"],
+		date: ["Mar 2024", "Jul 2024"],
 		title: "President",
 		institution: "JACHacks",
 		tagline: "Standing up a 130+ attendee hackathon on a six-week timeline.",
@@ -106,7 +105,7 @@ export const extraCurricularExp: z.infer<typeof experienceSchema>[] = [
 
 export const educationExp: z.infer<typeof experienceSchema>[] = [
 	{
-		date: ["Sept 2025", "Present"],
+		date: ["Sep 2025", "Present"],
 		title: "B.EngTech & Applied Sci",
 		institution: "Memorial University",
 		tagline:

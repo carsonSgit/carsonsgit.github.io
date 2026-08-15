@@ -7,7 +7,6 @@ export const experienceSchema = z.object({
 	tagline: z.string().optional(),
 	description: z.array(z.string()),
 	link: z.string(),
-	caseStudySlug: z.string().optional(),
 });
 
 const projectLinkSchema = z.object({
@@ -16,10 +15,8 @@ const projectLinkSchema = z.object({
 });
 
 export const projectSchema = z.object({
-	year: z.number(),
 	title: z.string(),
 	description: z.string(),
 	caseStudySlug: z.string().optional(),
 	links: z.array(projectLinkSchema),
-	stack: z.array(z.string()),
 });
