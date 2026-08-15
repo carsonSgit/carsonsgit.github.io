@@ -1,3 +1,13 @@
+/* Private family name — must not collide with any locally installed Inter,
+   or the browser paints that cut first and reflows when this one loads. */
+@font-face {
+  font-family: "PortfolioSans";
+  src: url("/fonts/inter-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: block;
+}
+
 :root {
   color-scheme: light;
 
@@ -32,7 +42,7 @@ body {
   margin: 0;
   background-color: var(--ground);
   color: var(--ink-body);
-  font-family: system-ui, sans-serif;
+  font-family: "PortfolioSans", system-ui, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-synthesis: none;
