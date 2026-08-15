@@ -52,13 +52,15 @@ jobs:
           cache: pnpm
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: true
 
       - name: Format and lint
-        run: pnpm exec biome ci .
+        run: pnpm lint
 
       - name: Typecheck
-        run: pnpm exec tsc --noEmit
+        run: pnpm typecheck
 
       - name: Unused code
         run: pnpm lint:unused
