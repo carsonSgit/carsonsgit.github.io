@@ -1,66 +1,61 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root {
+  color-scheme: light;
+
+  --ground: #ededed;
+  --ink: #000016;
+  --ink-body: rgb(0 0 22 / 0.59);
+  --ink-quiet: rgb(0 0 22 / 0.56);
+  --rule: rgb(0 0 22 / 0.1);
+  --focus: rgb(0 0 22 / 0.45);
+
+  --column: 604px;
+  --step-1: 6px;
+  --step-2: 14px;
+  --step-3: 24px;
+  --step-4: 44px;
+  --step-5: 84px;
+  --step-6: 96px;
+  --step-7: 120px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 html {
-  color-scheme: dark;
-  cursor: default;
-}
-
-html[data-mode="light"] {
-  color-scheme: light;
-}
-
-li,
-button,
-a {
-  cursor: default !important;
+  background-color: var(--ground);
 }
 
 body {
   margin: 0;
-  font-family: 'CommitMono', monospace;
+  background-color: var(--ground);
+  color: var(--ink-body);
+  font-family: system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-synthesis: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #111;
 }
 
-html[data-mode="light"] body {
-  background-color: #f4f4f7;
+h1,
+h2,
+h3,
+p,
+figure {
+  margin: 0;
 }
 
-@font-face {
-  font-family: 'CommitMono';
-  src: url('/fonts/CommitMono-400-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+::selection {
+  background-color: rgb(0 0 22 / 0.12);
+  color: var(--ink);
 }
 
-@font-face {
-  font-family: 'CommitMono';
-  src: url('/fonts/CommitMono-700-Regular.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'CaseStudySans';
-  src:
-    local('Aptos'),
-    local('Aptos Display'),
-    local('Segoe UI Variable Text'),
-    local('Segoe UI'),
-    local('Helvetica Neue');
-  font-weight: 400 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-code {
-  font-family:
-    source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+:focus-visible {
+  outline: 1px solid var(--focus);
+  outline-offset: 3px;
 }
 
 /* Visually hidden but available to screen readers */
@@ -71,51 +66,7 @@ code {
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
-}
-
-::-webkit-scrollbar {
-  display: none;
-}
-
-:root {
-  --main: oklch(0.97 0 0);
-  --main-secondary: oklch(97% 0 0);
-  --main-foreground: oklch(0.925 0 0);
-  --main-muted: oklch(0.96 0 0);
-  --main-background: oklch(1 0 0);
-  --main-invert: oklch(0.205 0 0);
-
-  --primary: oklch(0 0 0);
-  --primary-foreground: oklch(37.1% 0 0);
-  --primary-muted: oklch(0.556 0 0);
-  --primary-invert: oklch(1 0 0);
-}
-
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-  }
-
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-  }
 }

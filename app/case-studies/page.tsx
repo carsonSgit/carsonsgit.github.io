@@ -39,11 +39,7 @@ export default function CaseStudiesIndexPage() {
 				</header>
 				<section aria-label="Case study list" className="case-studies-panels">
 					{caseStudies.map((caseStudy) => (
-						<article
-							key={caseStudy.slug}
-							className="case-study-panel"
-							data-accent={caseStudy.presentation?.accent ?? "mist"}
-						>
+						<article key={caseStudy.slug} className="case-study-panel">
 							<Link
 								href={`/case-studies/${caseStudy.slug}`}
 								className="case-study-panel__surface"
