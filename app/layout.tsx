@@ -171,6 +171,13 @@ export default function RootLayout({
 				/>
 			</head>
 			<body>
+				<link
+					rel="preload"
+					href="/fonts/inter-latin.woff2"
+					as="font"
+					type="font/woff2"
+					crossOrigin="anonymous"
+				/>
 				{children}
 				<Analytics />
 				<SpeedInsights />
