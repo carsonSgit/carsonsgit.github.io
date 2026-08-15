@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import "@/styles.scss";
 import { caseStudies } from "@/data/caseStudies";
@@ -26,7 +25,7 @@ const monthYear = (iso: string) =>
 export default function CaseStudiesIndexPage() {
 	return (
 		<main className="case-study-page">
-			<div className="case-study-shell case-study-shell--index">
+			<div className="case-study-shell">
 				<Link href="/" className="case-study-backlink">
 					Back home
 				</Link>
@@ -39,40 +38,26 @@ export default function CaseStudiesIndexPage() {
 				</header>
 				<section aria-label="Case study list" className="case-studies-panels">
 					{caseStudies.map((caseStudy) => (
-						<article key={caseStudy.slug} className="case-study-panel">
+						<article key={caseStudy.slug}>
 							<Link
 								href={`/case-studies/${caseStudy.slug}`}
 								className="case-study-panel__surface"
 							>
-								<div className="case-study-panel__content">
-									<p className="case-study-panel__meta">
-										<strong>{caseStudy.projectType}</strong> ·{" "}
-										{monthYear(caseStudy.publishedAt)}
-									</p>
-									<h2 className="case-study-panel__title">{caseStudy.title}</h2>
-									<p className="case-study-panel__summary">
-										{caseStudy.summary}
-									</p>
-									<span className="case-study-panel__read">
-										Continue reading
-										<span
-											className="case-study-panel__read-arrow"
-											aria-hidden="true"
-										>
-											→
-										</span>
+								<p className="case-study-panel__meta">
+									<strong>{caseStudy.projectType}</strong> ·{" "}
+									{monthYear(caseStudy.publishedAt)}
+								</p>
+								<h2 className="case-study-panel__title">{caseStudy.title}</h2>
+								<p className="case-study-panel__summary">{caseStudy.summary}</p>
+								<span className="case-study-panel__read">
+									Continue reading
+									<span
+										className="case-study-panel__read-arrow"
+										aria-hidden="true"
+									>
+										→
 									</span>
-								</div>
-								{caseStudy.image ? (
-									<div className="case-study-panel__media">
-										<Image
-											src={caseStudy.image}
-											alt=""
-											fill
-											sizes="(max-width: 960px) 100vw, 20rem"
-										/>
-									</div>
-								) : null}
+								</span>
 							</Link>
 						</article>
 					))}

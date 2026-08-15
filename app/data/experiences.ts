@@ -75,24 +75,6 @@ export const extraCurricularExp: z.infer<typeof experienceSchema>[] = [
 			"Running Canada's longest running student tech conference, 10,000+ attendees, 380+ sponsors, 280+ speakers.",
 			"Leading a team of 30+ members to ensure highest quality work is done and all members are supported to the fullest in their work.",
 		],
-		roles: [
-			{
-				title: "Director of Logistics",
-				date: ["Jan 2025", "Jan 2026"],
-				description: [
-					"Negotiated hotel and venue arrangements for the conference, including pricing, room blocks, space requirements, and contract terms.",
-					"Coordinated vendors and operational logistics across conference planning, ensuring venue, accommodation, scheduling, and execution needs were aligned.",
-				],
-			},
-			{
-				title: "Sponsorship Executive",
-				date: ["Jan 2024", "Jan 2025"],
-				description: [
-					"Built and maintained relationships with corporate sponsors, university partners, and local technology organizations to support conference funding goals.",
-					"Prepared and delivered sponsorship outreach materials, communicating conference value, audience demographics, partnership tiers, and sponsor benefits.",
-				],
-			},
-		],
 		link: "https://2026.cusec.net/",
 	},
 	{

@@ -18,15 +18,12 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "npx serve@latest ./out -l 3120",
-		"predeploy": "pnpm build",
 		"format": "pnpm biome format --write",
 		"lint:unused": "knip"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.3.5",
-		"@react-grab/mcp": "^0.1.28",
 		"knip": "^5.69.1",
-		"react-grab": "^0.1.28",
 		"sass": "^1.80.0",
 		"typescript": "^5.7.0"
 	},
