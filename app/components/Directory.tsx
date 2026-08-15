@@ -138,6 +138,7 @@ const Directory = () => {
 				id={`panel-${active.id}`}
 				aria-labelledby={`tab-${active.id}`}
 			>
+				{/* biome-ignore lint/a11y: Safari drops list semantics when list-style is none */}
 				<ul className="directory__list" role="list">
 					{active.entries.map((entry) => (
 						<li key={entry.title}>
