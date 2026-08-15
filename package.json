@@ -17,7 +17,7 @@
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
-		"start": "npx serve@latest ./out -l 3120",
+		"start": "pnpm dlx serve ./out -l 3120",
 		"format": "pnpm biome format --write",
 		"lint:unused": "knip"
 	},
