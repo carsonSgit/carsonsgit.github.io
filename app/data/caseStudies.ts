@@ -1,31 +1,28 @@
-export interface CaseStudyLink {
+interface CaseStudyLink {
 	label: string;
 	href: string;
 }
 
-export interface CaseStudySeo {
+interface CaseStudySeo {
 	title?: string;
 	description?: string;
 	socialImage?: string;
 }
 
-export interface CaseStudySection {
+interface CaseStudySection {
 	id: string;
 	title: string;
 	paragraphs: string[];
 }
 
-export interface CaseStudyHighlight {
+interface CaseStudyHighlight {
 	label: string;
 	value: string;
 }
 
-export interface CaseStudyPresentation {
+interface CaseStudyPresentation {
 	eyebrow?: string;
-	accent?: "gold" | "mist" | "meadow";
-	heroLayout?: "balanced" | "immersive";
 	highlights?: CaseStudyHighlight[];
-	indexLabel?: string;
 }
 
 export interface CaseStudy {
@@ -53,9 +50,6 @@ export const caseStudies: CaseStudy[] = [
 		image: "/botpress.webp",
 		presentation: {
 			eyebrow: "Shipping at an industry-leading AI startup",
-			accent: "gold",
-			heroLayout: "immersive",
-			indexLabel: "Lessons learned from working at Botpress",
 			highlights: [
 				{
 					label: "Ship fast",
@@ -107,16 +101,11 @@ export const caseStudies: CaseStudy[] = [
 				title: "What did I learn?",
 				paragraphs: [
 					"First and foremost, shipping fast does NOT mean slop, and second, the importance of good developer experience has such a massive impact on what you can do and how fast you can go.",
-					"",
-					"",
 					"QStash: QStash is a tool made by Upstash (What's up stash?), basically it's the middleman between your API and your requests. The problem I was tackling had to do with system flows and triggers. Basically, `if A triggered --> do B and C --> once B is done launch D --> D depends on C`.",
 					"Without QStash, we were running into a lot of issues with reliability, AI jobs ran on certain triggers, but at scale issues arose (deduplication, synchronization, server-stress, reliability & error catching). After going through and mapping out the architecture with my Team Lead, we decided to use QStash to handle the AI inferrence jobs.",
 					"While reading through the docs, my team lead and I realized that this was actually something that needed to be done for a lot of other jobs that get triggered, without a queueing system we were basically waiting for a disaster. After setting it up, it was night and day, no dropped requests, automatic retries, overall a much more reliable system, and the AI inferrence jobs were now bringing unquantifiably better results.",
-					"",
-					"",
 					"Tilt.dev: Tilt is a tool for making local development *so* much easier. Instead of having to mess around with Docker commands, kubectl, Apache configs, manage different environments, etc., Tilt just handlees everything for you. Auto-rebuild, logs, syncing, whatever you need when it comes to infrastructure and local development, Tilt handles it.",
 					"Tilt genuinely is one of the most useful tools I've ever worked with, everyone has the same config, the same docker containers and kubernetes clusters, it's all standardized and just works. The best part? All you need to do is run `tilt up` and you're good to go.",
-					"",
 					"Overall I grew across all facets of engineering; backend, frontend, infrastructure, testing, scaling, and so much more. In 3 weeks I can confidently say that I learnt more than some people do in 3 years at other companies, I'm extremely grateful for the opportunity to work and learn at Botpress.",
 				],
 			},
@@ -126,7 +115,6 @@ export const caseStudies: CaseStudy[] = [
 				paragraphs: [
 					"Today, when I got into work I was made aware that the company was going through restructuring, 40% of the company was being laid off effective immediately. Unfortunately, I was one of the many affected.",
 					"The news is definitely a shock, I still can't really process it. The hardest part is that I really loved working at Botpress, the people, the work, the culture, I was so proud to be part of it and I was so excited to start my career there, I honestly saw myself there for a very long time.",
-					"",
 					"That being said, I understand that this is simply the reality of startups and the tech industry in general. Does that mean it doesn't hurt? No, it definitely does, but the fact is that I was able to learn and grow so much in such a short amount of time, I'm already a better developer than I was a month ago and I'm confident that I'll keep growing.",
 					"Layoffs suck and personally in most cases I think they're the wrong move for a company to make, but in tech you have to face the reality that they *do* happen, you just have to take the hit and move forward.",
 				],
@@ -152,13 +140,10 @@ export const caseStudies: CaseStudy[] = [
 		image: "/argus.png",
 		presentation: {
 			eyebrow: "Live ops tooling for machine-assisted review",
-			accent: "mist",
-			heroLayout: "immersive",
-			indexLabel: "Monitoring workflow prototype",
 			highlights: [
 				{ label: "Outcome", value: "2x hackathon winner" },
 				{ label: "Focus", value: "Signal-first operator review" },
-				{ label: "Stack", value: "Vision, streaming, storage" },
+				{ label: "System", value: "Vision, streaming, storage" },
 			],
 		},
 		sections: [
@@ -210,9 +195,6 @@ export const caseStudies: CaseStudy[] = [
 		image: "/cropcare.png",
 		presentation: {
 			eyebrow: "Connected agriculture system spanning hardware and software",
-			accent: "meadow",
-			heroLayout: "balanced",
-			indexLabel: "IoT monitoring and response prototype",
 			highlights: [
 				{ label: "Focus", value: "Readable monitoring and control" },
 				{ label: "System", value: "Sensors, Azure, MQTT" },
@@ -268,9 +250,6 @@ export const caseStudies: CaseStudy[] = [
 		image: "/linky.png",
 		presentation: {
 			eyebrow: "A calmer interface for retrieval-backed learning",
-			accent: "gold",
-			heroLayout: "balanced",
-			indexLabel: "URL-to-knowledge product concept",
 			highlights: [
 				{ label: "Focus", value: "Learning workflow over chat UX" },
 				{ label: "System", value: "Retrieval, storage, typed frontend" },

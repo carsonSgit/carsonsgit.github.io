@@ -10,6 +10,7 @@ import {
 import { projects } from "@/data/projects";
 
 type Entry = {
+	meta: string;
 	title: string;
 	summary: string;
 	href: string;
@@ -22,40 +23,39 @@ type Tab = {
 	entries: Entry[];
 };
 
-const fromExperience = (
-	items: typeof professionalExp,
-	fallbackSummary: (item: (typeof professionalExp)[number]) => string,
-): Entry[] =>
+const dateRange = ([start, end]: string[]) =>
+	start === end ? start : `${start} — ${end}`;
+
+const fromExperience = (items: typeof professionalExp): Entry[] =>
 	items.map((item) => ({
+		meta: dateRange(item.date),
 		title: `${item.title} at ${item.institution}`,
-		summary: fallbackSummary(item),
+		summary: item.tagline ?? item.description[0],
 		href: item.link,
 		external: true,
 	}));
-
-const experienceSummary = (item: (typeof professionalExp)[number]) =>
-	item.tagline ?? item.description[0];
 
 const TABS: Tab[] = [
 	{
 		id: "experience",
 		label: "Experience",
-		entries: fromExperience(professionalExp, experienceSummary),
+		entries: fromExperience(professionalExp),
 	},
 	{
 		id: "academics",
 		label: "Academics",
-		entries: fromExperience(educationExp, experienceSummary),
+		entries: fromExperience(educationExp),
 	},
 	{
 		id: "extra-curricular",
 		label: "Extra-Curricular",
-		entries: fromExperience(extraCurricularExp, experienceSummary),
+		entries: fromExperience(extraCurricularExp),
 	},
 	{
 		id: "projects",
 		label: "Projects",
 		entries: projects.map((project) => ({
+			meta: String(project.year),
 			title: project.title,
 			summary: project.description,
 			href: project.caseStudySlug
@@ -68,6 +68,7 @@ const TABS: Tab[] = [
 		id: "case-studies",
 		label: "Case Studies",
 		entries: caseStudies.map((caseStudy) => ({
+			meta: caseStudy.projectType,
 			title: caseStudy.title,
 			summary: caseStudy.summary,
 			href: `/case-studies/${caseStudy.slug}`,
@@ -147,6 +148,7 @@ const Directory = () => {
 									? { target: "_blank", rel: "noopener noreferrer" }
 									: {})}
 							>
+								<span className="entry__meta">{entry.meta}</span>
 								<span className="entry__title">
 									{entry.title}
 									{entry.external ? (
