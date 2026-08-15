@@ -10,8 +10,8 @@ permissions:
   contents: read
 
 jobs:
-  ci:
-    name: Check
+  scour:
+    name: Scour
     runs-on: ubuntu-latest
 
     steps:
@@ -33,3 +33,35 @@ jobs:
           since: ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || github.event.before }}
           format: github
           fail-on: error
+
+  checks:
+    name: Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Format and lint
+        run: pnpm exec biome ci .
+
+      - name: Typecheck
+        run: pnpm exec tsc --noEmit
+
+      - name: Unused code
+        run: pnpm lint:unused
+
+      - name: Build
+        run: pnpm build

@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { BASE_URL, absoluteUrl } from "@/lib/seo";
+import { absoluteUrl, BASE_URL } from "@/lib/seo";
 
 export const dynamic = "force-static";
 
