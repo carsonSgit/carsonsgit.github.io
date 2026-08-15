@@ -10,7 +10,7 @@ import {
 import { projects } from "@/data/projects";
 
 type Entry = {
-	meta: string;
+	date?: string;
 	title: string;
 	summary: string;
 	href: string;
@@ -26,9 +26,12 @@ type Tab = {
 const dateRange = ([start, end]: string[]) =>
 	start === end ? start : `${start} — ${end}`;
 
-const fromExperience = (items: typeof professionalExp): Entry[] =>
+const fromExperience = (
+	items: typeof professionalExp,
+	{ dated }: { dated: boolean },
+): Entry[] =>
 	items.map((item) => ({
-		meta: dateRange(item.date),
+		date: dated ? dateRange(item.date) : undefined,
 		title: `${item.title} at ${item.institution}`,
 		summary: item.tagline ?? item.description[0],
 		href: item.link,
@@ -39,23 +42,22 @@ const TABS: Tab[] = [
 	{
 		id: "experience",
 		label: "Experience",
-		entries: fromExperience(professionalExp),
+		entries: fromExperience(professionalExp, { dated: true }),
 	},
 	{
 		id: "academics",
 		label: "Academics",
-		entries: fromExperience(educationExp),
+		entries: fromExperience(educationExp, { dated: true }),
 	},
 	{
 		id: "extra-curricular",
 		label: "Extra-Curricular",
-		entries: fromExperience(extraCurricularExp),
+		entries: fromExperience(extraCurricularExp, { dated: false }),
 	},
 	{
 		id: "projects",
 		label: "Projects",
 		entries: projects.map((project) => ({
-			meta: String(project.year),
 			title: project.title,
 			summary: project.description,
 			href: project.caseStudySlug
@@ -68,7 +70,6 @@ const TABS: Tab[] = [
 		id: "case-studies",
 		label: "Case Studies",
 		entries: caseStudies.map((caseStudy) => ({
-			meta: caseStudy.projectType,
 			title: caseStudy.title,
 			summary: caseStudy.summary,
 			href: `/case-studies/${caseStudy.slug}`,
@@ -149,14 +150,18 @@ const Directory = () => {
 									? { target: "_blank", rel: "noopener noreferrer" }
 									: {})}
 							>
-								<span className="entry__meta">{entry.meta}</span>
-								<span className="entry__title">
-									{entry.title}
-									{entry.external ? (
-										<span className="sr-only"> (opens in new tab)</span>
-									) : null}
+								<span className="entry__text">
+									<span className="entry__title">
+										{entry.title}
+										{entry.external ? (
+											<span className="sr-only"> (opens in new tab)</span>
+										) : null}
+									</span>
+									<span className="entry__summary">{entry.summary}</span>
 								</span>
-								<p className="entry__summary">{entry.summary}</p>
+								{entry.date ? (
+									<span className="entry__date">{entry.date}</span>
+								) : null}
 							</a>
 						</li>
 					))}

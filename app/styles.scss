@@ -111,9 +111,8 @@
 
 .entry {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: var(--step-1);
+  align-items: center;
+  gap: var(--step-3);
   min-height: 48px;
   padding: 12px;
   margin-inline: -12px;
@@ -128,12 +127,6 @@
     background-color: var(--hover-bg);
   }
 
-  &:hover .entry__title,
-  &:focus-visible .entry__title {
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
-
   &:active {
     background-color: var(--active-bg);
   }
@@ -143,18 +136,30 @@
   }
 }
 
-.entry__meta {
-  line-height: 24px;
+.entry__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--step-1);
+  flex: 1;
+  min-width: 0;
 }
 
 .entry__title {
-  display: block;
   line-height: 24px;
   color: var(--ink);
 }
 
 .entry__summary {
   text-wrap: pretty;
+}
+
+.entry__date {
+  flex-shrink: 0;
+  min-width: 19ch;
+  line-height: 24px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  text-align: right;
 }
 
 .contact {
@@ -182,6 +187,17 @@
 
   .column {
     gap: 56px;
+  }
+
+  .entry {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--step-1);
+  }
+
+  .entry__date {
+    order: -1;
+    text-align: left;
   }
 }
 
@@ -250,12 +266,6 @@
   &:hover,
   &:focus-visible {
     background-color: var(--hover-bg);
-  }
-
-  &:hover .case-study-panel__title,
-  &:focus-visible .case-study-panel__title {
-    text-decoration: underline;
-    text-underline-offset: 3px;
   }
 
   &:active {
@@ -390,8 +400,6 @@
   &:hover,
   &:focus-visible {
     background-color: var(--hover-bg);
-    text-decoration: underline;
-    text-underline-offset: 3px;
   }
 
   &:focus-visible {
