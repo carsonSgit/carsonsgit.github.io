@@ -18,8 +18,10 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "pnpm dlx serve ./out -l 3120",
-		"format": "pnpm biome format --write",
-		"lint:unused": "knip"
+		"format": "biome format --write",
+		"lint": "biome ci .",
+		"lint:unused": "knip",
+		"typecheck": "tsc --noEmit"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.3.5",
