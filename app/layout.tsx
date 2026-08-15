@@ -2,7 +2,6 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import CommandPaletteProvider from "@/components/shared/CommandPaletteProvider";
 import {
 	absoluteUrl,
 	BASE_URL,
@@ -67,24 +66,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-	themeColor: [
-		{ media: "(prefers-color-scheme: dark)", color: "#111" },
-		{ media: "(prefers-color-scheme: light)", color: "#f4f4f7" },
-	],
+	themeColor: "#ededed",
 };
-
-const COLOR_MODE_BOOTSTRAP = `(() => {
-  try {
-    const stored = window.localStorage.getItem('portfolio:color-mode');
-    const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-    const mode = stored === 'light' || stored === 'dark' ? stored : (prefersLight ? 'light' : 'dark');
-    document.documentElement.setAttribute('data-mode', mode);
-    document.documentElement.style.colorScheme = mode;
-    if (mode === 'light') document.documentElement.style.backgroundColor = '#f4f4f7';
-  } catch (_) {
-    document.documentElement.setAttribute('data-mode', 'light');
-  }
-})();`;
 
 const jsonLd = {
 	"@context": "https://schema.org",
@@ -166,17 +149,8 @@ export default function RootLayout({
 	readonly children: React.ReactNode;
 }) {
 	return (
-		<html
-			lang="en-CA"
-			data-theme="mono"
-			data-mode="light"
-			suppressHydrationWarning
-		>
+		<html lang="en-CA">
 			<head>
-				<script
-					// biome-ignore lint/security/noDangerouslySetInnerHtml: static bootstrap to prevent FOUC, no user input
-					dangerouslySetInnerHTML={{ __html: COLOR_MODE_BOOTSTRAP }}
-				/>
 				{process.env.NODE_ENV === "development" && (
 					<Script
 						src="//unpkg.com/react-grab/dist/index.global.js"
@@ -196,8 +170,7 @@ export default function RootLayout({
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 				/>
 			</head>
-			<body className="theme-mono">
-				<CommandPaletteProvider />
+			<body>
 				{children}
 				<Analytics />
 				<SpeedInsights />
