@@ -12,9 +12,8 @@
   color-scheme: light;
 
   --ground: #ededed;
-  --ink: #000016;
-  --ink-body: rgb(0 0 22 / 0.59);
-  --ink-quiet: rgb(0 0 22 / 0.56);
+  --ink: #21201c;
+  --ink-body: #63635e;
   --rule: rgb(0 0 22 / 0.1);
   --focus: rgb(0 0 22 / 0.45);
 
@@ -44,7 +43,10 @@ body {
   color: var(--ink-body);
   font-family: "PortfolioSans", system-ui, sans-serif;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 26.4px;
+  letter-spacing: 0.006em;
+  font-feature-settings: "cv01", "ss03";
+  font-variant-ligatures: none;
   font-synthesis: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
