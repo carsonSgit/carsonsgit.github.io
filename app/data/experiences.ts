@@ -1,22 +1,17 @@
 import type * as z from "zod";
 import type { experienceSchema } from "../types/zodTypes";
-import { colours } from "./colours";
 
 export const professionalExp: z.infer<typeof experienceSchema>[] = [
 	{
 		date: ["June 2026", "Present"],
 		title: "AI Automation Software Developer",
 		institution: "Qohash",
-		tagline: "Building towards Sovereign Zero Copy Data Security for responsible AI.",
+		tagline:
+			"Building towards Sovereign Zero Copy Data Security for responsible AI.",
 		description: [
 			"Building & deploying AI-powered automations and tooling to improve workflows and automate GTM strategies.",
 			"Continuously researching and developing the latest in AI, applying it towards building a responsible and secure data platform for the future of AI.",
 		],
-		experienceBadges: {
-			ai: { label: "AI", backgroundColour: colours.ai },
-			automation: { label: "Automation", backgroundColour: colours.automation },
-			security: { label: "Security", backgroundColour: colours.security },
-		},
 		link: "https://qohash.com/",
 	},
 	{
@@ -29,11 +24,6 @@ export const professionalExp: z.infer<typeof experienceSchema>[] = [
 			"Building software integrations to connect customer's services with Agentic AI systems.",
 			"Engineered an end-to-end product for generating insights based on customer support data with custom AI inference flows, data classification, logic gating and deduplication.",
 		],
-		experienceBadges: {
-			ai: { label: "AI", backgroundColour: colours.ai },
-			fullStack: { label: "Full Stack", backgroundColour: colours.devops },
-			devops: { label: "DevOps", backgroundColour: colours.devops },
-		},
 		caseStudySlug: "botpress",
 		link: "https://botpress.com/",
 	},
@@ -47,11 +37,6 @@ export const professionalExp: z.infer<typeof experienceSchema>[] = [
 			"Optimized microservices improving scalability and performance by up to 99%. (PHP, Node.js)",
 			"Built automations for core business workflows to drastically increase scale and speed of growth and efficiency. (TypeScript, Python, Golang)",
 		],
-		experienceBadges: {
-			automation: { label: "Automation", backgroundColour: colours.automation },
-			ai: { label: "AI", backgroundColour: colours.ai },
-			devops: { label: "DevOps", backgroundColour: colours.devops },
-		},
 		link: "https://www.fundica.com/content/fundica-live-demo-at-finovate-spring-2022",
 	},
 	{
@@ -64,11 +49,6 @@ export const professionalExp: z.infer<typeof experienceSchema>[] = [
 			"Architected backend jobs and UI/UX across products, increasing user conversions by over 80%. (Next.js, TypeScript, Docker)",
 			"Engineered an AI-ingestion pipeline for analyzing user resumes and job listings for improved classification and suggestion algorithms. (Python, Vector Database, AWS Lambda)",
 		],
-		experienceBadges: {
-			ai: { label: "AI", backgroundColour: colours.ai },
-			aws: { label: "AWS", backgroundColour: colours.aws },
-			rnd: { label: "R&D", backgroundColour: colours.rnd },
-		},
 		link: "https://tailed.ca",
 	},
 	{
@@ -80,14 +60,6 @@ export const professionalExp: z.infer<typeof experienceSchema>[] = [
 			"Scripted and automated bulk vulnerability scans and patch deployments, improving mitigation efficiency by 80%.",
 			"Cybersecurity tasks using CrowdStrike Falcon and Python, eliminating 4,500+ vulnerabilities.",
 		],
-		experienceBadges: {
-			it: { label: "IT", backgroundColour: colours.it },
-			cybersecurity: {
-				label: "Cybersecurity",
-				backgroundColour: colours.cybersecurity,
-			},
-			networking: { label: "Networking", backgroundColour: colours.networking },
-		},
 		link: "https://ville.kirkland.qc.ca/",
 	},
 ];
@@ -103,11 +75,6 @@ export const extraCurricularExp: z.infer<typeof experienceSchema>[] = [
 			"Running Canada's longest running student tech conference, 10,000+ attendees, 380+ sponsors, 280+ speakers.",
 			"Leading a team of 30+ members to ensure highest quality work is done and all members are supported to the fullest in their work.",
 		],
-		experienceBadges: {
-			leadership: { label: "Leadership", backgroundColour: colours.leadership },
-			management: { label: "Management", backgroundColour: colours.management },
-			logistics: { label: "Logistics", backgroundColour: colours.logistics },
-		},
 		roles: [
 			{
 				title: "Director of Logistics",
@@ -137,11 +104,6 @@ export const extraCurricularExp: z.infer<typeof experienceSchema>[] = [
 			"Managed a team of 5 to ensure the successful organization and execution of the hackathon.",
 			"Organized the event with a short timeline of 1.5 months, resulting in 130+ attendees and overly positive feedback.",
 		],
-		experienceBadges: {
-			leadership: { label: "Leadership", backgroundColour: colours.leadership },
-			management: { label: "Management", backgroundColour: colours.management },
-			logistics: { label: "Logistics", backgroundColour: colours.logistics },
-		},
 		link: "https://jachacks.pages.dev/",
 	},
 	{
@@ -156,10 +118,6 @@ export const extraCurricularExp: z.infer<typeof experienceSchema>[] = [
 			"Presented the project to a panel of investors and industry professionals.",
 			"Noted as the top project of the program's conception.",
 		],
-		experienceBadges: {
-			rnd: { label: "R&D", backgroundColour: colours.rnd },
-			ai: { label: "AI", backgroundColour: colours.ai },
-		},
 		link: "https://mitacs.launchlab.ai/en/",
 	},
 ];
@@ -169,48 +127,31 @@ export const educationExp: z.infer<typeof experienceSchema>[] = [
 		date: ["Sept 2025", "Present"],
 		title: "B.EngTech & Applied Sci",
 		institution: "Memorial University",
+		tagline:
+			"Engineering, technology, project management, applied statistics, and business.",
 		description: [
 			"Engineering, technology, project management, applied statistics, business, and more.",
 		],
-		experienceBadges: {
-			engineering: {
-				label: "Engineering",
-				backgroundColour: colours.engineering,
-			},
-			sciences: { label: "Sciences", backgroundColour: colours.sciences },
-			qm: { label: "Quality Management", backgroundColour: colours.qm },
-		},
 		link: "https://www.mun.ca/",
 	},
 	{
 		date: ["Aug 2024", "May 2025"],
 		title: "B.Econ",
 		institution: "Concordia University",
+		tagline: "Economics, realized business isn't for me.",
 		description: ["Economics, realized business isn't for me."],
-		experienceBadges: {
-			business: { label: "Business", backgroundColour: colours.business },
-			econ: { label: "Economics", backgroundColour: colours.econ },
-		},
 		link: "https://www.concordia.ca/",
 	},
 	{
 		date: ["Aug 2021", "May 2024"],
 		title: "DEC.CompSci",
 		institution: "John Abbott College",
+		tagline:
+			"Three years of software development, mobile, and IoT fundamentals.",
 		description: [
 			"Completed a comprehensive 3-year Computer Science DEC program with a focus on software development, mobile app development, and IoT technologies.",
 			"Built a strong foundation in programming fundamentals, algorithms, data structures, and computer architecture while developing practical skills in full-stack development.",
 		],
-		experienceBadges: {
-			dataStructures: {
-				label: "Data Structures",
-				backgroundColour: colours.dataStructures,
-			},
-			algorithms: { label: "Algorithms", backgroundColour: colours.algorithms },
-			swe: { label: "Software Engineering", backgroundColour: colours.swe },
-			security: { label: "Security", backgroundColour: colours.security },
-			iot: { label: "IoT", backgroundColour: colours.iot },
-		},
 		link: "https://www.johnabbott.qc.ca/",
 	},
 ];

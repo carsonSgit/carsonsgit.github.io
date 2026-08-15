@@ -47,8 +47,7 @@ export const caseStudies: CaseStudy[] = [
 	{
 		slug: "botpress",
 		title: "Working at Botpress",
-		summary:
-			"Lessons learned while working at Botpress.",
+		summary: "Lessons learned while working at Botpress.",
 		projectType: "Professional Experience",
 		stack: ["TypeScript", "Zod", "LLMz", "Next.js", "Prisma"],
 		image: "/botpress.webp",
@@ -58,9 +57,18 @@ export const caseStudies: CaseStudy[] = [
 			heroLayout: "immersive",
 			indexLabel: "Lessons learned from working at Botpress",
 			highlights: [
-				{ label: "Ship fast", value: "Rapid iteration and deployment in a fast-paced environment" },
-				{ label: "Engineering", value: "Building scalable and maintainable applications" },
-				{ label: "Ownership", value: "Taking end-to-end responsibility for features and products" },
+				{
+					label: "Ship fast",
+					value: "Rapid iteration and deployment in a fast-paced environment",
+				},
+				{
+					label: "Engineering",
+					value: "Building scalable and maintainable applications",
+				},
+				{
+					label: "Ownership",
+					value: "Taking end-to-end responsibility for features and products",
+				},
 			],
 		},
 		sections: [
@@ -70,7 +78,7 @@ export const caseStudies: CaseStudy[] = [
 				paragraphs: [
 					"Starting in Summer 2025, I became enamoured with the work that Botpress does. The speed and quality that they go at was awe-inspiring for me, and I knew that I wanted to be a part of it.",
 					"I spent the next 8 months interviewing, practicing, learning, growing, and taking feedback to the heart to become a great engineer, ultimately I was given an offer for a full time position as a Full Stack Developer.",
-					"The offer came in back in February and I accepted it immediately, all that hard work finally paid off and I was ready to step up to the challenge and get to shipping."
+					"The offer came in back in February and I accepted it immediately, all that hard work finally paid off and I was ready to step up to the challenge and get to shipping.",
 				],
 			},
 			{
@@ -82,7 +90,7 @@ export const caseStudies: CaseStudy[] = [
 					"I was given the task to build out the Jira integration. I had heard that people typically take about 2-3 weeks to build their integration, but me being me, I wanted to challenge myself to see how quickly I could get it up and running.",
 					"After fumbling through setting up my dev environment, I got to work. Lots of reading documentation, looking at other examples, manual testing, trying to break things, before the end of the week I was done everything.",
 					"Once I was done, it actually hit me-- this tool I just built was now able to be used to help customers improve their own workflows in the blink of an eye. A little bit later, I got to set up OAuth connections which was really fun and a good learning experience, I got to really appreciate the beauty of TypeScript and intellisense.",
-									],
+				],
 			},
 			{
 				id: "work",
@@ -91,7 +99,7 @@ export const caseStudies: CaseStudy[] = [
 					"During my first week, since I was basically done with my integration, I spoke with my team lead about next steps. To my shock, he decided to catapult me into building a full, comprehensive feature end-to-end.",
 					"I was tasked with building out Topic Insights for our new product that's in the works. Backend logic, CRON jobs, database schemas, API routes, AI flows, synchronization, logic gating, deduplication, frontend, testing, documentation, the whole shebang.",
 					"I was definitely nervous to start, this feature is *very* important to the product and customers, it's the one-stop shop for all the data and insights that users will be relying on to make important business decisions, and I was the one given the reigns and responsibility to build it out from ground up.",
-					"But I got to work, stayed late *every day...* (even till 11:30pm on some days) and I loved every minute of it. In the world of programming, getting to do actual engineering work at a high level is pretty rare, so getting to have full ownership over a core feature of the product *on my first week* was an absolutely unique feeling."
+					"But I got to work, stayed late *every day...* (even till 11:30pm on some days) and I loved every minute of it. In the world of programming, getting to do actual engineering work at a high level is pretty rare, so getting to have full ownership over a core feature of the product *on my first week* was an absolutely unique feeling.",
 				],
 			},
 			{
@@ -120,13 +128,11 @@ export const caseStudies: CaseStudy[] = [
 					"The news is definitely a shock, I still can't really process it. The hardest part is that I really loved working at Botpress, the people, the work, the culture, I was so proud to be part of it and I was so excited to start my career there, I honestly saw myself there for a very long time.",
 					"",
 					"That being said, I understand that this is simply the reality of startups and the tech industry in general. Does that mean it doesn't hurt? No, it definitely does, but the fact is that I was able to learn and grow so much in such a short amount of time, I'm already a better developer than I was a month ago and I'm confident that I'll keep growing.",
-					"Layoffs suck and personally in most cases I think they're the wrong move for a company to make, but in tech you have to face the reality that they *do* happen, you just have to take the hit and move forward."
+					"Layoffs suck and personally in most cases I think they're the wrong move for a company to make, but in tech you have to face the reality that they *do* happen, you just have to take the hit and move forward.",
 				],
 			},
 		],
-		links: [
-			{ label: "Botpress", href: "https://botpress.com/" },
-		],
+		links: [{ label: "Botpress", href: "https://botpress.com/" }],
 		publishedAt: "2026-05-20",
 		updatedAt: "2026-05-20",
 		seo: {
