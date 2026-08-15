@@ -11,13 +11,16 @@
 :root {
   color-scheme: light;
 
-  --ground: #ededed;
+  --ground: #fdfdfc;
   --ink: #21201c;
   --ink-body: #63635e;
-  --rule: rgb(0 0 22 / 0.1);
-  --focus: rgb(0 0 22 / 0.45);
+  --rule: #0000000f;
+  --focus: #00000072;
+  --hover-bg: #f5f4f4;
+  --active-bg: #f1f0ef;
+  --radius: 8px;
 
-  --column: 604px;
+  --column: 644px;
   --step-1: 6px;
   --step-2: 14px;
   --step-3: 24px;
@@ -61,7 +64,7 @@ figure {
 }
 
 ::selection {
-  background-color: rgb(0 0 22 / 0.12);
+  background-color: #00000017;
   color: var(--ink);
 }
 
