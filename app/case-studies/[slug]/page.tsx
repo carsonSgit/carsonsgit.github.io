@@ -133,10 +133,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
 	};
 
 	return (
-		<main
-			className="case-study-page"
-			data-accent={caseStudy.presentation?.accent ?? "mist"}
-		>
+		<main className="case-study-page">
 			<article className="case-study-shell case-study-shell--article">
 				<script
 					type="application/ld+json"
