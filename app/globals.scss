@@ -21,6 +21,7 @@
   --radius: 8px;
 
   --column: 644px;
+  --rail: 200px;
   --step-1: 6px;
   --step-2: 14px;
   --step-3: 24px;
@@ -71,6 +72,14 @@ figure {
 :focus-visible {
   outline: 1px solid var(--focus);
   outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Visually hidden but available to screen readers */
