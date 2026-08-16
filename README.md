@@ -6,9 +6,7 @@
 
 **Typography-led portfolio. No frameworks I don't need, no bloat I can't justify.**
 
-<video src="./.github/media/demo.mp4" controls muted autoplay loop width="860"></video>
-
-<sub><a href="./.github/media/demo.mp4">Watch the demo</a> if the player does not load.</sub>
+[![Portfolio demo](./.github/media/demo.gif)](https://carsonspriggs.me)
 
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&labelColor=black&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19-20232A?style=flat-square&labelColor=black&logo=react&logoColor=61DAFB)](https://react.dev/)
