@@ -17,7 +17,7 @@ const Contact = () => {
 			>
 				LinkedIn
 			</a>{" "}
-			or over <a href="mailto:carsonspriggs6@gmail.com">email</a>.
+			or over <a href="mailto:carsonspriggs8@gmail.com">email</a>.
 		</footer>
 	);
 };

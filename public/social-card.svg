@@ -1,15 +1,16 @@
-<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">Carson Spriggs social card</title>
-  <desc id="desc">Preview card for Carson Spriggs, software developer.</desc>
-  <rect width="1200" height="630" fill="#050506"/>
-  <rect x="40" y="40" width="1120" height="550" rx="18" fill="#0D0D0F" stroke="rgba(255,255,255,0.12)"/>
-  <circle cx="110" cy="110" r="10" fill="#FF5F57"/>
-  <circle cx="145" cy="110" r="10" fill="#FEBC2E"/>
-  <circle cx="180" cy="110" r="10" fill="#28C840"/>
-  <text x="88" y="210" fill="#E8E8EC" font-family="CommitMono, monospace" font-size="68" font-weight="700">Carson Spriggs</text>
-  <text x="88" y="278" fill="#8A8A94" font-family="CommitMono, monospace" font-size="30">Quality Assurance Specialist &amp; Developer</text>
-  <text x="88" y="372" fill="#B6B6B6" font-family="CommitMono, monospace" font-size="28">Product-focused web work, developer tools,</text>
-  <text x="88" y="414" fill="#B6B6B6" font-family="CommitMono, monospace" font-size="28">and concise write-ups on selected hackathon builds.</text>
-  <rect x="88" y="474" width="235" height="52" rx="6" fill="#12324D" stroke="#60A5FA"/>
-  <text x="114" y="507" fill="#E8E8EC" font-family="CommitMono, monospace" font-size="24">carsonspriggs.me</text>
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="card-title card-desc">
+  <title id="card-title">Carson Spriggs-Audet — Software Developer</title>
+  <desc id="card-desc">Preview card for the portfolio of Carson Spriggs-Audet, a software developer based in Canada.</desc>
+
+  <rect width="1200" height="630" fill="#fdfdfc"/>
+
+  <g font-family="Inter Variable, Inter, system-ui, sans-serif" font-feature-settings="'cv01', 'ss03'">
+    <text x="96" y="268" fill="#21201c" font-size="76" font-weight="500" letter-spacing="-1.9">Carson Spriggs-Audet</text>
+    <text x="96" y="326" fill="#63635e" font-size="30" font-weight="400" letter-spacing="0.18">Software Developer</text>
+
+    <rect x="96" y="418" width="1008" height="1" fill="#e8e7e5"/>
+
+    <text x="96" y="496" fill="#63635e" font-size="26" font-weight="400" letter-spacing="0.16">Automation, data, and AI at Qohash.</text>
+    <text x="1104" y="496" fill="#8a8984" font-size="26" font-weight="400" letter-spacing="0.16" text-anchor="end">carsonspriggs.me</text>
+  </g>
 </svg>
