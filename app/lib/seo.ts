@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 
 export const BASE_URL = "https://carsonspriggs.me";
-export const SITE_NAME = "Carson Spriggs";
-export const DEFAULT_TITLE = "Carson Spriggs | Full Stack Developer";
+export const SITE_NAME = "Carson Spriggs-Audet";
+export const DEFAULT_TITLE = "Carson Spriggs-Audet | Software Developer";
 export const DEFAULT_DESCRIPTION =
-	"Carson Spriggs is a Canada-based AI Automation Software Developer at Qohash, focused on product engineering, developer tools, and clear technical communication.";
-export const DEFAULT_SOCIAL_IMAGE = "/social-card.svg";
+	"Carson Spriggs-Audet is a Canada-based AI Automation Software Developer at Qohash, focused on automation, data, and practical software.";
+export const DEFAULT_SOCIAL_IMAGE = "/social-card.png";
 export const DEFAULT_SOCIAL_IMAGE_ALT =
-	"Carson Spriggs software engineer portfolio preview card.";
+	"Carson Spriggs-Audet software developer portfolio preview card.";
 
 export function absoluteUrl(pathname = "/") {
 	return new URL(pathname, BASE_URL).toString();

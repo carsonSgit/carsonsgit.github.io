@@ -1,6 +1,6 @@
 {
-	"short_name": "Carson Spriggs",
-	"name": "Carson Spriggs | Software Engineer",
+	"short_name": "Carson Spriggs-Audet",
+	"name": "Carson Spriggs-Audet | Software Developer",
 	"icons": [
 		{
 			"src": "favicon.ico",
@@ -10,8 +10,8 @@
 	],
 	"start_url": "/",
 	"display": "standalone",
-	"theme_color": "#111",
-	"background_color": "#111",
-	"description": "Canada-based software engineer portfolio with product work, developer tools, and concise hackathon write-ups.",
+	"theme_color": "#fdfdfc",
+	"background_color": "#fdfdfc",
+	"description": "Canada-based software developer portfolio with product work, developer tools, and concise hackathon write-ups.",
 	"lang": "en-CA"
 }

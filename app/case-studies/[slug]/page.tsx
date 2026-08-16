@@ -8,9 +8,12 @@ import {
 	caseStudies,
 	getCaseStudyBySlug,
 } from "@/data/caseStudies";
-
-const BASE_URL = "https://carsonspriggs.me";
-const DEFAULT_SOCIAL_IMAGE = "/klungo.png";
+import {
+	absoluteUrl,
+	BASE_URL,
+	DEFAULT_SOCIAL_IMAGE,
+	SITE_NAME,
+} from "@/lib/seo";
 
 type RouteParams = {
 	slug: string;
@@ -44,7 +47,7 @@ export async function generateMetadata({
 	}
 
 	const title =
-		caseStudy.seo?.title ?? `${caseStudy.title} Case Study | Carson Spriggs`;
+		caseStudy.seo?.title ?? `${caseStudy.title} Case Study | ${SITE_NAME}`;
 	const description = caseStudy.seo?.description ?? caseStudy.summary;
 	const socialImage = caseStudy.seo?.socialImage ?? DEFAULT_SOCIAL_IMAGE;
 	const canonicalPath = `/case-studies/${caseStudy.slug}`;
@@ -58,7 +61,7 @@ export async function generateMetadata({
 		keywords: [
 			caseStudy.title,
 			...caseStudy.stack,
-			"Carson Spriggs",
+			SITE_NAME,
 			"case study",
 			"hackathon project",
 			"software engineer",
@@ -70,7 +73,7 @@ export async function generateMetadata({
 			type: "article",
 			images: [
 				{
-					url: socialImage,
+					url: absoluteUrl(socialImage),
 					width: 1200,
 					height: 630,
 					alt: `${caseStudy.title} case study preview`,
@@ -81,7 +84,7 @@ export async function generateMetadata({
 			card: "summary_large_image",
 			title,
 			description,
-			images: [socialImage],
+			images: [absoluteUrl(socialImage)],
 		},
 	};
 }
@@ -110,18 +113,18 @@ export default async function CaseStudyPage({ params }: PageProps) {
 		"@context": "https://schema.org",
 		"@type": "Article",
 		headline:
-			caseStudy.seo?.title ?? `${caseStudy.title} Case Study | Carson Spriggs`,
+			caseStudy.seo?.title ?? `${caseStudy.title} Case Study | ${SITE_NAME}`,
 		description: caseStudy.seo?.description ?? caseStudy.summary,
 		datePublished: caseStudy.publishedAt,
 		dateModified: caseStudy.updatedAt,
 		author: {
 			"@type": "Person",
-			name: "Carson Spriggs",
+			name: SITE_NAME,
 			url: BASE_URL,
 		},
 		publisher: {
 			"@type": "Person",
-			name: "Carson Spriggs",
+			name: SITE_NAME,
 			url: BASE_URL,
 		},
 		mainEntityOfPage: `${BASE_URL}/case-studies/${caseStudy.slug}`,
