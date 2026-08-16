@@ -124,7 +124,7 @@ export const caseStudies: CaseStudy[] = [
 		publishedAt: "2026-05-20",
 		updatedAt: "2026-05-20",
 		seo: {
-			title: "Botpress Case Study | Carson Spriggs",
+			title: "Botpress Case Study | Carson Spriggs-Audet",
 			description:
 				"Learn about my experience at Botpress and the lessons I learned while working on various projects.",
 			socialImage: "/botpress.webp",
@@ -137,7 +137,7 @@ export const caseStudies: CaseStudy[] = [
 			"Hackathon prototype for monitoring live video feeds with event detection and operator review tools.",
 		projectType: "2x Hackathon Winning Project",
 		stack: ["TypeScript", "AI", "Computer Vision", "PostgreSQL", "RTMP"],
-		image: "/argus.png",
+		image: "/argus.webp",
 		presentation: {
 			eyebrow: "Live ops tooling for machine-assisted review",
 			highlights: [
@@ -179,10 +179,9 @@ export const caseStudies: CaseStudy[] = [
 		publishedAt: "2025-10-26",
 		updatedAt: "2026-03-26",
 		seo: {
-			title: "Argus Case Study | Carson Spriggs",
+			title: "Argus Case Study | Carson Spriggs-Audet",
 			description:
-				"How Carson Spriggs built Argus, a hackathon prototype that combines live video ingest, event detection, and operator review.",
-			socialImage: "/klungo.png",
+				"How Carson Spriggs-Audet built Argus, a hackathon prototype that combines live video ingest, event detection, and operator review.",
 		},
 	},
 	{
@@ -192,7 +191,7 @@ export const caseStudies: CaseStudy[] = [
 			"Hackathon prototype for plant monitoring and control using sensors, cloud messaging, and operator dashboards.",
 		projectType: "Capstone Project",
 		stack: ["Python", "C#", "IoT", "Azure", "MQTT", "Hardware"],
-		image: "/cropcare.png",
+		image: "/cropcare.webp",
 		presentation: {
 			eyebrow: "Connected agriculture system spanning hardware and software",
 			highlights: [
@@ -234,10 +233,9 @@ export const caseStudies: CaseStudy[] = [
 		publishedAt: "2024-05-23",
 		updatedAt: "2026-03-26",
 		seo: {
-			title: "CropCare Case Study | Carson Spriggs",
+			title: "CropCare Case Study | Carson Spriggs-Audet",
 			description:
-				"How Carson Spriggs built CropCare, a hackathon prototype that links sensor data, Azure services, and practical automation workflows.",
-			socialImage: "/klungo.png",
+				"How Carson Spriggs-Audet built CropCare, a hackathon prototype that links sensor data, Azure services, and practical automation workflows.",
 		},
 	},
 	{
@@ -247,7 +245,7 @@ export const caseStudies: CaseStudy[] = [
 			"Hackathon prototype that turns a URL into a searchable knowledge base with retrieval-backed answers.",
 		projectType: "Hackathon Winning Project",
 		stack: ["TypeScript", "AI", "RAG", "PostgreSQL", "Mantine"],
-		image: "/linky.png",
+		image: "/linky.webp",
 		presentation: {
 			eyebrow: "A calmer interface for retrieval-backed learning",
 			highlights: [
@@ -289,10 +287,9 @@ export const caseStudies: CaseStudy[] = [
 		publishedAt: "2024-04-11",
 		updatedAt: "2026-03-26",
 		seo: {
-			title: "Linky Case Study | Carson Spriggs",
+			title: "Linky Case Study | Carson Spriggs-Audet",
 			description:
-				"How Carson Spriggs built Linky, a hackathon prototype that uses retrieval and interface design to improve exploration and learning.",
-			socialImage: "/klungo.png",
+				"How Carson Spriggs-Audet built Linky, a hackathon prototype that uses retrieval and interface design to improve exploration and learning.",
 		},
 	},
 ];
